@@ -17,7 +17,7 @@ public class PlayerCamera : MonoBehaviour
         
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         if (other.gameObject == targetObject)
         {
@@ -28,5 +28,5 @@ public class PlayerCamera : MonoBehaviour
                 if
             }
         }
-    }
+    }*/
 }
