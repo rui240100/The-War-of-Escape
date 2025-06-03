@@ -23,8 +23,9 @@ public class TreasureBox : MonoBehaviour
             if (distance <= openDistance && Input.GetButtonDown("Fire2"))
             {
                 Player player = playerObj.GetComponent<Player>();
-                if (player != null && !player.HasItem)
+                if (player != null)
                 {
+                   
                     GiveItemToPlayer(player);
                     OpenChest();
                 }
@@ -47,24 +48,30 @@ public class TreasureBox : MonoBehaviour
                 int index = Random.Range(0, possibleItems.Length);
                 GameObject itemObj = Instantiate(possibleItems[index]);
 
-                // まず Item か KeyItem かを判定
-                Item item = itemObj.GetComponent<Item>();
-                KeyItem keyItem = itemObj.GetComponent<KeyItem>();
-
-                if (item != null)
+                // 出てきたのが鍵だった場合
+                if (itemObj.TryGetComponent<KeyItem>(out var keyItem))
                 {
-                    // 通常アイテム処理
+                    player.AddKey();        // 鍵だけ追加
+                    Destroy(itemObj);       // プレハブは即削除
+                    return;
+                }
+
+                // 通常アイテムだった場合
+                if (itemObj.TryGetComponent<Item>(out var item))
+                {
+                    // すでにアイテムを持っている場合は削除して入れ替え
+                    if (player.HasItem)
+                    {
+                        Destroy(player.heldItem.gameObject);
+                    }
+
                     player.SetHeldItem(item);
                     itemObj.transform.SetParent(player.transform);
                     itemObj.transform.localPosition = Vector3.zero;
+
+                    // 表示や物理演算を無効化（拾った状態）
                     itemObj.GetComponent<Collider>().enabled = false;
                     itemObj.GetComponent<MeshRenderer>().enabled = false;
-                }
-                else if (keyItem != null)
-                {
-                    // 鍵を直接プレイヤーに渡す処理
-                    player.AddKey();
-                    Destroy(itemObj); // 見えないけど取得処理完了なので消す
                 }
             }
 
