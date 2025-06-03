@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1589745497115370567}
   - component: {fileID: 3317967654050494768}
   - component: {fileID: 7693308590862592740}
-  - component: {fileID: 8753020840297840626}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -87,29 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8753020840297840626
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2678412373564895899}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7169205604759171138
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,10 +290,18 @@ MonoBehaviour:
   Speed: 5
   cameraTransform: {fileID: 5764057910027673219}
   lookSensitivity: 3
-  HasItem: 0
   otherPlayer: {fileID: 0}
-  slowDuration: 10
-  slowSpeedMultiplier: 0.75
+  keyCount: 0
+  heldItem: {fileID: 0}
+  itemIconUI: {fileID: 0}
+  defaultItemIcon: {fileID: 0}
+  keyIconUI: {fileID: 0}
+  keyIconSprite: {fileID: 0}
+  defaultKeyIcon: {fileID: 0}
+  keyIcons: []
+  keyCountText: {fileID: 0}
+  magatamaCount: 0
+  magatamaIcons: []
 --- !u!143 &7553327553942621771
 CharacterController:
   m_ObjectHideFlags: 0
