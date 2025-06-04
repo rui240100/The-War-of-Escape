@@ -15,7 +15,7 @@ public class ProtectingDemon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Launch();
+        
     }
 
     public void Launch() 

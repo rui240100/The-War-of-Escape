@@ -4,12 +4,16 @@ public class TriggerCamera : MonoBehaviour
 {
     public GameObject targetObject;
     private Player target;
+    private TriggerCamera targetCamera;
     public bool demonHave;
+
+    private ProtectingDemon protectingDemon; 
+    private DemonAI demon;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        target = GetComponent<Player>();
+        
     }
 
     // Update is called once per frame
@@ -22,17 +26,29 @@ public class TriggerCamera : MonoBehaviour
     {
         if (other.gameObject == targetObject)
         {
+            target = other.GetComponent<Player>();
+            targetCamera = target.GetComponent<TriggerCamera>();
             Debug.Log("Trigger");
 
-            if ((demonHave) && (Input.GetMouseButtonDown(0))) 
+            if (demonHave)
             {
-                //if()
+                if (!targetCamera.demonHave)
                 {
                     target.Speed *= 0.1f;
-                    Debug.Log("Stun");
-
+                    //Time
+                }
+                else
+                {
+                    //Ç±Ç±Ç…å›Ç¢ÇÃéÁåÏãSÇDestroyÇ∑ÇÈÇÃèëÇ≠
                 }
             }
+        }
+        else if (other.CompareTag("Demon"))
+        {
+            demon = other.GetComponent<DemonAI>();
+            demon.chaseSpeed *= 0.1f;
+            //Time
+            demon.StopChase();
         }
     }
 }
