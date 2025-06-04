@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class PrisonGate : MonoBehaviour
 {
-    public float holdTime ;
+    public float holdTime;
     public int requiredMagatamaCount = 3;
 
     private bool isOpening = false;
     private float holdTimer = 0f;
     private Player playerInFront;
 
-
     [SerializeField]
-    GameObject doorPart;  // Inspectorで監獄のドア部分（キューブ）をアサイン
+    private GameObject doorPart;  // Inspectorで監獄のドア部分（キューブ）をアサイン
+
+    private Player openedByPlayer; // 誰が開けたかを記録する変数
 
     private void Update()
     {
@@ -20,9 +21,9 @@ public class PrisonGate : MonoBehaviour
             bool holdingButton = false;
 
             if (playerInFront.playerID == 1)
-                holdingButton = Input.GetButton("Fire2"); // Bボタン
+                holdingButton = Input.GetButton("Fire2");
             else if (playerInFront.playerID == 2)
-                holdingButton = Input.GetButton("Fire2_2"); // 2P用のボタン（あれば）
+                holdingButton = Input.GetButton("Fire2_2");
 
             if (holdingButton)
             {
@@ -31,8 +32,7 @@ public class PrisonGate : MonoBehaviour
                     holdTimer += Time.deltaTime;
                     if (holdTimer >= holdTime)
                     {
-                    　　Debug.Log("開けゴマ");
-                        OpenPrison();
+                        OpenPrison(playerInFront);
                     }
                 }
                 else
@@ -48,11 +48,11 @@ public class PrisonGate : MonoBehaviour
         }
     }
 
-    private void OpenPrison()
+    private void OpenPrison(Player player)
     {
         isOpening = true;
-        Debug.Log("監獄が開いた！");
-        // アニメーションやドア開放処理をここに
+        openedByPlayer = player;
+        Debug.Log($"監獄が開いた！ 開けたのは Player{player.playerID}");
 
         if (doorPart != null)
         {
@@ -62,9 +62,6 @@ public class PrisonGate : MonoBehaviour
         {
             Debug.LogWarning("doorPartがセットされていません！");
         }
-
-
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,5 +81,10 @@ public class PrisonGate : MonoBehaviour
             playerInFront = null;
             holdTimer = 0f;
         }
+    }
+
+    public Player GetOpenedByPlayer()
+    {
+        return openedByPlayer;
     }
 }

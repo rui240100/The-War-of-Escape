@@ -163,21 +163,7 @@ public class Player : MonoBehaviour
     }
 
 
-    /*void UseItem()
-    {
-        heldItem?.Activate(this); // 自分を渡してアイテムを起動
-        heldItem = null; // 消費
-
-       
-        if (itemIconUI != null)
-        {
-            itemIconUI.sprite = defaultItemIcon; // 空アイコンに戻す
-            itemIconUI.enabled = false;
-        }
-
-
-
-    }*/
+   
 
     public IEnumerator SlowDown(float multiplier, float duration)
     {

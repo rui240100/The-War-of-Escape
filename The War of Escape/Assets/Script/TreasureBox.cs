@@ -25,7 +25,7 @@ public class TreasureBox : MonoBehaviour
                 Player player = playerObj.GetComponent<Player>();
                 if (player != null)
                 {
-                   
+
                     GiveItemToPlayer(player);
                     OpenChest();
                 }
