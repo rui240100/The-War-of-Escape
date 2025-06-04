@@ -1474,7 +1474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!143 &1064268816
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  demonHave: 0
+  demonHave: 1
 --- !u!23 &1994072126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2973,9 +2973,8 @@ MonoBehaviour:
   - {fileID: 1799762679}
   - {fileID: 620389426}
   - {fileID: 2086137603}
+  agent: {fileID: 0}
   isChasing: 0
-  patrolSpeed: 4
-  chaseSpeed: 6
   keyPrefab: {fileID: 6414842845069078188, guid: 16dac2f3839c7d34c9986e7bbd5864a1, type: 3}
   keySpawnPositions:
   - {x: 3, y: 0.3, z: 26}
@@ -2985,6 +2984,8 @@ MonoBehaviour:
   - {x: 35, y: 0.3, z: 45}
   checkRadius: 0.1
   respawn: {x: 30, y: 1, z: 17}
+  patrolSpeed: 4
+  chaseSpeed: 6
 --- !u!23 &8388828511120559135
 MeshRenderer:
   m_ObjectHideFlags: 0

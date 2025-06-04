@@ -31,8 +31,8 @@ public class DemonCamera : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        //if (demon.isChasing)
-        //    return;
+        if (demon.isChasing)
+            return;
 
 
         //if (Time.time >= nextActionTime)

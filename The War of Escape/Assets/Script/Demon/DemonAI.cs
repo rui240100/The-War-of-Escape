@@ -6,13 +6,10 @@ public class DemonAI : MonoBehaviour
     public Transform[] patrolPoints; // パトロールする地点の配列
     private int currentPointIndex = 0; // 現在向かっているパトロール地点のインデックス
 
-    private NavMeshAgent agent; // NavMeshAgent コンポーネント
+    public NavMeshAgent agent; // NavMeshAgent コンポーネント
     private Transform player; // 現在追跡しているプレイヤー
     public bool isChasing = false; // 追跡状態フラグ
     private bool callStart = true;
-
-    public float patrolSpeed = 2.0f; // パトロール時の移動速度
-    public float chaseSpeed = 4.0f;  // 追跡時の移動速度
 
     public Transform CurrentTarget => player; // 現在のターゲットを外部から参照できるプロパティ
 
@@ -22,6 +19,9 @@ public class DemonAI : MonoBehaviour
     public float checkRadius = 0.1f;
 
     public Vector3 respawn;
+
+    public float patrolSpeed = 4.0f; // パトロール時の移動速度
+    public float chaseSpeed = 6.0f;  // 追跡時の移動速度
 
     void Start()
     {

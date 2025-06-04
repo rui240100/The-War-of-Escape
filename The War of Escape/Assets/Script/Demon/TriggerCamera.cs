@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TriggerCamera : MonoBehaviour
 {
@@ -22,33 +24,58 @@ public class TriggerCamera : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == targetObject)
+        if (demonHave)  //©•ª‚ªçŒì‹S‚ğ‚Á‚Ä‚¢‚½‚ç
         {
-            target = other.GetComponent<Player>();
-            targetCamera = target.GetComponent<TriggerCamera>();
-            Debug.Log("Trigger");
-
-            if (demonHave)
+            if (other.CompareTag("Player"))     //‘Šè‚ªƒvƒŒƒCƒ„[‚©Šm‚©‚ß‚é
             {
-                if (!targetCamera.demonHave)
-                {
-                    target.Speed *= 0.1f;
-                    //Time
-                }
-                else
-                {
-                    //‚±‚±‚ÉŒİ‚¢‚ÌçŒì‹S‚ğDestroy‚·‚é‚Ì‘‚­
-                }
+                //target = other.GetComponent<Player>();
+                //targetCamera =other.GetComponent<TriggerCamera>();
+
+                //if (!targetCamera.demonHave)    //‘Šè‚ªçŒì‹S‚ğ‚Á‚Ä‚¢‚È‚©‚Á‚½‚ç
+                //{
+                //    StartCoroutine(StunCoroutine(target));
+                //}
+                //else
+                //{
+                //    //‘Šè‚ÌçŒì‹SDestroy
+                //}
+
+                ////©•ª‚ÌçŒì‹SDestroy
+            }
+            else if (other.CompareTag("Demon"))
+            {
+                demon = other.GetComponent<DemonAI>();
+
+                StartCoroutine(ProtectCoroutine(demon));
+
+                //©•ª‚ÌçŒì‹SDestroy
             }
         }
-        else if (other.CompareTag("Demon"))
-        {
-            demon = other.GetComponent<DemonAI>();
-            demon.chaseSpeed *= 0.1f;
-            //Time
-            demon.StopChase();
-        }
+    }
+
+    private IEnumerator StunCoroutine(Player target)
+    {
+        float playerSpeed = target.Speed;
+        target.Speed = playerSpeed * 0.1f;
+
+        yield return new WaitForSeconds(5.0f);
+
+        target.Speed = playerSpeed;
+    }
+
+    private IEnumerator ProtectCoroutine(DemonAI demon)
+    {
+        float demonSpeed = demon.chaseSpeed;
+
+        demon.chaseSpeed = demonSpeed * 0.1f;
+        demon.agent.speed = demon.chaseSpeed;
+
+        Debug.Log("SlowDemon");
+
+        yield return new WaitForSeconds(5.0f);
+
+        demon.StopChase();
     }
 }
