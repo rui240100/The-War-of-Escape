@@ -12,7 +12,8 @@ public class PrisonGate : MonoBehaviour
     [SerializeField] GameObject doorPart;
 
     [Header("監獄に入ってる鬼（Inspectorで指定）")]
-    public ProtectingDemon imprisonedOni;  // ← ここを Inspector で指定する！
+    public GameObject protectingDemon;  // ← ここを Inspector で指定する！
+    private ProtectingDemon protectingDemonScript;
 
     private Player openedByPlayer;
 
@@ -59,15 +60,19 @@ public class PrisonGate : MonoBehaviour
 
         Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
 
+        protectingDemonScript=protectingDemon.GetComponent<ProtectingDemon>();
+        protectingDemonScript.Launch();
+
+
         if (doorPart != null)
         {
             Destroy(doorPart);
         }
 
         // 鬼に知らせる
-        if (imprisonedOni != null)
+        if (protectingDemonScript != null)
         {
-            imprisonedOni.SetOwner(player);
+            protectingDemonScript.SetOwner(player);
         }
     }
 
@@ -85,7 +90,7 @@ public class PrisonGate : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         Player player = other.GetComponent<Player>();
         if (player != null && player == playerInFront)
