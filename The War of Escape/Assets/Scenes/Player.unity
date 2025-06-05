@@ -251,6 +251,177 @@ Transform:
   m_Children: []
   m_Father: {fileID: 604712594}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &316175915
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.1993003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2899995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9135704
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093230722866030929, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_Name
+      value: Magatama (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+--- !u!1001 &450433023
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9782289
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.0163896
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093230722866030929, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_Name
+      value: Magatama (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+--- !u!1001 &591611311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.6183028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.2404063
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093230722866030929, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_Name
+      value: Magatama (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 535b6e501e0626741865744acad5ccab, type: 3}
 --- !u!1 &604712593
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +523,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &829351554
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7942062
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053754405827421756, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093230722866030929, guid: 535b6e501e0626741865744acad5ccab, type: 3}
+      propertyPath: m_Name
+      value: Magatama (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 535b6e501e0626741865744acad5ccab, type: 3}
 --- !u!1001 &992765245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1617,6 +1845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Itemimage
       objectReference: {fileID: 0}
+    - target: {fileID: 8441753286882172305, guid: 3d216f91d7bf2c440a8ea55157e168aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1641,3 +1873,7 @@ SceneRoots:
   - {fileID: 4319159436968179652}
   - {fileID: 3156776315282739618}
   - {fileID: 4041516294567754316}
+  - {fileID: 450433023}
+  - {fileID: 591611311}
+  - {fileID: 316175915}
+  - {fileID: 829351554}

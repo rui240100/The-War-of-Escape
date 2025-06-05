@@ -40,6 +40,10 @@ public class PrisonGate : MonoBehaviour
 
             if (holdingButton)
             {
+
+                /*Debug.Log("プレイヤーの勾玉数: " + playerInFront.magatamaCount);
+                Debug.Log("必要な勾玉数: " + requiredMagatamaCount);*/
+
                 if (playerInFront.HasEnoughMagatama(requiredMagatamaCount))
                 {
                     holdTimer += Time.deltaTime;
