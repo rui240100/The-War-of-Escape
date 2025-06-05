@@ -15,6 +15,8 @@ public class PrisonGate : MonoBehaviour
     public GameObject protectingDemon;  // ← ここを Inspector で指定する！
     private ProtectingDemon protectingDemonScript;
 
+    public bool playerID;
+
     //private Player openedByPlayer;
 
     private void Update()
@@ -24,9 +26,15 @@ public class PrisonGate : MonoBehaviour
             bool holdingButton = false;
 
             if (playerInFront.playerID == 1)
+            {
                 holdingButton = Input.GetButton("Fire2");
+                playerID = true;
+            }
             else if (playerInFront.playerID == 2)
+            {
                 holdingButton = Input.GetButton("Fire2_2");
+                playerID = false;
+            }
 
             if (holdingButton)
             {
@@ -60,8 +68,8 @@ public class PrisonGate : MonoBehaviour
 
         Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
 
-        protectingDemonScript=protectingDemon.GetComponent<ProtectingDemon>();
-        protectingDemonScript.Launch();
+        protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
+        //protectingDemonScript.Launch();
 
 
         if (doorPart != null)
@@ -72,7 +80,7 @@ public class PrisonGate : MonoBehaviour
         // 鬼に知らせる
         if (protectingDemonScript != null)
         {
-            protectingDemonScript.SetOwner(player);
+            //protectingDemonScript.SetOwner(player);
         }
     }
 
