@@ -12,7 +12,7 @@ public class PrisonGate : MonoBehaviour
     [SerializeField] GameObject doorPart;
 
     [Header("監獄に入ってる鬼（Inspectorで指定）")]
-    public Oni imprisonedOniko;  // ← ここを Inspector で指定する！
+    public ProtectingDemon imprisonedOni;  // ← ここを Inspector で指定する！
 
     private Player openedByPlayer;
 
@@ -65,9 +65,9 @@ public class PrisonGate : MonoBehaviour
         }
 
         // 鬼に知らせる
-        if (imprisonedOniko != null)
+        if (imprisonedOni != null)
         {
-            imprisonedOniko.SetOwner(player);
+            imprisonedOni.SetOwner(player);
         }
     }
 

@@ -5,6 +5,8 @@ public class ProtectingDemon : MonoBehaviour
 {
     private NavMeshAgent agent; // NavMeshAgent コンポーネント
     public GameObject player;
+    //松山追加しました　プレイヤーをオーナーにしてます
+    private Player owner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,5 +31,18 @@ public class ProtectingDemon : MonoBehaviour
     {
 
     }
+
+    //松山ここから下追加しました
+    public void SetOwner(Player newOwner)
+    {
+        owner = newOwner;
+        Debug.Log($"鬼がプレイヤー{owner.playerID}のものになった！");
+        // ここでAIや追従先などを切り替える処理を書く！
+    }
+
+
+
+
+
 }
 
