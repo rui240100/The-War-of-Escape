@@ -22,7 +22,7 @@ public class ProtectingDemon : MonoBehaviour
 
     public void Launch() 
     {
-        Vector3 targetPosition = player.transform.position - player.transform.forward * 5f;
+        Vector3 targetPosition = owner.transform.position - owner.transform.forward * 5f;
 
         agent.SetDestination(targetPosition);
     }
