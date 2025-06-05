@@ -3,7 +3,7 @@ using UnityEngine;
 public class PrisonGate : MonoBehaviour
 {
     public float holdTime;
-    public int requiredMagatamaCount = 3;
+    public int requiredMagatamaCount = 0;
 
     private bool isOpening = false;
     private float holdTimer = 0f;
@@ -15,7 +15,7 @@ public class PrisonGate : MonoBehaviour
     public GameObject protectingDemon;  // ← ここを Inspector で指定する！
     private ProtectingDemon protectingDemonScript;
 
-    private Player openedByPlayer;
+    //private Player openedByPlayer;
 
     private void Update()
     {
@@ -56,7 +56,7 @@ public class PrisonGate : MonoBehaviour
         if (isOpening) return;
 
         isOpening = true;
-        openedByPlayer = player;
+        playerInFront = player;
 
         Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
 
@@ -78,7 +78,7 @@ public class PrisonGate : MonoBehaviour
 
     public Player GetOpenedByPlayer()
     {
-        return openedByPlayer;
+        return playerInFront;
     }
 
     private void OnTriggerEnter(Collider other)
