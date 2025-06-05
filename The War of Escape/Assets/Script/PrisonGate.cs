@@ -3,7 +3,7 @@ using UnityEngine;
 public class PrisonGate : MonoBehaviour
 {
     public float holdTime;
-    public int requiredMagatamaCount = 3;
+    public int requiredMagatamaCount = 0;
 
     private bool isOpening = false;
     private float holdTimer = 0f;
@@ -12,9 +12,10 @@ public class PrisonGate : MonoBehaviour
     [SerializeField] GameObject doorPart;
 
     [Header("監獄に入ってる鬼（Inspectorで指定）")]
-    public ProtectingDemon imprisonedOni;  // ← ここを Inspector で指定する！
+    public GameObject protectingDemon;  // ← ここを Inspector で指定する！
+    private ProtectingDemon protectingDemonScript;
 
-    private Player openedByPlayer;
+    //private Player openedByPlayer;
 
     private void Update()
     {
@@ -55,9 +56,13 @@ public class PrisonGate : MonoBehaviour
         if (isOpening) return;
 
         isOpening = true;
-        openedByPlayer = player;
+        playerInFront = player;
 
         Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
+
+        protectingDemonScript=protectingDemon.GetComponent<ProtectingDemon>();
+        protectingDemonScript.Launch();
+
 
         if (doorPart != null)
         {
@@ -65,15 +70,15 @@ public class PrisonGate : MonoBehaviour
         }
 
         // 鬼に知らせる
-        if (imprisonedOni != null)
+        if (protectingDemonScript != null)
         {
-            imprisonedOni.SetOwner(player);
+            protectingDemonScript.SetOwner(player);
         }
     }
 
     public Player GetOpenedByPlayer()
     {
-        return openedByPlayer;
+        return playerInFront;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -85,7 +90,7 @@ public class PrisonGate : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         Player player = other.GetComponent<Player>();
         if (player != null && player == playerInFront)
