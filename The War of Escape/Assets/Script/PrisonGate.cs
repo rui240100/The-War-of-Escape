@@ -9,10 +9,12 @@ public class PrisonGate : MonoBehaviour
     private float holdTimer = 0f;
     private Player playerInFront;
 
-    [SerializeField]
-    private GameObject doorPart;  // Inspectorで監獄のドア部分（キューブ）をアサイン
+    [SerializeField] GameObject doorPart;
 
-    private Player openedByPlayer; // 誰が開けたかを記録する変数
+    [Header("監獄に入ってる鬼（Inspectorで指定）")]
+    public Oni imprisonedOniko;  // ← ここを Inspector で指定する！
+
+    private Player openedByPlayer;
 
     private void Update()
     {
@@ -50,18 +52,28 @@ public class PrisonGate : MonoBehaviour
 
     private void OpenPrison(Player player)
     {
+        if (isOpening) return;
+
         isOpening = true;
         openedByPlayer = player;
-        Debug.Log($"監獄が開いた！ 開けたのは Player{player.playerID}");
+
+        Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
 
         if (doorPart != null)
         {
             Destroy(doorPart);
         }
-        else
+
+        // 鬼に知らせる
+        if (imprisonedOniko != null)
         {
-            Debug.LogWarning("doorPartがセットされていません！");
+            imprisonedOniko.SetOwner(player);
         }
+    }
+
+    public Player GetOpenedByPlayer()
+    {
+        return openedByPlayer;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,10 +93,5 @@ public class PrisonGate : MonoBehaviour
             playerInFront = null;
             holdTimer = 0f;
         }
-    }
-
-    public Player GetOpenedByPlayer()
-    {
-        return openedByPlayer;
     }
 }
