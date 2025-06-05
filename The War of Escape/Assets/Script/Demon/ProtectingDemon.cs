@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.UI.GridLayoutGroup;
 
 public class ProtectingDemon : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class ProtectingDemon : MonoBehaviour
     public GameObject player;
     //松山追加しました　プレイヤーをオーナーにしてます
     private PrisonGate prisonGate;
+    private Player owner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,12 +22,21 @@ public class ProtectingDemon : MonoBehaviour
         
     }
 
-    //public void Launch() 
-    //{
-    //    Vector3 targetPosition = owner.transform.position - owner.transform.forward * 5f;
+    public void Launch() 
+    {
+        Vector3 targetPosition = owner.transform.position - owner.transform.forward * 5f;
 
-    //    agent.SetDestination(targetPosition);
-    //}
+       agent.SetDestination(targetPosition);
+    }
+
+    public void SetOwner(Player newOwner)
+    {
+        owner = newOwner;
+        Debug.Log($"鬼がプレイヤー{owner.playerID}のものになった！");
+    }
+
+
+
 
     public void Stun()
     {

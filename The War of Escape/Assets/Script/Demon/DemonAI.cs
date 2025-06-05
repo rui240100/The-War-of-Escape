@@ -34,11 +34,11 @@ public class DemonAI : MonoBehaviour
     {
         if (isChasing && player != null)
         {
-            Debug.Log("追いかけ中" + player.position);
+            /*Debug.Log("追いかけ中" + player.position);
             Debug.Log("Chase Object Name " + player);
 
             Debug.Log("agent.hasPath" + agent.hasPath);
-            Debug.Log("agent.isStopped" + agent.isStopped);
+            Debug.Log("agent.isStopped" + agent.isStopped);*/
 
             if (agent.hasPath)
             {
@@ -47,7 +47,7 @@ public class DemonAI : MonoBehaviour
         }
         else if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            Debug.Log("探索中");
+            //Debug.Log("探索中");
             GoToNextPatrolPoint(); // 次のパトロール地点へ
         }
     }
@@ -64,13 +64,13 @@ public class DemonAI : MonoBehaviour
     {
         if (callStart)
         {
-            Debug.Log("Start1");
+            //Debug.Log("Start1");
 
             player = target;
             isChasing = true;
             agent.speed = chaseSpeed; // 追跡時のスピードに変更
 
-            Debug.Log("Start2");
+            //Debug.Log("Start2");
 
             callStart = false;
         }
@@ -78,7 +78,7 @@ public class DemonAI : MonoBehaviour
 
     public void StopChase()
     {
-        Debug.Log("Stop");
+        //Debug.Log("Stop");
 
         isChasing = false;
         player = null;
@@ -100,7 +100,7 @@ public class DemonAI : MonoBehaviour
             playerScript = collision.gameObject.GetComponent<Player>();
 
             int keyCountToReturn = playerScript.keyCount;
-            Debug.Log("プレイヤーが持っていた鍵の数: " + keyCountToReturn);
+           // Debug.Log("プレイヤーが持っていた鍵の数: " + keyCountToReturn);
 
             playerScript.keyCount = 0;
 
@@ -128,13 +128,13 @@ public class DemonAI : MonoBehaviour
                 {
                     Instantiate(keyPrefab, pos, Quaternion.identity);
                     placedCount++;
-                    Debug.Log("鍵を配置しました @ " + pos);
+                  //  Debug.Log("鍵を配置しました @ " + pos);
                 }
             }
 
             if (placedCount < keyCountToReturn)
             {
-                Debug.LogWarning("鍵を戻す場所が足りませんでした！");
+                //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
             }
 
             StopChase();
