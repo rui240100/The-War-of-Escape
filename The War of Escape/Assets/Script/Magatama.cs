@@ -19,13 +19,13 @@ public class Magatama : MonoBehaviour
 
      void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Õ“Ë‘Šè: " + other.name); // © ‚±‚ê’Ç‰ÁI
+        //Debug.Log("Õ“Ë‘Šè: " + other.name); // © ‚±‚ê’Ç‰ÁI
 
         Player player = other.GetComponentInParent<Player>();
         if (player != null)
         {
 
-            Debug.Log($"PlayerID: {player.playerID} ‚ªŒù‹Ê‚ğæ“¾");
+            //Debug.Log($"PlayerID: {player.playerID} ‚ªŒù‹Ê‚ğæ“¾");
             player.AddMagatama();
             Destroy(gameObject); // æ“¾ŒãÁ‚·
         }

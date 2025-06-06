@@ -21,6 +21,10 @@ public class PrisonGate : MonoBehaviour
 
     private void Update()
     {
+
+        //Debug.Log($"playerInFront: {playerInFront}, isOpening: {isOpening}");
+
+
         if (playerInFront != null && !isOpening)
         {
             bool holdingButton = false;
@@ -65,7 +69,7 @@ public class PrisonGate : MonoBehaviour
         }
     }
 
-    private void OpenPrison(Player player)
+    /*private void OpenPrison(Player player)
     {
         if (isOpening) return;
 
@@ -75,24 +79,40 @@ public class PrisonGate : MonoBehaviour
         playerID = true;
 
 
+        if (protectingDemon != null)
+        {
+            protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
+            protectingDemonScript.SetOwner(player); // ← ここが重要！
+        }
+
+
+
+        // ここ追加！！！！！
+        if (protectingDemonScript == null && protectingDemon != null)
+        {
+            protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
+        }
+
         if (player.playerID == 1)
         {
+            protectingDemonScript.SetOwner(player); // ←ここ！！
             protectingDemonScript.Launch();
             Debug.Log("Launch呼ばれた");
             Debug.Log("【1P】監獄がプレイヤー1によって開かれました！");
         }
         else if (player.playerID == 2)
         {
+            protectingDemonScript.SetOwner(player);
             protectingDemonScript.Launch();
             Debug.Log("Launch呼ばれた");
             Debug.Log("【2P】監獄がプレイヤー2によって開かれました！");
         }
 
 
-        /*Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
+        //Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
 
-        protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
-        */
+        //protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
+        
 
 
         if (doorPart != null)
@@ -108,7 +128,65 @@ public class PrisonGate : MonoBehaviour
             Debug.Log("Launch呼ばれた");
             //protectingDemonScript.SetOwner(player);
         }
+    }*/
+
+    private void OpenPrison(Player player)
+    {
+        if (isOpening) return;
+
+        isOpening = true;
+        playerInFront = player;
+        playerID = true;
+
+        if (protectingDemon != null)
+        {
+            protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
+
+            if (protectingDemonScript != null)
+            {
+                protectingDemonScript.SetOwner(player);
+                protectingDemonScript.Launch();
+
+                Debug.Log($"Launch呼ばれた 【{player.playerID}P】監獄がプレイヤー{player.playerID}によって開かれました！");
+            }
+            else
+            {
+                Debug.LogError("protectingDemonScript が null です。ProtectingDemon コンポーネントがありません。");
+            }
+        }
+        else
+        {
+            Debug.LogError("protectingDemon が Inspector でセットされていません！");
+        }
+
+        if (doorPart != null)
+        {
+            Destroy(doorPart);
+        }
+
+        if (protectingDemon != null)
+        {
+            protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
+
+            if (protectingDemonScript != null)
+            {
+                protectingDemonScript.SetOwner(player);
+                protectingDemonScript.Launch();
+
+                Debug.Log($"Launch呼ばれた 【{player.playerID}P】監獄がプレイヤー{player.playerID}によって開かれました！");
+            }
+            else
+            {
+                Debug.LogError("protectingDemonScript が null です。ProtectingDemon コンポーネントがありません。");
+            }
+        }
+        else
+        {
+            Debug.LogError("protectingDemon が Inspector でセットされていません！");
+        }
+
     }
+
 
     public Player GetOpenedByPlayer()
     {

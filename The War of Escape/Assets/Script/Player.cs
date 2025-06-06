@@ -275,7 +275,7 @@ public class Player : MonoBehaviour
     public void AddMagatama()
     {
         magatamaCount = Mathf.Clamp(magatamaCount + 1, 0, magatamaIcons.Length);
-        Debug.Log($"AddMagatama() 呼ばれた。現在の勾玉数: {magatamaCount}");
+        //Debug.Log($"AddMagatama() 呼ばれた。現在の勾玉数: {magatamaCount}");
         UpdateMagatamaUI();
     }
 
