@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  demonHave: 1
+  demonHave: 0
 --- !u!23 &1994072126
 MeshRenderer:
   m_ObjectHideFlags: 0

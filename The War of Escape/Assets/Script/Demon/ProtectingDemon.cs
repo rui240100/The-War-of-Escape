@@ -5,11 +5,13 @@ using static UnityEngine.UI.GridLayoutGroup;
 public class ProtectingDemon : MonoBehaviour
 {
     private NavMeshAgent agent; // NavMeshAgent コンポーネント
+
     public GameObject player1;
     public GameObject player2;
 
-    //松山追加しました　プレイヤーをオーナーにしてます
     private PrisonGate prisonGate;
+    private TriggerCamera triggerCamera;
+    private Player player;
 
     private Transform owner;
 
@@ -29,10 +31,18 @@ public class ProtectingDemon : MonoBehaviour
     {
         if (prisonGate.playerID)
         {
+            triggerCamera = player1.GetComponent<TriggerCamera>();
+            triggerCamera.demonHave = true;
+
+            player = player1.GetComponent<Player>();
+            
             player1.transform.position = owner.transform.position;
         }
         else if (!prisonGate.playerID) 
-        { 
+        {
+            triggerCamera = player2.GetComponent<TriggerCamera>();
+            triggerCamera.demonHave= true;
+
             player2.transform.position = owner.transform.position;
         }
 
