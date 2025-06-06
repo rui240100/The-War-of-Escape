@@ -69,12 +69,17 @@ public class TriggerCamera : MonoBehaviour
     {
         float demonSpeed = demon.chaseSpeed;
 
-        demon.chaseSpeed = demonSpeed * 0.1f;
+        demon.chaseSpeed = 0.0f;
         demon.agent.speed = demon.chaseSpeed;
 
         Debug.Log("SlowDemon");
 
         yield return new WaitForSeconds(5.0f);
+
+        demon.chaseSpeed = 6.0f;
+        demon.agent.speed = demon.chaseSpeed;
+
+        Debug.Log("ãSçƒäJ");
 
         demon.StopChase();
     }

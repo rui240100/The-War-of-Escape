@@ -43,6 +43,7 @@ public class DemonAI : MonoBehaviour
             if (agent.hasPath)
             {
                 agent.SetDestination(player.position); // プレイヤーを追跡
+                agent.speed = chaseSpeed; // 追跡時のスピードに変更
             }
         }
         else if (!agent.pathPending && agent.remainingDistance < 0.5f)
@@ -50,6 +51,8 @@ public class DemonAI : MonoBehaviour
             //Debug.Log("探索中");
             GoToNextPatrolPoint(); // 次のパトロール地点へ
         }
+
+        
     }
 
     void GoToNextPatrolPoint()
@@ -68,7 +71,7 @@ public class DemonAI : MonoBehaviour
 
             player = target;
             isChasing = true;
-            agent.speed = chaseSpeed; // 追跡時のスピードに変更
+            
 
             //Debug.Log("Start2");
 

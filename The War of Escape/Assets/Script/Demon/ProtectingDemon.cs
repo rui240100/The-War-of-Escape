@@ -5,10 +5,13 @@ using static UnityEngine.UI.GridLayoutGroup;
 public class ProtectingDemon : MonoBehaviour
 {
     private NavMeshAgent agent; // NavMeshAgent コンポーネント
-    public GameObject player;
+    public GameObject player1;
+    public GameObject player2;
+
     //松山追加しました　プレイヤーをオーナーにしてます
     private PrisonGate prisonGate;
-    private Player owner;
+
+    private Transform owner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,19 +27,18 @@ public class ProtectingDemon : MonoBehaviour
 
     public void Launch() 
     {
-        Vector3 targetPosition = owner.transform.position - owner.transform.forward * 5f;
+        if (prisonGate.playerID)
+        {
+            player1.transform.position = owner.transform.position;
+        }
+        else if (!prisonGate.playerID) 
+        { 
+            player2.transform.position = owner.transform.position;
+        }
 
-       agent.SetDestination(targetPosition);
+        Vector3 targetPosition = owner.transform.position - owner.forward * 5f;
+        agent.SetDestination(targetPosition);
     }
-
-    public void SetOwner(Player newOwner)
-    {
-        owner = newOwner;
-        Debug.Log($"鬼がプレイヤー{owner.playerID}のものになった！");
-    }
-
-
-
 
     public void Stun()
     {
@@ -50,10 +52,5 @@ public class ProtectingDemon : MonoBehaviour
     //    Debug.Log($"鬼がプレイヤー{owner.playerID}のものになった！");
     //    // ここでAIや追従先などを切り替える処理を書く！
     //}
-
-
-
-
-
 }
 
