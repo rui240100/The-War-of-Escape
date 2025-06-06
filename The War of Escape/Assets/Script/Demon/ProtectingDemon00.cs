@@ -2,15 +2,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.UI.GridLayoutGroup;
 
-public class ProtectingDemon : MonoBehaviour
+public class ProtectingDemon00 : MonoBehaviour
 {
     private NavMeshAgent agent; // NavMeshAgent コンポーネント
 
     public GameObject player1;
     public GameObject player2;
-    public GameObject prisonGateObject;
+    public GameObject prisonGateObject00;
 
-    private PrisonGate prisonGate;
+    private PrisonGate00 prisonGate00;
     private TriggerCamera triggerCamera;
     private Player player;
 
@@ -20,7 +20,7 @@ public class ProtectingDemon : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
-        prisonGate = prisonGateObject.GetComponent<PrisonGate>();
+        prisonGate00 = prisonGateObject00.GetComponent<PrisonGate00>();
     }
 
     // Update is called once per frame
@@ -31,23 +31,23 @@ public class ProtectingDemon : MonoBehaviour
 
     public void Launch() 
     {
-        if (prisonGate.playerID)
+        if (prisonGate00.playerID00)
         {
             triggerCamera = player1.GetComponent<TriggerCamera>();
             triggerCamera.demonHave = true;
 
             player = player1.GetComponent<Player>();
-            player.pd = prisonGate.protectingDemon;
+            player.pd = prisonGate00.protectingDemonObj;
 
             player1.transform.position = owner.transform.position;
         }
-        else if (!prisonGate.playerID) 
+        else if (!prisonGate00.playerID00) 
         {
             triggerCamera = player2.GetComponent<TriggerCamera>();
             triggerCamera.demonHave= true;
 
             player = player2.GetComponent<Player>();
-            player.pd = prisonGate.protectingDemon;
+            player.pd = prisonGate00.protectingDemonObj;
 
             player2.transform.position = owner.transform.position;
         }
