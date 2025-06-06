@@ -28,14 +28,14 @@ public class PrisonGate : MonoBehaviour
             if (playerInFront.playerID == 1)
             {
                 holdingButton = Input.GetButton("Fire2");
-                //playerID = true;
-
+                
+                
             }
             else if (playerInFront.playerID == 2)
             {
                 holdingButton = Input.GetButton("Fire2_2");
-               // playerID = false;
-
+               playerID = false;
+                //Debug.Log("2P呼ばれた");
             }
 
             if (holdingButton)
@@ -72,10 +72,24 @@ public class PrisonGate : MonoBehaviour
         isOpening = true;
         playerInFront = player;
 
-        Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
+        playerID = true;
+
+
+        if (player.playerID == 1)
+        {
+            
+            Debug.Log("【1P】監獄がプレイヤー1によって開かれました！");
+        }
+        else if (player.playerID == 2)
+        {
+            Debug.Log("【2P】監獄がプレイヤー2によって開かれました！");
+        }
+
+
+        /*Debug.Log($"監獄がプレイヤー{player.playerID}によって開かれました！");
 
         protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
-        
+        */
 
 
         if (doorPart != null)
@@ -88,7 +102,7 @@ public class PrisonGate : MonoBehaviour
         {
             //protectingDemonScript.SetOwner(player);  // ← 所有者を教える
             protectingDemonScript.Launch();
-
+            Debug.Log("Launch呼ばれた");
             //protectingDemonScript.SetOwner(player);
         }
     }

@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     public Image[] magatamaIcons;  // Inspectorで複数の勾玉アイコンをアサイン（例：5個）
 
-
+    public GameObject pd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
