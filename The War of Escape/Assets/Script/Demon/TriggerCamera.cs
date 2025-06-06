@@ -15,7 +15,7 @@ public class TriggerCamera : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        demonHave = false;
     }
 
     // Update is called once per frame
@@ -30,19 +30,19 @@ public class TriggerCamera : MonoBehaviour
         {
             if (other.CompareTag("Player"))     //‘Šè‚ªƒvƒŒƒCƒ„[‚©Šm‚©‚ß‚é
             {
-                //target = other.GetComponent<Player>();
-                //targetCamera =other.GetComponent<TriggerCamera>();
+                target = other.GetComponent<Player>();
+                targetCamera = other.GetComponent<TriggerCamera>();
 
-                //if (!targetCamera.demonHave)    //‘Šè‚ªçŒì‹S‚ğ‚Á‚Ä‚¢‚È‚©‚Á‚½‚ç
-                //{
-                //    StartCoroutine(StunCoroutine(target));
-                //}
-                //else
-                //{
-                //    //‘Šè‚ÌçŒì‹SDestroy
-                //}
+                if (!targetCamera.demonHave)    //‘Šè‚ªçŒì‹S‚ğ‚Á‚Ä‚¢‚È‚©‚Á‚½‚ç
+                {
+                    StartCoroutine(StunCoroutine(target));
+                }
+                else
+                {
+                    //‘Šè‚ÌçŒì‹SDestroy
+                }
 
-                ////©•ª‚ÌçŒì‹SDestroy
+                //©•ª‚ÌçŒì‹SDestroy
             }
             else if (other.CompareTag("Demon"))
             {
