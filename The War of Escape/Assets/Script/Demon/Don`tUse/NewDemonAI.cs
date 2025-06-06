@@ -20,10 +20,10 @@ public class NewDemonAI : MonoBehaviour
     public float patrolSpeed = 5f;
     public float chaseSpeed = 10f;
 
-    private NavMeshAgent agent;
-    private Transform targetPlayer = null;
+    NavMeshAgent agent;
+    Transform targetPlayer = null;
 
-    private bool isChasing = false;
+    bool isChasing = false;
 
     void Start()
     {
