@@ -269,6 +269,7 @@ MonoBehaviour:
   possibleItems:
   - {fileID: 3470639543458426257, guid: b7fe00cd98f51294994a3408a83eb1b5, type: 3}
   - {fileID: 6414842845069078188, guid: 16dac2f3839c7d34c9986e7bbd5864a1, type: 3}
+  magatamaPrefab: {fileID: 1093230722866030929, guid: 535b6e501e0626741865744acad5ccab, type: 3}
 --- !u!65 &629120320645467284
 BoxCollider:
   m_ObjectHideFlags: 0
