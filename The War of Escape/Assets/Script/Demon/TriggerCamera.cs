@@ -6,6 +6,7 @@ public class TriggerCamera : MonoBehaviour
 {
     public GameObject targetObject;
     private Player target;
+    private Player player;
     private TriggerCamera targetCamera;
     public bool demonHave;
 
@@ -39,10 +40,11 @@ public class TriggerCamera : MonoBehaviour
                 }
                 else
                 {
-                    //‘ŠŽè‚ÌŽçŒì‹SDestroy
+                    Destroy(target.pd);
                 }
 
-                //Ž©•ª‚ÌŽçŒì‹SDestroy
+                player = transform.parent.GetComponent<Player>();
+                Destroy(player.pd);
             }
             else if (other.CompareTag("Demon"))
             {
@@ -50,7 +52,8 @@ public class TriggerCamera : MonoBehaviour
 
                 StartCoroutine(ProtectCoroutine(demon));
 
-                //Ž©•ª‚ÌŽçŒì‹SDestroy
+                player = transform.parent.GetComponent<Player>();
+                Destroy(player.pd);
             }
         }
     }

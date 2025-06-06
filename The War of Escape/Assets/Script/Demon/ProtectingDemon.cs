@@ -35,13 +35,17 @@ public class ProtectingDemon : MonoBehaviour
             triggerCamera.demonHave = true;
 
             player = player1.GetComponent<Player>();
-            
+            player.pd = prisonGate.protectingDemon;
+
             player1.transform.position = owner.transform.position;
         }
         else if (!prisonGate.playerID) 
         {
             triggerCamera = player2.GetComponent<TriggerCamera>();
             triggerCamera.demonHave= true;
+
+            player = player2.GetComponent<Player>();
+            player.pd = prisonGate.protectingDemon;
 
             player2.transform.position = owner.transform.position;
         }
