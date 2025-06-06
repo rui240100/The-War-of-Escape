@@ -86,7 +86,7 @@ public class PrisonGate : MonoBehaviour
         // ‹S‚É’m‚ç‚¹‚é
         if (protectingDemonScript != null)
         {
-            protectingDemonScript.SetOwner(player);  // © Š—LÒ‚ğ‹³‚¦‚é
+            //protectingDemonScript.SetOwner(player);  // © Š—LÒ‚ğ‹³‚¦‚é
             protectingDemonScript.Launch();
 
             //protectingDemonScript.SetOwner(player);
