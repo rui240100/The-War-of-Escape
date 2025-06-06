@@ -77,11 +77,14 @@ public class PrisonGate : MonoBehaviour
 
         if (player.playerID == 1)
         {
-            
+            protectingDemonScript.Launch();
+            Debug.Log("Launch呼ばれた");
             Debug.Log("【1P】監獄がプレイヤー1によって開かれました！");
         }
         else if (player.playerID == 2)
         {
+            protectingDemonScript.Launch();
+            Debug.Log("Launch呼ばれた");
             Debug.Log("【2P】監獄がプレイヤー2によって開かれました！");
         }
 
@@ -101,7 +104,7 @@ public class PrisonGate : MonoBehaviour
         if (protectingDemonScript != null)
         {
             //protectingDemonScript.SetOwner(player);  // ← 所有者を教える
-            protectingDemonScript.Launch();
+            
             Debug.Log("Launch呼ばれた");
             //protectingDemonScript.SetOwner(player);
         }
