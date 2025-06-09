@@ -31,11 +31,50 @@ public class ProtectingDemon : MonoBehaviour
 
     public void Launch() 
     {
-       
+        Debug.Log("Launch(): 開始");
+
+        if (prisonGate == null)
+        {
+            Debug.LogError("prisonGate が null です！");
+        }
+        else
+        {
+            Debug.Log($"prisonGate.playerID: {prisonGate.playerID}");
+        }
+
+        if (owner == null)
+        {
+            Debug.LogError("owner が null です！");
+        }
+        else
+        {
+            Debug.Log($"owner: {owner.name}");
+        }
+
+        if (player1 == null || player2 == null)
+        {
+            Debug.LogError("player1 または player2 が null です！");
+        }
+
+        if (agent == null)
+        {
+            Debug.LogError("NavMeshAgent が取得できていません！");
+        }
+        else
+        {
+            Debug.Log("NavMeshAgent 取得 OK");
+        }
+
+        Debug.Log("Launch(): 処理分岐前");
+
 
         if (prisonGate.playerID)
         {
-            triggerCamera = player1.GetComponent<TriggerCamera>();
+
+            Debug.Log("プレイヤー1の処理に入った");
+
+            triggerCamera = player1.GetComponentInChildren<TriggerCamera>();
+            //triggerCamera = player1.GetComponent<TriggerCamera>();
             if (triggerCamera == null)
             {
                 Debug.LogError("player1 に TriggerCamera がアタッチされていません！");
@@ -72,6 +111,10 @@ public class ProtectingDemon : MonoBehaviour
         }
 
         Vector3 targetPosition = owner.transform.position - owner.forward * 5f;
+             
+        Debug.Log($"鬼の目的地: {targetPosition} に向かいます！");
+
+
 
         //Debug.Log($"targetPosition: {targetPosition}");
         agent.SetDestination(targetPosition);
