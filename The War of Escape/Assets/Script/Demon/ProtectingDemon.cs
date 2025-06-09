@@ -32,23 +32,16 @@ public class ProtectingDemon : MonoBehaviour
     public void Launch() 
     {
 
-        
-
-
-
         if (prisonGate.playerID)
         {
-                       
-
-            Debug.Log("プレイヤー1の処理に入った");
-
-
+                 
+            //Debug.Log("プレイヤー1の処理に入った");
 
             var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);
-            Debug.Log($"TriggerCamera の数: {triggerCandidates.Length}");
+            //Debug.Log($"TriggerCamera の数: {triggerCandidates.Length}");
 
             triggerCamera = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
-            Debug.Log($"triggerCamera は null ですか？: {triggerCamera == null}");
+            //Debug.Log($"triggerCamera は null ですか？: {triggerCamera == null}");
 
             if (triggerCamera == null)
             {
@@ -66,8 +59,8 @@ public class ProtectingDemon : MonoBehaviour
 
 
 
-            /*var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);*/
-            /*triggerCamera = player1.GetComponentInChildren<TriggerCamera>();*/
+            /*var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);
+            triggerCamera = player1.GetComponentInChildren<TriggerCamera>();*/
 
 
             //triggerCamera = player1.GetComponent<TriggerCamera>();
@@ -85,23 +78,30 @@ public class ProtectingDemon : MonoBehaviour
                 triggerCamera.demonHave = true;
             }
 
-
-
-
-
             player = player1.GetComponent<Player>();
             player.pd = prisonGate.protectingDemon;
-
-            
 
 
             player1.transform.position = owner.transform.position;
 
         }
-        else if (!prisonGate.playerID) 
+        else if (!prisonGate.playerID)
         {
-            triggerCamera = player2.GetComponent<TriggerCamera>();
-            triggerCamera.demonHave= true;
+            var triggerCandidates = player2.GetComponentsInChildren<TriggerCamera>(true);
+            triggerCamera = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
+
+            if (triggerCamera == null)
+            {
+                Debug.LogError("2P側 TriggerCamera が GetComponentsInChildren でも見つかりませんでしたわ！");
+                return;
+            }
+            else
+            {
+                Debug.Log("2P側 TriggerCamera を正常に取得できましたわ！");
+                Debug.Log($"triggerCamera.enabled: {triggerCamera.enabled}, triggerCamera.gameObject.activeSelf: {triggerCamera.gameObject.activeSelf}");
+
+                triggerCamera.demonHave = true;
+            }
 
             player = player2.GetComponent<Player>();
             player.pd = prisonGate.protectingDemon;
@@ -135,12 +135,6 @@ public class ProtectingDemon : MonoBehaviour
 
     }
 
-    //松山ここから下追加しました
-   /* public void SetOwner(Player newOwner)
-    {
-        owner = newOwner;
-        Debug.Log($"鬼がプレイヤー{owner.playerID}のものになった！");
-        // ここでAIや追従先などを切り替える処理を書く！
-    }*/
+    
 }
 

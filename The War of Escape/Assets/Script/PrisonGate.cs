@@ -87,7 +87,7 @@ public class PrisonGate : MonoBehaviour
 
 
 
-        // ここ追加！！！！！
+        // 
         if (protectingDemonScript == null && protectingDemon != null)
         {
             protectingDemonScript = protectingDemon.GetComponent<ProtectingDemon>();
@@ -95,7 +95,7 @@ public class PrisonGate : MonoBehaviour
 
         if (player.playerID == 1)
         {
-            protectingDemonScript.SetOwner(player); // ←ここ！！
+            protectingDemonScript.SetOwner(player); // 
             protectingDemonScript.Launch();
             Debug.Log("Launch呼ばれた");
             Debug.Log("【1P】監獄がプレイヤー1によって開かれました！");
@@ -147,16 +147,16 @@ public class PrisonGate : MonoBehaviour
                 protectingDemonScript.SetOwner(player);
                 protectingDemonScript.Launch();
 
-                Debug.Log($"Launch呼ばれた 【{player.playerID}P】監獄がプレイヤー{player.playerID}によって開かれました！");
+                //Debug.Log($"Launch呼ばれた 【{player.playerID}P】監獄がプレイヤー{player.playerID}によって開かれました！");
             }
             else
             {
-                Debug.LogError("protectingDemonScript が null です。ProtectingDemon コンポーネントがありません。");
+                //Debug.LogError("protectingDemonScript が null です。ProtectingDemon コンポーネントがありません。");
             }
         }
         else
         {
-            Debug.LogError("protectingDemon が Inspector でセットされていません！");
+            //Debug.LogError("protectingDemon が Inspector でセットされていません！");
         }
 
         if (doorPart != null)
@@ -173,16 +173,16 @@ public class PrisonGate : MonoBehaviour
                 protectingDemonScript.SetOwner(player);
                 protectingDemonScript.Launch();
 
-                Debug.Log($"Launch呼ばれた 【{player.playerID}P】監獄がプレイヤー{player.playerID}によって開かれました！");
+                //Debug.Log($"Launch呼ばれた 【{player.playerID}P】監獄がプレイヤー{player.playerID}によって開かれました！");
             }
             else
             {
-                Debug.LogError("protectingDemonScript が null です。ProtectingDemon コンポーネントがありません。");
+                //Debug.LogError("protectingDemonScript が null です。ProtectingDemon コンポーネントがありません。");
             }
         }
         else
         {
-            Debug.LogError("protectingDemon が Inspector でセットされていません！");
+            //Debug.LogError("protectingDemon が Inspector でセットされていません！");
         }
 
     }
