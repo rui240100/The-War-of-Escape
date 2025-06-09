@@ -31,62 +31,63 @@ public class ProtectingDemon : MonoBehaviour
 
     public void Launch() 
     {
-        Debug.Log("Launch(): 開始");
 
-        if (prisonGate == null)
-        {
-            Debug.LogError("prisonGate が null です！");
-        }
-        else
-        {
-            Debug.Log($"prisonGate.playerID: {prisonGate.playerID}");
-        }
+        
 
-        if (owner == null)
-        {
-            Debug.LogError("owner が null です！");
-        }
-        else
-        {
-            Debug.Log($"owner: {owner.name}");
-        }
-
-        if (player1 == null || player2 == null)
-        {
-            Debug.LogError("player1 または player2 が null です！");
-        }
-
-        if (agent == null)
-        {
-            Debug.LogError("NavMeshAgent が取得できていません！");
-        }
-        else
-        {
-            Debug.Log("NavMeshAgent 取得 OK");
-        }
-
-        Debug.Log("Launch(): 処理分岐前");
 
 
         if (prisonGate.playerID)
         {
+                       
 
             Debug.Log("プレイヤー1の処理に入った");
 
-            triggerCamera = player1.GetComponentInChildren<TriggerCamera>();
-            //triggerCamera = player1.GetComponent<TriggerCamera>();
+
+
+            var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);
+            Debug.Log($"TriggerCamera の数: {triggerCandidates.Length}");
+
+            triggerCamera = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
+            Debug.Log($"triggerCamera は null ですか？: {triggerCamera == null}");
+
             if (triggerCamera == null)
             {
-                Debug.LogError("player1 に TriggerCamera がアタッチされていません！");
+                Debug.LogError("TriggerCamera が GetComponentsInChildren でも見つかりませんでしたわ！");
+                return;
             }
             else
             {
-                Debug.Log("player1 の TriggerCamera を取得できました！");
+                Debug.Log("TriggerCamera を正常に取得できましたわ！");
+
+                Debug.Log($"triggerCamera.enabled: {triggerCamera.enabled}, triggerCamera.gameObject.activeSelf: {triggerCamera.gameObject.activeSelf}");
+
                 triggerCamera.demonHave = true;
             }
 
-            triggerCamera = player1.GetComponent<TriggerCamera>();
-            triggerCamera.demonHave = true;
+
+
+            /*var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);*/
+            /*triggerCamera = player1.GetComponentInChildren<TriggerCamera>();*/
+
+
+            //triggerCamera = player1.GetComponent<TriggerCamera>();
+            //triggerCamera.demonHave = true;
+
+
+            if (triggerCamera == null)
+            {
+                Debug.LogError("TriggerCamera が GetComponentsInChildren でも見つかりませんでしたわ！");
+                return;
+            }
+            else
+            {
+                Debug.Log("TriggerCamera を正常に取得できましたわ！");
+                triggerCamera.demonHave = true;
+            }
+
+
+
+
 
             player = player1.GetComponent<Player>();
             player.pd = prisonGate.protectingDemon;
@@ -95,8 +96,6 @@ public class ProtectingDemon : MonoBehaviour
 
 
             player1.transform.position = owner.transform.position;
-
-            
 
         }
         else if (!prisonGate.playerID) 
@@ -110,14 +109,17 @@ public class ProtectingDemon : MonoBehaviour
             player2.transform.position = owner.transform.position;
         }
 
+        Debug.Log("owner やその他のチェックが完了したので、目的地を計算しますわ！");
         Vector3 targetPosition = owner.transform.position - owner.forward * 5f;
-             
         Debug.Log($"鬼の目的地: {targetPosition} に向かいます！");
+        
 
 
 
         //Debug.Log($"targetPosition: {targetPosition}");
         agent.SetDestination(targetPosition);
+        Debug.Log("SetDestination を呼び出しましたわ！");
+
     }
 
 
