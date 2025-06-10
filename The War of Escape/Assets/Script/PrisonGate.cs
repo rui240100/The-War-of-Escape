@@ -32,8 +32,8 @@ public class PrisonGate : MonoBehaviour
             if (playerInFront.playerID == 1)
             {
                 holdingButton = Input.GetButton("Fire2");
-                
-                
+                playerID = true;
+
             }
             else if (playerInFront.playerID == 2)
             {
@@ -136,7 +136,7 @@ public class PrisonGate : MonoBehaviour
 
         isOpening = true;
         playerInFront = player;
-        playerID = true;
+        
 
         if (protectingDemon != null)
         {

@@ -73,16 +73,16 @@ public class ProtectingDemon : MonoBehaviour
             //triggerCamera.demonHave = true;
 
 
-            if (triggerCameraScript == null)
-            {
-                Debug.LogError("TriggerCamera が GetComponentsInChildren でも見つかりませんでしたわ！");
-                return;
-            }
-            else
-            {
-                Debug.Log("TriggerCamera を正常に取得できましたわ！");
-                triggerCameraScript.demonHave = true;
-            }
+            //if (triggerCameraScript == null)
+            //{
+            //    Debug.LogError("TriggerCamera が GetComponentsInChildren でも見つかりませんでしたわ！");
+            //    return;
+            //}
+            //else
+            //{
+            //    Debug.Log("TriggerCamera を正常に取得できましたわ！");
+            //    triggerCameraScript.demonHave = true;
+            //}
 
             playerScript = player1.GetComponent<Player>();
             playerScript.pd = prisonGateScript.protectingDemon;
