@@ -32,7 +32,7 @@ public class TriggerCamera : MonoBehaviour
             if (other.CompareTag("Player"))     //相手がプレイヤーか確かめる
             {
                 target = other.GetComponent<Player>();
-                targetCamera = other.GetComponent<TriggerCamera>();
+                targetCamera = other.GetComponentInChildren<TriggerCamera>();
 
                 if (!targetCamera.demonHave)    //相手が守護鬼を持っていなかったら
                 {
