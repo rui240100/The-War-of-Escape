@@ -13,6 +13,8 @@ public class TriggerCamera : MonoBehaviour
     private ProtectingDemon protectingDemon; 
     private DemonAI demon;
 
+    public float stun = 0.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +31,7 @@ public class TriggerCamera : MonoBehaviour
     {
         if (demonHave)  //自分が守護鬼を持っていたら
         {
-            if (other.CompareTag("Player"))     //相手がプレイヤーか確かめる
+            if (other.gameObject == targetObject)   //相手がプレイヤーか確かめる
             {
                 target = other.GetComponent<Player>();
                 targetCamera = other.GetComponentInChildren<TriggerCamera>();
@@ -60,14 +62,19 @@ public class TriggerCamera : MonoBehaviour
 
     private IEnumerator StunCoroutine(Player target)
     {
-        target = targetObject.GetComponent<Player>();
+        if(target != this.transform.parent.GetComponent<Player>())
+        {
+            float playerSpeed = target.Speed;
+            target.Speed = stun;
 
-        float playerSpeed = target.Speed;
-        target.Speed = playerSpeed * 0.1f;
+            yield return new WaitForSeconds(5.0f);
 
-        yield return new WaitForSeconds(5.0f);
-
-        target.Speed = playerSpeed;
+            target.Speed = playerSpeed;
+        }
+        else
+        {
+            Debug.Log("自分のGetComponentしてる");
+        }
     }
 
     private IEnumerator ProtectCoroutine(DemonAI demon)
