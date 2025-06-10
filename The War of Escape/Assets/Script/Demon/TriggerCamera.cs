@@ -60,6 +60,8 @@ public class TriggerCamera : MonoBehaviour
 
     private IEnumerator StunCoroutine(Player target)
     {
+        target = targetObject.GetComponent<Player>();
+
         float playerSpeed = target.Speed;
         target.Speed = playerSpeed * 0.1f;
 

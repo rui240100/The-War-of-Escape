@@ -7445,6 +7445,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerCamera 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5985294689580742806, guid: 8365c3dd2a874a543a431324731fb47f, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 307566718}
+    - target: {fileID: 6596750684853198214, guid: 8365c3dd2a874a543a431324731fb47f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596750684853198214, guid: 8365c3dd2a874a543a431324731fb47f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6596750684853198214, guid: 8365c3dd2a874a543a431324731fb47f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11957,6 +11969,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1438492403}
     m_Modifications:
+    - target: {fileID: 3272580731996336058, guid: dcd4d5ac9434a6048a92898fe6568e74, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1190770819}
     - target: {fileID: 8267842538659874283, guid: dcd4d5ac9434a6048a92898fe6568e74, type: 3}
       propertyPath: m_Name
       value: TriggerCamera
