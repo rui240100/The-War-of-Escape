@@ -36,6 +36,10 @@ public class Player : MonoBehaviour
 
     public GameObject pd;
 
+    public MagatamaUIManager magatamaUIManager; // それぞれ個別に設定
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
