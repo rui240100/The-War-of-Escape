@@ -32,7 +32,11 @@ public class MiniMap : MonoBehaviour
     void Update()
     {
         p1Point.GetComponent<RectTransform>().anchoredPosition = WorldToMapPosition(player1.transform.position);
+        p1Point.GetComponent<RectTransform>().localEulerAngles = new Vector3(0f, 0f, -player1.transform.eulerAngles.y);
+
+
         p2Point.GetComponent<RectTransform>().anchoredPosition = WorldToMapPosition(player2.transform.position);
+        p2Point.GetComponent<RectTransform>().localEulerAngles = new Vector3(0f, 0f, -player2.transform.eulerAngles.y);
     }
 
     /// <summary>
