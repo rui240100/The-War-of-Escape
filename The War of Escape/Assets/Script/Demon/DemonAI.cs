@@ -34,12 +34,6 @@ public class DemonAI : MonoBehaviour
     {
         if (isChasing && player != null)
         {
-            /*Debug.Log("’Ç‚¢‚©‚¯’†" + player.position);
-            Debug.Log("Chase Object Name " + player);
-
-            Debug.Log("agent.hasPath" + agent.hasPath);
-            Debug.Log("agent.isStopped" + agent.isStopped);*/
-
             if (agent.hasPath)
             {
                 agent.SetDestination(player.position); // ƒvƒŒƒCƒ„[‚ğ’ÇÕ

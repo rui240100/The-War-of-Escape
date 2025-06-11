@@ -13106,7 +13106,7 @@ PrefabInstance:
       objectReference: {fileID: 986820087}
     - target: {fileID: 6928602310355188522, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_VersionIndex
-      value: 1065
+      value: 1068
       objectReference: {fileID: 0}
     - target: {fileID: 8054084538588146053, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: isChasing
@@ -13152,6 +13152,10 @@ PrefabInstance:
       propertyPath: 'patrolPoints.Array.data[8]'
       value: 
       objectReference: {fileID: 523742191}
+    - target: {fileID: 9054917894952274805, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: detectionRadius
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
