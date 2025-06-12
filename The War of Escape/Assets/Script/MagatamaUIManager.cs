@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class MagatamaUIManager : MonoBehaviour
 {
-    public GameObject magatamaIconPrefab;
-    public Transform container;
+    //public GameObject magatamaIconPrefab;
+    //public Transform container;
 
-    private List<GameObject> icons = new List<GameObject>();
+    //private List<GameObject> icons = new List<GameObject>();
 
+    [Header("表示する勾玉UI（順番通りに並べる）")]
+    public List<GameObject> magatamaIcons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,21 +23,44 @@ public class MagatamaUIManager : MonoBehaviour
         
     }
 
-    public void SetMagatamaCount(int count)
+    /*public void UpdateMagatamaUI(int count)
     {
-        while (icons.Count < count)
+        // 現在の表示を全て削除
+        foreach (Transform child in magatamaUIParent)
         {
-            GameObject icon = Instantiate(magatamaIconPrefab, container);
-            icons.Add(icon);
+            Destroy(child.gameObject);
         }
 
-        while (icons.Count > count)
+        // 新しく count 分アイコンを生成
+        for (int i = 0; i < count; i++)
         {
-            GameObject icon = icons[icons.Count - 1];
-            icons.RemoveAt(icons.Count - 1);
-            Destroy(icon);
+            Instantiate(magatamaIconPrefab, magatamaUIParent);
+        }
+    }*/
+
+
+
+    public void UpdateMagatamaUI(int count)
+    {
+        for (int i = 0; i < magatamaIcons.Count; i++)
+        {
+            magatamaIcons[i].SetActive(i < count);
         }
     }
+
+    /*public void ResetMagatamaUI()
+    {
+        UpdateMagatamaUI(0);
+    }*/
+
+    public void ResetMagatamaUI()
+    {
+        for (int i = 0; i < magatamaIcons.Count; i++)
+        {
+            magatamaIcons[i].SetActive(false);
+        }
+    }
+
 
 
 }

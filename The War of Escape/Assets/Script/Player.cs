@@ -32,13 +32,13 @@ public class Player : MonoBehaviour
 
     public int magatamaCount = 0; // 勾玉の所持数
 
-    public Image[] magatamaIcons;  // Inspectorで複数の勾玉アイコンをアサイン（例：5個）
+    //public Image[] magatamaIcons;  // Inspectorで複数の勾玉アイコンをアサイン（例：5個）
 
     public GameObject pd;
 
     public MagatamaUIManager magatamaUIManager; // それぞれ個別に設定
 
-
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,9 +61,19 @@ public class Player : MonoBehaviour
         Application.targetFrameRate = 60;
 
 
-        UpdateMagatamaUI();
+        //UpdateMagatamaUI();
 
         UpdateKeyUI();
+
+
+        if (magatamaUIManager != null)
+        {
+            magatamaUIManager.ResetMagatamaUI();
+        }
+
+
+
+
     }
 
     // Update is called once per frame
@@ -264,7 +274,7 @@ public class Player : MonoBehaviour
 
 
 
-    public void UpdateMagatamaUI()
+    /*public void UpdateMagatamaUI()
     {
         for (int i = 0; i < magatamaIcons.Length; i++)
         {
@@ -274,17 +284,28 @@ public class Player : MonoBehaviour
                 magatamaIcons[i].enabled = (i < magatamaCount);
             }
         }
-    }
+    }*/
 
     public void AddMagatama()
     {
-        magatamaCount = Mathf.Clamp(magatamaCount + 1, 0, magatamaIcons.Length);
-        //Debug.Log($"AddMagatama() 呼ばれた。現在の勾玉数: {magatamaCount}");
-        UpdateMagatamaUI();
+        // 上限をつける（3個まで）
+        magatamaCount = Mathf.Clamp(magatamaCount + 1, 0, 3);
+
+        if (magatamaUIManager != null)
+        {
+            magatamaUIManager.UpdateMagatamaUI(magatamaCount);
+        }
     }
 
-
-
+    //勾玉の数をリセットさせる
+    public void ResetMagatama()
+    {
+        magatamaCount = 0;
+        if (magatamaUIManager != null)
+        {
+            magatamaUIManager.UpdateMagatamaUI(magatamaCount);
+        }
+    }
 
 
 
