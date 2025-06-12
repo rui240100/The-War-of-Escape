@@ -13106,7 +13106,7 @@ PrefabInstance:
       objectReference: {fileID: 986820087}
     - target: {fileID: 6928602310355188522, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_VersionIndex
-      value: 1068
+      value: 1077
       objectReference: {fileID: 0}
     - target: {fileID: 8054084538588146053, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: isChasing

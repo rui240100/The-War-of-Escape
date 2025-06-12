@@ -1,19 +1,20 @@
-Ôªøusing UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 //using System.Diagnostics;
 
-public class DemonCamera : MonoBehaviour
+public class NewDemonCamera : MonoBehaviour
 {
     private DemonAI demon;
-    private List<Transform> playersInRange = new List<Transform>();
+
+    public GameObject player;
     public GameObject eyeposition;
 
     public float radius = 5f;
-    public Transform player;
+    public Transform playerTransform;
 
-    Vector3 origin; //„É¨„Ç§„ÅÆÁô∫Â∞Ñ‰ΩçÁΩÆ
+    Vector3 origin; //ÉåÉCÇÃî≠éÀà íu
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class DemonCamera : MonoBehaviour
     {
         origin = eyeposition.transform.position;
 
-        float distance = Vector3.Distance(transform.position, player.position);
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
 
         if (distance <= radius)
         {
@@ -37,16 +38,16 @@ public class DemonCamera : MonoBehaviour
         if (demon.isChasing)
             return;
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject == player)
         {
-            Debug.Log("Ë¶ñÁïåÂÜÖ" + other.name);
+            Debug.Log("éãäEì‡" + other.name);
             if (CanSeePlayer(other.transform))
             {
                 demon.StartChase(other.transform);
             }
             else
             {
-                Debug.Log("CanSeePlayer returned FALSE ‚Äî Not chasing.");
+                Debug.Log("CanSeePlayer returned FALSE ? Not chasing.");
             }
         }
     }
