@@ -7,10 +7,12 @@ using static UnityEngine.GraphicsBuffer;
 public class NewDemonCamera : MonoBehaviour
 {
     private DemonAI demon;
+
+    public GameObject player;
     public GameObject eyeposition;
 
     public float radius = 5f;
-    public Transform player;
+    public Transform playerTransform;
 
     Vector3 origin; //ƒŒƒC‚Ì”­ŽËˆÊ’u
 
@@ -23,7 +25,7 @@ public class NewDemonCamera : MonoBehaviour
     {
         origin = eyeposition.transform.position;
 
-        float distance = Vector3.Distance(transform.position, player.position);
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
 
         if (distance <= radius)
         {
@@ -36,7 +38,7 @@ public class NewDemonCamera : MonoBehaviour
         if (demon.isChasing)
             return;
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject == player)
         {
             Debug.Log("Ž‹ŠE“à" + other.name);
             if (CanSeePlayer(other.transform))
