@@ -1,95 +1,118 @@
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// åˆ¤å®šã‚¨ãƒªã‚¢ï¼ˆTriggerï¼‰ã«å…¥ã£ã¦ã„ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æœ¬äººã ã‘ãŒå¯¾å¿œãƒœã‚¿ãƒ³ã§å®ç®±ã‚’é–‹ã‘ã‚‹ã€‚
+/// 1P ã¯ Fire2 / 2P ã¯ Fire2_2 ã‚’ä½¿ã†æƒ³å®šã€‚
+/// </summary>
 public class TreasureBox : MonoBehaviour
 {
-    bool isOpen = false;
-    public Animator animator;
-    public float openDistance = 3.0f;
+    [Header("é–‹å°ãƒ•ãƒ©ã‚°")] private bool isOpen = false;
 
-    [Header("oŒ»‚³‚¹‚éƒAƒCƒeƒ€‚ÌƒvƒŒƒnƒui•¡”j")]
-    public GameObject[] possibleItems; // ‚±‚±‚Í GameObjectiƒvƒŒƒnƒuj‚ÅOK
+    [Header("é–‹å°ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚¿ãƒ¼ (ä»»æ„)")]
+    [SerializeField] private Animator animator;
+
+    [Header("å‡ºç¾ã•ã›ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã®ãƒ—ãƒ¬ãƒãƒ–")]
+    [SerializeField] private GameObject[] possibleItems;
+
+    // â–¶ ã‚¨ãƒªã‚¢å†…ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’ä¿æŒ
+    private readonly List<Player> playersInRange = new();
 
 
-    //public GameObject magatamaPrefab;// Šm’è‚Åo‚·Œù‹Ê‚ÌƒvƒŒƒnƒu
+
+    void Start()
+    {
+        foreach (string name in Input.GetJoystickNames())
+        {
+            Debug.Log("æ¥ç¶šä¸­ã®ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯: " + name);
+        }
+    }
 
 
-    void Update()
+
+
+
+    /* ===== Update ===== */
+    private void Update()
     {
         if (isOpen) return;
 
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-
-
-        foreach (GameObject playerObj in players)
+        foreach (Player p in playersInRange)
         {
-            float distance = Vector3.Distance(transform.position, playerObj.transform.position);
-
-            if (distance <= openDistance && Input.GetButtonDown("Fire2"))
+            if (IsInteractPressed(p))
             {
-                Player player = playerObj.GetComponent<Player>();
-                if (player != null)
-                {
-
-                    GiveItemToPlayer(player);
-                    OpenChest();
-                }
+                GiveItemToPlayer(p);
+                OpenChest();
                 break;
             }
-
-
-
-
         }
+    }
 
-
-        void GiveItemToPlayer(Player player)
+    /* ===== Trigger ===== */
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            //ƒvƒŒƒCƒ„[‚ÌŒù‹Ê‚Ì”‚ğ+1‚³‚¹‚é
-            player.AddMagatama(); // © Œù‹Ê‚ÌŠ”‚ğ’¼Ú{1I‚±‚ê‚¾‚¯‚ÅOKI
-
-            // Œ® or ƒAƒCƒeƒ€‚ğƒ‰ƒ“ƒ_ƒ€‚Åo‚·
-            if (possibleItems.Length == 0) return;
-
-            int index = Random.Range(0, possibleItems.Length);
-            GameObject itemObj = Instantiate(possibleItems[index]);
-
-            // o‚Ä‚«‚½‚Ì‚ªŒ®‚¾‚Á‚½ê‡
-            if (itemObj.TryGetComponent<KeyItem>(out var keyItem))
-            {
-                player.AddKey();        // Œ®‚¾‚¯’Ç‰Á
-                Destroy(itemObj);       // ƒvƒŒƒnƒu‚Í‘¦íœ
-                return;
-            }
-
-            // ’ÊíƒAƒCƒeƒ€‚¾‚Á‚½ê‡
-            if (itemObj.TryGetComponent<Item>(out var item))
-            {
-                // ‚·‚Å‚ÉƒAƒCƒeƒ€‚ğ‚Á‚Ä‚¢‚éê‡‚Ííœ‚µ‚Ä“ü‚ê‘Ö‚¦
-                if (player.HasItem)
-                {
-                    Destroy(player.heldItem.gameObject);
-                }
-
-                player.SetHeldItem(item);
-                itemObj.transform.SetParent(player.transform);
-                itemObj.transform.localPosition = Vector3.zero;
-
-                // •\¦‚â•¨—‰‰Z‚ğ–³Œø‰»iE‚Á‚½ó‘Ôj
-                itemObj.GetComponent<Collider>().enabled = false;
-                itemObj.GetComponent<MeshRenderer>().enabled = false;
-            }
+            Player p = other.GetComponent<Player>();
+            if (p != null && !playersInRange.Contains(p))
+                playersInRange.Add(p);
         }
+    }
 
-
-        void OpenChest()
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            isOpen = true;
-            if (animator != null)
-            {
-                animator.SetTrigger("Open");
-            }
+            Player p = other.GetComponent<Player>();
+            if (p != null) playersInRange.Remove(p);
+        }
+    }
+
+    /* ===== å…¥åŠ›åˆ¤å®š ===== */
+    private bool IsInteractPressed(Player p) =>
+        p.playerID switch
+        {
+            1 => Input.GetButtonDown("Fire2"),
+            2 => Input.GetButtonDown("Fire2_2"),
+            _ => false
+        };
+
+    /* ===== ã‚¢ã‚¤ãƒ†ãƒ ä»˜ä¸ ===== */
+    private void GiveItemToPlayer(Player player)
+    {
+        player.AddMagatama();                          // å‹¾ç‰ +1
+
+        if (possibleItems.Length == 0) return;         // ä½•ã‚‚è¨­å®šã•ã‚Œã¦ã„ãªã‘ã‚Œã°çµ‚äº†
+
+        GameObject obj = Instantiate(
+            possibleItems[Random.Range(0, possibleItems.Length)]);
+
+        // éµã ã£ãŸå ´åˆ
+        if (obj.TryGetComponent<KeyItem>(out _))
+        {
+            player.AddKey();
+            Destroy(obj);
+            return;
         }
 
+        // é€šå¸¸ã‚¢ã‚¤ãƒ†ãƒ 
+        if (obj.TryGetComponent<Item>(out Item item))
+        {
+            if (player.HasItem) Destroy(player.heldItem.gameObject);
+
+            player.SetHeldItem(item);
+            obj.transform.SetParent(player.transform);
+            obj.transform.localPosition = Vector3.zero;
+
+            obj.GetComponent<Collider>().enabled = false;
+            obj.GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    /* ===== é–‹å° ===== */
+    private void OpenChest()
+    {
+        isOpen = true;
+        if (animator != null) animator.SetTrigger("Open");
     }
 }
