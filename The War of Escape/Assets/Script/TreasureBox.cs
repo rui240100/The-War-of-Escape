@@ -4,10 +4,12 @@ using UnityEngine;
 /// <summary>
 /// 判定エリア（Trigger）に入っているプレイヤー本人だけが対応ボタンで宝箱を開ける。
 /// 1P は Fire2 / 2P は Fire2_2 を使う想定。
+/// 一番近いプレイヤーのみ開けられる仕様に改修済み。
 /// </summary>
 public class TreasureBox : MonoBehaviour
 {
-    [Header("開封フラグ")] private bool isOpen = false;
+    [Header("開封フラグ")]
+    private bool isOpen = false;
 
     [Header("開封アニメーター (任意)")]
     [SerializeField] private Animator animator;
@@ -18,37 +20,54 @@ public class TreasureBox : MonoBehaviour
     // ▶ エリア内プレイヤーを保持
     private readonly List<Player> playersInRange = new();
 
-
-
     void Start()
     {
-        foreach (string name in Input.GetJoystickNames())
+        /*foreach (string name in Input.GetJoystickNames())
         {
             Debug.Log("接続中のジョイスティック: " + name);
-        }
+        }*/
     }
 
-
-
-
-
-    /* ===== Update ===== */
     private void Update()
     {
         if (isOpen) return;
+        if (playersInRange.Count == 0) return;
 
-        foreach (Player p in playersInRange)
+        // 宝箱の中心位置
+        Vector3 chestPos = transform.position;
+
+        // 最も近いプレイヤーを選ぶ
+        Player closestPlayer = null;
+        float minDist = float.MaxValue;
+
+        foreach (var p in playersInRange)
         {
-            if (IsInteractPressed(p))
+            float dist = Vector3.Distance(p.transform.position, chestPos);
+            Debug.Log($"Player {p.playerID} distance: {dist}");
+            if (dist < minDist)
             {
-                GiveItemToPlayer(p);
-                OpenChest();
-                break;
+                minDist = dist;
+                closestPlayer = p;
             }
+        }
+
+        if (closestPlayer != null)
+        {
+            Debug.Log($"Closest Player: {closestPlayer.playerID} at distance {minDist}");
+        }
+
+
+
+        // 一番近いプレイヤーが操作ボタンを押していたら開ける
+        if (closestPlayer != null && IsInteractPressed(closestPlayer))
+        {
+
+            Debug.Log($"TreasureBox opened by Player {closestPlayer.playerID}");
+            GiveItemToPlayer(closestPlayer);
+            OpenChest();
         }
     }
 
-    /* ===== Trigger ===== */
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -68,7 +87,6 @@ public class TreasureBox : MonoBehaviour
         }
     }
 
-    /* ===== 入力判定 ===== */
     private bool IsInteractPressed(Player p) =>
         p.playerID switch
         {
@@ -77,7 +95,6 @@ public class TreasureBox : MonoBehaviour
             _ => false
         };
 
-    /* ===== アイテム付与 ===== */
     private void GiveItemToPlayer(Player player)
     {
         player.AddMagatama();                          // 勾玉 +1
@@ -109,7 +126,6 @@ public class TreasureBox : MonoBehaviour
         }
     }
 
-    /* ===== 開封 ===== */
     private void OpenChest()
     {
         isOpen = true;
