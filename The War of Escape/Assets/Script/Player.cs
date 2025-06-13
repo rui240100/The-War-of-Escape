@@ -295,7 +295,7 @@ public class Player : MonoBehaviour
         {
             magatamaUIManager.UpdateMagatamaUI(magatamaCount);
         }
-    }
+    }                                                                                                                                                                
 
     //勾玉の数をリセットさせる
     public void ResetMagatama()
