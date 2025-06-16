@@ -131,17 +131,11 @@ public class Player : MonoBehaviour
 
 
 
-        if (playerID == 1 && Input.GetButtonDown("Fire3") && HasItem) // Fire3は1PのRT
+        if (((playerID == 1 && Input.GetButtonDown("Fire3")) ||
+     (playerID == 2 && Input.GetButtonDown("Fire3_2"))) && HasItem)
         {
             UseItem();
-
-            //Debug.Log("動くな");
-        }
-        else if (playerID == 2 && Input.GetButtonDown("Fire3_2") && HasItem)
-        {
-            UseItem();
-
-            //Debug.Log("動くな");
+            // Debug.Log("動くな");
         }
 
 

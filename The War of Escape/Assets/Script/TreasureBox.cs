@@ -87,13 +87,11 @@ public class TreasureBox : MonoBehaviour
         }
     }
 
-    private bool IsInteractPressed(Player p) =>
-        p.playerID switch
-        {
-            1 => Input.GetButtonDown("Fire2"),
-            2 => Input.GetButtonDown("Fire2_2"),
-            _ => false
-        };
+    private bool IsInteractPressed(Player p)
+    {
+        return (Input.GetButtonDown("Fire2") && p.playerID == 1) ||
+               (Input.GetButtonDown("Fire2_2") && p.playerID == 2);
+    }
 
     private void GiveItemToPlayer(Player player)
     {
@@ -112,7 +110,7 @@ public class TreasureBox : MonoBehaviour
             return;
         }
 
-        // 通常アイテム
+        // 通常アイテムは持ち物を入れ替える
         if (obj.TryGetComponent<Item>(out Item item))
         {
             if (player.HasItem) Destroy(player.heldItem.gameObject);
