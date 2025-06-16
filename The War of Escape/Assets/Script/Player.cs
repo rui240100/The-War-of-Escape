@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     bool isSlowing = false;
     public int keyCount = 0; // 所持している鍵の数
     public Item heldItem; // 拾ったアイテムの参照
+
+
+    
     public bool HasItem => heldItem != null;
 
     public Image itemIconUI; //UIのImageを入れる
@@ -38,7 +41,10 @@ public class Player : MonoBehaviour
 
     public MagatamaUIManager magatamaUIManager; // それぞれ個別に設定
 
+
     
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,9 +67,7 @@ public class Player : MonoBehaviour
         Application.targetFrameRate = 60;
 
 
-        //UpdateMagatamaUI();
-
-        UpdateKeyUI();
+      　UpdateKeyUI();
 
 
         if (magatamaUIManager != null)
@@ -71,6 +75,7 @@ public class Player : MonoBehaviour
             magatamaUIManager.ResetMagatamaUI();
         }
 
+       
 
 
 
@@ -135,7 +140,7 @@ public class Player : MonoBehaviour
      (playerID == 2 && Input.GetButtonDown("Fire3_2"))) && HasItem)
         {
             UseItem();
-            // Debug.Log("動くな");
+           
         }
 
 
@@ -163,15 +168,15 @@ public class Player : MonoBehaviour
 
     }
 
-
+    
     void UseItem()
     {
         heldItem?.Activate(this); // 自分を渡してアイテムを起動
         SetHeldItem(null);        // ← これでアイテムを消費して、UIもリセット！
     }
 
-
    
+
 
     public IEnumerator SlowDown(float multiplier, float duration)
     {
@@ -265,20 +270,7 @@ public class Player : MonoBehaviour
     {
         return magatamaCount >= required;
     }
-
-
-
-    /*public void UpdateMagatamaUI()
-    {
-        for (int i = 0; i < magatamaIcons.Length; i++)
-        {
-            if (magatamaIcons[i] != null)
-            {
-                // 勾玉数より小さい数のアイコンは表示、大きい数は非表示
-                magatamaIcons[i].enabled = (i < magatamaCount);
-            }
-        }
-    }*/
+         
 
     public void AddMagatama()
     {
@@ -301,7 +293,7 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    
 
 
 

@@ -18,6 +18,8 @@ public class Item : MonoBehaviour
         
     }
 
+    
+
     void OnTriggerEnter(Collider other)
     {
         Player player = other.GetComponent<Player>();
@@ -46,7 +48,7 @@ public class Item : MonoBehaviour
         }
     }*/
 
-    public void Activate(Player user)
+    public virtual void Activate(Player user)
     {
         if (user.otherPlayer != null)
         {
