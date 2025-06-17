@@ -1222,6 +1222,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4048397709454660199}
     - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: chaseSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: patrolSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: 'patrolPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 805716888}

@@ -26,7 +26,6 @@ public class DemonAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
-        agent.speed = patrolSpeed; // 初期状態ではパトロール速度
         GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
     }
 
@@ -43,10 +42,9 @@ public class DemonAI : MonoBehaviour
         else if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
             //Debug.Log("探索中");
+            agent.speed = patrolSpeed; // 初期状態ではパトロール速度
             GoToNextPatrolPoint(); // 次のパトロール地点へ
-        }
-
-        
+        } 
     }
 
     void GoToNextPatrolPoint()
