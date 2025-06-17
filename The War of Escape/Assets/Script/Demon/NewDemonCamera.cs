@@ -10,14 +10,14 @@ public class NewDemonCamera : MonoBehaviour
 
     public GameObject player1Object;
     public GameObject player2Object;
-    public Player playerScript;
+    private Player playerScript;
     private bool player1;
     private bool player2;
 
     public GameObject eyeposition;
 
     public float radius = 5f;
-    public Transform playerTransform;
+    private Transform playerTransform;
 
     Vector3 origin; //ƒŒƒC‚Ì”­ŽËˆÊ’u
 
