@@ -13,6 +13,8 @@ public class NewDemonCamera : MonoBehaviour
     private Player playerScript;
     private bool player1;
     private bool player2;
+    private bool player1Chase;
+    private bool player2Chase;
 
     public GameObject eyeposition;
 
@@ -64,17 +66,23 @@ public class NewDemonCamera : MonoBehaviour
             if (playerScript.playerID == 1)
             {
                 player1 = false;
+
+                if (player1Chase)
+                {
+                    demon.StopChase();
+                }
             }
-            else
+            else if (playerScript.playerID == 2)
             {
                 player2 = false;
+
+                if (player2Chase)
+                {
+                    demon.StopChase();
+                }
             }
         }
 
-        //if (demon.CurrentTarget == other.transform)
-        //{
-        //    demon.StopChase();
-        //}
     }
 
     void OnTriggerStay(Collider other)
@@ -83,18 +91,19 @@ public class NewDemonCamera : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("Ž‹ŠE“à" + other.name);
                 playerScript = other.GetComponent<Player>();
 
                 if (playerScript.playerID == 1) 
                 {
                     CanSeePlayer(other.transform);
                     demon.StartChase(other.transform);
+                    player1Chase = true;
                 }
                 else
                 {
                     CanSeePlayer(other.transform);
                     demon.StartChase(other.transform);
+                    player2Chase = true;
                 }
             }
         }
@@ -123,11 +132,15 @@ public class NewDemonCamera : MonoBehaviour
                     {
                         Debug.Log("Player1‚ª‹ß‚¢");
                         demon.StartChase(player1Object.transform);
+                        player1Chase = true;
+                        player2Chase = false;
                     }
                     else if (hit1.distance > hit2.distance)
                     {
                         Debug.Log("Player2‚ª‹ß‚¢");
                         demon.StartChase(player2Object.transform);
+                        player2Chase = true;
+                        player1Chase = false;
                     }
                     else
                     {

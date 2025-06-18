@@ -31,7 +31,7 @@ public class DemonAI : MonoBehaviour
 
     void Update()
     {
-        if (isChasing && player != null)
+        if (isChasing)
         {
             if (agent.hasPath)
             {
@@ -41,7 +41,6 @@ public class DemonAI : MonoBehaviour
         }
         else if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            //Debug.Log("探索中");
             agent.speed = patrolSpeed; // 初期状態ではパトロール速度
             GoToNextPatrolPoint(); // 次のパトロール地点へ
         } 
@@ -57,29 +56,15 @@ public class DemonAI : MonoBehaviour
 
     public void StartChase(Transform target)
     {
-        if (callStart)
-        {
-            //Debug.Log("Start1");
-
             player = target;
             isChasing = true;
-            
-
-            //Debug.Log("Start2");
-
-            callStart = false;
-        }
     }
 
     public void StopChase()
     {
-        //Debug.Log("Stop");
-
         isChasing = false;
         player = null;
-        agent.speed = patrolSpeed; // パトロール速度に戻す
-
-        callStart = true;
+        agent.speed = patrolSpeed;
     }
 
     private void OnCollisionEnter(Collision collision)
