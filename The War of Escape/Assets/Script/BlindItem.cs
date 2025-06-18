@@ -25,7 +25,7 @@ public class BlindItem : Item
 
     private IEnumerator BlindRoutine(Player target)
     {
-        Canvas canvas = target.GetComponentInChildren<Canvas>(true);
+        Canvas canvas = GameObject.Find($"Player{target.playerID}Canvas")?.GetComponent<Canvas>();
         if (canvas == null) yield break;
 
         Image overlay = canvas.transform
@@ -34,7 +34,7 @@ public class BlindItem : Item
         if (overlay == null) yield break;
 
         // Š®‘S‚É“\‚è•t‚¯
-        overlay.enabled = true;
+        overlay.enabled = true;          // © C³
         var c = overlay.color;
         c.a = 1f;
         overlay.color = c;
