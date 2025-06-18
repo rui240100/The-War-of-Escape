@@ -3,45 +3,93 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 相手プレイヤーの画面中央にお札を貼り付け、
+/// 相手プレイヤーの画面中央にお札（黒い画像）を貼り付け、
 /// 5 秒後から 3 秒でフェードアウトさせるアイテム。
 /// </summary>
 public class BlindItem : Item
 {
-    [Header("Blind settings")]
+    [Header("Blind Settings")]
     public float blindDuration = 5f;
     public float fadeOutDuration = 3f;
 
-    // slowdown 用パラメータは無視
+    [Header("UI Manager")]
+    private UIManager uiManager;
+
+    private void Awake()
+    {
+        // UIManagerをシーンから探す（シングルトンでもOK）
+        uiManager = FindFirstObjectByType<UIManager>();
+        if (uiManager == null)
+        {
+            Debug.LogError("UIManager がシーンに存在しません！");
+        }
+    }
+
     public override void Activate(Player user)
     {
         if (user.otherPlayer != null)
         {
-            user.otherPlayer.StartCoroutine(BlindRoutine(user.otherPlayer));
+            // 相手のプレイヤーの画面にブラインドを貼る
+            StartCoroutine(BlindRoutine(user.otherPlayer.playerID));
         }
 
-        Destroy(gameObject);   // 使い捨て
+        Destroy(gameObject); // アイテムは使い捨て
     }
 
-    private IEnumerator BlindRoutine(Player target)
+    private IEnumerator BlindRoutine(int targetPlayerID)
     {
-        Canvas canvas = GameObject.Find($"Player{target.playerID}Canvas")?.GetComponent<Canvas>();
-        if (canvas == null) yield break;
+        Canvas canvas = (targetPlayerID == 1) ?
+                        uiManager.player1Canvas :
+                        uiManager.player2Canvas;
 
-        Image overlay = canvas.transform
-                               .Find("BlindOverlay")
-                               ?.GetComponent<Image>();
-        if (overlay == null) yield break;
+        if (canvas == null)
+        {
+            Debug.LogError(" Canvas が null です！");
+            yield break;
+        }
 
-        // 完全に貼り付け
-        overlay.enabled = true;          // ← 修正
+        Debug.Log(" 使用中の Canvas: " + canvas.name);
+
+        // ── まずは直下に探す
+        Transform overlayTransform = canvas.transform.Find("BlindOverlay");
+        if (overlayTransform == null)
+        {
+            Debug.Log("BlindOverlay は直下に見つかりませんでした。階層が深いかも？");
+        }
+
+        Image overlay = overlayTransform?.GetComponent<Image>();
+
+        // ── 子孫全体から再検索（階層が深い場合対応）
+        if (overlay == null)
+        {
+            Debug.Log(" 子階層の Image を探索中...");
+
+            foreach (var img in canvas.GetComponentsInChildren<Image>(true))
+            {
+                Debug.Log(" 検出: " + img.gameObject.name);
+                if (img.gameObject.name == "BlindOverlay")
+                {
+                    overlay = img;
+                    Debug.Log(" BlindOverlay を子階層で発見しました！");
+                    break;
+                }
+            }
+        }
+
+        if (overlay == null)
+        {
+            Debug.LogError(" BlindOverlay が本当に Canvas 内に見つかりません！");
+            yield break;
+        }
+
+        // ── フェード処理
+        overlay.enabled = true;
         var c = overlay.color;
         c.a = 1f;
         overlay.color = c;
 
         yield return new WaitForSeconds(blindDuration);
 
-        // フェードアウト
         float t = 0f;
         while (t < fadeOutDuration)
         {
@@ -53,4 +101,5 @@ public class BlindItem : Item
 
         overlay.enabled = false;
     }
+
 }

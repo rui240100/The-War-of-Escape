@@ -43,7 +43,7 @@ public class TreasureBox : MonoBehaviour
         foreach (var p in playersInRange)
         {
             float dist = Vector3.Distance(p.transform.position, chestPos);
-            Debug.Log($"Player {p.playerID} distance: {dist}");
+            //Debug.Log($"Player {p.playerID} distance: {dist}");
             if (dist < minDist)
             {
                 minDist = dist;
@@ -53,7 +53,7 @@ public class TreasureBox : MonoBehaviour
 
         if (closestPlayer != null)
         {
-            Debug.Log($"Closest Player: {closestPlayer.playerID} at distance {minDist}");
+            //Debug.Log($"Closest Player: {closestPlayer.playerID} at distance {minDist}");
         }
 
 
@@ -110,8 +110,29 @@ public class TreasureBox : MonoBehaviour
             return;
         }
 
+
         // 通常アイテムは持ち物を入れ替える
         if (obj.TryGetComponent<Item>(out Item item))
+        {
+            if (player.HasItem)Destroy(player.heldItem.gameObject);
+
+            player.SetHeldItem(item);
+            obj.transform.SetParent(player.transform);
+            obj.transform.localPosition = Vector3.zero;
+
+            var collider = obj.GetComponent<Collider>();
+            if (collider != null) collider.enabled = false;
+
+            var meshRenderer = obj.GetComponent<MeshRenderer>();
+            if (meshRenderer != null) meshRenderer.enabled = false;
+        }
+
+
+
+
+
+        // 通常アイテムは持ち物を入れ替える  いったんコメントアウト
+        /*if (obj.TryGetComponent<Item>(out Item item))
         {
             if (player.HasItem) Destroy(player.heldItem.gameObject);
 
@@ -121,7 +142,7 @@ public class TreasureBox : MonoBehaviour
 
             obj.GetComponent<Collider>().enabled = false;
             obj.GetComponent<MeshRenderer>().enabled = false;
-        }
+        }*/
     }
 
     private void OpenChest()
