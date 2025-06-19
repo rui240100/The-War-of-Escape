@@ -2,104 +2,66 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// 相手プレイヤーの画面中央にお札（黒い画像）を貼り付け、
-/// 5 秒後から 3 秒でフェードアウトさせるアイテム。
-/// </summary>
 public class BlindItem : Item
 {
-    [Header("Blind Settings")]
     public float blindDuration = 5f;
     public float fadeOutDuration = 3f;
 
-    [Header("UI Manager")]
-    private UIManager uiManager;
+    private Image blindOverlayP1;
+    private Image blindOverlayP2;
 
     private void Awake()
     {
-        // UIManagerをシーンから探す（シングルトンでもOK）
-        uiManager = FindFirstObjectByType<UIManager>();
-        if (uiManager == null)
-        {
-            Debug.LogError("UIManager がシーンに存在しません！");
-        }
+        var canvasP1 = GameObject.Find("BlindCanvas_P1");
+        if (canvasP1 != null)
+            blindOverlayP1 = canvasP1.GetComponentInChildren<Image>();
+
+        var canvasP2 = GameObject.Find("BlindCanvas_P2");
+        if (canvasP2 != null)
+            blindOverlayP2 = canvasP2.GetComponentInChildren<Image>();
+
+        if (blindOverlayP1 != null)
+            blindOverlayP1.color = new Color(1, 1, 1, 0);
+        if (blindOverlayP2 != null)
+            blindOverlayP2.color = new Color(1, 1, 1, 0);
     }
 
     public override void Activate(Player user)
     {
-        if (user.otherPlayer != null)
+        if (user == null) return;
+
+        Player target = user.otherPlayer;
+        if (target == null)
         {
-            // 相手のプレイヤーの画面にブラインドを貼る
-            StartCoroutine(BlindRoutine(user.otherPlayer.playerID));
+            Debug.LogWarning("BlindItem: 相手プレイヤーが見つかりません");
+            return;
         }
 
-        Destroy(gameObject); // アイテムは使い捨て
+        if (target.playerID == 1)
+            user.StartCoroutine(ApplyBlindEffectCoroutine(blindOverlayP1));
+        else if (target.playerID == 2)
+            user.StartCoroutine(ApplyBlindEffectCoroutine(blindOverlayP2));
+        else
+            Debug.LogWarning("BlindItem: 無効なplayerID");
+
+        Destroy(this.gameObject);
     }
 
-    private IEnumerator BlindRoutine(int targetPlayerID)
+    private IEnumerator ApplyBlindEffectCoroutine(Image overlay)
     {
-        Canvas canvas = (targetPlayerID == 1) ?
-                        uiManager.player1Canvas :
-                        uiManager.player2Canvas;
+        if (overlay == null) yield break;
 
-        if (canvas == null)
-        {
-            Debug.LogError(" Canvas が null です！");
-            yield break;
-        }
-
-        Debug.Log(" 使用中の Canvas: " + canvas.name);
-
-        // ── まずは直下に探す
-        Transform overlayTransform = canvas.transform.Find("BlindOverlay");
-        if (overlayTransform == null)
-        {
-            Debug.Log("BlindOverlay は直下に見つかりませんでした。階層が深いかも？");
-        }
-
-        Image overlay = overlayTransform?.GetComponent<Image>();
-
-        // ── 子孫全体から再検索（階層が深い場合対応）
-        if (overlay == null)
-        {
-            Debug.Log(" 子階層の Image を探索中...");
-
-            foreach (var img in canvas.GetComponentsInChildren<Image>(true))
-            {
-                Debug.Log(" 検出: " + img.gameObject.name);
-                if (img.gameObject.name == "BlindOverlay")
-                {
-                    overlay = img;
-                    Debug.Log(" BlindOverlay を子階層で発見しました！");
-                    break;
-                }
-            }
-        }
-
-        if (overlay == null)
-        {
-            Debug.LogError(" BlindOverlay が本当に Canvas 内に見つかりません！");
-            yield break;
-        }
-
-        // ── フェード処理
-        overlay.enabled = true;
-        var c = overlay.color;
-        c.a = 1f;
-        overlay.color = c;
-
+        overlay.color = new Color(1, 1, 1, 1);
         yield return new WaitForSeconds(blindDuration);
 
-        float t = 0f;
-        while (t < fadeOutDuration)
+        float timer = 0f;
+        while (timer < fadeOutDuration)
         {
-            t += Time.deltaTime;
-            c.a = Mathf.Lerp(1f, 0f, t / fadeOutDuration);
-            overlay.color = c;
+            timer += Time.deltaTime;
+            float alpha = Mathf.Lerp(1, 0, timer / fadeOutDuration);
+            overlay.color = new Color(1, 1, 1, alpha);
             yield return null;
         }
-
-        overlay.enabled = false;
+        overlay.color = new Color(1, 1, 1, 0);
     }
-
 }
