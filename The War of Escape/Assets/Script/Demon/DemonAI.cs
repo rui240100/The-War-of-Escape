@@ -23,10 +23,14 @@ public class DemonAI : MonoBehaviour
     public float patrolSpeed = 4.0f; // パトロール時の移動速度
     public float chaseSpeed = 6.0f;  // 追跡時の移動速度
 
+    private NewDemonCamera newDemonCamera;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
         GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
+
+        newDemonCamera = GetComponent<NewDemonCamera>();
     }
 
     void Update()
@@ -117,6 +121,15 @@ public class DemonAI : MonoBehaviour
                 //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
             }
 
+
+            if (playerScript.playerID == 1)
+            {
+                newDemonCamera.player1Chase = false;
+            }
+            else if (playerScript.playerID == 2)
+            {
+                newDemonCamera.player2Chase = false;
+            }
             StopChase();
         }
     }

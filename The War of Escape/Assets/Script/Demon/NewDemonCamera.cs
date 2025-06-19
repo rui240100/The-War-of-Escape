@@ -13,8 +13,9 @@ public class NewDemonCamera : MonoBehaviour
     private Player playerScript;
     private bool player1;
     private bool player2;
-    private bool player1Chase;
-    private bool player2Chase;
+    public bool player1Chase;
+    public bool player2Chase;
+    public float stopChaseTime; // プレイヤーがカメラの視界から外れたときに追跡を停止するまでの時間
 
     public GameObject eyeposition;
 
@@ -70,6 +71,7 @@ public class NewDemonCamera : MonoBehaviour
                 if (player1Chase)
                 {
                     demon.StopChase();
+                    player1Chase = false;
                 }
             }
             else if (playerScript.playerID == 2)
@@ -79,6 +81,7 @@ public class NewDemonCamera : MonoBehaviour
                 if (player2Chase)
                 {
                     demon.StopChase();
+                    player2Chase = false;
                 }
             }
         }
