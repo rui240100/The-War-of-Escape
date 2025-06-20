@@ -93,19 +93,39 @@ public class Player : MonoBehaviour
 
         if (playerID == 1)
         {
-            x = Input.GetAxisRaw("Horizontal1"); // 左右入力
-            z = Input.GetAxisRaw("Vertical1");   // 前後入力
+            InvertedInput inv = GetComponent<InvertedInput>();
+            if (inv != null)
+            {
+                x = inv.GetAxisRaw("Horizontal1");
+                z = inv.GetAxisRaw("Vertical1");
+            }
+            else
+            {
+                x = Input.GetAxisRaw("Horizontal1");
+                z = Input.GetAxisRaw("Vertical1");
+            }
+
             mouseX = Input.GetAxis("Mouse X");
             mouseY = Input.GetAxis("Mouse Y");
         }
         else if (playerID == 2)
         {
-            x = Input.GetAxisRaw("Horizontal2");
-            z = Input.GetAxisRaw("Vertical2");
+            InvertedInput inv = GetComponent<InvertedInput>();
+            if (inv != null)
+            {
+                x = inv.GetAxisRaw("Horizontal2");
+                z = inv.GetAxisRaw("Vertical2");
+            }
+            else
+            {
+                x = Input.GetAxisRaw("Horizontal2");
+                z = Input.GetAxisRaw("Vertical2");
+            }
+
             mouseX = Input.GetAxis("Mouse X2");
             mouseY = Input.GetAxis("Mouse Y2");
-
         }
+
 
         // Debug.Log(x + "," + z);
 
