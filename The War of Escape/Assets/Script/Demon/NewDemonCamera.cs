@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
+using System.Collections;
 //using System.Diagnostics;
 
 public class NewDemonCamera : MonoBehaviour
@@ -19,9 +20,6 @@ public class NewDemonCamera : MonoBehaviour
 
     public GameObject eyeposition;
 
-    public float radius = 5f;
-    private Transform playerTransform;
-
     Vector3 origin; //ƒŒƒC‚Ì”­ŽËˆÊ’u
 
     void Start()
@@ -32,13 +30,6 @@ public class NewDemonCamera : MonoBehaviour
     private void Update()
     {
         origin = eyeposition.transform.position;
-
-        //float distance = Vector3.Distance(transform.position, playerTransform.position);
-
-        //if (distance <= radius)
-        //{
-
-        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -70,8 +61,7 @@ public class NewDemonCamera : MonoBehaviour
 
                 if (player1Chase)
                 {
-                    demon.StopChase();
-                    player1Chase = false;
+                    StartCoroutine(StopChaseTimeCoroutine1());
                 }
             }
             else if (playerScript.playerID == 2)
@@ -80,8 +70,7 @@ public class NewDemonCamera : MonoBehaviour
 
                 if (player2Chase)
                 {
-                    demon.StopChase();
-                    player2Chase = false;
+                    StartCoroutine(StopChaseTimeCoroutine2());
                 }
             }
         }
@@ -173,5 +162,27 @@ public class NewDemonCamera : MonoBehaviour
             return hit.collider.CompareTag("Player");
         }
         return false;
+    }
+
+    private IEnumerator StopChaseTimeCoroutine1()
+    {
+        yield return new WaitForSeconds(5.0f);
+
+        if (player1)
+        {
+            demon.StopChase();
+            player1Chase = false;
+        }
+    }
+
+    private IEnumerator StopChaseTimeCoroutine2()
+    {
+        yield return new WaitForSeconds(5.0f);
+
+        if (player2)
+        {
+            demon.StopChase();
+            player2Chase = false;
+        }
     }
 }

@@ -60,8 +60,8 @@ public class DemonAI : MonoBehaviour
 
     public void StartChase(Transform target)
     {
-            player = target;
-            isChasing = true;
+        player = target;
+        isChasing = true;
     }
 
     public void StopChase()
@@ -131,6 +131,7 @@ public class DemonAI : MonoBehaviour
                 newDemonCamera.player2Chase = false;
             }
             StopChase();
+            Debug.Log("èIóπ");
         }
     }
 }
