@@ -188,14 +188,20 @@ public class Player : MonoBehaviour
 
     }
 
-    
+
     void UseItem()
     {
-        heldItem?.Activate(this); // 自分を渡してアイテムを起動
-        SetHeldItem(null);        // ← これでアイテムを消費して、UIもリセット！
+        Item used = heldItem;          // 元の参照を控える
+        heldItem?.Activate(this);      // 発動（中で持ち替えの可能性あり）
+
+        // もし発動後も同じアイテムだったら消費して null に
+        if (heldItem == used)
+        {
+            SetHeldItem(null);
+        }
     }
 
-   
+
 
 
     public IEnumerator SlowDown(float multiplier, float duration)

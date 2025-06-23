@@ -21,8 +21,7 @@ public class GhostItem : Item
 
         if (target.keyCount > 0)
         {
-            int keysToSteal = stealAmount <= 0 ? target.keyCount
-                                               : Mathf.Min(stealAmount, target.keyCount);
+            int keysToSteal = stealAmount <= 0 ? target.keyCount: Mathf.Min(stealAmount, target.keyCount);
 
             for (int i = 0; i < keysToSteal; i++)
             {
