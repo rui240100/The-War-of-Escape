@@ -25,7 +25,7 @@ public class Item : MonoBehaviour
         Player player = other.GetComponent<Player>();
         if (player != null && !player.HasItem)
         {
-            player.SetHeldItem(this); 
+            player.SetHeldItem(this);
             transform.SetParent(player.transform);
             transform.localPosition = Vector3.zero;
             GetComponent<Collider>().enabled = false;

@@ -15,6 +15,10 @@ public class GameDrector : MonoBehaviour
     void Update()
     {
         TimeCount -= Time.deltaTime;
-        timeUI.GetComponent<TextMeshProUGUI>().text = "" + (int)TimeCount / 60 + ":" + (int)TimeCount % 60;
+        int second = (int)TimeCount % 60;
+
+
+
+        timeUI.GetComponent<TextMeshProUGUI>().text = "0" + (int)TimeCount / 60 + ":" + second.ToString("00");
     }
 }
