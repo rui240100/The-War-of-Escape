@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class Necromancer : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     private Player playerScript;
     private Transform player;
@@ -17,6 +17,8 @@ public class Necromancer : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        Destroy(this.gameObject, 30.0f);
     }
 
     // Update is called once per frame
