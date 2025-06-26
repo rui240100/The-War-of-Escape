@@ -14,11 +14,16 @@ public class GameDrector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeCount -= Time.deltaTime;
+
+        if( TimeCount > 0)
+        {
+            TimeCount -= Time.deltaTime;
+
+        }
+
+
         int second = (int)TimeCount % 60;
 
-
-
-        timeUI.GetComponent<TextMeshProUGUI>().text = "0" + (int)TimeCount / 60 + ":" + second.ToString("00");
+        timeUI.GetComponent<TextMeshProUGUI>().text = "" + (int)TimeCount / 60 + ":" + second.ToString("D2");
     }
 }
