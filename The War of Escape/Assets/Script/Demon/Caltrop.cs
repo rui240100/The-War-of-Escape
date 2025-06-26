@@ -2,11 +2,12 @@ using System.Collections;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.Arm;
 
-public class Caltrap : MonoBehaviour
+public class Caltrap : Item
 {
     private Player playerScript;
     private DemonAI demonAIScript;
     private Necromancer necromancerScript;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +52,8 @@ public class Caltrap : MonoBehaviour
 
     private IEnumerator SlowDownDemon(DemonAI demonAIScript)
     {
+
+
         if (demonAIScript.isChasing)
         {
             float demonChaseSpeed = demonAIScript.chaseSpeed;
@@ -84,4 +87,12 @@ public class Caltrap : MonoBehaviour
 
         necromancerScript.agent.speed = necromancerSpeed;
     }
+
+    
+
+    
+
+
+
+
 }
