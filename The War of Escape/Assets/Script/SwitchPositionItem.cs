@@ -34,7 +34,8 @@ public class SwitchPositionItem : Item
 
     public override void Activate(Player user)
     {
-        if (isUsed || user.otherPlayer == null) return;
+        if (isUsed || user.otherPlayer == null) 
+          return;
 
         isUsed = true;
         user.StartCoroutine(SwitchPositionsAfterDelay(user));
