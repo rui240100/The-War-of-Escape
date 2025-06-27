@@ -376,11 +376,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5611299084068701775}
   possibleItems:
-  - {fileID: 6414842845069078188, guid: 16dac2f3839c7d34c9986e7bbd5864a1, type: 3}
-  - {fileID: 3470639543458426257, guid: b7fe00cd98f51294994a3408a83eb1b5, type: 3}
-  - {fileID: 1741095577436644675, guid: f7c607aeea2848d4ab7bd8da3898a288, type: 3}
-  - {fileID: 6414842845069078188, guid: 16dac2f3839c7d34c9986e7bbd5864a1, type: 3}
-  - {fileID: 4377685084806127688, guid: 3d0cdddda4f961942aab456fd2b6f49e, type: 3}
+  - {fileID: 1709245929355156397, guid: e9cc399a9ee1ca64bb286df9d603f44b, type: 3}
+  - {fileID: 1709245929355156397, guid: e9cc399a9ee1ca64bb286df9d603f44b, type: 3}
+  - {fileID: 1709245929355156397, guid: e9cc399a9ee1ca64bb286df9d603f44b, type: 3}
+  - {fileID: 1709245929355156397, guid: e9cc399a9ee1ca64bb286df9d603f44b, type: 3}
+  - {fileID: 1709245929355156397, guid: e9cc399a9ee1ca64bb286df9d603f44b, type: 3}
 --- !u!65 &629120320645467284
 BoxCollider:
   m_ObjectHideFlags: 0
