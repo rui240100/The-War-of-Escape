@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.Arm;
 
-public class Caltrap : Item
+public class Caltrap : MonoBehaviour
 {
     private Player playerScript;
     private DemonAI demonAIScript;
