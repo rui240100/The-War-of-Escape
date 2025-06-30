@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         //ゲーム開始時に何も持ってないときのアイテムUIを表示する
         if (itemIconUI != null && defaultItemIcon != null)
         {
-            itemIconUI.sprite = defaultItemIcon;
+            //itemIconUI.sprite = defaultItemIcon;
             itemIconUI.enabled = true; 
         }
 
