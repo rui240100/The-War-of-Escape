@@ -27,19 +27,19 @@ public class Caltrap : MonoBehaviour
         {
             playerScript = other.GetComponent<Player>();
             StartCoroutine(SlowDownPlayer(playerScript));
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,5.1f);
         }
         else if (other.CompareTag("Demon"))
         {
             demonAIScript = other.GetComponent<DemonAI>();
             StartCoroutine(SlowDownDemon(demonAIScript));
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 5.1f);
         }
         else if (other.CompareTag("Necromancer"))
         {
             necromancerScript = other.GetComponent<Necromancer>();
             StartCoroutine(SlowDownNecromancer(necromancerScript));
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 5.1f);
         }
     }
 
