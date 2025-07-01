@@ -21,6 +21,8 @@ public class DemonAI : MonoBehaviour
 
     private NewDemonCamera newDemonCamera;
 
+    public bool demonStun = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
@@ -36,12 +38,19 @@ public class DemonAI : MonoBehaviour
             if (agent.hasPath)
             {
                 agent.SetDestination(player.position); // プレイヤーを追跡
-                agent.speed = chaseSpeed; // 追跡時のスピードに変更
+
+                if (!demonStun)
+                {
+                    agent.speed = chaseSpeed; // 追跡時のスピードに変更
+                }
             }
         }
         else if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            agent.speed = patrolSpeed; // 初期状態ではパトロール速度
+            if (!demonStun)
+            {
+                agent.speed = patrolSpeed; // 初期状態ではパトロール速度
+            }
             GoToNextPatrolPoint(); // 次のパトロール地点へ
         } 
     }

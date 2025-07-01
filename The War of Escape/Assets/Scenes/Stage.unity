@@ -40267,6 +40267,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
+    - target: {fileID: 5389241302548563975, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 715934406}
+    - target: {fileID: 5422611358433307914, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 715934406}
     - target: {fileID: 6017950073614371012, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -40275,6 +40283,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 715934406}
+    - target: {fileID: 7270030914693350864, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_VersionIndex
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7314107377950820027, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_Mesh
       value: 

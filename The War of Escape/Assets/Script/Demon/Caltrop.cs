@@ -8,7 +8,6 @@ public class Caltrap : MonoBehaviour
     private DemonAI demonAIScript;
     private Necromancer necromancerScript;
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,18 +26,21 @@ public class Caltrap : MonoBehaviour
         {
             playerScript = other.GetComponent<Player>();
             StartCoroutine(SlowDownPlayer(playerScript));
+            this.transform.position = new Vector3(0, -100, 0);
             Destroy(this.gameObject,5.1f);
         }
         else if (other.CompareTag("Demon"))
         {
             demonAIScript = other.GetComponent<DemonAI>();
             StartCoroutine(SlowDownDemon(demonAIScript));
+            this.transform.position = new Vector3(0, -100, 0);
             Destroy(this.gameObject, 5.1f);
         }
         else if (other.CompareTag("Necromancer"))
         {
             necromancerScript = other.GetComponent<Necromancer>();
             StartCoroutine(SlowDownNecromancer(necromancerScript));
+            this.transform.position = new Vector3(0, -100, 0);
             Destroy(this.gameObject, 5.1f);
         }
     }
@@ -59,22 +61,26 @@ public class Caltrap : MonoBehaviour
             float demonChaseSpeed = demonAIScript.chaseSpeed;
             demonAIScript.chaseSpeed = 0.2f;
             demonAIScript.agent.speed = demonAIScript.chaseSpeed;
+            demonAIScript.demonStun = true;
 
             yield return new WaitForSeconds(5.0f);
 
             demonAIScript.chaseSpeed = 6.0f;
             demonAIScript.agent.speed = demonAIScript.chaseSpeed;
+            demonAIScript.demonStun = false;
         }
         else if (!demonAIScript.isChasing)
         {
             float demonPatrolSpeed = demonAIScript.patrolSpeed;
             demonAIScript.patrolSpeed = 0.2f;
             demonAIScript.agent.speed = demonAIScript.patrolSpeed;
+            demonAIScript.demonStun = true;
 
             yield return new WaitForSeconds(5.0f);
 
             demonAIScript.patrolSpeed = 4.0f;
             demonAIScript.agent.speed = demonAIScript.patrolSpeed;
+            demonAIScript.demonStun = false;
         }
     }
 
