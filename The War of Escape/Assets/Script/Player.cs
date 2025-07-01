@@ -2,87 +2,64 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;  // UI関連を使うので追加
-
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public int playerID;
     public float Speed;
-    public Transform cameraTransform; // カメラのTransformを入れるための変数
+    public Transform cameraTransform;
     public float lookSensitivity = 3.0f;
     CharacterController characterController;
-    //public bool HasItem = false;
+    Animator animator;
+
     public Player otherPlayer;
-
     bool isSlowing = false;
-    public int keyCount = 0; // 所持している鍵の数
-    public Item heldItem; // 拾ったアイテムの参照
 
+    public int keyCount = 0;
+    public Item heldItem;
 
-    
     public bool HasItem => heldItem != null;
 
-    public Image itemIconUI; // ← 上に重ねるアイテムの画像
-    public Sprite defaultItemIcon;// プレハブに持たせるアイコン画像
+    public Image itemIconUI;
+    public Sprite defaultItemIcon;
+    public Image itemBackgroundUI;
 
-    public Image keyIconUI; // 鍵アイコンを表示するImage（プレイヤーごとに設定）
-    public Sprite keyIconSprite; // 鍵を持ったときに表示するアイコン
-    public Sprite defaultKeyIcon; // 鍵がないときのデフォルトアイコン
-    public Sprite[] keyIcons; // 鍵の所持数に応じたアイコンを入れる（0〜5）
+    public Image keyIconUI;
+    public Sprite keyIconSprite;
+    public Sprite defaultKeyIcon;
+    public Sprite[] keyIcons;
+    public Text keyCountText;
 
-    public Text keyCountText;       // 所持数表示用のテキスト
-
-    public int magatamaCount = 0; // 勾玉の所持数
-
-    //public Image[] magatamaIcons;  // Inspectorで複数の勾玉アイコンをアサイン（例：5個）
+    public int magatamaCount = 0;
+    public MagatamaUIManager magatamaUIManager;
 
     public GameObject pd;
 
-    public MagatamaUIManager magatamaUIManager; // それぞれ個別に設定
+    public float idleAnimationSpeed = 2.0f;  // Idle速度
+    public float runAnimationSpeed = 2.0f;   // Run速度
 
-
-            
-    public Image itemBackgroundUI;   // ← 下に常に表示する宝箱の画像
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         characterController = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
 
         StartCoroutine(FindOtherPlayerWithDelay());
 
-
-        //ゲーム開始時に何も持ってないときのアイテムUIを表示する
         if (itemIconUI != null && defaultItemIcon != null)
         {
-            //itemIconUI.sprite = defaultItemIcon;
-            itemIconUI.enabled = true; 
+            itemIconUI.enabled = true;
         }
 
-
-
         Application.targetFrameRate = 60;
-
-
-      　UpdateKeyUI();
-
+        UpdateKeyUI();
 
         if (magatamaUIManager != null)
         {
             magatamaUIManager.ResetMagatamaUI();
         }
-
-       
-
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         float x = 0f;
@@ -90,21 +67,11 @@ public class Player : MonoBehaviour
         float mouseX = 0f;
         float mouseY = 0f;
 
-
-
         if (playerID == 1)
         {
             InvertedInput inv = GetComponent<InvertedInput>();
-            if (inv != null)
-            {
-                x = inv.GetAxisRaw("Horizontal1");
-                z = inv.GetAxisRaw("Vertical1");
-            }
-            else
-            {
-                x = Input.GetAxisRaw("Horizontal1");
-                z = Input.GetAxisRaw("Vertical1");
-            }
+            x = (inv != null) ? inv.GetAxisRaw("Horizontal1") : Input.GetAxisRaw("Horizontal1");
+            z = (inv != null) ? inv.GetAxisRaw("Vertical1") : Input.GetAxisRaw("Vertical1");
 
             mouseX = Input.GetAxis("Mouse X");
             mouseY = Input.GetAxis("Mouse Y");
@@ -112,69 +79,56 @@ public class Player : MonoBehaviour
         else if (playerID == 2)
         {
             InvertedInput inv = GetComponent<InvertedInput>();
-            if (inv != null)
-            {
-                x = inv.GetAxisRaw("Horizontal2");
-                z = inv.GetAxisRaw("Vertical2");
-            }
-            else
-            {
-                x = Input.GetAxisRaw("Horizontal2");
-                z = Input.GetAxisRaw("Vertical2");
-            }
+            x = (inv != null) ? inv.GetAxisRaw("Horizontal2") : Input.GetAxisRaw("Horizontal2");
+            z = (inv != null) ? inv.GetAxisRaw("Vertical2") : Input.GetAxisRaw("Vertical2");
 
             mouseX = Input.GetAxis("Mouse X2");
             mouseY = Input.GetAxis("Mouse Y2");
         }
 
-
-        // Debug.Log(x + "," + z);
-
-
-        // カメラの前方向・右方向を取得
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 
-        // 上下成分を消す（水平移動だけにする）
         forward.y = 0f;
         right.y = 0f;
         forward.Normalize();
         right.Normalize();
 
-        // 入力と方向ベクトルを合成
         Vector3 move = (forward * z + right * x).normalized;
 
-
-        //  真上・真下を向いているとき対策 
         if (forward == Vector3.zero)
         {
-            // カメラが真上か真下を向いてるなら、プレイヤーのローカル軸で動かす
             move = transform.right * x + transform.forward * z;
             move = move.normalized;
         }
 
         characterController.SimpleMove(move * Speed);
 
-
-
-        if (((playerID == 1 && Input.GetButtonDown("Fire3")) ||
-     (playerID == 2 && Input.GetButtonDown("Fire3_2"))) && HasItem)
+        // アニメーション制御（IdleとRunを個別に調整）
+        if (animator != null)
         {
-            UseItem();
-           
+            if (move.magnitude > 0.1f)
+            {
+                animator.speed = runAnimationSpeed;
+                animator.Play("Run");
+            }
+            else
+            {
+                animator.speed = idleAnimationSpeed;
+                animator.Play("Idle");
+            }
         }
 
-
-
-
+        if (((playerID == 1 && Input.GetButtonDown("Fire3")) ||
+             (playerID == 2 && Input.GetButtonDown("Fire3_2"))) && HasItem)
+        {
+            UseItem();
+        }
     }
-
-
-
 
     IEnumerator FindOtherPlayerWithDelay()
     {
-        yield return new WaitForSeconds(0.1f); // 少し待つ（0.1秒）
+        yield return new WaitForSeconds(0.1f);
 
         Player[] allPlayers = FindObjectsByType<Player>(FindObjectsSortMode.None);
         foreach (var p in allPlayers)
@@ -185,25 +139,18 @@ public class Player : MonoBehaviour
                 break;
             }
         }
-
-
     }
-
 
     void UseItem()
     {
-        Item used = heldItem;          // 元の参照を控える
-        heldItem?.Activate(this);      // 発動（中で持ち替えの可能性あり）
+        Item used = heldItem;
+        heldItem?.Activate(this);
 
-        // もし発動後も同じアイテムだったら消費して null に
         if (heldItem == used)
         {
             SetHeldItem(null);
         }
     }
-
-
-
 
     public IEnumerator SlowDown(float multiplier, float duration)
     {
@@ -234,11 +181,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
-
-
-    
-
     public void RemoveKey()
     {
         keyCount = Mathf.Max(0, keyCount - 1);
@@ -254,7 +196,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
     public void SetHeldItem(Item item)
     {
         heldItem = item;
@@ -268,41 +209,17 @@ public class Player : MonoBehaviour
             }
             else
             {
-                itemIconUI.sprite = null; // 透明に戻す（背景が見える）
-                itemIconUI.enabled = false; // 表示をOFFにしておいてもOK
+                itemIconUI.sprite = null;
+                itemIconUI.enabled = false;
             }
         }
 
         if (itemBackgroundUI != null)
         {
-            itemBackgroundUI.enabled = true; // 宝箱画像は常に表示
+            itemBackgroundUI.enabled = true;
         }
     }
 
-
-
-
-
-    /*public void SetHeldItem(Item item)
-    {
-        heldItem = item;
-
-        if (itemIconUI != null)
-        {
-            if (item != null && item.icon != null)
-            {
-                itemIconUI.sprite = item.icon;
-            }
-            else
-            {
-                itemIconUI.sprite = defaultItemIcon;
-            }
-
-            itemIconUI.enabled = true;
-        }
-    }*/
-
-    //鍵の処理
     void UpdateKeyUI()
     {
         if (keyIconUI != null && keyIcons != null && keyIcons.Length > keyCount)
@@ -316,38 +233,28 @@ public class Player : MonoBehaviour
         }
     }
 
-    //勾玉の処理
-   
-
     public bool HasEnoughMagatama(int required)
     {
         return magatamaCount >= required;
     }
-         
 
     public void AddMagatama()
     {
-        // 上限をつける（3個まで）
         magatamaCount = Mathf.Clamp(magatamaCount + 1, 0, 3);
 
         if (magatamaUIManager != null)
         {
             magatamaUIManager.UpdateMagatamaUI(magatamaCount);
         }
-    }                                                                                                                                                                
+    }
 
-    //勾玉の数をリセットさせる
     public void ResetMagatama()
     {
         magatamaCount = 0;
+
         if (magatamaUIManager != null)
         {
             magatamaUIManager.UpdateMagatamaUI(magatamaCount);
         }
     }
-
-    
-
-
-
 }
