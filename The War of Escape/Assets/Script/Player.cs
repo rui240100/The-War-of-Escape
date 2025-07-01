@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     
     public bool HasItem => heldItem != null;
 
-    public Image itemIconUI; //UIのImageを入れる
+    public Image itemIconUI; // ← 上に重ねるアイテムの画像
     public Sprite defaultItemIcon;// プレハブに持たせるアイコン画像
 
     public Image keyIconUI; // 鍵アイコンを表示するImage（プレイヤーごとに設定）
@@ -42,7 +42,8 @@ public class Player : MonoBehaviour
     public MagatamaUIManager magatamaUIManager; // それぞれ個別に設定
 
 
-    
+            
+    public Image itemBackgroundUI;   // ← 下に常に表示する宝箱の画像
 
 
 
@@ -254,9 +255,35 @@ public class Player : MonoBehaviour
     }
 
 
-
-
     public void SetHeldItem(Item item)
+    {
+        heldItem = item;
+
+        if (itemIconUI != null)
+        {
+            if (item != null && item.icon != null)
+            {
+                itemIconUI.sprite = item.icon;
+                itemIconUI.enabled = true;
+            }
+            else
+            {
+                itemIconUI.sprite = null; // 透明に戻す（背景が見える）
+                itemIconUI.enabled = false; // 表示をOFFにしておいてもOK
+            }
+        }
+
+        if (itemBackgroundUI != null)
+        {
+            itemBackgroundUI.enabled = true; // 宝箱画像は常に表示
+        }
+    }
+
+
+
+
+
+    /*public void SetHeldItem(Item item)
     {
         heldItem = item;
 
@@ -273,7 +300,7 @@ public class Player : MonoBehaviour
 
             itemIconUI.enabled = true;
         }
-    }
+    }*/
 
     //鍵の処理
     void UpdateKeyUI()
