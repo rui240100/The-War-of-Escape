@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
     public float idleAnimationSpeed = 2.0f;  // Idle速度
     public float runAnimationSpeed = 2.0f;   // Run速度
 
+    public Sprite itemBackgroundSprite; // 宝箱の画像（常に表示したいやつ）
+
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -46,10 +49,16 @@ public class Player : MonoBehaviour
 
         StartCoroutine(FindOtherPlayerWithDelay());
 
-        if (itemIconUI != null && defaultItemIcon != null)
+        /*if (itemIconUI != null && defaultItemIcon != null)
         {
             itemIconUI.enabled = true;
+        }*/
+
+        if (itemIconUI != null)
+        {
+            itemIconUI.enabled = false;  // 最初は非表示にしておく！
         }
+
 
         Application.targetFrameRate = 60;
         UpdateKeyUI();
@@ -58,6 +67,16 @@ public class Player : MonoBehaviour
         {
             magatamaUIManager.ResetMagatamaUI();
         }
+
+        if (itemBackgroundUI != null && itemBackgroundSprite != null)
+        {
+            itemBackgroundUI.sprite = itemBackgroundSprite;
+            itemBackgroundUI.enabled = true; // 念のため表示ONに
+        }
+
+
+
+
     }
 
     void Update()
@@ -205,20 +224,23 @@ public class Player : MonoBehaviour
             if (item != null && item.icon != null)
             {
                 itemIconUI.sprite = item.icon;
-                itemIconUI.enabled = true;
+                itemIconUI.color = new Color(1, 1, 1, 1); // 不透明に
+                itemIconUI.enabled = true;               // 表示ON！
             }
             else
             {
-                itemIconUI.sprite = null;
-                itemIconUI.enabled = false;
+                itemIconUI.enabled = false;              // 表示OFF！（白いのも消える）
             }
         }
 
-        if (itemBackgroundUI != null)
+        // 🔻 宝箱背景は「常にON」に固定
+        if (itemBackgroundUI != null && !itemBackgroundUI.enabled)
         {
             itemBackgroundUI.enabled = true;
         }
     }
+
+
 
     void UpdateKeyUI()
     {
