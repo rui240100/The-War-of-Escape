@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CallNecromancer : MonoBehaviour
+public class CallCaltrop : MonoBehaviour
 {
-    public GameObject Necromancer;
-    private Transform Player;
+    public GameObject caltrop;
+    private Transform player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +19,7 @@ public class CallNecromancer : MonoBehaviour
 
     void Activate()
     {
-        Instantiate(Necromancer);
-        Necromancer.transform.position = Player.position;
+        Instantiate(caltrop);
+        caltrop.transform.position = player.position;
     }
 }

@@ -31,16 +31,13 @@ public class Necromancer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collided Object Position: " + collision.transform.position);
             collision.gameObject.GetComponent<CharacterController>().enabled = false;
             collision.gameObject.transform.position = respawn;
             collision.gameObject.GetComponent<CharacterController>().enabled = true;
-            Debug.Log("Collided Object Position: " + collision.transform.position);
-            Debug.Log("Collided Object Name: " + collision.gameObject.name);
+
             playerScript = collision.gameObject.GetComponent<Player>();
 
             int keyCountToReturn = playerScript.keyCount;
-            // Debug.Log("ƒvƒŒƒCƒ„[‚ª‚Á‚Ä‚¢‚½Œ®‚Ì”: " + keyCountToReturn);
 
             playerScript.keyCount = 0;
 
