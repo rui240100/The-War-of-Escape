@@ -114,7 +114,11 @@ public class TreasureBox : MonoBehaviour
         // 通常アイテムは持ち物を入れ替える
         if (obj.TryGetComponent<Item>(out Item item))
         {
-            if (player.HasItem)Destroy(player.heldItem.gameObject);
+            if (player.HasItem)
+            {
+                Destroy(player.heldItem.gameObject);
+
+            }
 
             player.SetHeldItem(item);
             obj.transform.SetParent(player.transform);
@@ -127,7 +131,20 @@ public class TreasureBox : MonoBehaviour
             if (meshRenderer != null) meshRenderer.enabled = false;
         }
 
+        //if(obj.CompareTag("Tanaka"))
+        //{
+        //    if (player.HasItem)
+        //    {
+        //        Destroy(player.heldItem.gameObject);
+        //    }
 
+
+        //    player.SetHeldItem(item);
+
+        //    obj.transform.SetParent(player.transform);
+        //    obj.transform.localPosition = Vector3.zero;
+
+        //}
 
 
 
