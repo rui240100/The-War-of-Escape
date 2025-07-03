@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CallCaltrop : MonoBehaviour
+public class CallCaltrop : Item
 {
     public GameObject caltrop;
     private Transform player;
