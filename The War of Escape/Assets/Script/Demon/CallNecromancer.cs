@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CallNecromancer : MonoBehaviour
+public class CallNecromancer : Item
 {
     public GameObject Necromancer;
     private Transform Player;

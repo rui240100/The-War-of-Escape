@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d60fd83b0afdf488f5396bcc8db2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caltrop: {fileID: 0}
+  slowDuration: 5
+  slowMultiplier: 0.2
+  icon: {fileID: 0}
+  caltrop: {fileID: 4267804960135556011, guid: 999c29add9676c84faadb4a66785a245, type: 3}
