@@ -17,7 +17,7 @@ public class CallNecromancer : Item
         
     }
 
-    void Activate()
+    public override void Activate(Player user)
     {
         Instantiate(Necromancer);
         Necromancer.transform.position = Player.position;
