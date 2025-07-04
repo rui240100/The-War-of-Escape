@@ -1312,7 +1312,7 @@ PrefabInstance:
       objectReference: {fileID: 745530437}
     - target: {fileID: 7270030914693350864, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_VersionIndex
-      value: 18
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8266889614884529804, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: player1Object

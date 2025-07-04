@@ -8,6 +8,8 @@ public class Caltrap : MonoBehaviour
     private DemonAI demonAIScript;
     private Necromancer necromancerScript;
 
+    private int count = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +24,13 @@ public class Caltrap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        count++;
+
+        if (count == 1)
+        {
+            return;
+        }
+
         if (other.CompareTag("Player"))
         {
             playerScript = other.GetComponent<Player>();
