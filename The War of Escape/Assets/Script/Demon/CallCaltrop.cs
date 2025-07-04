@@ -18,21 +18,22 @@ public class CallCaltrop : Item
         
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            playerTransform = other.transform;
-            this.transform.SetParent(other.transform);
-            this.transform.localPosition = Vector3.zero;
-        }
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.CompareTag("Player"))
+    //    {
+    //        Debug.Log("denai");
+    //        playerTransform = other.transform;
+    //        this.transform.SetParent(other.transform);
+    //        this.transform.localPosition = Vector3.zero;
+    //    }
+    //}
 
     public override void Activate(Player user)
     {
         Debug.Log("Ç‹Ç´Ç—Çµê›íu0");
-        Instantiate(caltrop);
-        caltrop.transform.position = playerTransform.position;
+        GameObject caltropObj = Instantiate(caltrop);
+        caltropObj.transform.position = user.transform.position;
         Debug.Log("Ç‹Ç´Ç—Çµê›íu1");
     }
 }
