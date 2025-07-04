@@ -28,7 +28,7 @@ public class CallCaltrop : Item
         }
     }
 
-    void Activate()
+    public override void Activate(Player user)
     {
         Debug.Log("‚Ü‚«‚Ñ‚µİ’u0");
         Instantiate(caltrop);
