@@ -6,7 +6,10 @@ public class Necromancer : MonoBehaviour
     public NavMeshAgent agent;
 
     private Player playerScript;
-    private Transform player;
+    public GameObject player1Obj;
+    public GameObject player2Obj;
+    public bool player1 = false;
+    public bool player2 = false;
     public Vector3 respawn;
 
     public GameObject keyPrefab;
@@ -22,9 +25,12 @@ public class Necromancer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        agent.SetDestination(player.position);
+        if(player1)
+            agent.SetDestination(player1Obj.transform.position);
+        else if (player2)
+            agent.SetDestination(player2Obj.transform.position);
     }
 
     private void OnCollisionEnter(Collision collision)
