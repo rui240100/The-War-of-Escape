@@ -3,8 +3,6 @@ using UnityEngine;
 public class CallCaltrop : Item
 {
     public GameObject caltrop;
-    private Player playerScript;
-    private Transform playerTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,17 +15,6 @@ public class CallCaltrop : Item
     {
         
     }
-
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.CompareTag("Player"))
-    //    {
-    //        Debug.Log("denai");
-    //        playerTransform = other.transform;
-    //        this.transform.SetParent(other.transform);
-    //        this.transform.localPosition = Vector3.zero;
-    //    }
-    //}
 
     public override void Activate(Player user)
     {

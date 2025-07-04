@@ -3,7 +3,8 @@ using UnityEngine;
 public class CallNecromancer : Item
 {
     public GameObject Necromancer;
-    private Transform Player;
+    private Necromancer necromancerScript;
+    private Player playerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +20,18 @@ public class CallNecromancer : Item
 
     public override void Activate(Player user)
     {
-        Instantiate(Necromancer);
-        Necromancer.transform.position = Player.position;
+        GameObject NecromancerObj = Instantiate(Necromancer);
+        NecromancerObj.transform.position = user.transform.position;
+        necromancerScript = NecromancerObj.GetComponent<Necromancer>();
+
+        playerScript = user.GetComponent<Player>();
+        if (playerScript.playerID == 1)
+        {
+            necromancerScript.player2 = true;
+        }
+        else if (playerScript.playerID == 2)
+        {
+            necromancerScript.player1 = true;
+        }
     }
 }
