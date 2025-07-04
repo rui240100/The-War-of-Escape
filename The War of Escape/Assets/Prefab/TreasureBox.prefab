@@ -376,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5611299084068701775}
   possibleItems:
-  - {fileID: 4946287297852470925, guid: b99d8ed7347e6f24bb02468af90aa435, type: 3}
+  - {fileID: 7566809616069466531, guid: b9d7ba3740c7e9b4d86ca2eeab907fcb, type: 3}
 --- !u!65 &629120320645467284
 BoxCollider:
   m_ObjectHideFlags: 0
