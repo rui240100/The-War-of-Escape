@@ -25,10 +25,10 @@ public class Player : MonoBehaviour
     public Sprite defaultItemIcon;
     public Image itemBackgroundUI;
 
-    public Image keyIconUI;
+    //public Image keyIconUI;
     public Sprite keyIconSprite;
     public Sprite defaultKeyIcon;
-    public Sprite[] keyIcons;
+    //public Sprite[] keyIcons;
     public Text keyCountText;
 
     public int magatamaCount = 0;
@@ -40,6 +40,10 @@ public class Player : MonoBehaviour
     public float runAnimationSpeed = 2.0f;   // Run速度
 
     public Sprite itemBackgroundSprite; // 宝箱の画像（常に表示したいやつ）
+
+    [Header("鍵UI関連")]
+    public GameObject keyUIContainer; // 鍵の枠画像（背景）
+    public List<GameObject> keyIcons = new List<GameObject>(); // 鍵の個別アイコン（最大5つ）
 
 
     void Start()
@@ -185,35 +189,29 @@ public class Player : MonoBehaviour
         isSlowing = false;
     }
 
+
+    //鍵関係
     public void AddKey()
     {
-        keyCount = Mathf.Clamp(keyCount + 1, 0, 5);
-
-        if (keyIconUI != null && keyIcons != null && keyIcons.Length > keyCount)
-        {
-            keyIconUI.sprite = keyIcons[keyCount];
-        }
-
-        if (keyCountText != null)
-        {
-            keyCountText.text = keyCount.ToString();
-        }
+        keyCount = Mathf.Clamp(keyCount + 1, 0, keyIcons.Count);
+        UpdateKeyUI();
     }
 
     public void RemoveKey()
     {
         keyCount = Mathf.Max(0, keyCount - 1);
+        UpdateKeyUI();
+    }
 
-        if (keyIconUI != null && keyIcons != null && keyIcons.Length > keyCount)
+    void UpdateKeyUI()
+    {
+        for (int i = 0; i < keyIcons.Count; i++)
         {
-            keyIconUI.sprite = keyIcons[keyCount];
-        }
-
-        if (keyCountText != null)
-        {
-            keyCountText.text = keyCount.ToString();
+            keyIcons[i].SetActive(i < keyCount);
         }
     }
+
+
 
     public void SetHeldItem(Item item)
     {
@@ -242,18 +240,7 @@ public class Player : MonoBehaviour
 
 
 
-    void UpdateKeyUI()
-    {
-        if (keyIconUI != null && keyIcons != null && keyIcons.Length > keyCount)
-        {
-            keyIconUI.sprite = keyIcons[keyCount];
-        }
-
-        if (keyCountText != null)
-        {
-            keyCountText.text = keyCount.ToString();
-        }
-    }
+    
 
     public bool HasEnoughMagatama(int required)
     {
