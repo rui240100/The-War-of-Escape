@@ -34139,7 +34139,7 @@ PrefabInstance:
     - target: {fileID: 6842429303383437910, guid: 610ae714531bb0c48844b98141753db6, type: 3}
       propertyPath: 'playerObjects.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1750139204}
     - target: {fileID: 6842429303383437910, guid: 610ae714531bb0c48844b98141753db6, type: 3}
       propertyPath: 'playerObjects.Array.data[1]'
       value: 
@@ -40600,6 +40600,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1529706336}
+    - target: {fileID: 8266889614884529804, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: player1Object
+      value: 
+      objectReference: {fileID: 1750139204}
+    - target: {fileID: 8266889614884529804, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: player2Object
+      value: 
+      objectReference: {fileID: 1190770819}
     - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -47520,6 +47528,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1750139204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7832984954572477228, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+  m_PrefabInstance: {fileID: 1224309059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752646330
 GameObject:
   m_ObjectHideFlags: 0
