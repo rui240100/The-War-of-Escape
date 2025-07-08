@@ -25783,6 +25783,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066666466}
   m_Mesh: {fileID: 4300100, guid: e9aae193cb635f34297c00a1fd162785, type: 3}
+--- !u!114 &1076485628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2612017542274926711, guid: 3d216f91d7bf2c440a8ea55157e168aa, type: 3}
+  m_PrefabInstance: {fileID: 146613081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077403844
 GameObject:
   m_ObjectHideFlags: 0
@@ -55619,7 +55630,7 @@ PrefabInstance:
     - target: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: itemIconUI
       value: 
-      objectReference: {fileID: 2128461689}
+      objectReference: {fileID: 1076485628}
     - target: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: otherPlayer
       value: 
@@ -55631,7 +55642,7 @@ PrefabInstance:
     - target: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: defaultKeyIcon
       value: 
-      objectReference: {fileID: 21300000, guid: f2ec73fddd5a1ee449ce1cd726e55e27, type: 3}
+      objectReference: {fileID: 21300000, guid: deb17d8b8105ea2479eaa9ef0c37ace8, type: 3}
     - target: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: keyUIContainer
       value: 
@@ -55639,7 +55650,7 @@ PrefabInstance:
     - target: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: defaultItemIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 0e122ea66a253264d8385ae8a160dd5d, type: 3}
+      objectReference: {fileID: 21300000, guid: deb17d8b8105ea2479eaa9ef0c37ace8, type: 3}
     - target: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: magatamaUIManager
       value: 
@@ -55822,17 +55833,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122212160}
   m_Mesh: {fileID: 4300112, guid: e9aae193cb635f34297c00a1fd162785, type: 3}
---- !u!114 &2128461689 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8051197414598240808, guid: 3d216f91d7bf2c440a8ea55157e168aa, type: 3}
-  m_PrefabInstance: {fileID: 146613081}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2130615982
 GameObject:
   m_ObjectHideFlags: 0
