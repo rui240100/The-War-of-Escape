@@ -131,12 +131,13 @@ GameObject:
   - component: {fileID: 28681487}
   - component: {fileID: 28681486}
   - component: {fileID: 28681485}
+  - component: {fileID: 28681489}
   m_Layer: 0
   m_Name: Floor (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &28681485
 BoxCollider:
@@ -227,6 +228,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28681489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28681484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: fabbe587db467b84181a035875f3444f, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &28916373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1080,12 +1113,13 @@ GameObject:
   - component: {fileID: 126631151}
   - component: {fileID: 126631150}
   - component: {fileID: 126631149}
+  - component: {fileID: 126631152}
   m_Layer: 0
   m_Name: Floor (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &126631148
 Transform:
@@ -1176,6 +1210,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126631147}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &126631152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126631147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 112663b070ef1794185f68402a67d640, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &132450767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3211,12 +3277,13 @@ GameObject:
   - component: {fileID: 253332993}
   - component: {fileID: 253332992}
   - component: {fileID: 253332991}
+  - component: {fileID: 253332994}
   m_Layer: 0
   m_Name: Floor (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &253332990
 Transform:
@@ -3307,6 +3374,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253332989}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &253332994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253332989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 76c8aa50fd43cc541863ac253d93a0c9, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &261028545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3553,12 +3652,13 @@ GameObject:
   - component: {fileID: 291156373}
   - component: {fileID: 291156372}
   - component: {fileID: 291156371}
+  - component: {fileID: 291156375}
   m_Layer: 0
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &291156371
 BoxCollider:
@@ -3649,6 +3749,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &291156375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291156370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: a721775597954324d91804071e11ef03, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &295479508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4137,12 +4269,13 @@ GameObject:
   - component: {fileID: 312514607}
   - component: {fileID: 312514606}
   - component: {fileID: 312514605}
+  - component: {fileID: 312514609}
   m_Layer: 0
   m_Name: Floor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &312514605
 BoxCollider:
@@ -4233,6 +4366,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &312514609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312514604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: c503d067c0ee99149a1d293d6eab829b, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &317338083
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,12 +4626,13 @@ GameObject:
   - component: {fileID: 319967600}
   - component: {fileID: 319967599}
   - component: {fileID: 319967598}
+  - component: {fileID: 319967602}
   m_Layer: 0
   m_Name: Floor (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &319967598
 BoxCollider:
@@ -4557,6 +4723,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &319967602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319967597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: c24021e955818dc43b88b5db68511852, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &322694060
 GameObject:
   m_ObjectHideFlags: 0
@@ -4824,12 +5022,13 @@ GameObject:
   - component: {fileID: 332826750}
   - component: {fileID: 332826749}
   - component: {fileID: 332826748}
+  - component: {fileID: 332826752}
   m_Layer: 0
   m_Name: Floor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &332826748
 BoxCollider:
@@ -4920,6 +5119,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332826752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332826747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 3aecbad6d2a5f11438af168709f645a3, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &336418390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6120,6 +6351,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2078245492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &433594884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433594885}
+  m_Layer: 0
+  m_Name: patrolPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &433594885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433594884}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.5, y: 0, z: 70}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &436209162
 GameObject:
   m_ObjectHideFlags: 0
@@ -6750,12 +7012,13 @@ GameObject:
   - component: {fileID: 470447710}
   - component: {fileID: 470447709}
   - component: {fileID: 470447708}
+  - component: {fileID: 470447712}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &470447708
 BoxCollider:
@@ -6846,6 +7109,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &470447712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470447707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 43604abc9e9d7954f9e9bde4c52e674a, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &505142218
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,12 +7565,13 @@ GameObject:
   - component: {fileID: 560395346}
   - component: {fileID: 560395345}
   - component: {fileID: 560395344}
+  - component: {fileID: 560395348}
   m_Layer: 0
   m_Name: Floor (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &560395344
 BoxCollider:
@@ -7366,6 +7662,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &560395348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560395343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: ba07dcc6058ebd3419f4058ddd7fa82a, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &563240751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7825,12 +8153,13 @@ GameObject:
   - component: {fileID: 622749316}
   - component: {fileID: 622749315}
   - component: {fileID: 622749314}
+  - component: {fileID: 622749318}
   m_Layer: 0
   m_Name: Floor (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &622749314
 BoxCollider:
@@ -7921,6 +8250,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &622749318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622749313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: f28aca1f1eab6584b9ea4419c5d96017, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &623593347
 GameObject:
   m_ObjectHideFlags: 0
@@ -9276,6 +9637,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2078245492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &714539409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 714539410}
+  m_Layer: 0
+  m_Name: patrolPoint (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &714539410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714539409}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.5, y: 0, z: 7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734959111
 GameObject:
   m_ObjectHideFlags: 0
@@ -9288,12 +9680,13 @@ GameObject:
   - component: {fileID: 734959114}
   - component: {fileID: 734959113}
   - component: {fileID: 734959112}
+  - component: {fileID: 734959116}
   m_Layer: 0
   m_Name: Floor (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &734959112
 BoxCollider:
@@ -9384,6 +9777,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &734959116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734959111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 4fab70d1f1b20b846a542fe33f602019, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &735213324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9768,12 +10193,13 @@ GameObject:
   - component: {fileID: 744625376}
   - component: {fileID: 744625375}
   - component: {fileID: 744625374}
+  - component: {fileID: 744625378}
   m_Layer: 0
   m_Name: Floor (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &744625374
 BoxCollider:
@@ -9864,6 +10290,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744625378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744625373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: ef967e3b890f86f4891ff997a08ee2a7, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &746033107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10278,12 +10736,13 @@ GameObject:
   - component: {fileID: 795503409}
   - component: {fileID: 795503408}
   - component: {fileID: 795503407}
+  - component: {fileID: 795503411}
   m_Layer: 0
   m_Name: Floor (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &795503407
 BoxCollider:
@@ -10374,6 +10833,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &795503411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795503406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 7a7ab9e980cfca3429768bb067e96cf1, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &805221194
 GameObject:
   m_ObjectHideFlags: 0
@@ -11321,12 +11812,13 @@ GameObject:
   - component: {fileID: 914878072}
   - component: {fileID: 914878071}
   - component: {fileID: 914878070}
+  - component: {fileID: 914878074}
   m_Layer: 0
   m_Name: Floor (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &914878070
 BoxCollider:
@@ -11417,6 +11909,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &914878074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914878069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 17a4d38a425ecde4286fc306b5d68473, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &921200274
 GameObject:
   m_ObjectHideFlags: 0
@@ -11429,12 +11953,13 @@ GameObject:
   - component: {fileID: 921200277}
   - component: {fileID: 921200276}
   - component: {fileID: 921200275}
+  - component: {fileID: 921200279}
   m_Layer: 0
   m_Name: Floor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &921200275
 BoxCollider:
@@ -11525,6 +12050,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &921200279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921200274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: ed49f6a11dcd2e64e8e0892ccd048f74, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &924532083
 GameObject:
   m_ObjectHideFlags: 0
@@ -11646,12 +12203,13 @@ GameObject:
   - component: {fileID: 935699472}
   - component: {fileID: 935699471}
   - component: {fileID: 935699470}
+  - component: {fileID: 935699474}
   m_Layer: 0
   m_Name: Floor (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &935699470
 BoxCollider:
@@ -11742,6 +12300,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &935699474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935699469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 4dfd857e0467e934abecc4bfda4e9b13, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &942212940
 GameObject:
   m_ObjectHideFlags: 0
@@ -11928,6 +12518,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 385355d885661594d931d96d75fefdbb, type: 3}
   m_PrefabInstance: {fileID: 942247787}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &947657478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947657479}
+  m_Layer: 0
+  m_Name: PatrolPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &947657479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947657478}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1395504175}
+  - {fileID: 1092926995}
+  - {fileID: 433594885}
+  - {fileID: 1935822268}
+  - {fileID: 714539410}
+  - {fileID: 1826540367}
+  - {fileID: 1538119084}
+  - {fileID: 1785505831}
+  - {fileID: 1244843314}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &963964674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12296,6 +12926,123 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2078245492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &982310722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: chaseSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: patrolSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: patrolPoints.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1395504175}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1092926995}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 433594885}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1935822268}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 714539410}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1826540367}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1538119084}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1785505831}
+    - target: {fileID: 2566550010902952497, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: 'patrolPoints.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1244843314}
+    - target: {fileID: 4847486271300496179, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_Name
+      value: Demon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389241302548563975, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1765879128}
+    - target: {fileID: 5422611358433307914, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1765879128}
+    - target: {fileID: 7270030914693350864, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1765879128}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930754656400359667, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
 --- !u!1 &984227059
 GameObject:
   m_ObjectHideFlags: 0
@@ -12308,12 +13055,13 @@ GameObject:
   - component: {fileID: 984227062}
   - component: {fileID: 984227061}
   - component: {fileID: 984227060}
+  - component: {fileID: 984227064}
   m_Layer: 0
   m_Name: Floor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &984227060
 BoxCollider:
@@ -12404,6 +13152,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &984227064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984227059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 4ec856f28bd7efd42900222933c4f68a, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1002541817
 GameObject:
   m_ObjectHideFlags: 0
@@ -12611,12 +13391,13 @@ GameObject:
   - component: {fileID: 1006040221}
   - component: {fileID: 1006040220}
   - component: {fileID: 1006040219}
+  - component: {fileID: 1006040223}
   m_Layer: 0
   m_Name: Floor (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1006040219
 BoxCollider:
@@ -12707,6 +13488,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1006040223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006040218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 21f8c5d23ec2a534781c38f6a904bb41, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1013202357
 GameObject:
   m_ObjectHideFlags: 0
@@ -13523,6 +14336,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2078245492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1092926994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092926995}
+  m_Layer: 0
+  m_Name: patrolPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092926995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092926994}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.5, y: 0, z: 12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1097203012
 GameObject:
   m_ObjectHideFlags: 0
@@ -13535,12 +14379,13 @@ GameObject:
   - component: {fileID: 1097203015}
   - component: {fileID: 1097203014}
   - component: {fileID: 1097203013}
+  - component: {fileID: 1097203017}
   m_Layer: 0
   m_Name: Floor (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1097203013
 BoxCollider:
@@ -13631,6 +14476,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1097203017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097203012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: ec1d45312852a6a488e73f2348e28328, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1114483720
 GameObject:
   m_ObjectHideFlags: 0
@@ -15119,12 +15996,13 @@ GameObject:
   - component: {fileID: 1229695477}
   - component: {fileID: 1229695476}
   - component: {fileID: 1229695475}
+  - component: {fileID: 1229695479}
   m_Layer: 0
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1229695475
 BoxCollider:
@@ -15215,6 +16093,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229695479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229695474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: ae5230c2b7a0ff54c8c89fe40073184f, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1232594079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15694,6 +16604,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2078245492}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1244843313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1244843314}
+  m_Layer: 0
+  m_Name: patrolPoint (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1244843314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244843313}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 45, y: 0, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245433191
 GameObject:
@@ -18519,6 +19460,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 385355d885661594d931d96d75fefdbb, type: 3}
   m_PrefabInstance: {fileID: 1384665838}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1395504174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395504175}
+  m_Layer: 0
+  m_Name: patrolPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395504175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395504174}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399841559
 GameObject:
   m_ObjectHideFlags: 0
@@ -18531,12 +19503,13 @@ GameObject:
   - component: {fileID: 1399841562}
   - component: {fileID: 1399841561}
   - component: {fileID: 1399841560}
+  - component: {fileID: 1399841564}
   m_Layer: 0
   m_Name: Floor (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1399841560
 BoxCollider:
@@ -18627,6 +19600,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1399841564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399841559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: f77e6b28cb59b3d4a899a1bb0403519a, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1404577394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20051,12 +21056,13 @@ GameObject:
   - component: {fileID: 1449814663}
   - component: {fileID: 1449814662}
   - component: {fileID: 1449814661}
+  - component: {fileID: 1449814664}
   m_Layer: 0
   m_Name: Floor (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1449814660
 Transform:
@@ -20147,6 +21153,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449814659}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1449814664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449814659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: e7f41a5db5dcce94789b7cd9b43e3e9e, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1451794484
 GameObject:
   m_ObjectHideFlags: 0
@@ -20987,6 +22025,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 385355d885661594d931d96d75fefdbb, type: 3}
   m_PrefabInstance: {fileID: 1537140244}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1538119083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538119084}
+  m_Layer: 0
+  m_Name: patrolPoint (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538119084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538119083}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29, y: 0, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545659195
 GameObject:
   m_ObjectHideFlags: 0
@@ -20999,12 +22068,13 @@ GameObject:
   - component: {fileID: 1545659198}
   - component: {fileID: 1545659197}
   - component: {fileID: 1545659196}
+  - component: {fileID: 1545659200}
   m_Layer: 0
   m_Name: Floor (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1545659196
 BoxCollider:
@@ -21095,6 +22165,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1545659200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545659195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 41aeec03cac36a04a9e8c58656838797, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1554143732
 GameObject:
   m_ObjectHideFlags: 0
@@ -21107,12 +22209,13 @@ GameObject:
   - component: {fileID: 1554143735}
   - component: {fileID: 1554143734}
   - component: {fileID: 1554143733}
+  - component: {fileID: 1554143737}
   m_Layer: 0
   m_Name: Floor (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1554143733
 BoxCollider:
@@ -21203,6 +22306,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554143737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554143732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: b17aae2e72bed0046b70ba66ffeb1697, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1554320742
 GameObject:
   m_ObjectHideFlags: 0
@@ -23186,12 +24321,13 @@ GameObject:
   - component: {fileID: 1728463445}
   - component: {fileID: 1728463444}
   - component: {fileID: 1728463443}
+  - component: {fileID: 1728463447}
   m_Layer: 0
   m_Name: Floor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1728463443
 BoxCollider:
@@ -23282,6 +24418,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1728463447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728463442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 1577cfb9060f30a489ad56012dc3e790, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1731813966
 GameObject:
   m_ObjectHideFlags: 0
@@ -23294,12 +24462,13 @@ GameObject:
   - component: {fileID: 1731813969}
   - component: {fileID: 1731813968}
   - component: {fileID: 1731813967}
+  - component: {fileID: 1731813971}
   m_Layer: 0
   m_Name: Floor (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1731813967
 BoxCollider:
@@ -23390,6 +24559,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731813971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731813966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 8324fc5ad8f000e45996e49475755cf0, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1735993703
 GameObject:
   m_ObjectHideFlags: 0
@@ -23845,12 +25046,13 @@ GameObject:
   - component: {fileID: 1759799739}
   - component: {fileID: 1759799738}
   - component: {fileID: 1759799737}
+  - component: {fileID: 1759799741}
   m_Layer: 0
   m_Name: Floor (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1759799737
 BoxCollider:
@@ -23941,6 +25143,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1759799741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759799736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 5fdfd82d867a61246a21f4e757f55989, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1761516023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24019,6 +25253,181 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 385355d885661594d931d96d75fefdbb, type: 3}
   m_PrefabInstance: {fileID: 1761516023}
   m_PrefabAsset: {fileID: 0}
+--- !u!43 &1765879128
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pb_Mesh-31032
+  serializedVersion: 11
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 276
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 140
+    localAABB:
+      m_Center: {x: 0.000000059604645, y: 0, z: 0.24999988}
+      m_Extent: {x: 0.50000006, y: 1, z: 0.7500001}
+  - serializedVersion: 2
+    firstByte: 552
+    indexCount: 48
+    topology: 0
+    baseVertex: 0
+    firstVertex: 140
+    vertexCount: 48
+    localAABB:
+      m_Center: {x: 0, y: 0.50000095, z: 1.4000001}
+      m_Extent: {x: 2, y: 0.5, z: 1.5000002}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 0000010002000300010004000500060007000800060009000a0006000b000c0006000d000e000f0010000e00100011001200130014001200140015001600170018001600180019001a001b001c001a001c001d001e001f0020001e0020002100220023002400220024002500250024002600250026002700280029002a0028002a002b002c002d002e002c002e002f003000310032003000320033003300320034003300340035003600370038003600380039003a003b003c003a003c003d003e003f0040003e0040004100420043004400420044004500450044004600450046004700480049004a0048004a004b004c004d004e004c004e004f005000510052005000520053005400550056005400560057005800010059005a0001005800590001005b005b0001005c005d0001005a005e0001005d005c0001005f005f0001000000600001005e00610001006000620001006100630001006200020001006400640001006500660001006300040001006600650001006700670001000300680006006900690006006a006b00060068006c0006006b006a0006006d006d0006006e006f0006006c00070006006f006e00060070007000060008007100060005000b0006007100090006007200720006000c00730006000a000d0006007300740075007600740076007700780079007a0078007a007b007c007d007e007c007e007f00800081008200800082008300840085008600840086008700880089008a0088008a008b008c008d008e008f0090009100920093009400950096009700980099009a009b009c009d009e009f00a000a100a200a300a400a500a600a700a800a900aa00ab00ac00ad00ae00af00b000b100b200b300b400b500b600b700b800b900ba00bb00
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 188
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 40
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 9024
+    _typelessdata: 7f371ebe0000803f7978f3be000000000000803f00000000000080bf00000000937a7bb5000080bff04d273f83c6783f000000000000803f00000000000000000000803f00000000000080bf00000000937a7bb5000080bfb60e003faef8ff3e000000000000803f040000bf000000000000803f00000000000080bf00000000937a7bb5000080bfb30e003fd8fd7e3f7578f33e0000803f7c371ebe000000000000803f00000000000080bf00000000a7402135000080bf4c91e83c893b273f0200003f0000803f00000000000000000000803f00000000000080bf00000000a7402135000080bfa09c863ba4f8ff3e00000000000080bf040000bf00000000000080bf000000000000803f00000000efd88235000080bfae0e003fd8fd7e3f00000000000080bf0000000000000000000080bf000000000000803f00000000efd88235000080bfac0e003fb2f8ff3e7f371ebe000080bf7978f3be00000000000080bf000000000000803f00000000efd88235000080bfe49eb13e83c6783f7c371e3e000080bf7378f33e00000000000080bf000000000000803f000000000aaf6fb4000080bfdf4d273fc645e63c1a79963e000080bfbf1bcf3e00000000000080bf000000000000803f000000000aaf6fb4000080bf9db54a3f07e3c93dc11bcf3e000080bf1b7996be00000000000080bf000000000000803f00000000f8cf11b6000080bfabce663f41a34a3f1c79963e000080bfc21bcfbe00000000000080bf000000000000803f00000000f8cf11b6000080bfa9b54a3f4bbc663f7578f33e000080bf7c371e3e00000000000080bf000000000000803f000000009b2091b5000080bfd5d8783f357ab13e0200003f000080bf0000000000000000000080bf000000000000803f000000009b2091b5000080bf2b107f3fa0f8ff3e7b78f3be000080bf80371ebe011964bf000000007171e8be7171e83e00000000011964bf000080bf4c07ce3db3e3ed397b78f3be0000803f80371ebe011964bf000000007171e8be7271e83e00000000021964bf000080bf2507ce3db2da7f3fc61bcfbe0000803f1e7996be011964bf000000007171e8be7171e83e00000000011964bf000080bf41514d3eb2da7f3fc61bcfbe000080bf1e7996be011964bf000000007171e8be7171e83e00000000011964bf000080bf49514d3eb3e3ed39c61bcfbe000080bf1e7996bef20435bf00000000f50435bff404353f00000000f20435bf000080bf49514d3eb3e3ed39c61bcfbe0000803f1e7996bef20435bf00000000f50435bff504353f00000000f10435bf000080bf41514d3eb2da7f3f1e7996be0000803fc51bcfbef20435bf00000000f50435bff404353f00000000f20435bf000080bf78cf993eb2da7f3f1e7996be000080bfc51bcfbef20435bf00000000f50435bff504353f00000000f20435bf000080bf78cf993eb3e3ed391e7996be000080bfc51bcfbe6b71e8be00000000031964bf0319643f000000006b71e8be000080bf78cf993eb3e3ed391e7996be0000803fc51bcfbe6b71e8be00000000031964bf0319643f000000006b71e8be000080bf78cf993eb2da7f3f7f371ebe0000803f7978f3be6b71e8be00000000031964bf0319643f000000006b71e8be000080bf49f6cc3eb2da7f3f7f371ebe000080bf7978f3be6b71e8be00000000031964bf0319643f000000006b71e8be000080bf49f6cc3eb3e3ed397f371ebe000080bf7978f3be513020be0000000026d97cbf25d97c3f00000000513020be000080bf49f6cc3eb3e3ed397f371ebe0000803f7978f3be513020be0000000026d97cbf25d97c3f00000000513020be000080bf49f6cc3eb2da7f3f000000000000803f040000bf513020be0000000026d97cbf25d97c3f00000000513020be000080bf8c0e003fb2da7f3f00000000000080bf040000bf513020be0000000026d97cbf25d97c3f00000000513020be000080bf8c0e003fb3e3ed3900000000000080bf040000bf5e30203e0000000025d97cbf25d97c3f000000005e30203e000080bf8c0e003fb3e3ed39000000000000803f040000bf5e30203e0000000025d97cbf25d97c3f000000005e30203e000080bf8c0e003fb2da7f3f7f371e3e0000803f7878f3be5e30203e0000000025d97cbf25d97c3f000000005e30203e000080bff1a1193fb2da7f3f7f371e3e000080bf7878f3be5e30203e0000000025d97cbf25d97c3f000000005e30203e000080bff1a1193fb3e3ed397f371e3e000080bf7878f3be7a71e83e00000000ff1864bfff18643f000000007a71e83e000080bff1a1193fb3e3ed397f371e3e0000803f7878f3be7a71e83e00000000ff1864bfff18643f000000007a71e83e000080bff1a1193fb2da7f3f1c79963e0000803fc21bcfbe1c79163f00000000ba1b4fbfba1b4f3f000000001d79163f000080bf5935333fb2da7f3f1c79963e000080bfc21bcfbe1c79163f00000000ba1b4fbfba1b4f3f000000001c79163f000080bf5835333fb3e3ed39c11bcf3e0000803f1b7996bef604353f00000000f00435bff004353f00000000f604353f000080bfbfc84c3fb2da7f3fc11bcf3e000080bf1b7996bef604353f00000000f00435bff004353f00000000f704353f000080bfbcc84c3fb3e3ed39c11bcf3e000080bf1b7996be0219643f000000006f71e8be6f71e83e000000000219643f000080bfbcc84c3fb3e3ed39c11bcf3e0000803f1b7996be0219643f000000006f71e8be6f71e83e000000000219643f000080bfbfc84c3fb2da7f3f7578f33e0000803f7c371ebe0219643f000000006f71e8be6f71e83e000000000219643f000080bf245c663fb2da7f3f7578f33e000080bf7c371ebe0219643f000000006f71e8be6f71e83e000000000219643f000080bf205c663fb3e3ed397578f33e000080bf7c371ebe25d97c3f00000000543020be5430203e0000000025d97c3f000080bf205c663fb3e3ed397578f33e0000803f7c371ebe25d97c3f00000000543020be5430203e0000000025d97c3f000080bf245c663fb2da7f3f0200003f0000803f0000000025d97c3f00000000543020be5430203e0000000025d97c3f000080bf8fef7f3fb2da7f3f0200003f000080bf0000000025d97c3f00000000543020be5430203e0000000025d97c3f000080bf8def7f3fb3e3ed390200003f000080bf0000000025d97c3f000000005430203e543020be0000000025d97c3f000080bf74d8353ab3e3ed390200003f0000803f0000000025d97c3f000000005430203e543020be0000000025d97c3f000080bf8cf0353ab2da7f3f7578f33e0000803f7c371e3e7078733f000000007b379e3e7d379ebe000000007078733f000080bf3007ce3db2da7f3f7578f33e000080bf7c371e3e7078733f000000007b379e3e7d379ebe000000007078733f000080bf0807ce3db3e3ed39c01bcf3e0000803f1a79963e0019643f000000007671e83e7671e8be000000000019643f000080bf35514d3eb2da7f3fc01bcf3e000080bf1a79963e0019643f000000007671e83e7671e8be000000000019643f000080bf30514d3eb3e3ed39c01bcf3e000080bf1a79963ef204353f00000000f504353ff40435bf00000000f204353f000080bf30514d3eb3e3ed39c01bcf3e0000803f1a79963ef204353f00000000f504353ff40435bf00000000f204353f000080bf35514d3eb2da7f3f1a79963e0000803fbf1bcf3ef204353f00000000f504353ff40435bf00000000f204353f000080bf6acf993eb2da7f3f1a79963e000080bfbf1bcf3ef204353f00000000f504353ff50435bf00000000f104353f000080bf6acf993eb3e3ed391a79963e000080bfbf1bcf3e7071e83e000000000119643f021964bf000000007171e83e000080bf6acf993eb3e3ed391a79963e0000803fbf1bcf3e7071e83e000000000119643f021964bf000000007171e83e000080bf6acf993eb2da7f3f7c371e3e0000803f7378f33e7071e83e000000000119643f021964bf000000007171e83e000080bf38f6cc3eb2da7f3f7c371e3e000080bf7378f33e7071e83e000000000119643f021964bf000000007171e83e000080bf38f6cc3eb3e3ed397c371e3e000080bf7378f33e5530203e0000000025d97c3f25d97cbf000000005530203e000080bf38f6cc3eb3e3ed397c371e3e0000803f7378f33e5530203e0000000025d97c3f25d97cbf000000005530203e000080bf38f6cc3eb2da7f3f000080320000803f0100003f5530203e0000000025d97c3f25d97cbf000000005530203e000080bf840e003fb2da7f3f00008032000080bf0100003f5530203e0000000025d97c3f25d97cbf000000005530203e000080bf840e003fb3e3ed3900008032000080bf0100003f623020be0000000024d97c3f25d97cbf00000000633020be000080bf840e003fb3e3ed39000080320000803f0100003f623020be0000000024d97c3f25d97cbf00000000633020be000080bf840e003fb2da7f3f79371ebe0000803f7278f33e7d379ebe000000007078733f707873bf000000007d379ebe000080bfe9a1193fb2da7f3f79371ebe000080bf7278f33e7d379ebe000000007078733f707873bf000000007d379ebe000080bfe9a1193fb3e3ed39187996be0000803fbe1bcf3e7271e8be000000000119643f011964bf000000007271e8be000080bf4e35333fb2da7f3f187996be000080bfbe1bcf3e7271e8be000000000119643f011964bf000000007271e8be000080bf4f35333fb3e3ed39187996be000080bfbe1bcf3ef30435bf00000000f304353ff40435bf00000000f40435bf000080bf4f35333fb3e3ed39187996be0000803fbe1bcf3ef30435bf00000000f304353ff40435bf00000000f40435bf000080bf4e35333fb2da7f3fbd1bcfbe0000803f1979963ef30435bf00000000f304353ff40435bf00000000f40435bf000080bfaec84c3fb2da7f3fbd1bcfbe000080bf1979963ef30435bf00000000f304353ff40435bf00000000f40435bf000080bfb4c84c3fb3e3ed39bd1bcfbe000080bf1979963e011964bf000000007071e83e7171e8be00000000021964bf000080bfb4c84c3fb3e3ed39bd1bcfbe0000803f1979963e011964bf000000007071e83e7171e8be00000000021964bf000080bfaec84c3fb2da7f3f7178f3be0000803f7a371e3e011964bf000000007071e83e7171e8be00000000021964bf000080bf135c663fb2da7f3f7178f3be000080bf7a371e3e011964bf000000007071e83e7171e8be00000000021964bf000080bf195c663fb3e3ed397178f3be000080bf7a371e3e25d97cbf000000005630203e563020be0000000025d97cbf000080bf195c663fb3e3ed397178f3be0000803f7a371e3e25d97cbf000000005630203e563020be0000000025d97cbf000080bf135c663fb2da7f3f000000bf0000803f0000000025d97cbf000000005630203e563020be0000000025d97cbf000080bf79ef7f3fb2da7f3f000000bf000080bf0000000025d97cbf000000005630203e563020be0000000025d97cbf000080bf7def7f3fb3e3ed39000000bf000080bf000000002ad97cbf00000000d42f20bed42f203e000000002ad97cbf000080bfacff353ab3e3ed39000000bf0000803f000000002ad97cbf00000000d42f20bed42f203e000000002ad97cbf000080bf70e7353ab2da7f3f7b78f3be0000803f80371ebe2ad97cbf00000000d42f20bed42f203e000000002ad97cbf000080bf2507ce3db2da7f3f7b78f3be000080bf80371ebe2ad97cbf00000000d42f20bed42f203e000000002bd97cbf000080bf4c07ce3db3e3ed397178f3be0000803f7a371e3e000000000000803f00000000000080bf0000000064acdab4000080bfddd8783f3b7ab13e000000bf0000803f00000000000000000000803f00000000000080bf000000008a0001b5000080bf31107f3fa6f8ff3ebd1bcfbe0000803f1979963e000000000000803f00000000000080bf00000000b557b3b4000080bfabce663f9355553e7b78f3be0000803f80371ebe000000000000803f00000000000080bf0000000005181ab5000080bfe6d8783f8b3b273fc61bcfbe0000803f1e7996be000000000000803f00000000000080bf00000000802f33b5000080bfb3ce663f47a34a3f187996be0000803fbe1bcf3e000000000000803f00000000000080bf00000000ca520233000080bfa9b54a3f07e3c93d79371ebe0000803f7278f33e000000000000803f00000000000080bf00000000c1d89232000080bfeb4d273fb645e63c1e7996be0000803fc51bcfbe000000000000803f00000000000080bf0000000022bf6fb5000080bfadb54a3f4dbc663f000080320000803f0100003f000000000000803f00000000000080bf00000000a0091a31000080bfb10e003f88da7a3b7c371e3e0000803f7378f33e000000000000803f00000000000080bf000000009bb55db3000080bff59eb13ea645e63c1a79963e0000803fbf1bcf3e000000000000803f00000000000080bf0000000062ea2934000080bf059f553e07e3c93dc01bcf3e0000803f1a79963e000000000000803f00000000000080bf00000000d4d20e35000080bff875ca3d8b55553e7f371e3e0000803f7878f3be000000000000803f00000000000080bf00000000d5159235000080bfee9eb13e83c6783f1c79963e0000803fc21bcfbe000000000000803f00000000000080bf00000000d351c035000080bff59e553e4bbc663f7578f33e0000803f7c371e3e000000000000803f00000000000080bf00000000aef91635000080bf8c91e83c377ab13ec11bcf3e0000803f1b7996be000000000000803f00000000000080bf000000007d0d8435000080bfdb75ca3d43a34a3f000000bf000080bf0000000000000000000080bf000000000000803f0000000093008134000080bf4098863baef8ff3e7178f3be000080bf7a371e3e00000000000080bf000000000000803f000000008ad9da33000080bf5490e83c487ab13ebd1bcfbe000080bf1979963e00000000000080bf000000000000803f000000005e9e1cb3000080bf9575ca3db055553e7b78f3be000080bf80371ebe00000000000080bf000000000000803f00000000dbef1635000080bf908fe83c8b3b273fc61bcfbe000080bf1e7996be00000000000080bf000000000000803f000000006d5f6d35000080bf7d75ca3d47a34a3f187996be000080bfbe1bcf3e00000000000080bf000000000000803f00000000090339b5000080bfd09e553e3ce3c93d79371ebe000080bf7278f33e00000000000080bf000000000000803f00000000e9a649b5000080bfd89eb13e5a46e63c1e7996be000080bfc51bcfbe00000000000080bf000000000000803f0000000065d48a35000080bfd09e553e4dbc663f00008032000080bf0100003f00000000000080bf000000000000803f00000000642c58b5000080bfa40e003f18dd7a3b7f371e3e000080bf7878f3be00000000000080bf000000000000803f000000001e0d9cb5000080bfeb4d273f83c6783fc01bcf3e000080bf1a79963e00000000000080bf000000000000803f00000000f16b5eb5000080bfa1ce663f8b55553e7578f33e000080bf7c371ebe00000000000080bf000000000000803f000000008aa88db5000080bfd9d8783f873b273f0000003f000000bf0000803f00000000000000000000803f000080bf0000000000000000000080bf00000000000000000000003f0000003f0000803f00000000000000000000803f000080bf0000000000000000000080bf000000000000803f000000bf0000003f0000803f00000000000000000000803f000080bf0000000000000000000080bf0000803f0000803f000000bf000000bf0000803f00000000000000000000803f000080bf0000000000000000000080bf0000803f000000000000003f0000003f0000803f000000000000803f00000000000080bf0000000000000000000080bf00000000000000000000003f0000003f00000000000000000000803f00000000000080bf0000000000000000000080bf000000000000803f000000bf0000003f00000000000000000000803f00000000000080bf0000000000000000000080bf0000803f0000803f000000bf0000003f0000803f000000000000803f00000000000080bf0000000000000000000080bf0000803f000000000000003f0000003f000000000000000000000000000080bf000080bf0000000000000000000080bf00000000000000000000003f000000bf000000000000000000000000000080bf000080bf0000000000000000000080bf000000000000803f000000bf000000bf000000000000000000000000000080bf000080bf0000000000000000000080bf0000803f0000803f000000bf0000003f000000000000000000000000000080bf000080bf0000000000000000000080bf0000803f000000000000003f000000bf0000000000000000000080bf00000000000080bf0000000000000000000080bf00000000000000000000003f000000bf0000803f00000000000080bf00000000000080bf0000000000000000000080bf000000000000803f000000bf000000bf0000803f00000000000080bf00000000000080bf0000000000000000000080bf0000803f0000803f000000bf000000bf0000000000000000000080bf00000000000080bf0000000000000000000080bf0000803f00000000000000bf000000bf0000803f000080bf00000000000000000000000000000000000080bf000080bf0000000000000000000000bf0000003f0000803f000080bf00000000000000000000000000000000000080bf000080bf000000000000803f000000bf0000003f00000000000080bf00000000000000000000000000000000000080bf000080bf0000803f0000803f000000bf000000bf00000000000080bf00000000000000000000000000000000000080bf000080bf0000803f000000000000003f000000bf000000000000803f000000000000000000000000000000000000803f000080bf00000000000000000000003f0000003f000000000000803f000000000000000000000000000000000000803f000080bf000000000000803f0000003f0000003f0000803f0000803f000000000000000000000000000000000000803f000080bf0000803f0000803f0000003f000000bf0000803f0000803f000000000000000000000000000000000000803f000080bf0000803f0000000000000000e0ffff3ee7ccccbdd123fa3e07394f3f9cc2a6be832c5bbf7848043f00000000000080bf15efc33e6d747041f304b53f88825a3f9b993940d123fa3e07394f3f9cc2a6be832c5bbf7848043f00000000000080bf16ef433f00000000000000401000003f9b993940d123fa3e07394f3f9cc2a6be832c5bbf7848043f00000000000080bf0000000000000000000000401000003f9b99394000000000000000000000803f65177cbf5341323e00000000000080bf020020c14004353ef304b53f88825a3f9b99394000000000000000000000803f65177cbf5341323e00000000000080bf8529bcc020ae3440000000001000003f9b99394000000000000000000000803f65177cbf5341323e00000000000080bf1098d7bfdc3464c000000000e0ffff3ee7ccccbded1bd03db1357b3f497927be6ba37ebf0ff3d23d00000000000080bf15efc33e6d7470412fbdbbb30800803f9b993940ed1bd03db1357b3f497927be6ba37ebf0ff3d23d00000000000080bf16ef433f00000000f304b53f88825a3f9b993940ed1bd03db1357b3f497927be6ba37ebf0ff3d23d00000000000080bf0000000000000000f304b53f88825a3f9b99394000000000000000000000803fba4476bf86d38b3e00000000000080bfb292e1c0cc1c313f2fbdbbb30800803f9b99394000000000000000000000803fba4476bf86d38b3e00000000000080bf0024a83c249fa43e000000001000003f9b99394000000000000000000000803fba4476bf86d38b3e00000000000080bf00c221bd7e19cfbe00000000e0ffff3ee7ccccbdee1bd0bdb1357b3f497927be6ba37ebf10f3d2bd4979a7b0000080bf15efc33e6d747041f304b5bf88825a3f9b993940ee1bd0bdb1357b3f497927be6ba37ebf10f3d2bd4979a7b0000080bf16ef433f000000002fbdbbb30800803f9b993940ee1bd0bdb1357b3f497927be6ba37ebf10f3d2bd4979a7b0000080bf00000000000000002fbdbbb30800803f9b99394000000000000000000000803fb84476bf93d38bbe00000000000080bf8026a8bc1c9fa43ef304b5bf88825a3f9b99394000000000000000000000803fb84476bf93d38bbe00000000000080bfac92e140f01c313f000000001000003f9b99394000000000000000000000803fb84476bf93d38bbe00000000000080bf40c1213df219cfbe00000000e0ffff3ee7ccccbdd123fabe07394f3f9cc2a6be832c5bbf784804bf00000000000080bf15efc33e6d747041000000c01000003f9b993940d123fabe07394f3f9cc2a6be832c5bbf784804bf00000000000080bf16ef433f00000000f304b5bf88825a3f9b993940d123fabe07394f3f9cc2a6be832c5bbf784804bf00000000000080bf0000000000000000f304b5bf88825a3f9b99394000000000000000000000803f64177cbf794132be00000000000080bf8529bc400eae3440000000c01000003f9b99394000000000000000000000803f64177cbf794132be00000000000080bfffff1f41c005353e000000001000003f9b99394000000000000000000000803f64177cbf794132be00000000000080bf1298d73fd23464c000000000e0ffff3ee7ccccbdd823fabe0a394fbf7ec2a6be822c5b3f7a4804bf7fc2a632000080bf15efc33e6d747041f404b5bf60f6153e9b993940d823fabe0a394fbf7ec2a6be822c5b3f7a4804bf7fc2a632000080bf16ef433f00000000000000c01000003f9b993940d823fabe0a394fbf7ec2a6be822c5b3f7a4804bf7fc2a632000080bf0000000000000000000000c01000003f9b99394000000000000000000000803f65177cbf6641323e00000000000080bf00002041f00435bef404b5bf60f6153e9b99394000000000000000000000803f65177cbf6641323e00000000000080bf8929bc400fae34c0000000001000003f9b99394000000000000000000000803f65177cbf6641323e00000000000080bffc97d73fcd34644000000000e0ffff3ee7ccccbdec1bd0bdb3357bbff67827be6ba37e3f0df3d2bdf778a730000080bf15efc33e6d7470412fdecc32000080359b993940ec1bd0bdb3357bbff67827be6ba37e3f0df3d2bdf778a730000080bf16ef433f00000000f404b5bf60f6153e9b993940ec1bd0bdb3357bbff67827be6ba37e3f0df3d2bdf778a730000080bf0000000000000000f404b5bf60f6153e9b99394000000000000000000000803fba4476bf88d38b3e00000000000080bfb092e140cb1c31bf2fdecc32000080359b99394000000000000000000000803fba4476bf88d38b3e00000000000080bf0026a8bc209fa4be000000001000003f9b99394000000000000000000000803fba4476bf88d38b3e00000000000080bf00c1213d8419cf3e00000000e0ffff3ee7ccccbdf31bd03db4357bbff87827be6ba37e3f13f3d23d00000000000080bf15efc33e6d747041f104b53f60f6153e9b993940f31bd03db4357bbff87827be6ba37e3f13f3d23d00000000000080bf16ef433f000000002fdecc32000080359b993940f31bd03db4357bbff87827be6ba37e3f13f3d23d00000000000080bf00000000000000002fdecc32000080359b99394000000000000000000000803fb74476bf9ed38bbe00000000000080bf8026a83c1d9fa4bef104b53f60f6153e9b99394000000000000000000000803fb74476bf9ed38bbe00000000000080bfaa92e1c0181d31bf000000001000003f9b99394000000000000000000000803fb74476bf9ed38bbe00000000000080bf00c221bd5c1acf3e00000000e0ffff3ee7ccccbdd223fa3e0d394fbf7ac2a6be852c5b3f7648043f00000000000080bf15efc33e6d747041000000401000003f9b993940d223fa3e0d394fbf7ac2a6be852c5b3f7648043f00000000000080bf16ef433f00000000f104b53f60f6153e9b993940d223fa3e0d394fbf7ac2a6be852c5b3f7648043f00000000000080bf0000000000000000f104b53f60f6153e9b99394000000000000000000000803f65177cbf694132be00000000000080bf7f29bcc015ae34c0000000401000003f9b99394000000000000000000000803f65177cbf694132be00000000000080bf000020c1000535be000000001000003f9b99394000000000000000000000803f65177cbf694132be00000000000080bf1c98d7bfdd346440
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.00000047683716, z: 1.2}
+    m_Extent: {x: 2, y: 1.0000005, z: 1.7000003}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1767732376
 GameObject:
   m_ObjectHideFlags: 0
@@ -24672,6 +26081,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780790299}
   m_Mesh: {fileID: 6643394183232773, guid: d1a0377cf789263439d9ae63236a7c6e, type: 3}
+--- !u!1 &1785505830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785505831}
+  m_Layer: 0
+  m_Name: patrolPoint (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1785505831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785505830}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 34.5, y: 0, z: -17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790779678
 GameObject:
   m_ObjectHideFlags: 0
@@ -25104,6 +26544,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2078245492}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1826540366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826540367}
+  m_Layer: 0
+  m_Name: patrolPoint (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1826540367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826540366}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20, y: 0, z: -8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835417459
 GameObject:
@@ -25659,12 +27130,13 @@ GameObject:
   - component: {fileID: 1887159542}
   - component: {fileID: 1887159541}
   - component: {fileID: 1887159540}
+  - component: {fileID: 1887159544}
   m_Layer: 0
   m_Name: Floor (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1887159540
 BoxCollider:
@@ -25755,6 +27227,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1887159544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887159539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 1891e1a6985212c45a6b954120ee0615, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1887965243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26126,12 +27630,13 @@ GameObject:
   - component: {fileID: 1911670203}
   - component: {fileID: 1911670202}
   - component: {fileID: 1911670201}
+  - component: {fileID: 1911670205}
   m_Layer: 0
   m_Name: Floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1911670201
 BoxCollider:
@@ -26222,6 +27727,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1911670205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911670200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 3146763f5c49b774c93c107079981e40, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1912409950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26594,6 +28131,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 385355d885661594d931d96d75fefdbb, type: 3}
   m_PrefabInstance: {fileID: 1935643780}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1935822267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935822268}
+  m_Layer: 0
+  m_Name: patrolPoint (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1935822268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935822267}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.5, y: 0, z: 70}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947657479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1948573153
 GameObject:
   m_ObjectHideFlags: 0
@@ -26606,12 +28174,13 @@ GameObject:
   - component: {fileID: 1948573156}
   - component: {fileID: 1948573155}
   - component: {fileID: 1948573154}
+  - component: {fileID: 1948573158}
   m_Layer: 0
   m_Name: Floor (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1948573154
 BoxCollider:
@@ -26702,6 +28271,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948573158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948573153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 202c98d92dec56546ba3a880e50f336a, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1968348501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27633,12 +29234,13 @@ GameObject:
   - component: {fileID: 2034367864}
   - component: {fileID: 2034367863}
   - component: {fileID: 2034367862}
+  - component: {fileID: 2034367866}
   m_Layer: 0
   m_Name: Floor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &2034367862
 BoxCollider:
@@ -27729,6 +29331,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2034367866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034367861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 089c6dcb44e740348a35d550f0063070, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &2040409404
 GameObject:
   m_ObjectHideFlags: 0
@@ -27849,12 +29483,13 @@ GameObject:
   - component: {fileID: 2047144550}
   - component: {fileID: 2047144549}
   - component: {fileID: 2047144548}
+  - component: {fileID: 2047144552}
   m_Layer: 0
   m_Name: Floor (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &2047144548
 BoxCollider:
@@ -27945,6 +29580,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047144552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047144547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 4f93c6d3ae24a6545986db09176a75e2, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &2078245491
 GameObject:
   m_ObjectHideFlags: 0
@@ -28329,12 +29996,13 @@ GameObject:
   - component: {fileID: 2085379689}
   - component: {fileID: 2085379688}
   - component: {fileID: 2085379687}
+  - component: {fileID: 2085379691}
   m_Layer: 0
   m_Name: Floor (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &2085379687
 BoxCollider:
@@ -28425,6 +30093,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085379691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085379686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 0200df6cae5b4b044a2acd6450540d07, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &2086672459
 GameObject:
   m_ObjectHideFlags: 0
@@ -28653,12 +30353,13 @@ GameObject:
   - component: {fileID: 2108872596}
   - component: {fileID: 2108872595}
   - component: {fileID: 2108872594}
+  - component: {fileID: 2108872598}
   m_Layer: 0
   m_Name: Floor (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &2108872594
 BoxCollider:
@@ -28749,6 +30450,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 586274298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2108872598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108872593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 6370b9ea16b2d0744b171614f5d5d117, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &2111207752
 GameObject:
   m_ObjectHideFlags: 0
@@ -29876,6 +31609,30 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 50de9aa7b0fed874e9c35e969de6b5e2, type: 2}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: chaseSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: patrolSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: 'patrolPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1395504175}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: 'patrolPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1092926995}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: 'patrolPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 433594885}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: 'patrolPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 714539410}
     - target: {fileID: 1221141074391360481, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.406124
@@ -30206,3 +31963,5 @@ SceneRoots:
   - {fileID: 2657775375564035194}
   - {fileID: 1975685770375488432}
   - {fileID: 6846401626507695516}
+  - {fileID: 947657479}
+  - {fileID: 982310722}
