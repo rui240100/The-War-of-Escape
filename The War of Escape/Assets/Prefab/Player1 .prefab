@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1811291698494913743}
   - component: {fileID: 8405277770918588940}
   m_Layer: 0
-  m_Name: Player1 Model
+  m_Name: 'Player1 '
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,10 +212,8 @@ MonoBehaviour:
   itemIconUI: {fileID: 0}
   defaultItemIcon: {fileID: 0}
   itemBackgroundUI: {fileID: 0}
-  keyIconUI: {fileID: 0}
   keyIconSprite: {fileID: 0}
   defaultKeyIcon: {fileID: 0}
-  keyIcons: []
   keyCountText: {fileID: 0}
   magatamaCount: 0
   magatamaUIManager: {fileID: 0}
@@ -223,6 +221,8 @@ MonoBehaviour:
   idleAnimationSpeed: 2
   runAnimationSpeed: 10
   itemBackgroundSprite: {fileID: 0}
+  keyUIContainer: {fileID: 0}
+  keyIcons: []
 --- !u!143 &8405277770918588940
 CharacterController:
   m_ObjectHideFlags: 0
