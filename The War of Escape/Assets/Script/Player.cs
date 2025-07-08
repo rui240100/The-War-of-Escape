@@ -41,9 +41,13 @@ public class Player : MonoBehaviour
 
     public Sprite itemBackgroundSprite; // 宝箱の画像（常に表示したいやつ）
 
+
+
+
     [Header("鍵UI関連")]
-    public GameObject keyUIContainer; // 鍵の枠画像（背景）
-    public List<GameObject> keyIcons = new List<GameObject>(); // 鍵の個別アイコン（最大5つ）
+    public Image keyIconImage; // 鍵の表示を切り替えるImage
+    public Sprite[] keySprites; // 鍵0〜5個用のスプライト（6枚）
+    public GameObject keyUIContainer; // 背景の箱画像（常に表示したいなら）
 
 
     void Start()
@@ -78,7 +82,10 @@ public class Player : MonoBehaviour
             itemBackgroundUI.enabled = true; // 念のため表示ONに
         }
 
-
+        if (keyUIContainer != null)
+        {
+            keyUIContainer.SetActive(true); // 🔸これを必ず入れる！
+        }
 
 
     }
@@ -193,7 +200,7 @@ public class Player : MonoBehaviour
     //鍵関係
     public void AddKey()
     {
-        keyCount = Mathf.Clamp(keyCount + 1, 0, keyIcons.Count);
+        keyCount = Mathf.Clamp(keyCount + 1, 0, keySprites.Length - 1);
         UpdateKeyUI();
     }
 
@@ -205,11 +212,25 @@ public class Player : MonoBehaviour
 
     void UpdateKeyUI()
     {
-        for (int i = 0; i < keyIcons.Count; i++)
+        if (keyIconImage != null && keySprites != null)
         {
-            keyIcons[i].SetActive(i < keyCount);
+            if (keyCount == 0)
+            {
+                keyIconImage.enabled = false;  // 鍵なしなら非表示
+            }
+            else if (keyCount > 0 && keyCount < keySprites.Length)
+            {
+                keyIconImage.enabled = true;
+                keyIconImage.sprite = keySprites[keyCount];
+            }
+        }
+
+        if (keyCountText != null)
+        {
+            keyCountText.text = keyCount.ToString();
         }
     }
+
 
 
 
