@@ -1,10 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;  // ← 追加！
 public class GameDrector : MonoBehaviour
 {
     public GameObject timeUI;
 
     float TimeCount = 300;
+    private bool hasEnded = false; // 終了処理が一度だけ実行されるように
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +24,12 @@ public class GameDrector : MonoBehaviour
 
         }
 
+        else if (!hasEnded)
+        {
+            hasEnded = true; // 2回以上呼ばれないように
+            TimeCount = 0;   // マイナスにならないように固定
+            SceneManager.LoadScene("Clear"); // ← シーン名をここに！
+        }
 
         int second = (int)TimeCount % 60;
 

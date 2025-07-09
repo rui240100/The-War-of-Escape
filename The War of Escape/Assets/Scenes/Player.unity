@@ -1212,6 +1212,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1926480983 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4641384329657935165, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+  m_PrefabInstance: {fileID: 1344157867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1951189113 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2612017542274926711, guid: 3d216f91d7bf2c440a8ea55157e168aa, type: 3}
@@ -2051,7 +2056,7 @@ PrefabInstance:
     - target: {fileID: 3013996823269695978, guid: e13b83432bb452241991da65e5ee6bd9, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1926480983}
     - target: {fileID: 3600297596482486356, guid: e13b83432bb452241991da65e5ee6bd9, type: 3}
       propertyPath: m_Name
       value: BlindCanvas_P1

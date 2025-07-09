@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// ‚°‚Á‚»[F‘Šè‚Ì‹ŠE‚ğ 5 •bŠ®‘SÕ•Á‚µA3 •b‚©‚¯‚ÄƒtƒF[ƒhƒAƒEƒg
+/// ã’ã£ããƒ¼ï¼šç›¸æ‰‹ã®è¦–ç•Œã‚’ 5 ç§’å®Œå…¨é®è”½ã—ã€3 ç§’ã‹ã‘ã¦ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆ
 /// </summary>
 public class BlindItem : Item
 {
@@ -13,39 +13,59 @@ public class BlindItem : Item
 
     private const string OverlayNameFormat = "BlindOverlay_P{0}";
 
-    // „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ ƒAƒCƒeƒ€g—p „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+    [Header("Blind Image")]
+    [SerializeField] private Sprite blindSprite;
+
+
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€ ã‚¢ã‚¤ãƒ†ãƒ ä½¿ç”¨ â”€â”€â”€â”€â”€â”€â”€â”€â”€
     public override void Activate(Player user)
     {
         if (user == null) return;
 
-        // ‘ŠèƒvƒŒƒCƒ„[‚ğæ“¾iPlayer ƒXƒNƒŠƒvƒg‚Ì otherPlayer ‚ğ—˜—pj
+        // ç›¸æ‰‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å–å¾—ï¼ˆPlayer ã‚¹ã‚¯ãƒªãƒ—ãƒˆã® otherPlayer ã‚’åˆ©ç”¨ï¼‰
         Player target = user.otherPlayer;
         if (target == null) return;
 
-        // ‘ÎÛƒvƒŒƒCƒ„[ê—p‚ÌƒI[ƒo[ƒŒƒC Image ‚ğ’T‚·
+        // å¯¾è±¡ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å°‚ç”¨ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ¬ã‚¤ Image ã‚’æ¢ã™
         Image overlay = FindOverlay(target.playerID);
         if (overlay == null) return;
 
-        // ƒGƒtƒFƒNƒgŠJniƒRƒ‹[ƒ`ƒ“‚ÍƒAƒCƒeƒ€©g‚Å“®‚©‚·j
+        // ã‚¨ãƒ•ã‚§ã‚¯ãƒˆé–‹å§‹ï¼ˆã‚³ãƒ«ãƒ¼ãƒãƒ³ã¯ã‚¢ã‚¤ãƒ†ãƒ è‡ªèº«ã§å‹•ã‹ã™ï¼‰
         StartCoroutine(BlindRoutine(overlay));
     }
 
-    // „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ •â•ƒƒ\ƒbƒh „Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€ è£œåŠ©ãƒ¡ã‚½ãƒƒãƒ‰ â”€â”€â”€â”€â”€â”€â”€â”€â”€
     private Image FindOverlay(int playerID)
     {
-        string objName = string.Format(OverlayNameFormat, playerID); // —á: BlindOverlay_P2
+        string objName = string.Format(OverlayNameFormat, playerID); // ä¾‹: BlindOverlay_P2
         GameObject obj = GameObject.Find(objName);
         return obj != null ? obj.GetComponent<Image>() : null;
     }
 
     private IEnumerator BlindRoutine(Image overlay)
     {
-        // Š®‘SÕ•Á
-        var c = overlay.color; c.a = 1f; overlay.color = c;
+        //  ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã‚’è¨­å®šï¼ˆnullãƒã‚§ãƒƒã‚¯ã‚‚å…¥ã‚Œã‚‹ã¨å®‰å¿ƒï¼‰
+        if (blindSprite != null)
+        {
+            overlay.sprite = blindSprite;
+            overlay.color = new Color(1f, 1f, 1f, 1f); // ä¸é€æ˜ã§ç™½è‰²
+            overlay.preserveAspect = true;             // ç”»åƒãŒä¼¸ã³ãªã„ã‚ˆã†ã«
+
+            overlay.rectTransform.rotation = Quaternion.Euler(0f, 0f, 15f); // 15åº¦å³ã«å‚¾ã‘ã‚‹
+
+        }
+        else
+        {
+            // ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆæœªè¨­å®šã®å ´åˆã¯é»’ã§å¡—ã‚Šã¤ã¶ã™
+            overlay.color = new Color(0f, 0f, 0f, 1f);
+        }
+
         yield return new WaitForSeconds(blindDuration);
 
-        // ƒtƒF[ƒhƒAƒEƒg
+        // ğŸ”» ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆå‡¦ç†
         float t = 0f;
+        Color c = overlay.color;
+
         while (t < fadeOutDuration)
         {
             t += Time.deltaTime;
@@ -53,9 +73,13 @@ public class BlindItem : Item
             overlay.color = c;
             yield return null;
         }
-        c.a = 0f; overlay.color = c;
 
-        // ˆ—Š®—¹AƒAƒCƒeƒ€©‰ó
+        c.a = 0f;
+        overlay.color = c;
+
+        //  ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã‚’æ¶ˆã™ï¼ˆãƒªã‚»ãƒƒãƒˆï¼‰
+        overlay.sprite = null;
+
         Destroy(gameObject);
     }
 }

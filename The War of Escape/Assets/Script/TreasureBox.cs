@@ -20,6 +20,12 @@ public class TreasureBox : MonoBehaviour
     // ▶ エリア内プレイヤーを保持
     private readonly List<Player> playersInRange = new();
 
+
+    [Header("サウンド")]
+    [SerializeField] private AudioClip openSound;       // 鳴らす音
+    [SerializeField] private AudioSource audioSource;   // 音を鳴らすためのAudioSource
+
+
     void Start()
     {
         /*foreach (string name in Input.GetJoystickNames())
@@ -165,6 +171,17 @@ public class TreasureBox : MonoBehaviour
     private void OpenChest()
     {
         isOpen = true;
+
+        // アニメーション再生
+        if (animator != null) animator.SetTrigger("Open");
+
+        // 音を再生！
+        if (audioSource != null && openSound != null)
+        {
+            audioSource.PlayOneShot(openSound);
+        }
+
+
         if (animator != null) animator.SetTrigger("Open");
     }
 }
