@@ -1,10 +1,13 @@
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class CallNecromancer : Item
 {
     public GameObject Necromancer;
     private Necromancer necromancerScript;
     private Player playerScript;
+    public Vector3[] NecSpawn;
+    public float checkRadius = 0.1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +23,16 @@ public class CallNecromancer : Item
 
     public override void Activate(Player user)
     {
+        NecSpawn[1] = new Vector3(user.transform.position.x + 2.0f, user.transform.position.y, user.transform.position.z);
+        NecSpawn[2] = new Vector3(user.transform.position.x - 2.0f, user.transform.position.y, user.transform.position.z);
+        NecSpawn[3] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z + 2.0f);
+        NecSpawn[4] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z - 2.0f);
+        
+        foreach (Vector3 position in NecSpawn)
+        {
+            //Collider[] hits = Physics.OverlapSphere(position,);
+        }
+
         GameObject NecromancerObj = Instantiate(Necromancer);
         NecromancerObj.transform.position = user.transform.position;
         necromancerScript = NecromancerObj.GetComponent<Necromancer>();
