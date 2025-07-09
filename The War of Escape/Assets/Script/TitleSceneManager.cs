@@ -8,14 +8,24 @@ public class TitlesceneManager : MonoBehaviour
 
     void Update()
     {
-        if (AnyButtonPressed())
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton1))
+        {
+            // タイトルシーンへ移動（"TitleScene" は実際のシーン名に変えてね）
+            SceneManager.LoadScene("Stage");
+        }
+
+
+
+
+        /*if (AnyButtonPressed())
         {
             SceneManager.LoadScene(nextSceneName);
-        }
+        }*/
     }
 
     // 何かしらのボタンが押されたか判定
-    bool AnyButtonPressed()
+    /*bool AnyButtonPressed()
     {
         // Xboxコントローラー含め、登録されている全ボタンをチェック
         for (int i = 0; i < 20; i++) // ボタン数は必要に応じて調整
@@ -27,5 +37,5 @@ public class TitlesceneManager : MonoBehaviour
         }
 
         return false;
-    }
+    }*/
 }
