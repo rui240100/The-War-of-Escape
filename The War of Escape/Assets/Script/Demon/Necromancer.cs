@@ -27,10 +27,16 @@ public class Necromancer : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if(player1)
+        if (player1)
+        {
             agent.SetDestination(player1Obj.transform.position);
+            Debug.Log("プレイヤー1追跡");
+        }
         else if (player2)
+        {
             agent.SetDestination(player2Obj.transform.position);
+            Debug.Log("プレイヤー2追跡");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
