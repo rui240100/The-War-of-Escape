@@ -87,15 +87,19 @@ public class NewDemonCamera : MonoBehaviour
 
                 if (playerScript.playerID == 1) 
                 {
-                    CanSeePlayer(other.transform);
-                    demon.StartChase(other.transform);
-                    player1Chase = true;
+                    if ((CanSeePlayer(other.transform)))
+                    {
+                        demon.StartChase(other.transform);
+                        player1Chase = true;
+                    }
                 }
                 else
                 {
-                    CanSeePlayer(other.transform);
-                    demon.StartChase(other.transform);
-                    player2Chase = true;
+                    if ((CanSeePlayer(other.transform)))
+                    {
+                        demon.StartChase(other.transform);
+                        player2Chase = true;
+                    }
                 }
             }
         }
