@@ -16,12 +16,16 @@ public class Necromancer : MonoBehaviour
     public Vector3[] keySpawnPositions;
     public float checkRadius = 0.1f;
 
+    NecTrigger necTrigger;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
         Destroy(this.gameObject, 30.0f);
+
+        necTrigger = this.GetComponentInChildren<NecTrigger>();
     }
 
     // Update is called once per frame
@@ -29,14 +33,16 @@ public class Necromancer : MonoBehaviour
     {
         if (player1)
         {
+            
             agent.SetDestination(player1Obj.transform.position);
-            Debug.Log("プレイヤー1追跡");
+            Debug.Log("プレイヤー1追跡");        
         }
         else if (player2)
         {
+            //player2Obj = GameObject.Find("Player2");
             agent.SetDestination(player2Obj.transform.position);
             Debug.Log("プレイヤー2追跡");
-        }
+        }        
     }
 
     private void OnCollisionEnter(Collision collision)

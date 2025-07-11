@@ -23,8 +23,10 @@ public class Exit : MonoBehaviour
         {
             if (player.keyCount >= 3)
             {
-                Debug.Log($"Player {player.playerID} ‚ª’Eo‚É¬Œ÷‚µ‚Ü‚µ‚½I");
-                SceneManager.LoadScene("Clear"); // ’Eoˆ—‚È‚Ç
+
+                ResultData.escapedPlayerID = player.playerID;
+                FadeManager.Instance.LoadScene("Clear", 2.0f);
+                
             }
             else
             {
