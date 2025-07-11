@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
     public Sprite[] keySprites; // 鍵0〜5個用のスプライト（6枚）
     public GameObject keyUIContainer; // 背景の箱画像（常に表示したいなら）
 
+    [Header("アイテム使用時の効果音")]
+    public AudioSource itemUseSound;
 
     void Start()
     {
@@ -174,6 +176,12 @@ public class Player : MonoBehaviour
     void UseItem()
     {
         Item used = heldItem;
+
+        if (itemUseSound != null)
+        {
+            itemUseSound.Play();
+        }
+
         heldItem?.Activate(this);
 
         if (heldItem == used)
