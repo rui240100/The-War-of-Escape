@@ -23,6 +23,8 @@ public class CallNecromancer : Item
 
     public override void Activate(Player user)
     {
+        Vector3[] NecSpawn = new Vector3[5];
+
         Vector3 safePosition = Vector3.zero;
         bool foundSafe = false;
 
