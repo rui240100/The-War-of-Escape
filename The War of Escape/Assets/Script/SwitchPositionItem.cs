@@ -1,22 +1,32 @@
 using UnityEngine;
+using TMPro;
 using System.Collections;
 
 public class SwitchPositionItem : Item
 {
+    //  static にして全インスタンスで共通にする（シーンに1つのUI）
+    private static GameObject countdownUI;
+    private static TextMeshProUGUI countdownText;
+
     private bool isUsed = false;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
+        //  まだ取得していない場合だけ探す
+        if (countdownUI == null)
+        {
+            countdownUI = GameObject.Find("SwitchPositionCountdown");
+            if (countdownUI != null)
+            {
+                Transform textObj = countdownUI.transform.Find("CountText");
+                if (textObj != null)
+                {
+                    countdownText = textObj.GetComponent<TextMeshProUGUI>();
+                }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+                countdownUI.SetActive(false); // ← ゲーム開始時に非表示
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -34,8 +44,7 @@ public class SwitchPositionItem : Item
 
     public override void Activate(Player user)
     {
-        if (isUsed || user.otherPlayer == null) 
-          return;
+        if (isUsed || user.otherPlayer == null) return;
 
         isUsed = true;
         user.StartCoroutine(SwitchPositionsAfterDelay(user));
@@ -43,15 +52,29 @@ public class SwitchPositionItem : Item
 
     private IEnumerator SwitchPositionsAfterDelay(Player user)
     {
-        yield return new WaitForSeconds(3f);
+        if (countdownUI != null && countdownText != null)
+        {
+            countdownUI.SetActive(true);
+            countdownText.text = $"{user.playerID + 1}Pが位置入れ替えアイテムを使用！";
+
+            yield return new WaitForSeconds(1f);
+            countdownText.text = "3...";
+            yield return new WaitForSeconds(1f);
+            countdownText.text = "2...";
+            yield return new WaitForSeconds(1f);
+            countdownText.text = "1...";
+        }
 
         Transform other = user.otherPlayer.transform;
         Vector3 tempPos = user.transform.position;
         user.transform.position = other.position;
         other.position = tempPos;
 
+        if (countdownUI != null)
+        {
+            countdownUI.SetActive(false);
+        }
+
         Destroy(gameObject); // アイテムは使い捨て
     }
-
-
 }

@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5611299084068701775}
   possibleItems:
-  - {fileID: 4946287297852470925, guid: b99d8ed7347e6f24bb02468af90aa435, type: 3}
+  - {fileID: 5690637637458751888, guid: f7c607aeea2848d4ab7bd8da3898a288, type: 3}
   openSound: {fileID: 8300000, guid: 9ff6f584d1c52774eba2c18253ff776d, type: 3}
   audioSource: {fileID: 490083714957400914}
 --- !u!65 &629120320645467284
