@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -17,39 +18,25 @@ public class TreasureBox : MonoBehaviour
     [Header("出現させるアイテムのプレハブ")]
     [SerializeField] private GameObject[] possibleItems;
 
-    // ▶ エリア内プレイヤーを保持
     private readonly List<Player> playersInRange = new();
 
-
     [Header("サウンド")]
-    [SerializeField] private AudioClip openSound;       // 鳴らす音
-    [SerializeField] private AudioSource audioSource;   // 音を鳴らすためのAudioSource
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioSource audioSource;
 
-
-    void Start()
-    {
-        /*foreach (string name in Input.GetJoystickNames())
-        {
-            Debug.Log("接続中のジョイスティック: " + name);
-        }*/
-    }
-
-    private void Update()
+    void Update()
     {
         if (isOpen) return;
         if (playersInRange.Count == 0) return;
 
-        // 宝箱の中心位置
         Vector3 chestPos = transform.position;
 
-        // 最も近いプレイヤーを選ぶ
         Player closestPlayer = null;
         float minDist = float.MaxValue;
 
         foreach (var p in playersInRange)
         {
             float dist = Vector3.Distance(p.transform.position, chestPos);
-            //Debug.Log($"Player {p.playerID} distance: {dist}");
             if (dist < minDist)
             {
                 minDist = dist;
@@ -57,17 +44,8 @@ public class TreasureBox : MonoBehaviour
             }
         }
 
-        if (closestPlayer != null)
-        {
-            //Debug.Log($"Closest Player: {closestPlayer.playerID} at distance {minDist}");
-        }
-
-
-
-        // 一番近いプレイヤーが操作ボタンを押していたら開ける
         if (closestPlayer != null && IsInteractPressed(closestPlayer))
         {
-
             Debug.Log($"TreasureBox opened by Player {closestPlayer.playerID}");
             GiveItemToPlayer(closestPlayer);
             OpenChest();
@@ -101,12 +79,11 @@ public class TreasureBox : MonoBehaviour
 
     private void GiveItemToPlayer(Player player)
     {
-        player.AddMagatama();                          // 勾玉 +1
+        player.AddMagatama(); // 勾玉 +1
 
-        if (possibleItems.Length == 0) return;         // 何も設定されていなければ終了
+        if (possibleItems.Length == 0) return;
 
-        GameObject obj = Instantiate(
-            possibleItems[Random.Range(0, possibleItems.Length)]);
+        GameObject obj = Instantiate(possibleItems[Random.Range(0, possibleItems.Length)]);
 
         // 鍵だった場合
         if (obj.TryGetComponent<KeyItem>(out _))
@@ -116,14 +93,12 @@ public class TreasureBox : MonoBehaviour
             return;
         }
 
-
-        // 通常アイテムは持ち物を入れ替える
+        // 通常アイテム
         if (obj.TryGetComponent<Item>(out Item item))
         {
             if (player.HasItem)
             {
                 Destroy(player.heldItem.gameObject);
-
             }
 
             player.SetHeldItem(item);
@@ -136,52 +111,35 @@ public class TreasureBox : MonoBehaviour
             var meshRenderer = obj.GetComponent<MeshRenderer>();
             if (meshRenderer != null) meshRenderer.enabled = false;
         }
-
-        //if(obj.CompareTag("Tanaka"))
-        //{
-        //    if (player.HasItem)
-        //    {
-        //        Destroy(player.heldItem.gameObject);
-        //    }
-
-
-        //    player.SetHeldItem(item);
-
-        //    obj.transform.SetParent(player.transform);
-        //    obj.transform.localPosition = Vector3.zero;
-
-        //}
-
-
-
-        // 通常アイテムは持ち物を入れ替える  いったんコメントアウト
-        /*if (obj.TryGetComponent<Item>(out Item item))
-        {
-            if (player.HasItem) Destroy(player.heldItem.gameObject);
-
-            player.SetHeldItem(item);
-            obj.transform.SetParent(player.transform);
-            obj.transform.localPosition = Vector3.zero;
-
-            obj.GetComponent<Collider>().enabled = false;
-            obj.GetComponent<MeshRenderer>().enabled = false;
-        }*/
     }
 
     private void OpenChest()
     {
         isOpen = true;
 
-        // アニメーション再生
         if (animator != null) animator.SetTrigger("Open");
 
-        // 音を再生！
         if (audioSource != null && openSound != null)
         {
             audioSource.PlayOneShot(openSound);
         }
 
+        // 30秒後に宝箱をリセットして再び開けられるようにする
+        StartCoroutine(ResetChestAfterDelay(60f));
+    }
 
-        if (animator != null) animator.SetTrigger("Open");
+    private IEnumerator ResetChestAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        isOpen = false;
+
+        // 任意：アニメーターに Close トリガーがある場合はこれも実行
+        if (animator != null)
+        {
+            animator.SetTrigger("Close"); // Closeアニメーションを再生（あれば）
+        }
+
+        Debug.Log("TreasureBox has been reset and can be opened again.");
     }
 }
