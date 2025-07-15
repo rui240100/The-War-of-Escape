@@ -9,10 +9,20 @@ public class CallNecromancer : Item
     public Vector3[] NecSpawn;
     public float checkRadius = 1.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public string useMessage1 = "アイテムを使用しました";
+    public string useMessage2 = "アイテムが使用されました";
+    private GameObject itemUse;
+    private ItemUse itemUseSc;
+
+    private void Start()
     {
-        
+        // シーン内のMessageDisplayManagerを探す
+        itemUse = GameObject.Find("ItemUse");
+        itemUseSc = itemUse.GetComponent<ItemUse>();
+        if (itemUseSc == null)
+        {
+            Debug.LogError("MessageDisplayManagerがシーンにありません！");
+        }
     }
 
     // Update is called once per frame
@@ -68,6 +78,20 @@ public class CallNecromancer : Item
             Debug.Log("No safe position");
         }
 
-        
+        if (itemUseSc != null)
+        {
+            if (playerScript.playerID == 1)
+            {
+                string message1 = useMessage1;
+                string message2 = useMessage2;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+            else if(playerScript.playerID == 2)
+            {
+                string message1 = useMessage2;
+                string message2 = useMessage1;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+        }
     }
 }
