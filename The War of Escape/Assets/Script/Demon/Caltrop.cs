@@ -95,12 +95,11 @@ public class Caltrap : MonoBehaviour
 
     private IEnumerator SlowDownNecromancer(Necromancer necromancerScript)
     {
-        float necromancerSpeed = necromancerScript.agent.speed;
         necromancerScript.agent.speed = 0.2f;
 
         yield return new WaitForSeconds(5.0f);
 
-        necromancerScript.agent.speed = necromancerSpeed;
+        necromancerScript.agent.speed = 6.0f;
     }
 
 

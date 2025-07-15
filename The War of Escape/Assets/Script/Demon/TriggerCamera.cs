@@ -13,6 +13,8 @@ public class TriggerCamera : MonoBehaviour
     private ProtectingDemon protectingDemon; 
     private DemonAI demon;
 
+    private Necromancer necromancer;
+
     public float stun = 0.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,6 +59,16 @@ public class TriggerCamera : MonoBehaviour
                 player = transform.parent.GetComponent<Player>();
                 Destroy(player.pd);
             }
+            else if(other.CompareTag("Necromancer"))
+            {
+                necromancer = other.GetComponent<Necromancer>();
+
+                StartCoroutine(ProtectNecCoroutine(necromancer));
+
+                player = transform.parent.GetComponent<Player>();
+                Destroy(player.pd);
+                
+            }
         }
     }
 
@@ -94,5 +106,19 @@ public class TriggerCamera : MonoBehaviour
         Debug.Log("ãSçƒäJ");
 
         demon.StopChase();
+    }
+
+    private IEnumerator ProtectNecCoroutine(Necromancer necromancer)
+    {
+        necromancer.agent.speed = 0.0f;
+
+        Debug.Log("SlowNec");
+
+        yield return new WaitForSeconds(5.0f);
+
+        necromancer.agent.speed = 6.0f;
+
+        Debug.Log("NecçƒäJ");
+
     }
 }
