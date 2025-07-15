@@ -48012,6 +48012,18 @@ PrefabInstance:
       propertyPath: m_text
       value: 0:00
       objectReference: {fileID: 0}
+    - target: {fileID: 7662947557949087217, guid: 51818954e9ddbb647ba96a574017e48c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1db8638c58f63ed419f8980052e5bb45, type: 2}
+    - target: {fileID: 7662947557949087217, guid: 51818954e9ddbb647ba96a574017e48c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1632815876336484352, guid: 1db8638c58f63ed419f8980052e5bb45, type: 2}
+    - target: {fileID: 7662947557949087217, guid: 51818954e9ddbb647ba96a574017e48c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
