@@ -18,12 +18,25 @@ public class ProtectingDemon : MonoBehaviour
     private Transform owner;
     private bool ownerFlag;
 
+    public string useMessagePr1 = "アイテムを使用しました";
+    public string useMessagePr2 = "アイテムが使用されました";
+    private GameObject itemUse;
+    private ItemUse itemUseSc;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ownerFlag = false;
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
         prisonGateScript = prisonGateObject.GetComponent<PrisonGate>();
+
+        // シーン内のMessageDisplayManagerを探す
+        itemUse = GameObject.Find("ItemUse");
+        itemUseSc = itemUse.GetComponent<ItemUse>();
+        if (itemUseSc == null)
+        {
+            Debug.LogError("MessageDisplayManagerがシーンにありません！");
+        }
     }
 
     // Update is called once per frame
@@ -83,6 +96,22 @@ public class ProtectingDemon : MonoBehaviour
             player2.transform.position = owner.transform.position;
         }
         ownerFlag = true;
+
+        if (itemUseSc != null)
+        {
+            if (playerScript.playerID == 1)
+            {
+                string message1 = useMessagePr1;
+                string message2 = useMessagePr2;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+            else if (playerScript.playerID == 2)
+            {
+                string message1 = useMessagePr2;
+                string message2 = useMessagePr1;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+        }
     }
 
     private void UpdateLaunch()

@@ -9,8 +9,8 @@ public class CallNecromancer : Item
     public Vector3[] NecSpawn;
     public float checkRadius = 1.0f;
 
-    public string useMessage1 = "アイテムを使用しました";
-    public string useMessage2 = "アイテムが使用されました";
+    public string useMessageNe1 = "アイテムを使用しました";
+    public string useMessageNe2 = "アイテムが使用されました";
     private GameObject itemUse;
     private ItemUse itemUseSc;
 
@@ -82,14 +82,14 @@ public class CallNecromancer : Item
         {
             if (playerScript.playerID == 1)
             {
-                string message1 = useMessage1;
-                string message2 = useMessage2;
+                string message1 = useMessageNe1;
+                string message2 = useMessageNe2;
                 itemUseSc.ShowMessage(message1, message2);
             }
             else if(playerScript.playerID == 2)
             {
-                string message1 = useMessage2;
-                string message2 = useMessage1;
+                string message1 = useMessageNe2;
+                string message2 = useMessageNe1;
                 itemUseSc.ShowMessage(message1, message2);
             }
         }

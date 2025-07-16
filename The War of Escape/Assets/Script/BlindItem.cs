@@ -16,6 +16,22 @@ public class BlindItem : Item
     [Header("Blind Image")]
     [SerializeField] private Sprite blindSprite;
 
+    private Player playerScript;
+    public string useMessageGh1 = "アイテムを使用しました";
+    public string useMessageGh2 = "アイテムが使用されました";
+    private GameObject itemUse;
+    private ItemUse itemUseSc;
+
+    private void Start()
+    {
+        // シーン内のMessageDisplayManagerを探す
+        itemUse = GameObject.Find("ItemUse");
+        itemUseSc = itemUse.GetComponent<ItemUse>();
+        if (itemUseSc == null)
+        {
+            Debug.LogError("MessageDisplayManagerがシーンにありません！");
+        }
+    }
 
     // ───────── アイテム使用 ─────────
     public override void Activate(Player user)
@@ -32,6 +48,24 @@ public class BlindItem : Item
 
         // エフェクト開始（コルーチンはアイテム自身で動かす）
         StartCoroutine(BlindRoutine(overlay));
+
+        playerScript = user.GetComponent<Player>();
+
+        if (itemUseSc != null)
+        {
+            if (playerScript.playerID == 1)
+            {
+                string message1 = useMessageGh1;
+                string message2 = useMessageGh2;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+            else if (playerScript.playerID == 2)
+            {
+                string message1 = useMessageGh2;
+                string message2 = useMessageGh1;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+        }
     }
 
     // ───────── 補助メソッド ─────────

@@ -27894,7 +27894,7 @@ PrefabInstance:
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
       value: 
-      objectReference: {fileID: 8721584537946619482, guid: 453eb2598e07b9c48989f40776ef0210, type: 3}
+      objectReference: {fileID: 5222341061944560564, guid: b9d7ba3740c7e9b4d86ca2eeab907fcb, type: 3}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[1]'
       value: 
@@ -40098,8 +40098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 500, y: 0}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425150720
 MonoBehaviour:
@@ -40121,7 +40121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1db8638c58f63ed419f8980052e5bb45, type: 2}
   m_sharedMaterial: {fileID: -1632815876336484352, guid: 1db8638c58f63ed419f8980052e5bb45, type: 2}
@@ -40148,8 +40148,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -44184,8 +44184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -500, y: 0}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559947400
 MonoBehaviour:
@@ -44207,7 +44207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1db8638c58f63ed419f8980052e5bb45, type: 2}
   m_sharedMaterial: {fileID: -1632815876336484352, guid: 1db8638c58f63ed419f8980052e5bb45, type: 2}
@@ -44234,13 +44234,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
