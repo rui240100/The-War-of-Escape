@@ -8,6 +8,12 @@ public class SwitchPositionItem : Item
     private static TextMeshProUGUI countdownText;
     private bool isUsed = false;
 
+    private Player playerScript;
+    public string useMessageSw1 = "アイテムを使用しました";
+    public string useMessageSw2 = "アイテムが使用されました";
+    private GameObject itemUse;
+    private ItemUse itemUseSc;
+
     void Start()
     {
         // 非アクティブなオブジェクトも対象に含めて探す
@@ -31,6 +37,14 @@ public class SwitchPositionItem : Item
                 }
             }
         }
+
+        // シーン内のMessageDisplayManagerを探す
+        itemUse = GameObject.Find("ItemUse");
+        itemUseSc = itemUse.GetComponent<ItemUse>();
+        if (itemUseSc == null)
+        {
+            Debug.LogError("MessageDisplayManagerがシーンにありません！");
+        }
     }
 
     public override void Activate(Player user)
@@ -39,6 +53,24 @@ public class SwitchPositionItem : Item
 
         isUsed = true;
         user.StartCoroutine(SwitchPositionsAfterDelay(user));
+
+        playerScript = user.GetComponent<Player>();
+
+        if (itemUseSc != null)
+        {
+            if (playerScript.playerID == 1)
+            {
+                string message1 = useMessageSw1;
+                string message2 = useMessageSw2;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+            else if (playerScript.playerID == 2)
+            {
+                string message1 = useMessageSw2;
+                string message2 = useMessageSw1;
+                itemUseSc.ShowMessage(message1, message2);
+            }
+        }
     }
 
     private IEnumerator SwitchPositionsAfterDelay(Player user)
