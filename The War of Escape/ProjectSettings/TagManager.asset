@@ -12,6 +12,7 @@ TagManager:
   - Key
   - ProtectingDemon
   - Necromancer
+  - KeyBox
   layers:
   - Default
   - TransparentFX

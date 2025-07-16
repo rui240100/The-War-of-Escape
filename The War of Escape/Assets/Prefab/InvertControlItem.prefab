@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4377685084806127688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -126,4 +126,8 @@ MonoBehaviour:
   slowDuration: 5
   slowMultiplier: 0.2
   icon: {fileID: 21300000, guid: 34b0d836863940641b8f52bf3cfaf2e4, type: 3}
+  useMessageSl1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
+  useMessageSl2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
   duration: 10
+  useMessageRe1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
+  useMessageRe2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
