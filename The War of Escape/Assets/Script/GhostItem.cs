@@ -9,18 +9,18 @@ public class GhostItem : Item
     [Header("Consolation Items")]
     [SerializeField] private List<GameObject> consolationItems = new();
 
-    private Player playerScript;
-    public string useMessageRo1 = "アイテムを使用しました";
-    public string useMessageRo2 = "アイテムが使用されました";
-    private GameObject itemUse;
-    private ItemUse itemUseSc;
+    private Player playerScriptRo;
+    public string useMessageRo1 = "を使用しました";
+    public string useMessageRo2 = "が使用されました";
+    private GameObject itemUseRo;
+    private ItemUse itemUseScRo;
 
     private void Start()
     {
         // シーン内のMessageDisplayManagerを探す
-        itemUse = GameObject.Find("ItemUse");
-        itemUseSc = itemUse.GetComponent<ItemUse>();
-        if (itemUseSc == null)
+        itemUseRo = GameObject.Find("ItemUse");
+        itemUseScRo = itemUseRo.GetComponent<ItemUse>();
+        if (itemUseScRo == null)
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
         }
@@ -98,21 +98,21 @@ public class GhostItem : Item
             }
         }
 
-        playerScript = user.GetComponent<Player>();
+        playerScriptRo = user.GetComponent<Player>();
 
-        if (itemUseSc != null)
+        if (itemUseScRo != null)
         {
-            if (playerScript.playerID == 1)
+            if (playerScriptRo.playerID == 1)
             {
                 string message1 = useMessageRo1;
                 string message2 = useMessageRo2;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScRo.ShowMessage(message1, message2);
             }
-            else if (playerScript.playerID == 2)
+            else if (playerScriptRo.playerID == 2)
             {
                 string message1 = useMessageRo2;
                 string message2 = useMessageRo1;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScRo.ShowMessage(message1, message2);
             }
         }
 

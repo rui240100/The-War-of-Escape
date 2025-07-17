@@ -5,21 +5,21 @@ public class CallNecromancer : Item
 {
     public GameObject Necromancer;
     private Necromancer necromancerScript;
-    private Player playerScript;
+    private Player playerScriptNe;
     public Vector3[] NecSpawn;
     public float checkRadius = 1.0f;
 
-    public string useMessageNe1 = "アイテムを使用しました";
-    public string useMessageNe2 = "アイテムが使用されました";
-    private GameObject itemUse;
-    private ItemUse itemUseSc;
+    public string useMessageNe1 = "鬼を召喚しました";
+    public string useMessageNe2 = "";
+    private GameObject itemUseNe;
+    private ItemUse itemUseScNe;
 
     private void Start()
     {
         // シーン内のMessageDisplayManagerを探す
-        itemUse = GameObject.Find("ItemUse");
-        itemUseSc = itemUse.GetComponent<ItemUse>();
-        if (itemUseSc == null)
+        itemUseNe = GameObject.Find("ItemUse");
+        itemUseScNe = itemUseNe.GetComponent<ItemUse>();
+        if (itemUseScNe == null)
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
         }
@@ -63,12 +63,12 @@ public class CallNecromancer : Item
             NecromancerObj.transform.position = safePosition;
             necromancerScript = NecromancerObj.GetComponent<Necromancer>();
 
-            playerScript = user.GetComponent<Player>();
-            if (playerScript.playerID == 1)
+            playerScriptNe = user.GetComponent<Player>();
+            if (playerScriptNe.playerID == 1)
             {
                 necromancerScript.player2 = true;
             }
-            else if (playerScript.playerID == 2)
+            else if (playerScriptNe.playerID == 2)
             {
                 necromancerScript.player1 = true;
             }
@@ -78,19 +78,19 @@ public class CallNecromancer : Item
             Debug.Log("No safe position");
         }
 
-        if (itemUseSc != null)
+        if (itemUseScNe != null)
         {
-            if (playerScript.playerID == 1)
+            if (playerScriptNe.playerID == 1)
             {
                 string message1 = useMessageNe1;
                 string message2 = useMessageNe2;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScNe.ShowMessage(message1, message2);
             }
-            else if(playerScript.playerID == 2)
+            else if(playerScriptNe.playerID == 2)
             {
                 string message1 = useMessageNe2;
                 string message2 = useMessageNe1;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScNe.ShowMessage(message1, message2);
             }
         }
     }

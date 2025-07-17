@@ -8,11 +8,11 @@ public class SwitchPositionItem : Item
     private static TextMeshProUGUI countdownText;
     private bool isUsed = false;
 
-    private Player playerScript;
-    public string useMessageSw1 = "アイテムを使用しました";
-    public string useMessageSw2 = "アイテムが使用されました";
-    private GameObject itemUse;
-    private ItemUse itemUseSc;
+    private Player playerScriptSw;
+    public string useMessageSw1 = "";
+    public string useMessageSw2 = "";
+    private GameObject itemUseSw;
+    private ItemUse itemUseScSw;
 
     void Start()
     {
@@ -39,9 +39,9 @@ public class SwitchPositionItem : Item
         }
 
         // シーン内のMessageDisplayManagerを探す
-        itemUse = GameObject.Find("ItemUse");
-        itemUseSc = itemUse.GetComponent<ItemUse>();
-        if (itemUseSc == null)
+        itemUseSw = GameObject.Find("ItemUse");
+        itemUseScSw = itemUseSw.GetComponent<ItemUse>();
+        if (itemUseScSw == null)
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
         }
@@ -54,21 +54,21 @@ public class SwitchPositionItem : Item
         isUsed = true;
         user.StartCoroutine(SwitchPositionsAfterDelay(user));
 
-        playerScript = user.GetComponent<Player>();
+        playerScriptSw = user.GetComponent<Player>();
 
-        if (itemUseSc != null)
+        if (itemUseScSw != null)
         {
-            if (playerScript.playerID == 1)
+            if (playerScriptSw.playerID == 1)
             {
                 string message1 = useMessageSw1;
                 string message2 = useMessageSw2;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScSw.ShowMessage(message1, message2);
             }
-            else if (playerScript.playerID == 2)
+            else if (playerScriptSw.playerID == 2)
             {
                 string message1 = useMessageSw2;
                 string message2 = useMessageSw1;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScSw.ShowMessage(message1, message2);
             }
         }
     }

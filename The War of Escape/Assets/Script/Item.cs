@@ -7,19 +7,19 @@ public class Item : MonoBehaviour
 
     public Sprite icon;
 
-    private Player playerScript;
-    public string useMessageSl1 = "アイテムを使用しました";
-    public string useMessageSl2 = "アイテムが使用されました";
-    private GameObject itemUse;
-    private ItemUse itemUseSc;
+    private Player playerScriptSl;
+    public string useMessageSl1 = "スローアイテムを使用しました";
+    public string useMessageSl2 = "スローアイテムが使用されました";
+    private GameObject itemUseSl;
+    private ItemUse itemUseScSl;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // シーン内のMessageDisplayManagerを探す
-        itemUse = GameObject.Find("ItemUse");
-        itemUseSc = itemUse.GetComponent<ItemUse>();
-        if (itemUseSc == null)
+        itemUseSl = GameObject.Find("ItemUse");
+        itemUseScSl = itemUseSl.GetComponent<ItemUse>();
+        if (itemUseScSl == null)
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
         }
@@ -68,19 +68,19 @@ public class Item : MonoBehaviour
             user.StartCoroutine(user.otherPlayer.SlowDown(slowMultiplier, slowDuration));
         }
 
-        if (itemUseSc != null)
+        if (itemUseScSl != null)
         {
-            if (playerScript.playerID == 1)
+            if (playerScriptSl.playerID == 1)
             {
                 string message1 = useMessageSl1;
                 string message2 = useMessageSl2;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScSl.ShowMessage(message1, message2);
             }
-            else if (playerScript.playerID == 2)
+            else if (playerScriptSl.playerID == 2)
             {
                 string message1 = useMessageSl2;
                 string message2 = useMessageSl1;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScSl.ShowMessage(message1, message2);
             }
         }
 
