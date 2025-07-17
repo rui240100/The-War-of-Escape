@@ -6,18 +6,18 @@ public class InvertControlItem : Item
 {
     public float duration = 10f; // 反転が続く時間
 
-    private Player playerScript;
-    public string useMessageRe1 = "アイテムを使用しました";
-    public string useMessageRe2 = "アイテムが使用されました";
-    private GameObject itemUse;
-    private ItemUse itemUseSc;
+    private Player playerScriptRe;
+    public string useMessageRe1 = "操作反転アイテムを使用しました";
+    public string useMessageRe2 = "移動操作が反転されました";
+    private GameObject itemUseRe;
+    private ItemUse itemUseScRe;
 
     private void Start()
     {
         // シーン内のMessageDisplayManagerを探す
-        itemUse = GameObject.Find("ItemUse");
-        itemUseSc = itemUse.GetComponent<ItemUse>();
-        if (itemUseSc == null)
+        itemUseRe = GameObject.Find("ItemUse");
+        itemUseScRe = itemUseRe.GetComponent<ItemUse>();
+        if (itemUseScRe == null)
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
         }
@@ -30,21 +30,21 @@ public class InvertControlItem : Item
             user.StartCoroutine(InvertControl(user.otherPlayer));
         }
 
-        playerScript = user.GetComponent<Player>();
+        playerScriptRe = user.GetComponent<Player>();
 
-        if (itemUseSc != null)
+        if (itemUseScRe != null)
         {
-            if (playerScript.playerID == 1)
+            if (playerScriptRe.playerID == 1)
             {
                 string message1 = useMessageRe1;
                 string message2 = useMessageRe2;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScRe.ShowMessage(message1, message2);
             }
-            else if (playerScript.playerID == 2)
+            else if (playerScriptRe.playerID == 2)
             {
                 string message1 = useMessageRe2;
                 string message2 = useMessageRe1;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScRe.ShowMessage(message1, message2);
             }
         }
     }
