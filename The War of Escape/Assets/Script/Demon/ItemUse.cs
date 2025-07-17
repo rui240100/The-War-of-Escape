@@ -27,8 +27,7 @@ public class ItemUse : MonoBehaviour
 
     public void ShowMessage(string message1,string message2)
     {
-        if (currentCoroutine != null) StopCoroutine(currentCoroutine);
-        currentCoroutine = StartCoroutine(ShowMessageCoroutine(message1,message2));
+         StartCoroutine(ShowMessageCoroutine(message1,message2));
     }
 
     private IEnumerator ShowMessageCoroutine(string message1,string message2)
