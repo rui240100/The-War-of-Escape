@@ -3,20 +3,20 @@ using UnityEngine;
 public class CallCaltrop : Item
 {
     public GameObject caltrop;
-    private Player playerScript;
+    private Player playerScriptCo;
 
-    public string useMessageCa1 = "アイテムを使用しました";
-    public string useMessageCa2 = "アイテムが使用されました";
-    private GameObject itemUse;
-    private ItemUse itemUseSc;
+    public string useMessageCa1 = "まきびしを設置しました";
+    public string useMessageCa2 = "";
+    private GameObject itemUseCo;
+    private ItemUse itemUseScCo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // シーン内のMessageDisplayManagerを探す
-        itemUse = GameObject.Find("ItemUse");
-        itemUseSc = itemUse.GetComponent<ItemUse>();
-        if (itemUseSc == null)
+        itemUseCo = GameObject.Find("ItemUse");
+        itemUseScCo = itemUseCo.GetComponent<ItemUse>();
+        if (itemUseScCo == null)
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
         }
@@ -34,21 +34,21 @@ public class CallCaltrop : Item
         GameObject caltropObj = Instantiate(caltrop);
         caltropObj.transform.position = user.transform.position;
         Debug.Log("まきびし設置1");
-        playerScript = user.GetComponent<Player>();
+        playerScriptCo = user.GetComponent<Player>();
 
-        if (itemUseSc != null)
+        if (itemUseScCo != null)
         {
-            if (playerScript.playerID == 1)
+            if (playerScriptCo.playerID == 1)
             {
                 string message1 = useMessageCa1;
                 string message2 = useMessageCa2;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScCo.ShowMessage(message1, message2);
             }
-            else if (playerScript.playerID == 2)
+            else if (playerScriptCo.playerID == 2)
             {
                 string message1 = useMessageCa2;
                 string message2 = useMessageCa1;
-                itemUseSc.ShowMessage(message1, message2);
+                itemUseScCo.ShowMessage(message1, message2);
             }
         }
     }
