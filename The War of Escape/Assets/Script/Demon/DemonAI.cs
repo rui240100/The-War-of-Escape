@@ -16,8 +16,7 @@ public class DemonAI : MonoBehaviour
     public Vector3 respawn;
 
     public GameObject keyPrefab;
-    public Vector3[] keySpawnPositions;
-    public float checkRadius = 0.1f;
+    public GameObject[] keyBox;
 
     public NewDemonCamera newDemonCamera;
 
@@ -88,43 +87,41 @@ public class DemonAI : MonoBehaviour
             Debug.Log("Collided Object Name: " + collision.gameObject.name);
             playerScript = collision.gameObject.GetComponent<Player>();
 
-            // int keyCountToReturn = playerScript.keyCount;
-            //// Debug.Log("プレイヤーが持っていた鍵の数: " + keyCountToReturn);
+            int keyCountToReturn = playerScript.keyCount;
+            // Debug.Log("プレイヤーが持っていた鍵の数: " + keyCountToReturn);
 
-            // playerScript.keyCount = 0;
+            playerScript.keyCount = 0;
 
-            // int placedCount = 0;
+            int placedCount = 0;
 
-            // foreach (Vector3 pos in keySpawnPositions)
-            // {
-            //     if (placedCount >= keyCountToReturn) break;
+            foreach (GameObject box in keyBox)
+            {
+                if (placedCount >= keyCountToReturn) break;
 
-            //     // 指定位置の周囲にあるオブジェクトを調べる
-            //     Collider[] hits = Physics.OverlapSphere(pos, checkRadius);
-            //     bool keyExists = false;
+                bool keyExists = false;
 
-            //     foreach (Collider col in hits)
-            //     {
-            //         if (col.CompareTag("Key"))
-            //         {
-            //             keyExists = true;
-            //             break;
-            //         }
-            //     }
+                foreach (Collider col in hits)
+                {
+                    if (col.CompareTag("Key"))
+                    {
+                        keyExists = true;
+                        break;
+                    }
+                }
 
-            //     // 鍵がなければ生成
-            //     if (!keyExists)
-            //     {
-            //         Instantiate(keyPrefab, pos, Quaternion.identity);
-            //         placedCount++;
-            //       //  Debug.Log("鍵を配置しました @ " + pos);
-            //     }
-            // }
+                // 鍵がなければ生成
+                if (!keyExists)
+                {
+                    Instantiate(keyPrefab, pos, Quaternion.identity);
+                    placedCount++;
+                    //  Debug.Log("鍵を配置しました @ " + pos);
+                }
+            }
 
-            // if (placedCount < keyCountToReturn)
-            // {
-            //     //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
-            // }
+            if (placedCount < keyCountToReturn)
+            {
+                //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
+            }
 
             newDemonCamera = this.GetComponentInChildren<NewDemonCamera>();
 
