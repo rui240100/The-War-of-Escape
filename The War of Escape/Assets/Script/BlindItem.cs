@@ -17,8 +17,8 @@ public class BlindItem : Item
     [SerializeField] private Sprite blindSprite;
 
     private Player playerScriptBl;
-    public string useMessageBl1 = "目隠しアイテムを使用しました";
-    public string useMessageBl2 = "";
+    private string useMessageBl1 = "目隠しアイテムを使用しました";
+    private string useMessageBl2 = "";
     private GameObject itemUseBl;
     private ItemUse itemUseScBl;
 

@@ -18,8 +18,8 @@ public class ProtectingDemon : MonoBehaviour
     private Transform owner;
     private bool ownerFlag;
 
-    public string useMessagePr1 = "アイテムを使用しました";
-    public string useMessagePr2 = "アイテムが使用されました";
+    private string useMessagePr1 = "アイテムを使用しました";
+    private string useMessagePr2 = "アイテムが使用されました";
     private GameObject itemUse;
     private ItemUse itemUseSc;
 

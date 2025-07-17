@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -7,10 +8,12 @@ public class CallNecromancer : Item
     private Necromancer necromancerScript;
     private Player playerScriptNe;
     public Vector3[] NecSpawn;
-    public float checkRadius = 1.0f;
+    public float checkRadius = 0.5f;
 
-    public string useMessageNe1 = "ãSÇè¢ä´ÇµÇ‹ÇµÇΩ";
-    public string useMessageNe2 = "";
+    private string useMessageNe1 = "ãSÇè¢ä´ÇµÇ‹ÇµÇΩ";
+    private string useMessageNe2 = "ëäéËÉvÉåÉCÉÑÅ[Ç…ÇÊÇ¡ÇƒãSÇ™è¢ä´Ç≥ÇÍÇ‹ÇµÇΩ";
+    private string useMessageNe12 = "30ïbä‘ëäéËÉvÉåÉCÉÑÅ[Çí«ê’ÇµÇ‹Ç∑";
+    private string useMessageNe22 = "30ïbä‘Ç†Ç»ÇΩÇí«ê’ÇµÇ‹Ç∑";
     private GameObject itemUseNe;
     private ItemUse itemUseScNe;
 
@@ -33,15 +36,17 @@ public class CallNecromancer : Item
 
     public override void Activate(Player user)
     {
+        playerScriptNe = user.GetComponent<Player>();
+
         Vector3[] NecSpawn = new Vector3[5];
 
         Vector3 safePosition = Vector3.zero;
         bool foundSafe = false;
 
-        NecSpawn[1] = new Vector3(user.transform.position.x + 2.0f, user.transform.position.y, user.transform.position.z);
-        NecSpawn[2] = new Vector3(user.transform.position.x - 2.0f, user.transform.position.y, user.transform.position.z);
-        NecSpawn[3] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z + 2.0f);
-        NecSpawn[4] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z - 2.0f);
+        NecSpawn[1] = new Vector3(user.transform.position.x + 1.0f, user.transform.position.y, user.transform.position.z);
+        NecSpawn[2] = new Vector3(user.transform.position.x - 1.0f, user.transform.position.y, user.transform.position.z);
+        NecSpawn[3] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z + 1.0f);
+        NecSpawn[4] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z - 1.0f);
         
         foreach (Vector3 position in NecSpawn)
         {
@@ -62,8 +67,7 @@ public class CallNecromancer : Item
             NecromancerObj = Instantiate(Necromancer);
             NecromancerObj.transform.position = safePosition;
             necromancerScript = NecromancerObj.GetComponent<Necromancer>();
-
-            playerScriptNe = user.GetComponent<Player>();
+     
             if (playerScriptNe.playerID == 1)
             {
                 necromancerScript.player2 = true;
@@ -72,26 +76,40 @@ public class CallNecromancer : Item
             {
                 necromancerScript.player1 = true;
             }
+
+            if (itemUseScNe != null)
+            {
+                if (playerScriptNe.playerID == 1)
+                {
+                    string message1 = useMessageNe1;
+                    string message2 = useMessageNe2;
+                    itemUseScNe.ShowMessage(message1, message2);
+                    string message3 = useMessageNe12;
+                    string message4 = useMessageNe22;
+                    StartCoroutine(Wait(message3, message4));
+                }
+                else if (playerScriptNe.playerID == 2)
+                {
+                    string message1 = useMessageNe2;
+                    string message2 = useMessageNe1;
+                    itemUseScNe.ShowMessage(message1, message2);
+                    message1 = useMessageNe22;
+                    message2 = useMessageNe12;
+                    StartCoroutine(Wait(message1, message2));
+                }
+            }
         }
         else
         {
             Debug.Log("No safe position");
         }
+    }
 
-        if (itemUseScNe != null)
-        {
-            if (playerScriptNe.playerID == 1)
-            {
-                string message1 = useMessageNe1;
-                string message2 = useMessageNe2;
-                itemUseScNe.ShowMessage(message1, message2);
-            }
-            else if(playerScriptNe.playerID == 2)
-            {
-                string message1 = useMessageNe2;
-                string message2 = useMessageNe1;
-                itemUseScNe.ShowMessage(message1, message2);
-            }
-        }
+    private IEnumerator Wait(string message1, string message2)
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        itemUseScNe.ShowMessage(message1, message2);
+        Debug.Log("sended");
     }
 }

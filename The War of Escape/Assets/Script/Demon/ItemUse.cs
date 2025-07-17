@@ -16,7 +16,7 @@ public class ItemUse : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentTime = 0f;
+        
     }
 
     // Update is called once per frame
@@ -46,6 +46,7 @@ public class ItemUse : MonoBehaviour
     private IEnumerator FadeOut()
     {
         Debug.Log("FadeOut started");
+        currentTime = 0f;
         Color originalColor1 = messageText1.color;
         Color originalColor2 = messageText2.color;
 

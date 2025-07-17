@@ -7,8 +7,8 @@ public class InvertControlItem : Item
     public float duration = 10f; // 反転が続く時間
 
     private Player playerScriptRe;
-    public string useMessageRe1 = "操作反転アイテムを使用しました";
-    public string useMessageRe2 = "移動操作が反転されました";
+    private string useMessageRe1 = "操作反転アイテムを使用しました";
+    private string useMessageRe2 = "移動操作が反転されました";
     private GameObject itemUseRe;
     private ItemUse itemUseScRe;
 

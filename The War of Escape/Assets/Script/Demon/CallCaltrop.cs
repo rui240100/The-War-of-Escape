@@ -5,8 +5,8 @@ public class CallCaltrop : Item
     public GameObject caltrop;
     private Player playerScriptCo;
 
-    public string useMessageCa1 = "‚Ü‚«‚Ñ‚µ‚ğİ’u‚µ‚Ü‚µ‚½";
-    public string useMessageCa2 = "";
+    private string useMessageCa1 = "‚Ü‚«‚Ñ‚µ‚ğİ’u‚µ‚Ü‚µ‚½";
+    private string useMessageCa2 = "";
     private GameObject itemUseCo;
     private ItemUse itemUseScCo;
 

@@ -9,8 +9,8 @@ public class SwitchPositionItem : Item
     private bool isUsed = false;
 
     private Player playerScriptSw;
-    public string useMessageSw1 = "";
-    public string useMessageSw2 = "";
+    private string useMessageSw1 = "";
+    private string useMessageSw2 = "";
     private GameObject itemUseSw;
     private ItemUse itemUseScSw;
 

@@ -8,8 +8,8 @@ public class Item : MonoBehaviour
     public Sprite icon;
 
     private Player playerScriptSl;
-    public string useMessageSl1 = "スローアイテムを使用しました";
-    public string useMessageSl2 = "スローアイテムが使用されました";
+    private string useMessageSl1 = "スローアイテムを使用しました";
+    private string useMessageSl2 = "スローアイテムが使用されました";
     private GameObject itemUseSl;
     private ItemUse itemUseScSl;
 
@@ -68,6 +68,7 @@ public class Item : MonoBehaviour
             user.StartCoroutine(user.otherPlayer.SlowDown(slowMultiplier, slowDuration));
         }
 
+        playerScriptSl = user.GetComponent<Player>();
         if (itemUseScSl != null)
         {
             if (playerScriptSl.playerID == 1)
