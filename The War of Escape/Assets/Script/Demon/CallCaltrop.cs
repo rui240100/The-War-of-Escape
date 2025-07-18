@@ -32,7 +32,7 @@ public class CallCaltrop : Item
     {
         Debug.Log("Ç‹Ç´Ç—Çµê›íu0");
         GameObject caltropObj = Instantiate(caltrop);
-        caltropObj.transform.position = user.transform.position;
+        caltropObj.transform.position = new Vector3(user.transform.position.x, user.transform.position.y - 0.5f, user.transform.position.z);
         Debug.Log("Ç‹Ç´Ç—Çµê›íu1");
         playerScriptCo = user.GetComponent<Player>();
 
