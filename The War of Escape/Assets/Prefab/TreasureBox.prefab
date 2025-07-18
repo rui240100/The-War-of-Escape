@@ -1072,8 +1072,8 @@ Transform:
   m_GameObject: {fileID: 6859821385406611040}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.26134348, y: 1.3013, z: 7.0994}
-  m_LocalScale: {x: 0.6928244, y: 0.6928244, z: 0.6928244}
+  m_LocalPosition: {x: 0.26134348, y: 1.1263, z: 7.3624}
+  m_LocalScale: {x: 1.1766237, y: 1.1766237, z: 1.1766237}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1947810722666530129}
@@ -1096,7 +1096,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5611299084068701775}
   possibleItems:
+  - {fileID: 3470639543458426257, guid: b7fe00cd98f51294994a3408a83eb1b5, type: 3}
+  - {fileID: 3470639543458426257, guid: b7fe00cd98f51294994a3408a83eb1b5, type: 3}
+  - {fileID: 3470639543458426257, guid: b7fe00cd98f51294994a3408a83eb1b5, type: 3}
+  - {fileID: 3470639543458426257, guid: b7fe00cd98f51294994a3408a83eb1b5, type: 3}
+  - {fileID: 4377685084806127688, guid: 3d0cdddda4f961942aab456fd2b6f49e, type: 3}
+  - {fileID: 4377685084806127688, guid: 3d0cdddda4f961942aab456fd2b6f49e, type: 3}
+  - {fileID: 4377685084806127688, guid: 3d0cdddda4f961942aab456fd2b6f49e, type: 3}
+  - {fileID: 9144015416291573477, guid: d9f51385d0b3a1e41a6421e7a1b7483c, type: 3}
+  - {fileID: 9144015416291573477, guid: d9f51385d0b3a1e41a6421e7a1b7483c, type: 3}
+  - {fileID: 9144015416291573477, guid: d9f51385d0b3a1e41a6421e7a1b7483c, type: 3}
+  - {fileID: 5222341061944560564, guid: b9d7ba3740c7e9b4d86ca2eeab907fcb, type: 3}
+  - {fileID: 5222341061944560564, guid: b9d7ba3740c7e9b4d86ca2eeab907fcb, type: 3}
+  - {fileID: 4946287297852470925, guid: b99d8ed7347e6f24bb02468af90aa435, type: 3}
+  - {fileID: 4946287297852470925, guid: b99d8ed7347e6f24bb02468af90aa435, type: 3}
+  - {fileID: 4946287297852470925, guid: b99d8ed7347e6f24bb02468af90aa435, type: 3}
+  - {fileID: 4377685084806127688, guid: 3d0cdddda4f961942aab456fd2b6f49e, type: 3}
   - {fileID: 5690637637458751888, guid: f7c607aeea2848d4ab7bd8da3898a288, type: 3}
+  - {fileID: 5690637637458751888, guid: f7c607aeea2848d4ab7bd8da3898a288, type: 3}
+  - {fileID: 5690637637458751888, guid: f7c607aeea2848d4ab7bd8da3898a288, type: 3}
+  - {fileID: 8721584537946619482, guid: 453eb2598e07b9c48989f40776ef0210, type: 3}
   openSound: {fileID: 8300000, guid: 9ff6f584d1c52774eba2c18253ff776d, type: 3}
   audioSource: {fileID: 490083714957400914}
 --- !u!65 &629120320645467284

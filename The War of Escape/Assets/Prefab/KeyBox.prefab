@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6471610632946459648}
   keyVisualEffect: {fileID: 0}
-  reopenDelay: 5
+  reopenDelay: 60
 --- !u!1 &3746503456646724906
 GameObject:
   m_ObjectHideFlags: 0
