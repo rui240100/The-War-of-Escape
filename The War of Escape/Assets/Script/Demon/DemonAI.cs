@@ -100,22 +100,22 @@ public class DemonAI : MonoBehaviour
 
                 bool keyExists = false;
 
-                foreach (Collider col in hits)
-                {
-                    if (col.CompareTag("Key"))
-                    {
-                        keyExists = true;
-                        break;
-                    }
-                }
+                //foreach (Collider col in hits)
+                //{
+                //    if (col.CompareTag("Key"))
+                //    {
+                //        keyExists = true;
+                //        break;
+                //    }
+                //}
 
                 // 鍵がなければ生成
-                if (!keyExists)
-                {
-                    Instantiate(keyPrefab, pos, Quaternion.identity);
-                    placedCount++;
-                    //  Debug.Log("鍵を配置しました @ " + pos);
-                }
+                //if (!keyExists)
+                //{
+                //    Instantiate(keyPrefab, pos, Quaternion.identity);
+                //    placedCount++;
+                //    //  Debug.Log("鍵を配置しました @ " + pos);
+                //}
             }
 
             if (placedCount < keyCountToReturn)
