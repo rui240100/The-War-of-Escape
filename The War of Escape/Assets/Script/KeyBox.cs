@@ -1,11 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 鍵しか出ない宝箱（KeyBox）。
-/// 一番近いプレイヤーのみ、対応ボタン（Fire2 / Fire2_2）で開封可能。
-/// 鍵とエフェクトを付与する。
-/// </summary>
 public class KeyBox : MonoBehaviour
 {
     [Header("開封フラグ")]
@@ -17,7 +13,9 @@ public class KeyBox : MonoBehaviour
     [Header("鍵取得時のエフェクト (任意)")]
     [SerializeField] private GameObject keyVisualEffect;
 
-    // エリア内のプレイヤー保持
+    [Header("再使用までの待ち時間（秒）")]
+    [SerializeField] private float reopenDelay = 60f;
+
     private readonly List<Player> playersInRange = new();
 
     void Update()
@@ -74,7 +72,7 @@ public class KeyBox : MonoBehaviour
 
     private void GiveKeyToPlayer(Player player)
     {
-        player.AddKey();  // 鍵を1つ加算
+        player.AddKey();
 
         if (keyVisualEffect != null)
         {
@@ -86,5 +84,14 @@ public class KeyBox : MonoBehaviour
     {
         isOpen = true;
         if (animator != null) animator.SetTrigger("Open");
+        StartCoroutine(ReopenAfterDelay());
+    }
+
+    private IEnumerator ReopenAfterDelay()
+    {
+        yield return new WaitForSeconds(reopenDelay);
+
+        if (animator != null) animator.SetTrigger("Close");
+        isOpen = false;
     }
 }
