@@ -10,8 +10,8 @@ public class GhostItem : Item
     [SerializeField] private List<GameObject> consolationItems = new();
 
     private Player playerScriptRo;
-    private string useMessageRo1 = "を使用しました";
-    private string useMessageRo2 = "が使用されました";
+    private string useMessageRo1 = "";
+    private string useMessageRo2 = "";
     private GameObject itemUseRo;
     private ItemUse itemUseScRo;
 
