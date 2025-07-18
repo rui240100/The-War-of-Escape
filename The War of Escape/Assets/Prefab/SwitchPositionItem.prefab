@@ -47,11 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowDuration: 5
   slowMultiplier: 0.2
-  icon: {fileID: 21300000, guid: dbc813e10d4dbd646a289db088cd0ca5, type: 3}
-  useMessageSl1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageSl2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
-  useMessageSw1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageSw2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
+  icon: {fileID: 21300000, guid: 7eb9511735713eb49aa4d56935920c63, type: 3}
 --- !u!65 &3861061212146857923
 BoxCollider:
   m_ObjectHideFlags: 0

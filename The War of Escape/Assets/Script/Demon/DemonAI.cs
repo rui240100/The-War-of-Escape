@@ -60,12 +60,14 @@ public class DemonAI : MonoBehaviour
 
         agent.destination = patrolPoints[currentPointIndex].position; // 次の目的地を設定
         currentPointIndex = (currentPointIndex + 1) % patrolPoints.Length; // 次のインデックスへ（ループ）
+        Debug.Log("Patroling");
     }
 
     public void StartChase(Transform target)
     {
         player = target;
         isChasing = true;
+        Debug.Log("ChaseStart");
     }
 
     public void StopChase()
@@ -73,6 +75,7 @@ public class DemonAI : MonoBehaviour
         isChasing = false;
         player = null;
         agent.speed = patrolSpeed;
+        Debug.Log("ChaseStop");
     }
 
     private void OnCollisionEnter(Collision collision)
