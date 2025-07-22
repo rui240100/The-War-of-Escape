@@ -47,4 +47,4 @@ MonoBehaviour:
   slowDuration: 5
   slowMultiplier: 0.2
   icon: {fileID: 21300000, guid: ca864c32220cd1940bd4075005b0d042, type: 3}
-  caltrop: {fileID: 6135111261178386407, guid: 999c29add9676c84faadb4a66785a245, type: 3}
+  caltrop: {fileID: 5325104350198187437, guid: 999c29add9676c84faadb4a66785a245, type: 3}
