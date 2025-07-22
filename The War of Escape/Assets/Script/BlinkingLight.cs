@@ -1,51 +1,44 @@
+using System.Collections;
 using UnityEngine;
 
 public class BlinkingLight : MonoBehaviour
 {
-    [Header("点灯している時間（秒）")]
-    [SerializeField] private float lightOnDuration = 1.0f;
+    [SerializeField] private Light lightComponent;
+    [SerializeField] private float minOnDuration = 0.5f;
+    [SerializeField] private float maxOnDuration = 1.5f;
+    [SerializeField] private float minOffDuration = 0.5f;
+    [SerializeField] private float maxOffDuration = 1.5f;
+    [SerializeField] private bool alwaysOn = false; // ← 追加
 
-    [Header("消灯している時間（秒）")]
-    [SerializeField] private float lightOffDuration = 1.0f;
-
-    private Light targetLight;
-    private float timer;
-    private bool isLightOn = true;
-
-    void Start()
+    private void Start()
     {
-        targetLight = GetComponent<Light>();
-        if (targetLight == null)
+        if (lightComponent == null)
         {
-            Debug.LogWarning("Lightコンポーネントが見つかりません！");
-            return;
+            lightComponent = GetComponent<Light>();
         }
 
-        targetLight.enabled = isLightOn;
-        timer = lightOnDuration;
+        StartCoroutine(Blink());
     }
 
-    void Update()
+    private IEnumerator Blink()
     {
-        if (targetLight == null) return;
-
-        if (lightOffDuration <= 0f && !isLightOn)
+        while (true)
         {
-            // 消灯時間が0なのに今OFF → 点けて終了
-            isLightOn = true;
-            targetLight.enabled = true;
-            return;
-        }
+            if (alwaysOn)
+            {
+                lightComponent.enabled = true;
+                yield break; // 常時点灯なら点滅処理終了
+            }
 
-        timer -= Time.deltaTime;
+            // ライトを ON にして一定時間待つ
+            lightComponent.enabled = true;
+            float onDuration = Random.Range(minOnDuration, maxOnDuration);
+            yield return new WaitForSeconds(onDuration);
 
-        if (timer <= 0f)
-        {
-            isLightOn = !isLightOn;
-            targetLight.enabled = isLightOn;
-
-            timer = isLightOn ? lightOnDuration : lightOffDuration;
+            // ライトを OFF にして一定時間待つ
+            lightComponent.enabled = false;
+            float offDuration = Random.Range(minOffDuration, maxOffDuration);
+            yield return new WaitForSeconds(offDuration);
         }
     }
-
 }
