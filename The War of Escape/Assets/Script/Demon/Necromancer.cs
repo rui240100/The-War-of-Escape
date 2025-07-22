@@ -55,6 +55,12 @@ public class Necromancer : MonoBehaviour
         }        
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        CapsuleCollider capsuleCollider = GetComponent<CapsuleCollider>();
+        capsuleCollider.isTrigger = false;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
