@@ -186,7 +186,7 @@ public class Player : MonoBehaviour
 
         if (heldItem == used)
         {
-            SetHeldItem(null);
+            //SetHeldItem(null);
         }
     }
 

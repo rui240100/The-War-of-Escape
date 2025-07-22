@@ -37,72 +37,107 @@ public class CallNecromancer : Item
     public override void Activate(Player user)
     {
         playerScriptNe = user.GetComponent<Player>();
+        GameObject NecromancerObj = Instantiate(Necromancer);
+        NecromancerObj.transform.position = user.transform.position;
+        necromancerScript = NecromancerObj.GetComponent<Necromancer>();
 
-        Vector3[] NecSpawn = new Vector3[5];
-
-        Vector3 safePosition = Vector3.zero;
-        bool foundSafe = false;
-
-        NecSpawn[1] = new Vector3(user.transform.position.x + 1.0f, user.transform.position.y, user.transform.position.z);
-        NecSpawn[2] = new Vector3(user.transform.position.x - 1.0f, user.transform.position.y, user.transform.position.z);
-        NecSpawn[3] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z + 1.0f);
-        NecSpawn[4] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z - 1.0f);
-        
-        foreach (Vector3 position in NecSpawn)
+        if (playerScriptNe.playerID == 1)
         {
-            Collider[] hits = Physics.OverlapSphere(position,checkRadius);
-
-            if (hits.Length == 0)
-            {
-                safePosition = position;
-                foundSafe = true;
-                break; // ç≈èâÇ…å©Ç¬ÇØÇΩà¿ëSÇ»èÍèäÇ≈é~ÇﬂÇÈ
-            }
+            necromancerScript.player2 = true;
+        }
+        else if (playerScriptNe.playerID == 2)
+        {
+            necromancerScript.player1 = true;
         }
 
-        GameObject NecromancerObj;
-
-        if (foundSafe)
+        if (itemUseScNe != null)
         {
-            NecromancerObj = Instantiate(Necromancer);
-            NecromancerObj.transform.position = safePosition;
-            necromancerScript = NecromancerObj.GetComponent<Necromancer>();
-     
             if (playerScriptNe.playerID == 1)
             {
-                necromancerScript.player2 = true;
+                string message1 = useMessageNe1;
+                string message2 = useMessageNe2;
+                itemUseScNe.ShowMessage(message1, message2);
+                string message3 = useMessageNe12;
+                string message4 = useMessageNe22;
+                StartCoroutine(Wait(message3, message4));
             }
             else if (playerScriptNe.playerID == 2)
             {
-                necromancerScript.player1 = true;
+                string message1 = useMessageNe2;
+                string message2 = useMessageNe1;
+                itemUseScNe.ShowMessage(message1, message2);
+                message1 = useMessageNe22;
+                message2 = useMessageNe12;
+                StartCoroutine(Wait(message1, message2));
             }
+        }
 
-            if (itemUseScNe != null)
-            {
-                if (playerScriptNe.playerID == 1)
-                {
-                    string message1 = useMessageNe1;
-                    string message2 = useMessageNe2;
-                    itemUseScNe.ShowMessage(message1, message2);
-                    string message3 = useMessageNe12;
-                    string message4 = useMessageNe22;
-                    StartCoroutine(Wait(message3, message4));
-                }
-                else if (playerScriptNe.playerID == 2)
-                {
-                    string message1 = useMessageNe2;
-                    string message2 = useMessageNe1;
-                    itemUseScNe.ShowMessage(message1, message2);
-                    message1 = useMessageNe22;
-                    message2 = useMessageNe12;
-                    StartCoroutine(Wait(message1, message2));
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("No safe position");
-        }
+        //Vector3[] NecSpawn = new Vector3[5];
+
+        //Vector3 safePosition = Vector3.zero;
+        //bool foundSafe = false;
+
+        //NecSpawn[1] = new Vector3(user.transform.position.x + 1.0f, user.transform.position.y, user.transform.position.z);
+        //NecSpawn[2] = new Vector3(user.transform.position.x - 1.0f, user.transform.position.y, user.transform.position.z);
+        //NecSpawn[3] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z + 1.0f);
+        //NecSpawn[4] = new Vector3(user.transform.position.x, user.transform.position.y, user.transform.position.z - 1.0f);
+
+        //foreach (Vector3 position in NecSpawn)
+        //{
+        //    Collider[] hits = Physics.OverlapSphere(position,checkRadius);
+
+        //    if (hits.Length == 0)
+        //    {
+        //        safePosition = position;
+        //        foundSafe = true;
+        //        break; // ç≈èâÇ…å©Ç¬ÇØÇΩà¿ëSÇ»èÍèäÇ≈é~ÇﬂÇÈ
+        //    }
+        //}
+
+        //GameObject NecromancerObj;
+
+        //if (foundSafe)
+        //{
+        //    NecromancerObj = Instantiate(Necromancer);
+        //    NecromancerObj.transform.position = safePosition;
+        //    necromancerScript = NecromancerObj.GetComponent<Necromancer>();
+
+        //    if (playerScriptNe.playerID == 1)
+        //    {
+        //        necromancerScript.player2 = true;
+        //    }
+        //    else if (playerScriptNe.playerID == 2)
+        //    {
+        //        necromancerScript.player1 = true;
+        //    }
+
+        //    if (itemUseScNe != null)
+        //    {
+        //        if (playerScriptNe.playerID == 1)
+        //        {
+        //            string message1 = useMessageNe1;
+        //            string message2 = useMessageNe2;
+        //            itemUseScNe.ShowMessage(message1, message2);
+        //            string message3 = useMessageNe12;
+        //            string message4 = useMessageNe22;
+        //            StartCoroutine(Wait(message3, message4));
+        //        }
+        //        else if (playerScriptNe.playerID == 2)
+        //        {
+        //            string message1 = useMessageNe2;
+        //            string message2 = useMessageNe1;
+        //            itemUseScNe.ShowMessage(message1, message2);
+        //            message1 = useMessageNe22;
+        //            message2 = useMessageNe12;
+        //            StartCoroutine(Wait(message1, message2));
+        //        }
+        //    }
+        //    Destroy(this.gameObject);
+        //}
+        //else
+        //{
+        //    Debug.Log("No safe position");
+        //}
     }
 
     private IEnumerator Wait(string message1, string message2)
@@ -111,5 +146,6 @@ public class CallNecromancer : Item
 
         itemUseScNe.ShowMessage(message1, message2);
         Debug.Log("sended");
+        Destroy(this.gameObject);
     }
 }

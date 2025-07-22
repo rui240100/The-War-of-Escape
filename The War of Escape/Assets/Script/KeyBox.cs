@@ -18,6 +18,17 @@ public class KeyBox : MonoBehaviour
 
     private readonly List<Player> playersInRange = new();
 
+    [Header("•ó” ‚ªŠJ‚­‚Æ‚«‚ÌŒø‰Ê‰¹ (”CˆÓ)")]
+    [SerializeField] private AudioClip openSound;
+
+    private AudioSource audioSource;
+
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (isOpen) return;
@@ -83,7 +94,13 @@ public class KeyBox : MonoBehaviour
     private void OpenChest()
     {
         isOpen = true;
-        if (animator != null) animator.SetTrigger("Open");
+
+        if (animator != null)
+            animator.SetTrigger("Open");
+
+        if (openSound != null && audioSource != null)
+            audioSource.PlayOneShot(openSound);
+
         StartCoroutine(ReopenAfterDelay());
     }
 

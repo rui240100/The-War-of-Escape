@@ -47,6 +47,7 @@ public class InvertControlItem : Item
                 itemUseScRe.ShowMessage(message1, message2);
             }
         }
+
     }
 
     private IEnumerator InvertControl(Player targetPlayer)
@@ -62,5 +63,6 @@ public class InvertControlItem : Item
         yield return new WaitForSeconds(duration);
 
         inverted.DisableInversion();
+        Destroy(this.gameObject);
     }
 }
