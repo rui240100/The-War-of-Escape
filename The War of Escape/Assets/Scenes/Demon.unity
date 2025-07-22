@@ -260,6 +260,17 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 32c1f93a192f9a246a2ffd5b13d9d249, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &88519404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
+  m_PrefabInstance: {fileID: 214270694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c97e4d334e9324c9346ca855dc8e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +400,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2599612036848607707, guid: 46274949b1143384595a968b323c0155, type: 3}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
     - target: {fileID: 4790712411445567796, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
@@ -483,6 +498,10 @@ PrefabInstance:
       propertyPath: heldItem
       value: 
       objectReference: {fileID: 1578861047306497315, guid: b9d7ba3740c7e9b4d86ca2eeab907fcb, type: 3}
+    - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 88519404}
     - target: {fileID: 7832984954572477228, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: m_Name
       value: 'Player1 '

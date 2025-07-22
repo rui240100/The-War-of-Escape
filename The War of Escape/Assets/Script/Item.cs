@@ -85,7 +85,7 @@ public class Item : MonoBehaviour
             }
         }
 
-        Destroy(gameObject); // アイテムは使い捨て
+        user.SetHeldItem(null);
     }
 }
 

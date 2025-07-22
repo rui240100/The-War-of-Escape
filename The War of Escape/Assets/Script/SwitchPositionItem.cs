@@ -108,7 +108,7 @@ public class SwitchPositionItem : Item
             countdownUI.SetActive(false);
         }
 
-        Destroy(gameObject);
+        user.SetHeldItem(null);
     }
 
 }

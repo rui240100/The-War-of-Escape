@@ -27,7 +27,7 @@ public class InvertControlItem : Item
     {
         if (user.otherPlayer != null)
         {
-            user.StartCoroutine(InvertControl(user.otherPlayer));
+            user.StartCoroutine(InvertControl(user.otherPlayer,user));
         }
 
         playerScriptRe = user.GetComponent<Player>();
@@ -50,7 +50,7 @@ public class InvertControlItem : Item
 
     }
 
-    private IEnumerator InvertControl(Player targetPlayer)
+    private IEnumerator InvertControl(Player targetPlayer,Player user)
     {
         InvertedInput inverted = targetPlayer.gameObject.GetComponent<InvertedInput>();
         if (inverted == null)
@@ -63,6 +63,6 @@ public class InvertControlItem : Item
         yield return new WaitForSeconds(duration);
 
         inverted.DisableInversion();
-        Destroy(this.gameObject);
+        user.SetHeldItem(null);
     }
 }

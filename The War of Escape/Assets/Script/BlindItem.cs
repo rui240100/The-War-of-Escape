@@ -66,7 +66,7 @@ public class BlindItem : Item
                 itemUseScBl.ShowMessage(message1, message2);
             }
         }
-        Destroy(this.gameObject);
+        user.SetHeldItem(null);
     }
 
     // ───────── 補助メソッド ─────────

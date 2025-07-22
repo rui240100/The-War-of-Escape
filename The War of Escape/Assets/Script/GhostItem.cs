@@ -10,8 +10,10 @@ public class GhostItem : Item
     [SerializeField] private List<GameObject> consolationItems = new();
 
     private Player playerScriptRo;
-    private string useMessageRo1 = "";
-    private string useMessageRo2 = "";
+    private string useMessageRo1 = "相手から鍵を奪いました";
+    private string useMessageRo2 = "相手に鍵を奪われました";
+    private string useMessageRo12 = "相手が鍵を持っていなかったので、アイテムを授けます";
+    private string useMessageRo22 = "";
     private GameObject itemUseRo;
     private ItemUse itemUseScRo;
 
@@ -28,6 +30,8 @@ public class GhostItem : Item
 
     public override void Activate(Player user)
     {
+        playerScriptRo = user.GetComponent<Player>();
+
         if (user == null || user.otherPlayer == null)
         {
             Debug.LogWarning("GhostItem: userまたはotherPlayerがnullです。");
@@ -47,6 +51,22 @@ public class GhostItem : Item
             }
 
             Debug.Log($"GhostItem: {keysToSteal} 鍵を Player{target.playerID} から Player{user.playerID} に奪いました。");
+
+            if (itemUseScRo != null)
+            {
+                if (playerScriptRo.playerID == 1)
+                {
+                    string message1 = useMessageRo1;
+                    string message2 = useMessageRo2;
+                    itemUseScRo.ShowMessage(message1, message2);
+                }
+                else if (playerScriptRo.playerID == 2)
+                {
+                    string message1 = useMessageRo2;
+                    string message2 = useMessageRo1;
+                    itemUseScRo.ShowMessage(message1, message2);
+                }
+            }
         }
         else
         {
@@ -71,7 +91,7 @@ public class GhostItem : Item
                     if (user.HasItem)
                     {
                         Debug.Log($"GhostItem: 既存アイテム {user.heldItem.name} を削除します。");
-                        Destroy(user.heldItem.gameObject);
+                        user.heldItem = null;
                     }
 
                     user.SetHeldItem(newItem);
@@ -96,26 +116,24 @@ public class GhostItem : Item
             {
                 Debug.LogWarning("GhostItem: consolationItems が空です。何も渡せません。");
             }
-        }
 
-        playerScriptRo = user.GetComponent<Player>();
-
-        if (itemUseScRo != null)
-        {
-            if (playerScriptRo.playerID == 1)
+            if (itemUseScRo != null)
             {
-                string message1 = useMessageRo1;
-                string message2 = useMessageRo2;
-                itemUseScRo.ShowMessage(message1, message2);
-            }
-            else if (playerScriptRo.playerID == 2)
-            {
-                string message1 = useMessageRo2;
-                string message2 = useMessageRo1;
-                itemUseScRo.ShowMessage(message1, message2);
+                if (playerScriptRo.playerID == 1)
+                {
+                    string message1 = useMessageRo12;
+                    string message2 = useMessageRo22;
+                    itemUseScRo.ShowMessage(message1, message2);
+                }
+                else if (playerScriptRo.playerID == 2)
+                {
+                    string message1 = useMessageRo22;
+                    string message2 = useMessageRo12;
+                    itemUseScRo.ShowMessage(message1, message2);
+                }
             }
         }
 
-        Destroy(gameObject);
+        user.SetHeldItem(null);
     }
 }
