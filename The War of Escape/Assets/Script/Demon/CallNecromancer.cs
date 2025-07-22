@@ -59,7 +59,7 @@ public class CallNecromancer : Item
                 itemUseScNe.ShowMessage(message1, message2);
                 string message3 = useMessageNe12;
                 string message4 = useMessageNe22;
-                StartCoroutine(Wait(message3, message4));
+                StartCoroutine(Wait(message3, message4,user));
             }
             else if (playerScriptNe.playerID == 2)
             {
@@ -68,7 +68,7 @@ public class CallNecromancer : Item
                 itemUseScNe.ShowMessage(message1, message2);
                 message1 = useMessageNe22;
                 message2 = useMessageNe12;
-                StartCoroutine(Wait(message1, message2));
+                StartCoroutine(Wait(message1, message2,user));
             }
         }
 
@@ -140,12 +140,12 @@ public class CallNecromancer : Item
         //}
     }
 
-    private IEnumerator Wait(string message1, string message2)
+    private IEnumerator Wait(string message1, string message2,Player user)
     {
         yield return new WaitForSeconds(3.0f);
 
         itemUseScNe.ShowMessage(message1, message2);
         Debug.Log("sended");
-        Destroy(this.gameObject);
+        user.SetHeldItem(null);
     }
 }

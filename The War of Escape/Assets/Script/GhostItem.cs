@@ -116,6 +116,6 @@ public class GhostItem : Item
             }
         }
 
-        Destroy(gameObject);
+        user.SetHeldItem(null);
     }
 }
