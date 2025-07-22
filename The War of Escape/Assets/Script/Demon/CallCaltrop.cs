@@ -18,7 +18,11 @@ public class CallCaltrop : Item
         itemUseScCo = itemUseCo.GetComponent<ItemUse>();
         if (itemUseScCo == null)
         {
-            Debug.LogError("MessageDisplayManagerがシーンにありません！");
+            Debug.Log("nothingで");
+        }
+        else
+        {
+            Debug.Log("見つけた");
         }
     }
 
@@ -50,6 +54,12 @@ public class CallCaltrop : Item
                 string message2 = useMessageCa1;
                 itemUseScCo.ShowMessage(message1, message2);
             }
+            Debug.Log("メッセージ渡した");
         }
+        else
+        {
+            Debug.Log("メッセージ渡せなかった");
+        }
+            user.SetHeldItem(null);
     }
 }
