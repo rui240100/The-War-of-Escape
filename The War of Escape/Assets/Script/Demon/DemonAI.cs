@@ -36,7 +36,9 @@ public class DemonAI : MonoBehaviour
         {
             if (agent.hasPath)
             {
-                agent.destination = player.position; // プレイヤーを追跡
+                Transform target = player.transform;
+                agent.destination = target.position; // プレイヤーを追跡
+                Debug.Log(target.position);
 
                 if (!demonStun)
                 {
