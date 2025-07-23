@@ -15,7 +15,8 @@ public class FadeManager : MonoBehaviour
 
 	private static FadeManager instance;
 
-	public static FadeManager Instance {
+    [Obsolete]
+    public static FadeManager Instance {
 		get {
 			if (instance == null) {
 				instance = (FadeManager)FindObjectOfType (typeof(FadeManager));
@@ -42,8 +43,8 @@ public class FadeManager : MonoBehaviour
 	/// <summary>フェード色</summary>
 	public Color fadeColor = Color.black;
 
-
-	public void Awake ()
+    [Obsolete]
+    public void Awake ()
 	{
 		if (this != Instance) {
 			Destroy (this.gameObject);
