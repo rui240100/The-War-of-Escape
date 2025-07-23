@@ -111,12 +111,14 @@ public class TriggerCamera : MonoBehaviour
     private IEnumerator ProtectNecCoroutine(Necromancer necromancer)
     {
         necromancer.agent.speed = 0.0f;
+        necromancer.NecStun = true;
 
         Debug.Log("SlowNec");
 
         yield return new WaitForSeconds(5.0f);
 
         necromancer.agent.speed = 6.0f;
+        necromancer.NecStun = false;
 
         Debug.Log("NecçƒäJ");
 

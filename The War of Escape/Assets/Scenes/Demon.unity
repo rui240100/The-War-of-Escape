@@ -497,7 +497,7 @@ PrefabInstance:
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: heldItem
       value: 
-      objectReference: {fileID: 1578861047306497315, guid: b9d7ba3740c7e9b4d86ca2eeab907fcb, type: 3}
+      objectReference: {fileID: 3508595155260803798, guid: 453eb2598e07b9c48989f40776ef0210, type: 3}
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: otherPlayer
       value: 
@@ -1416,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4847486271300496179, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5389241302548563975, guid: 3d9e3276c56a40d409002ffc5a993f10, type: 3}
       propertyPath: m_Mesh

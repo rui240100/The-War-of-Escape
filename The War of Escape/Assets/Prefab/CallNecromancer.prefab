@@ -47,10 +47,6 @@ MonoBehaviour:
   slowDuration: 5
   slowMultiplier: 0.2
   icon: {fileID: 21300000, guid: 67923d214bc2b0640a3073b203f7784a, type: 3}
-  useMessageSl1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageSl2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
-  Necromancer: {fileID: 9044956694004241932, guid: 4ba14842f44db5246bcc191225644839, type: 3}
+  Necromancer: {fileID: 1256065800633348793, guid: e20a7fe9028e96248afbe876b9dd22fc, type: 3}
   NecSpawn: []
   checkRadius: 1
-  useMessageNe1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageNe2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
