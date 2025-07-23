@@ -8,6 +8,7 @@ public class Exit : MonoBehaviour
     private float holdTime = 0f;
     private float requiredHoldTime = 2f; // ’·‰Ÿ‚µ‚É•K—v‚È•b”
 
+    [System.Obsolete]
     void Update()
     {
         if (isPlayerInTrigger && currentPlayer != null)
