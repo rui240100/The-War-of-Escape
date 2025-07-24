@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1221141074391360481}
   - component: {fileID: 3835237122350912115}
   - component: {fileID: 4721179423415680785}
-  - component: {fileID: 840521334081726271}
   - component: {fileID: 6850135094043544557}
   - component: {fileID: 6776789551555553622}
   - component: {fileID: 7561879254003470051}
@@ -94,32 +93,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &840521334081726271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256065800633348793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6af93fbbe757ec048b4be8bc26a742de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  patrolSpeed: 1
-  chaseSpeed: 3
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  isChasing: 0
-  respawn: {x: 30, y: 1, z: 17}
-  keyPrefab: {fileID: 6414842845069078188, guid: 16dac2f3839c7d34c9986e7bbd5864a1, type: 3}
-  keyBox: []
-  newDemonCamera: {fileID: 0}
-  demonStun: 0
 --- !u!114 &6850135094043544557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,14 +106,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  player1Obj: {fileID: 0}
-  player2Obj: {fileID: 0}
+  player1Obj: {fileID: 7832984954572477228, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+  player2Obj: {fileID: 9061555157747211651, guid: 46274949b1143384595a968b323c0155, type: 3}
   player1: 0
   player2: 0
-  respawn: {x: 0, y: 0, z: 0}
+  respawn: {fileID: 0}
   keyPrefab: {fileID: 0}
   keySpawnPositions: []
   checkRadius: 0.1
+  NecStun: 0
 --- !u!136 &6776789551555553622
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -156,7 +130,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

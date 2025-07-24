@@ -62,14 +62,14 @@ public class DemonAI : MonoBehaviour
 
         agent.destination = patrolPoints[currentPointIndex].position; // 次の目的地を設定
         currentPointIndex = (currentPointIndex + 1) % patrolPoints.Length; // 次のインデックスへ（ループ）
-        Debug.Log("Patroling");
+        //Debug.Log("Patroling");
     }
 
     public void StartChase(Transform target)
     {
         player = target;
         isChasing = true;
-        Debug.Log("ChaseStart");
+        //Debug.Log("ChaseStart");
     }
 
     public void StopChase()
@@ -96,14 +96,15 @@ public class DemonAI : MonoBehaviour
             // Debug.Log("プレイヤーが持っていた鍵の数: " + keyCountToReturn);
 
             playerScript.keyCount = 0;
+            playerScript.UpdateKeyUI();
 
-            int placedCount = 0;
+            //int placedCount = 0;
 
-            foreach (GameObject box in keyBox)
-            {
-                if (placedCount >= keyCountToReturn) break;
+            //foreach (GameObject box in keyBox)
+            //{
+            //    if (placedCount >= keyCountToReturn) break;
 
-                bool keyExists = false;
+            //    bool keyExists = false;
 
                 //foreach (Collider col in hits)
                 //{
@@ -121,12 +122,12 @@ public class DemonAI : MonoBehaviour
                 //    placedCount++;
                 //    //  Debug.Log("鍵を配置しました @ " + pos);
                 //}
-            }
+            //}
 
-            if (placedCount < keyCountToReturn)
-            {
-                //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
-            }
+            //if (placedCount < keyCountToReturn)
+            //{
+            //    //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
+            //}
 
             newDemonCamera = this.GetComponentInChildren<NewDemonCamera>();
 
