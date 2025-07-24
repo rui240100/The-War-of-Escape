@@ -55,7 +55,7 @@ public class ProtectingDemon : MonoBehaviour
         {        
             var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);
 
-            triggerCameraScript = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
+            //triggerCameraScript = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
 
             if (triggerCameraScript == null)
             {
@@ -64,6 +64,7 @@ public class ProtectingDemon : MonoBehaviour
             else
             {
                 triggerCameraScript.demonHave = true;
+                Debug.Log("demonHave = True");
             }
 
             //triggerCamera = player1.GetComponent<TriggerCamera>();
