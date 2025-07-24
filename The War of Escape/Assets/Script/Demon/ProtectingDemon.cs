@@ -52,13 +52,16 @@ public class ProtectingDemon : MonoBehaviour
     {
 
         if (prisonGateScript.playerID)
-        {        
-            var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);
+        {
+            //var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);
 
             //triggerCameraScript = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
+            GameObject triggerCameraObj = GameObject.Find("TriggerCamera1");
+            triggerCameraScript = triggerCameraObj.GetComponent<TriggerCamera>();
 
             if (triggerCameraScript == null)
             {
+                Debug.Log("‹î‚É‚á‚¿");
                 return;
             }
             else
@@ -79,8 +82,11 @@ public class ProtectingDemon : MonoBehaviour
         }
         else if (!prisonGateScript.playerID)
         {
-            var triggerCandidates = player2.GetComponentsInChildren<TriggerCamera>(true);
-            triggerCameraScript = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
+            //var triggerCandidates = player2.GetComponentsInChildren<TriggerCamera>(true);
+            //triggerCameraScript = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
+
+            GameObject triggerCameraObj = GameObject.Find("TriggerCamera2");
+            triggerCameraScript = triggerCameraObj.GetComponent<TriggerCamera>();
 
             if (triggerCameraScript == null)
             {

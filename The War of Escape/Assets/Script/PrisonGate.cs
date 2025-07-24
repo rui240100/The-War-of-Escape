@@ -150,6 +150,7 @@ public class PrisonGate : MonoBehaviour
             {
                 protectingDemonScript.SetOwner(player);
                 protectingDemonScript.Launch();
+                Debug.Log("にゃーーーーーーーーーー");
 
                 //Debug.Log($"Launch呼ばれた 【{player.playerID}P】監獄がプレイヤー{player.playerID}によって開かれました！");
             }
