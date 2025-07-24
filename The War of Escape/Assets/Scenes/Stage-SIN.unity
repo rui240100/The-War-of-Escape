@@ -17241,7 +17241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: keyCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: itemIconUI
