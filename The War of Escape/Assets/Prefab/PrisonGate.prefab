@@ -104,7 +104,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 1, z: 1}
   m_Center: {x: -0.00000047683716, y: 0, z: 0.00000047683716}
@@ -161,6 +161,7 @@ MonoBehaviour:
   requiredMagatamaCount: 3
   doorPart: {fileID: 2062590919249445473}
   protectingDemon: {fileID: 0}
+  playerID: 0
 --- !u!65 &8693522925825421682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,8 +181,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.47, y: 4.95, z: 2.57}
-  m_Center: {x: 1.46, y: 0.14, z: -1.36}
+  m_Size: {x: 3.47, y: 4.95, z: 1.83}
+  m_Center: {x: 1.46, y: 0.14, z: -1.81}
 --- !u!1 &4272859509935976297
 GameObject:
   m_ObjectHideFlags: 0
