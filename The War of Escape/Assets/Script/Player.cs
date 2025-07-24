@@ -42,6 +42,17 @@ public class Player : MonoBehaviour
     public Sprite itemBackgroundSprite; // 宝箱の画像（常に表示したいやつ）
 
 
+    /*[Header("プレイヤーの視点関係")]
+    public float verticalRotation = 0f;
+    public float minVerticalAngle = -30f;
+    public float maxVerticalAngle = 60f;*/
+
+    [Header("足音関連")]
+    public AudioSource footstepAudioSource; // 足音の音源
+    public AudioClip footstepClip;          // 足音の音素材
+    public float footstepInterval = 0.4f;   // 歩幅（音の間隔）
+
+    private float footstepTimer = 0f;
 
 
     [Header("鍵UI関連")]
@@ -90,14 +101,27 @@ public class Player : MonoBehaviour
         }
 
 
+        if (footstepAudioSource != null)
+        {
+            footstepAudioSource.clip = footstepClip;
+            footstepAudioSource.loop = false;
+        }
+
+
     }
 
     void Update()
     {
+        
+
         float x = 0f;
         float z = 0f;
         float mouseX = 0f;
         float mouseY = 0f;
+
+        
+
+
 
         if (playerID == 1)
         {
@@ -117,6 +141,11 @@ public class Player : MonoBehaviour
             mouseX = Input.GetAxis("Mouse X2");
             mouseY = Input.GetAxis("Mouse Y2");
         }
+
+    
+
+
+
 
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
@@ -156,6 +185,29 @@ public class Player : MonoBehaviour
         {
             UseItem();
         }
+
+
+        if (move.magnitude > 0.1f && characterController.isGrounded)
+        {
+            footstepTimer += Time.deltaTime;
+            if (footstepTimer >= footstepInterval)
+            {
+                if (footstepAudioSource != null && footstepClip != null)
+                {
+                    footstepAudioSource.PlayOneShot(footstepClip);
+                }
+                footstepTimer = 0f;
+            }
+        }
+        else
+        {
+            footstepTimer = footstepInterval; // 足を止めたら即次の足音を鳴らせるように
+        }
+
+
+
+
+
     }
 
     IEnumerator FindOtherPlayerWithDelay()

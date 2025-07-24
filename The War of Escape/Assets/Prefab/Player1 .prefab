@@ -224,6 +224,9 @@ MonoBehaviour:
   idleAnimationSpeed: 2
   runAnimationSpeed: 10
   itemBackgroundSprite: {fileID: 0}
+  footstepAudioSource: {fileID: 5360727185976374590}
+  footstepClip: {fileID: 8300000, guid: 15395b979e3f4ba44bb315acfd20dafe, type: 3}
+  footstepInterval: 0.4
   keyIconImage: {fileID: 0}
   keySprites: []
   keyUIContainer: {fileID: 0}
@@ -265,7 +268,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eaec03456d659424592ca4a074c1f6fd, type: 3}
   m_Resource: {fileID: 8300000, guid: eaec03456d659424592ca4a074c1f6fd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
