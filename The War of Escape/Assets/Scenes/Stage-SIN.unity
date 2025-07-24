@@ -17539,7 +17539,7 @@ PrefabInstance:
       objectReference: {fileID: 352153092}
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: magatamaCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: defaultKeyIcon
@@ -17589,6 +17589,10 @@ PrefabInstance:
       propertyPath: 'keySprites.Array.data[5]'
       value: 
       objectReference: {fileID: 21300000, guid: 3ddf57f3ae7f7a249b6fb74f8873f1a6, type: 3}
+    - target: {fileID: 1871270744548676847, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+      propertyPath: m_Name
+      value: TriggerCamera1
+      objectReference: {fileID: 0}
     - target: {fileID: 4352814758645641572, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.527
@@ -36428,39 +36432,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.409
+      value: 123.07
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.383
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 82.945
+      value: 85.625
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49655908
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5034174
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.49655908
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5034175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90.78601
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.00101
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2042895246919543743, guid: 7febf6eb9dc222a46866ca0f27352cc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -66762,7 +66766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &938979479
 Transform:
   m_ObjectHideFlags: 0
@@ -74726,6 +74730,10 @@ PrefabInstance:
     - target: {fileID: 5764057910027673219, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.658
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534432272951500898, guid: 46274949b1143384595a968b323c0155, type: 3}
+      propertyPath: m_Name
+      value: TriggerCamera2
       objectReference: {fileID: 0}
     - target: {fileID: 9061555157747211651, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: m_Name

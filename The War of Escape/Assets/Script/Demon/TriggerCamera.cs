@@ -52,6 +52,7 @@ public class TriggerCamera : MonoBehaviour
             }
             else if (other.CompareTag("Demon"))
             {
+                Debug.Log("ãSämîF");
                 demon = other.GetComponent<DemonAI>();
 
                 StartCoroutine(ProtectCoroutine(demon));
@@ -93,6 +94,7 @@ public class TriggerCamera : MonoBehaviour
     {
         float demonSpeed = demon.chaseSpeed;
 
+        demon.demonStun = true;
         demon.chaseSpeed = 0.0f;
         demon.agent.speed = demon.chaseSpeed;
 
@@ -102,6 +104,7 @@ public class TriggerCamera : MonoBehaviour
 
         demon.chaseSpeed = 6.0f;
         demon.agent.speed = demon.chaseSpeed;
+        demon.demonStun = false;
 
         Debug.Log("ãSçƒäJ");
 
