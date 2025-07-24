@@ -13,7 +13,7 @@ public class DemonAI : MonoBehaviour
     private Player playerScript;
     public bool isChasing = false; // 追跡状態フラグ
     public Transform CurrentTarget => player; // 現在のターゲットを外部から参照できるプロパティ
-    public Vector3 respawn;
+    public Transform respawn;
 
     public GameObject keyPrefab;
     public GameObject[] keyBox;
@@ -34,11 +34,11 @@ public class DemonAI : MonoBehaviour
     {
         if (isChasing)
         {
-            if (agent.hasPath)
+            //if (agent.hasPath)
             {
                 Transform target = player.transform;
                 agent.destination = target.position; // プレイヤーを追跡
-                Debug.Log(target.position);
+                Debug.Log("PlayerPosition" + target.position);
 
                 if (!demonStun)
                 {
@@ -86,7 +86,7 @@ public class DemonAI : MonoBehaviour
         {
             Debug.Log("Collided Object Position: " + collision.transform.position);
             collision.gameObject.GetComponent<CharacterController>().enabled = false;
-            collision.gameObject.transform.position = respawn;
+            collision.gameObject.transform.position = respawn.position;
             collision.gameObject.GetComponent<CharacterController>().enabled = true;
             Debug.Log("Collided Object Position: " + collision.transform.position);
             Debug.Log("Collided Object Name: " + collision.gameObject.name);
