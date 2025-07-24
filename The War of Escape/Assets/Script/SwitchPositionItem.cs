@@ -80,7 +80,7 @@ public class SwitchPositionItem : Item
             countdownUI.SetActive(true);
 
             countdownText.text = $"{user.playerID + 1}Pが位置入れ替えアイテムを使用！";
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
 
             countdownText.text = "3...";
             yield return new WaitForSeconds(1f);

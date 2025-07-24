@@ -10,7 +10,7 @@ public class Necromancer : MonoBehaviour
     public GameObject player2Obj;
     public bool player1 = false;
     public bool player2 = false;
-    public Vector3 respawn;
+    public GameObject respawn;
 
     public GameObject keyPrefab;
     public Vector3[] keySpawnPositions;
@@ -22,6 +22,7 @@ public class Necromancer : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        respawn = GameObject.Find("Respawn");
 
         Destroy(this.gameObject, 30.0f);
     }
@@ -68,7 +69,7 @@ public class Necromancer : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<CharacterController>().enabled = false;
-            collision.gameObject.transform.position = respawn;
+            collision.gameObject.transform.position = respawn.transform.position;
             collision.gameObject.GetComponent<CharacterController>().enabled = true;
 
             playerScript = collision.gameObject.GetComponent<Player>();
@@ -76,39 +77,40 @@ public class Necromancer : MonoBehaviour
             int keyCountToReturn = playerScript.keyCount;
 
             playerScript.keyCount = 0;
+            playerScript.UpdateKeyUI();
 
-            int placedCount = 0;
+            //int placedCount = 0;
 
-            foreach (Vector3 pos in keySpawnPositions)
-            {
-                if (placedCount >= keyCountToReturn) break;
+            //foreach (Vector3 pos in keySpawnPositions)
+            //{
+            //    if (placedCount >= keyCountToReturn) break;
 
-                // 指定位置の周囲にあるオブジェクトを調べる
-                Collider[] hits = Physics.OverlapSphere(pos, checkRadius);
-                bool keyExists = false;
+            //    // 指定位置の周囲にあるオブジェクトを調べる
+            //    Collider[] hits = Physics.OverlapSphere(pos, checkRadius);
+            //    bool keyExists = false;
 
-                foreach (Collider col in hits)
-                {
-                    if (col.CompareTag("Key"))
-                    {
-                        keyExists = true;
-                        break;
-                    }
-                }
+            //    foreach (Collider col in hits)
+            //    {
+            //        if (col.CompareTag("Key"))
+            //        {
+            //            keyExists = true;
+            //            break;
+            //        }
+            //    }
 
-                // 鍵がなければ生成
-                if (!keyExists)
-                {
-                    Instantiate(keyPrefab, pos, Quaternion.identity);
-                    placedCount++;
-                    //  Debug.Log("鍵を配置しました @ " + pos);
-                }
-            }
+            //    // 鍵がなければ生成
+            //    if (!keyExists)
+            //    {
+            //        Instantiate(keyPrefab, pos, Quaternion.identity);
+            //        placedCount++;
+            //        //  Debug.Log("鍵を配置しました @ " + pos);
+            //    }
+            //}
 
-            if (placedCount < keyCountToReturn)
-            {
-                //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
-            }
+            //if (placedCount < keyCountToReturn)
+            //{
+            //    //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
+            //}
 
             Destroy(this.gameObject);
         }

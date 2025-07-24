@@ -31,6 +31,7 @@ public class GhostItem : Item
     public override void Activate(Player user)
     {
         playerScriptRo = user.GetComponent<Player>();
+        user.SetHeldItem(null);
 
         if (user == null || user.otherPlayer == null)
         {
@@ -133,7 +134,5 @@ public class GhostItem : Item
                 }
             }
         }
-
-        user.SetHeldItem(null);
     }
 }

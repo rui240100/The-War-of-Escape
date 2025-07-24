@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
         UpdateKeyUI();
     }
 
-    void UpdateKeyUI()
+    public void UpdateKeyUI()
     {
         if (keyIconImage != null && keySprites != null)
         {

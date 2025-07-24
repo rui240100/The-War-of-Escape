@@ -10,7 +10,7 @@ public class ItemUse : MonoBehaviour
 
     private Coroutine currentCoroutine;
 
-    public float fadeDuration = 2f;  // フェード時間
+    public float fadeDuration = 2.0f;  // フェード時間
     private float currentTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -64,6 +64,10 @@ public class ItemUse : MonoBehaviour
 
         messageText1.enabled = false;
         messageText2.enabled = false;
+
+        messageText1.color = new Color(1f, 1f, 1f, 1f);
+        messageText2.color = new Color(1f, 1f, 1f, 1f);
+
         Debug.Log("FadeOut completed");
     }
 }

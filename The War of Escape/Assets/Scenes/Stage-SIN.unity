@@ -17522,6 +17522,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+      propertyPath: heldItem
+      value: 
+      objectReference: {fileID: 3508595155260803798, guid: 453eb2598e07b9c48989f40776ef0210, type: 3}
+    - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: keyCount
       value: 3
       objectReference: {fileID: 0}
@@ -17537,6 +17541,10 @@ PrefabInstance:
       propertyPath: keyIconImage
       value: 
       objectReference: {fileID: 352153092}
+    - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+      propertyPath: magatamaCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1811291698494913743, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: defaultKeyIcon
       value: 
@@ -17631,7 +17639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624482324694410847, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 109.6
       objectReference: {fileID: 0}
     - target: {fileID: 8624482324694410847, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17639,7 +17647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624482324694410847, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 58.8
       objectReference: {fileID: 0}
     - target: {fileID: 8624482324694410847, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66657,7 +66665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &938979479
 Transform:
   m_ObjectHideFlags: 0
@@ -68049,6 +68057,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtectingDemon 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4226315338859089489, guid: eb88e79b25c66fe4e8e79f31e4b8487f, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 7832984954572477228, guid: d54ef7da87ec67d459004b10e99220e6, type: 3}
+    - target: {fileID: 4226315338859089489, guid: eb88e79b25c66fe4e8e79f31e4b8487f, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 9061555157747211651, guid: 46274949b1143384595a968b323c0155, type: 3}
+    - target: {fileID: 4226315338859089489, guid: eb88e79b25c66fe4e8e79f31e4b8487f, type: 3}
+      propertyPath: prisonGateObject
+      value: 
+      objectReference: {fileID: 1208168830}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -71406,6 +71426,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4885762227395580199, guid: bb2b276fcba82b44ebad17202b1bbb37, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312990181779106344, guid: bb2b276fcba82b44ebad17202b1bbb37, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 5759331454650484253, guid: bb2b276fcba82b44ebad17202b1bbb37, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -71489,6 +71517,10 @@ PrefabInstance:
     - target: {fileID: 6117867342961522225, guid: bb2b276fcba82b44ebad17202b1bbb37, type: 3}
       propertyPath: m_Name
       value: ItemCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173363202921084123, guid: bb2b276fcba82b44ebad17202b1bbb37, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74599,7 +74631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061555157747211651, guid: 46274949b1143384595a968b323c0155, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -125328,6 +125360,14 @@ PrefabInstance:
     - target: {fileID: 4378177398383198, guid: 9a0270db994d1364589373e7f256c7fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577120470110184, guid: 9a0270db994d1364589373e7f256c7fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577120470110184, guid: 9a0270db994d1364589373e7f256c7fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -36,8 +36,6 @@ public class BlindItem : Item
     // ───────── アイテム使用 ─────────
     public override void Activate(Player user)
     {
-        if (user == null) return;
-
         // 相手プレイヤーを取得（Player スクリプトの otherPlayer を利用）
         Player target = user.otherPlayer;
         if (target == null) return;
@@ -50,6 +48,7 @@ public class BlindItem : Item
         StartCoroutine(BlindRoutine(overlay));
 
         playerScriptBl = user.GetComponent<Player>();
+        user.SetHeldItem(null);
 
         if (itemUseScBl != null)
         {
@@ -66,7 +65,6 @@ public class BlindItem : Item
                 itemUseScBl.ShowMessage(message1, message2);
             }
         }
-        user.SetHeldItem(null);
     }
 
     // ───────── 補助メソッド ─────────
