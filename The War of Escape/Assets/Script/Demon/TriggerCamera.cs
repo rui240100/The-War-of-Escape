@@ -44,13 +44,18 @@ public class TriggerCamera : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(target.pd);
+                    if (target.pd != null)
+                    {
+                        Destroy(target.pd);
+                    }
+                    demonHave = false;
                 }
 
                 player = transform.parent.GetComponent<Player>();
                 Destroy(player.pd);
+                demonHave = false;
             }
-            else if (other.CompareTag("Demon"))
+            else if (other.CompareTag("Demon "))
             {
                 Debug.Log("‹SŠm”F");
                 demon = other.GetComponent<DemonAI>();
@@ -59,6 +64,7 @@ public class TriggerCamera : MonoBehaviour
 
                 player = transform.parent.GetComponent<Player>();
                 Destroy(player.pd);
+                demonHave = false;
             }
             else if(other.CompareTag("Necromancer"))
             {
@@ -68,7 +74,7 @@ public class TriggerCamera : MonoBehaviour
 
                 player = transform.parent.GetComponent<Player>();
                 Destroy(player.pd);
-                
+                demonHave = false;
             }
         }
     }
