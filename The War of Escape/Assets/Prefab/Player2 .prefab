@@ -311,8 +311,9 @@ MonoBehaviour:
   runAnimationSpeed: 10
   itemBackgroundSprite: {fileID: 0}
   footstepAudioSource: {fileID: 3301124651852577423}
-  footstepClip: {fileID: 8300000, guid: 15395b979e3f4ba44bb315acfd20dafe, type: 3}
-  footstepInterval: 0.4
+  footstepClip: {fileID: 8300000, guid: e05213b9d414c6c46b9c4cab07d26950, type: 3}
+  footstepInterval: 0.6
+  baseFootstepPitch: 1
   keyIconImage: {fileID: 0}
   keySprites: []
   keyUIContainer: {fileID: 0}

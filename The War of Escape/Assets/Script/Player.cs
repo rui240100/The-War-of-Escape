@@ -47,12 +47,15 @@ public class Player : MonoBehaviour
     public float minVerticalAngle = -30f;
     public float maxVerticalAngle = 60f;*/
 
-    [Header("足音関連")]
-    public AudioSource footstepAudioSource; // 足音の音源
-    public AudioClip footstepClip;          // 足音の音素材
-    public float footstepInterval = 0.4f;   // 歩幅（音の間隔）
-
+    [Header("足音の設定")]
+    public AudioSource footstepAudioSource;
+    public AudioClip footstepClip;
+    public float footstepInterval = 0.5f;
     private float footstepTimer = 0f;
+
+    // エディタで調整できるピッチ倍率
+    [Range(0.1f, 3f)]
+    public float baseFootstepPitch = 1.0f;
 
 
     [Header("鍵UI関連")]
@@ -187,21 +190,28 @@ public class Player : MonoBehaviour
         }
 
 
+        // 足音の再生（ピッチ調整あり）
         if (move.magnitude > 0.1f && characterController.isGrounded)
         {
             footstepTimer += Time.deltaTime;
-            if (footstepTimer >= footstepInterval)
+            if (move.magnitude > 0.1f && characterController.isGrounded)
             {
-                if (footstepAudioSource != null && footstepClip != null)
+                footstepTimer += Time.deltaTime;
+
+                if (footstepTimer >= footstepInterval)
                 {
+                    // ピッチ調整（←ここ！）
+                    float pitch = isSlowing ? baseFootstepPitch * 0.7f : baseFootstepPitch * Mathf.Lerp(1.0f, 1.3f, move.magnitude);
+                    footstepAudioSource.pitch = pitch;
+
                     footstepAudioSource.PlayOneShot(footstepClip);
+                    footstepTimer = 0f;
                 }
-                footstepTimer = 0f;
             }
         }
         else
         {
-            footstepTimer = footstepInterval; // 足を止めたら即次の足音を鳴らせるように
+            footstepTimer = footstepInterval;
         }
 
 
