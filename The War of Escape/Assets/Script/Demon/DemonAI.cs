@@ -43,8 +43,8 @@ public class DemonAI : MonoBehaviour
                 }
             }
         }
-        //else if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        else if (!isChasing)
+        else if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        //else if (!isChasing)
         {
             if (!demonStun)
             {
