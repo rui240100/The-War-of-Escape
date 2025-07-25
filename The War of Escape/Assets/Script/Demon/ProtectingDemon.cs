@@ -18,8 +18,8 @@ public class ProtectingDemon : MonoBehaviour
     private Transform owner;
     private bool ownerFlag;
 
-    private string useMessagePr1 = "アイテムを使用しました";
-    private string useMessagePr2 = "アイテムが使用されました";
+    private string useMessagePr1 = "守護鬼を解放しました";
+    private string useMessagePr2 = "相手が守護鬼を解放しました";
     private GameObject itemUse;
     private ItemUse itemUseSc;
 
@@ -53,15 +53,12 @@ public class ProtectingDemon : MonoBehaviour
 
         if (prisonGateScript.playerID)
         {
-            //var triggerCandidates = player1.GetComponentsInChildren<TriggerCamera>(true);
-
-            //triggerCameraScript = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
             GameObject triggerCameraObj = GameObject.Find("TriggerCamera1");
             triggerCameraScript = triggerCameraObj.GetComponent<TriggerCamera>();
 
             if (triggerCameraScript == null)
             {
-                Debug.Log("駒にゃち");
+                Debug.Log("TriggerCamera = null");
                 return;
             }
             else
@@ -69,9 +66,6 @@ public class ProtectingDemon : MonoBehaviour
                 triggerCameraScript.demonHave = true;
                 Debug.Log("demonHave = True");
             }
-
-            //triggerCamera = player1.GetComponent<TriggerCamera>();
-            //triggerCamera.demonHave = true;
 
             playerScript = player1.GetComponent<Player>();
             playerScript.pd = prisonGateScript.protectingDemon;
@@ -82,9 +76,6 @@ public class ProtectingDemon : MonoBehaviour
         }
         else if (!prisonGateScript.playerID)
         {
-            //var triggerCandidates = player2.GetComponentsInChildren<TriggerCamera>(true);
-            //triggerCameraScript = triggerCandidates.Length > 0 ? triggerCandidates[0] : null;
-
             GameObject triggerCameraObj = GameObject.Find("TriggerCamera2");
             triggerCameraScript = triggerCameraObj.GetComponent<TriggerCamera>();
 

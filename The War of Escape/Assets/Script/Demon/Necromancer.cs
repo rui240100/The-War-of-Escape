@@ -10,11 +10,7 @@ public class Necromancer : MonoBehaviour
     public GameObject player2Obj;
     public bool player1 = false;
     public bool player2 = false;
-    public GameObject respawn;
-
-    public GameObject keyPrefab;
-    public Vector3[] keySpawnPositions;
-    public float checkRadius = 0.1f;
+    private GameObject respawn;
 
     public bool NecStun = false;
 
@@ -74,43 +70,8 @@ public class Necromancer : MonoBehaviour
 
             playerScript = collision.gameObject.GetComponent<Player>();
 
-            int keyCountToReturn = playerScript.keyCount;
-
             playerScript.keyCount = 0;
-            playerScript.UpdateKeyUI();
-
-            //int placedCount = 0;
-
-            //foreach (Vector3 pos in keySpawnPositions)
-            //{
-            //    if (placedCount >= keyCountToReturn) break;
-
-            //    // 指定位置の周囲にあるオブジェクトを調べる
-            //    Collider[] hits = Physics.OverlapSphere(pos, checkRadius);
-            //    bool keyExists = false;
-
-            //    foreach (Collider col in hits)
-            //    {
-            //        if (col.CompareTag("Key"))
-            //        {
-            //            keyExists = true;
-            //            break;
-            //        }
-            //    }
-
-            //    // 鍵がなければ生成
-            //    if (!keyExists)
-            //    {
-            //        Instantiate(keyPrefab, pos, Quaternion.identity);
-            //        placedCount++;
-            //        //  Debug.Log("鍵を配置しました @ " + pos);
-            //    }
-            //}
-
-            //if (placedCount < keyCountToReturn)
-            //{
-            //    //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
-            //}
+            playerScript.UpdateKeyUI();  
 
             Destroy(this.gameObject);
         }
