@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,9 @@ public class BlindItem : Item
     private GameObject itemUseBl;
     private ItemUse itemUseScBl;
 
+    // 傾け済みかどうか記録する辞書（複数プレイヤー対応）
+    private static readonly Dictionary<int, bool> rotatedOnce = new Dictionary<int, bool>();
+
     private void Start()
     {
         // シーン内のMessageDisplayManagerを探す
@@ -36,16 +40,13 @@ public class BlindItem : Item
     // ───────── アイテム使用 ─────────
     public override void Activate(Player user)
     {
-        // 相手プレイヤーを取得（Player スクリプトの otherPlayer を利用）
         Player target = user.otherPlayer;
         if (target == null) return;
 
-        // 対象プレイヤー専用のオーバーレイ Image を探す
         Image overlay = FindOverlay(target.playerID);
         if (overlay == null) return;
 
-        // エフェクト開始（コルーチンはアイテム自身で動かす）
-        StartCoroutine(BlindRoutine(overlay));
+        StartCoroutine(BlindRoutine(overlay, target.playerID));
 
         playerScriptBl = user.GetComponent<Player>();
         user.SetHeldItem(null);
@@ -54,15 +55,11 @@ public class BlindItem : Item
         {
             if (playerScriptBl.playerID == 1)
             {
-                string message1 = useMessageBl1;
-                string message2 = useMessageBl2;
-                itemUseScBl.ShowMessage(message1, message2);
+                itemUseScBl.ShowMessage(useMessageBl1, useMessageBl2);
             }
             else if (playerScriptBl.playerID == 2)
             {
-                string message1 = useMessageBl2;
-                string message2 = useMessageBl1;
-                itemUseScBl.ShowMessage(message1, message2);
+                itemUseScBl.ShowMessage(useMessageBl2, useMessageBl1);
             }
         }
     }
@@ -70,32 +67,33 @@ public class BlindItem : Item
     // ───────── 補助メソッド ─────────
     private Image FindOverlay(int playerID)
     {
-        string objName = string.Format(OverlayNameFormat, playerID); // 例: BlindOverlay_P2
+        string objName = string.Format(OverlayNameFormat, playerID);
         GameObject obj = GameObject.Find(objName);
         return obj != null ? obj.GetComponent<Image>() : null;
     }
 
-    private IEnumerator BlindRoutine(Image overlay)
+    private IEnumerator BlindRoutine(Image overlay, int playerID)
     {
-        //  スプライトを設定（nullチェックも入れると安心）
         if (blindSprite != null)
         {
             overlay.sprite = blindSprite;
-            overlay.color = new Color(1f, 1f, 1f, 1f); // 不透明で白色
-            overlay.preserveAspect = true;             // 画像が伸びないように
+            overlay.color = new Color(1f, 1f, 1f, 1f);
+            overlay.preserveAspect = true;
 
-            overlay.rectTransform.rotation = Quaternion.Euler(0f, 0f, 15f); // 15度右に傾ける
-
+            // 一度だけ回転を適用する
+            if (!rotatedOnce.ContainsKey(playerID) || !rotatedOnce[playerID])
+            {
+                overlay.rectTransform.rotation = Quaternion.Euler(0f, 0f, 15f);
+                rotatedOnce[playerID] = true;
+            }
         }
         else
         {
-            // スプライト未設定の場合は黒で塗りつぶす
             overlay.color = new Color(0f, 0f, 0f, 1f);
         }
 
         yield return new WaitForSeconds(blindDuration);
 
-        // 🔻 フェードアウト処理
         float t = 0f;
         Color c = overlay.color;
 
@@ -110,7 +108,6 @@ public class BlindItem : Item
         c.a = 0f;
         overlay.color = c;
 
-        //  スプライトを消す（リセット）
         overlay.sprite = null;
 
         Destroy(gameObject);
