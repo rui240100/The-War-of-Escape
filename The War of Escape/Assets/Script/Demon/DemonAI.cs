@@ -15,10 +15,7 @@ public class DemonAI : MonoBehaviour
     public Transform CurrentTarget => player; // 現在のターゲットを外部から参照できるプロパティ
     public Transform respawn;
 
-    public GameObject keyPrefab;
-    public GameObject[] keyBox;
-
-    public NewDemonCamera newDemonCamera;
+    private NewDemonCamera newDemonCamera;
 
     public bool demonStun = false;
 
@@ -46,7 +43,8 @@ public class DemonAI : MonoBehaviour
                 }
             }
         }
-        else if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        //else if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        else if (!isChasing)
         {
             if (!demonStun)
             {
@@ -92,42 +90,8 @@ public class DemonAI : MonoBehaviour
             Debug.Log("Collided Object Name: " + collision.gameObject.name);
             playerScript = collision.gameObject.GetComponent<Player>();
 
-            int keyCountToReturn = playerScript.keyCount;
-            // Debug.Log("プレイヤーが持っていた鍵の数: " + keyCountToReturn);
-
             playerScript.keyCount = 0;
             playerScript.UpdateKeyUI();
-
-            //int placedCount = 0;
-
-            //foreach (GameObject box in keyBox)
-            //{
-            //    if (placedCount >= keyCountToReturn) break;
-
-            //    bool keyExists = false;
-
-                //foreach (Collider col in hits)
-                //{
-                //    if (col.CompareTag("Key"))
-                //    {
-                //        keyExists = true;
-                //        break;
-                //    }
-                //}
-
-                // 鍵がなければ生成
-                //if (!keyExists)
-                //{
-                //    Instantiate(keyPrefab, pos, Quaternion.identity);
-                //    placedCount++;
-                //    //  Debug.Log("鍵を配置しました @ " + pos);
-                //}
-            //}
-
-            //if (placedCount < keyCountToReturn)
-            //{
-            //    //Debug.LogWarning("鍵を戻す場所が足りませんでした！");
-            //}
 
             newDemonCamera = this.GetComponentInChildren<NewDemonCamera>();
 
