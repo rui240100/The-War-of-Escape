@@ -61,13 +61,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8571854026891653475}
-    m_Position: {x: 367.05328, y: 117.16214, z: 0}
+    m_Position: {x: 370, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1839330921771208389}
     m_Position: {x: 370, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3485147076106957554}
-    m_Position: {x: 668.8371, y: 242.9054, z: 0}
+    m_Position: {x: 670, y: 240, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -257,7 +257,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: taiki
-  m_Speed: 0.5
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1638688867248585090}
