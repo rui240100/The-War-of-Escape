@@ -60775,6 +60775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Itemimage
       objectReference: {fileID: 0}
+    - target: {fileID: 8441753286882172305, guid: 3d216f91d7bf2c440a8ea55157e168aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
