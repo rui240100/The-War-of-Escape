@@ -22,9 +22,15 @@ public class NewDemonCamera : MonoBehaviour
 
     Vector3 origin; //ƒŒƒC‚Ì”­ŽËˆÊ’u
 
+    private GameObject ChaseUI;
+    private ChaseUI chaseUI;
+
     void Start()
     {
         demon = GetComponentInParent<DemonAI>();
+
+        ChaseUI = GameObject.Find("ChaseUI");
+        chaseUI = ChaseUI.GetComponent<ChaseUI>();
     }
 
     private void Update()
@@ -91,6 +97,7 @@ public class NewDemonCamera : MonoBehaviour
                     {
                         demon.StartChase(other.transform);
                         player1Chase = true;
+                        chaseUI.player1 = true;
                     }
                 }
                 else
@@ -99,6 +106,7 @@ public class NewDemonCamera : MonoBehaviour
                     {
                         demon.StartChase(other.transform);
                         player2Chase = true;
+                        chaseUI.player2 = true;
                     }
                 }
             }
@@ -129,14 +137,18 @@ public class NewDemonCamera : MonoBehaviour
                         Debug.Log("Player1‚ª‹ß‚¢");
                         demon.StartChase(player1Object.transform);
                         player1Chase = true;
+                        chaseUI.player1 = true;
                         player2Chase = false;
+                        chaseUI.player2 = false;
                     }
                     else if (hit1.distance > hit2.distance)
                     {
                         Debug.Log("Player2‚ª‹ß‚¢");
                         demon.StartChase(player2Object.transform);
                         player2Chase = true;
+                        chaseUI.player2 = true;
                         player1Chase = false;
+                        chaseUI.player1 = false;
                     }
                     else
                     {
@@ -176,6 +188,7 @@ public class NewDemonCamera : MonoBehaviour
         {
             demon.StopChase();
             player1Chase = false;
+            chaseUI.player1 = false;
         }
     }
 
@@ -187,6 +200,7 @@ public class NewDemonCamera : MonoBehaviour
         {
             demon.StopChase();
             player2Chase = false;
+            chaseUI.player2 = false;
         }
     }
 }

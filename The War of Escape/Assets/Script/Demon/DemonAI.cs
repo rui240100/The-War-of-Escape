@@ -19,12 +19,18 @@ public class DemonAI : MonoBehaviour
 
     public bool demonStun = false;
 
+    private GameObject ChaseUI;
+    private ChaseUI chaseUI;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
         GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
 
         newDemonCamera = GetComponent<NewDemonCamera>();
+
+        ChaseUI = GameObject.Find("ChaseUI");
+        chaseUI=ChaseUI.GetComponent<ChaseUI>();
     }
 
     void Update()
@@ -98,10 +104,12 @@ public class DemonAI : MonoBehaviour
             if (playerScript.playerID == 1)
             {
                 newDemonCamera.player1Chase = false;
+                chaseUI.player1 = false;
             }
             else if (playerScript.playerID == 2)
             {
                 newDemonCamera.player2Chase = false;
+                chaseUI.player2 = false;
             }
             StopChase();
             Debug.Log("終了");

@@ -336,13 +336,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.92
+  m_Height: 2.21
+  m_Radius: 0.55
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.09, z: 0.29}
+  m_Center: {x: 0, y: -0.09, z: 0.31}
 --- !u!82 &3301124651852577423
 AudioSource:
   m_ObjectHideFlags: 0
