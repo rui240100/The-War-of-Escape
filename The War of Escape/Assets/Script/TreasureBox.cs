@@ -79,7 +79,7 @@ public class TreasureBox : MonoBehaviour
 
     private void GiveItemToPlayer(Player player)
     {
-        player.AddMagatama(); // 勾玉 +1
+        //player.AddMagatama(); // 勾玉 +1
 
         if (possibleItems.Length == 0) return;
 

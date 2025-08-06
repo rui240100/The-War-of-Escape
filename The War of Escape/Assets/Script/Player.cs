@@ -338,7 +338,7 @@ public class Player : MonoBehaviour
         return magatamaCount >= required;
     }
 
-    public void AddMagatama()
+    /*public void AddMagatama()
     {
         magatamaCount = Mathf.Clamp(magatamaCount + 1, 0, 3);
 
@@ -356,5 +356,5 @@ public class Player : MonoBehaviour
         {
             magatamaUIManager.UpdateMagatamaUI(magatamaCount);
         }
-    }
+    }*/
 }

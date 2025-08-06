@@ -5,7 +5,7 @@ public class GameDrector : MonoBehaviour
 {
     public GameObject timeUI;
 
-    float TimeCount = 300;
+    float TimeCount = 180;
     private bool hasEnded = false; // I—¹ˆ—‚ªˆê“x‚¾‚¯Às‚³‚ê‚é‚æ‚¤‚É
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
