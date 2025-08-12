@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro; // TextMeshPro用
 
 public class Exit : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Exit : MonoBehaviour
     private float holdTime = 0f;
     private float requiredHoldTime = 7f; // 滞在に必要な秒数
 
+    [Header("UI表示用")]
+    public TextMeshProUGUI countdownText; // インスペクターで設定
+
     [System.Obsolete]
     void Update()
     {
@@ -15,6 +19,17 @@ public class Exit : MonoBehaviour
         {
             holdTime += Time.deltaTime;
 
+            // 残り秒数（切り上げ）
+            float remainingTime = Mathf.Ceil(requiredHoldTime - holdTime);
+            if (remainingTime < 0) remainingTime = 0;
+
+            // UIに表示
+            if (countdownText != null)
+            {
+                countdownText.text = remainingTime.ToString("0");
+            }
+
+            // 指定時間経過
             if (holdTime >= requiredHoldTime)
             {
                 if (currentPlayer.keyCount >= 3)
@@ -27,13 +42,16 @@ public class Exit : MonoBehaviour
                     Debug.Log($"Player {currentPlayer.playerID} は鍵が足りません！（{currentPlayer.keyCount}/3）");
                 }
 
-                // 処理後にリセット
-                isPlayerInTrigger = false;
-                holdTime = 0f;
+                ResetTrigger();
             }
         }
         else
         {
+            // 範囲外では非表示
+            if (countdownText != null)
+            {
+                countdownText.text = "";
+            }
             holdTime = 0f;
         }
     }
@@ -45,7 +63,7 @@ public class Exit : MonoBehaviour
         {
             currentPlayer = player;
             isPlayerInTrigger = true;
-            holdTime = 0f; // 新しく入ったときにリセット
+            holdTime = 0f;
             Debug.Log("出口範囲に入りました: " + player.name);
         }
     }
@@ -55,10 +73,20 @@ public class Exit : MonoBehaviour
         Player player = other.GetComponent<Player>();
         if (player != null && player == currentPlayer)
         {
-            isPlayerInTrigger = false;
-            currentPlayer = null;
-            holdTime = 0f;
+            ResetTrigger();
             Debug.Log("出口範囲から出ました: " + player.name);
+        }
+    }
+
+    private void ResetTrigger()
+    {
+        isPlayerInTrigger = false;
+        currentPlayer = null;
+        holdTime = 0f;
+
+        if (countdownText != null)
+        {
+            countdownText.text = "";
         }
     }
 }
