@@ -139,7 +139,7 @@ public class PrisonGate : MonoBehaviour
 
 
         //監獄を開けたら勾玉の数をリセットする
-        player.ResetMagatama();
+        //player.ResetMagatama();
 
 
         if (protectingDemon != null)

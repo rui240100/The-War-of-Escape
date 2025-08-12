@@ -3882,6 +3882,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4647,6 +4663,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8668,6 +8700,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20857,6 +20905,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23681,6 +23745,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36046,6 +36126,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36255,6 +36351,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -74613,6 +74725,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83466,6 +83594,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84938,7 +85082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1112856596
 Transform:
   m_ObjectHideFlags: 0
@@ -92688,6 +92832,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -111086,6 +111246,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -119444,6 +119620,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -123572,6 +123764,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -155934,6 +156142,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -158646,6 +158870,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreasureBox (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: 'possibleItems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

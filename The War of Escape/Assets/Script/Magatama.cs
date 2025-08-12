@@ -26,7 +26,7 @@ public class Magatama : MonoBehaviour
         {
 
             //Debug.Log($"PlayerID: {player.playerID} ‚ªŒù‹Ê‚ğæ“¾");
-            player.AddMagatama();
+            //player.AddMagatama();
             Destroy(gameObject); // æ“¾ŒãÁ‚·
         }
     }
