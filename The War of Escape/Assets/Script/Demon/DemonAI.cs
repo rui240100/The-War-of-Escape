@@ -22,6 +22,9 @@ public class DemonAI : MonoBehaviour
     private GameObject ChaseUI;
     private ChaseUI chaseUI;
 
+    private MonoBehaviour targetScript;
+    private float disableTime = 5.0f;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
@@ -30,7 +33,7 @@ public class DemonAI : MonoBehaviour
         newDemonCamera = GetComponent<NewDemonCamera>();
 
         ChaseUI = GameObject.Find("ChaseUI");
-        chaseUI=ChaseUI.GetComponent<ChaseUI>();
+        chaseUI = ChaseUI.GetComponent<ChaseUI>();
     }
 
     void Update()
@@ -57,7 +60,7 @@ public class DemonAI : MonoBehaviour
                 agent.speed = patrolSpeed; // 初期状態ではパトロール速度
             }
             GoToNextPatrolPoint(); // 次のパトロール地点へ
-        } 
+        }
     }
 
     void GoToNextPatrolPoint()
@@ -88,18 +91,19 @@ public class DemonAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collided Object Position: " + collision.transform.position);
-            collision.gameObject.GetComponent<CharacterController>().enabled = false;
-            collision.gameObject.transform.position = respawn.position;
-            collision.gameObject.GetComponent<CharacterController>().enabled = true;
-            Debug.Log("Collided Object Position: " + collision.transform.position);
+            //Debug.Log("Collided Object Position: " + collision.transform.position);
+            //collision.gameObject.GetComponent<CharacterController>().enabled = false;
+            //collision.gameObject.transform.position = respawn.position;
+            //collision.gameObject.GetComponent<CharacterController>().enabled = true;
+            //Debug.Log("Collided Object Position: " + collision.transform.position);
             Debug.Log("Collided Object Name: " + collision.gameObject.name);
             playerScript = collision.gameObject.GetComponent<Player>();
 
-            playerScript.keyCount = 0;
+            playerScript.keyCount -= 1;
             playerScript.UpdateKeyUI();
 
             newDemonCamera = this.GetComponentInChildren<NewDemonCamera>();
+            targetScript = newDemonCamera;
 
             if (playerScript.playerID == 1)
             {
@@ -111,8 +115,20 @@ public class DemonAI : MonoBehaviour
                 newDemonCamera.player2Chase = false;
                 chaseUI.player2 = false;
             }
+
+            StartCoroutine(DisableForSeconds(targetScript, disableTime));
             StopChase();
             Debug.Log("終了");
+        }
+    }
+
+    private System.Collections.IEnumerator DisableForSeconds(MonoBehaviour script, float seconds)
+    {
+        if (script != null)
+        {
+            script.enabled = false;       // 無効化
+            yield return new WaitForSeconds(seconds);
+            script.enabled = true;        // 再び有効化
         }
     }
 }
