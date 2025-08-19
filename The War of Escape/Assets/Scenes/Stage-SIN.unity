@@ -3883,6 +3883,10 @@ PrefabInstance:
       value: TreasureBox (12)
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
       value: 
       objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
@@ -4662,6 +4666,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -8699,6 +8707,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -21042,6 +21054,10 @@ PrefabInstance:
       value: TreasureBox (11)
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
       value: 
       objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
@@ -23880,6 +23896,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -36263,6 +36283,10 @@ PrefabInstance:
       value: TreasureBox
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
       value: 
       objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
@@ -36486,6 +36510,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -60821,7 +60849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441753286882172305, guid: 3d216f91d7bf2c440a8ea55157e168aa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74991,6 +75019,10 @@ PrefabInstance:
       value: TreasureBox (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
       value: 
       objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
@@ -83861,6 +83893,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -93099,6 +93135,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -111520,6 +111560,10 @@ PrefabInstance:
       value: TreasureBox (10)
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
       value: 
       objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
@@ -118768,7 +118812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 675871422868843134, guid: d172ee21ef2490346b6c5b225c61dc4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.325
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 675871422868843134, guid: d172ee21ef2490346b6c5b225c61dc4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -119896,6 +119940,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -124040,6 +124088,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
@@ -156420,6 +156472,10 @@ PrefabInstance:
       value: TreasureBox (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
       value: 
       objectReference: {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
@@ -159146,6 +159202,10 @@ PrefabInstance:
     - target: {fileID: 6859821385406611040, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: m_Name
       value: TreasureBox (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7660864567305962088, guid: f9bff0633c529d94995c512c337e4b23, type: 3}
       propertyPath: 'possibleItems.Array.data[0]'
