@@ -85,6 +85,7 @@ public class NewDemonCamera : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        //’Ç‚¢‚©‚¯‚Ä‚È‚¢
         if (!demon.isChasing)
         {
             if (other.CompareTag("Player"))
@@ -95,6 +96,7 @@ public class NewDemonCamera : MonoBehaviour
                 {
                     if ((CanSeePlayer(other.transform)))
                     {
+                        Debug.Log("’Ç‚¢‚©‚¯‚Ä‚È‚¢‚Æ‚«‚ÉP1‚Ý‚Â‚¯‚½");
                         demon.StartChase(other.transform);
                         player1Chase = true;
                         chaseUI.player1 = true;
@@ -111,6 +113,8 @@ public class NewDemonCamera : MonoBehaviour
                 }
             }
         }
+
+        //’Ç‚¢‚©‚¯‚Ä‚é
         else
         {
             if (player1 && player2 == true)
@@ -186,6 +190,7 @@ public class NewDemonCamera : MonoBehaviour
 
         if (player1)
         {
+            Debug.Log("AAAA");
             demon.StopChase();
             player1Chase = false;
             chaseUI.player1 = false;
@@ -198,6 +203,7 @@ public class NewDemonCamera : MonoBehaviour
 
         if (player2)
         {
+            Debug.Log("BBBB");
             demon.StopChase();
             player2Chase = false;
             chaseUI.player2 = false;

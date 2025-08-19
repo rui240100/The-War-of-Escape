@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.AI;
 
 public class DemonAI : MonoBehaviour
@@ -44,7 +45,7 @@ public class DemonAI : MonoBehaviour
             {
                 Transform target = player.transform;
                 agent.destination = target.position; // プレイヤーを追跡
-                Debug.Log("PlayerPosition" + target.position);
+                //Debug.Log("PlayerPosition" + target.position);
 
                 if (!demonStun)
                 {
@@ -102,8 +103,13 @@ public class DemonAI : MonoBehaviour
             playerScript.keyCount -= 1;
             playerScript.UpdateKeyUI();
 
-            newDemonCamera = this.GetComponentInChildren<NewDemonCamera>();
-            targetScript = newDemonCamera;
+            StartCoroutine(SlowDownPlayer(playerScript));
+
+
+
+            Debug.Log("プレイヤー" + playerScript.playerID + "と接触");
+
+
 
             if (playerScript.playerID == 1)
             {
@@ -116,19 +122,34 @@ public class DemonAI : MonoBehaviour
                 chaseUI.player2 = false;
             }
 
-            StartCoroutine(DisableForSeconds(targetScript, disableTime));
+            StartCoroutine(DisableForSeconds());
+
+        }
+    }
+
+    private IEnumerator DisableForSeconds()
+    {
+        MonoBehaviour script =this.GetComponentInChildren<NewDemonCamera>();
+
+        if (script != null)
+        {
+            script.enabled = false;       // 無効化
+            Debug.Log("DemonCameraFalse");
+            Debug.Log("今から5秒止めます");
+            yield return new WaitForSeconds(disableTime);
+            Debug.Log("5秒後");
+            script.enabled = true;        // 再び有効化
+            isChasing = false;
+
             StopChase();
             Debug.Log("終了");
         }
     }
 
-    private System.Collections.IEnumerator DisableForSeconds(MonoBehaviour script, float seconds)
+    private IEnumerator SlowDownPlayer(Player playerScript)
     {
-        if (script != null)
-        {
-            script.enabled = false;       // 無効化
-            yield return new WaitForSeconds(seconds);
-            script.enabled = true;        // 再び有効化
-        }
+        playerScript.Speed = 0.2f;
+        yield return new WaitForSeconds(5.0f);
+        playerScript.Speed = 5.0f;
     }
 }

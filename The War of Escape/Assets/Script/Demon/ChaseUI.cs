@@ -50,6 +50,8 @@ public class ChaseUI : MonoBehaviour
             Color color = player1UI.color;
             color.a = 0.0f;
             player1UI.color = color;
+
+            Debug.Log("********************UIè¡Ç¶ÇÈ");
         }
 
         if (player2 && player2UI != null)

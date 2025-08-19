@@ -114,6 +114,7 @@ public class TriggerCamera : MonoBehaviour
 
         Debug.Log("‹SÄŠJ");
 
+        Debug.Log("CCCC");
         demon.StopChase();
     }
 
