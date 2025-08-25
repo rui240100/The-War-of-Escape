@@ -125,9 +125,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowDuration: 5
   slowMultiplier: 0.2
-  icon: {fileID: 21300000, guid: 34b0d836863940641b8f52bf3cfaf2e4, type: 3}
-  useMessageSl1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageSl2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
+  icon: {fileID: 21300000, guid: e6239fd0708f1d840bfebd33949a01d4, type: 3}
   duration: 10
-  useMessageRe1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageRe2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
