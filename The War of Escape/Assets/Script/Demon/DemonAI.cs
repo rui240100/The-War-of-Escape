@@ -24,14 +24,18 @@ public class DemonAI : MonoBehaviour
     private ChaseUI chaseUI;
 
     private MonoBehaviour targetScript;
-    private float disableTime = 5.0f;
+    private float disableTime = 20.0f;
+    public GameObject child;
+    //private GameObject child;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
         GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
 
-        newDemonCamera = GetComponent<NewDemonCamera>();
+        //child = Instantiate(childPrefab, transform);
+
+        newDemonCamera = GetComponentInChildren<NewDemonCamera>();
 
         ChaseUI = GameObject.Find("ChaseUI");
         chaseUI = ChaseUI.GetComponent<ChaseUI>();
@@ -92,6 +96,8 @@ public class DemonAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            child.SetActive(false);
+            //newDemonCamera.enabled = false;
             //Debug.Log("Collided Object Position: " + collision.transform.position);
             //collision.gameObject.GetComponent<CharacterController>().enabled = false;
             //collision.gameObject.transform.position = respawn.position;
@@ -111,39 +117,48 @@ public class DemonAI : MonoBehaviour
 
 
 
-            if (playerScript.playerID == 1)
-            {
-                newDemonCamera.player1Chase = false;
-                chaseUI.player1 = false;
-            }
-            else if (playerScript.playerID == 2)
-            {
-                newDemonCamera.player2Chase = false;
-                chaseUI.player2 = false;
-            }
+            //if (playerScript.playerID == 1)
+            //{
+            //    newDemonCamera.player1Chase = false;
+            //    chaseUI.player1 = false;
+            //}
+            //else if (playerScript.playerID == 2)
+            //{
+            //    newDemonCamera.player2Chase = false;
+            //    chaseUI.player2 = false;
+            //}
 
+
+            chaseUI.player1 = false;
+            chaseUI.player2 = false;
             StartCoroutine(DisableForSeconds());
-
+            isChasing = false;
+            player = null;
+            StopChase();
+            Debug.Log("終了");
         }
     }
 
     private IEnumerator DisableForSeconds()
     {
-        MonoBehaviour script =this.GetComponentInChildren<NewDemonCamera>();
+        yield return new WaitForSeconds(10.0f);
+        child.SetActive(true);
+        newDemonCamera.player1 = false;
+        newDemonCamera.player2 = false;
+        newDemonCamera.player1Chase = false;
+        newDemonCamera.player2Chase = false;
+        //Instantiate(child, transform);
+        //MonoBehaviour script =this.GetComponentInChildren<NewDemonCamera>();
 
-        if (script != null)
-        {
-            script.enabled = false;       // 無効化
-            Debug.Log("DemonCameraFalse");
-            Debug.Log("今から5秒止めます");
-            yield return new WaitForSeconds(disableTime);
-            Debug.Log("5秒後");
-            script.enabled = true;        // 再び有効化
-            isChasing = false;
-
-            StopChase();
-            Debug.Log("終了");
-        }
+        //if (script != null)
+        //{
+        //    //script.enabled = false;       // 無効化
+        //    Debug.Log("DemonCameraFalse");
+        //    Debug.Log("今から5秒止めます");
+        //    yield return new WaitForSeconds(disableTime);
+        //    Debug.Log("5秒後");
+        //    script.enabled = true;        // 再び有効化
+        //}
     }
 
     private IEnumerator SlowDownPlayer(Player playerScript)

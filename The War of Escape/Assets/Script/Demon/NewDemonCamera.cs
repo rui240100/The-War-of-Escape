@@ -12,8 +12,8 @@ public class NewDemonCamera : MonoBehaviour
     public GameObject player1Object;
     public GameObject player2Object;
     private Player playerScript;
-    private bool player1;
-    private bool player2;
+    public bool player1;
+    public bool player2;
     public bool player1Chase;
     public bool player2Chase;
     public float stopChaseTime; // プレイヤーがカメラの視界から外れたときに追跡を停止するまでの時間
