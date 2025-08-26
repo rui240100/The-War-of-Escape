@@ -68,13 +68,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowDuration: 5
   slowMultiplier: 0.2
-  icon: {fileID: 21300000, guid: 36eb89e2f829ae1499aeb63183b2786d, type: 3}
-  useMessageSl1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageSl2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
+  icon: {fileID: 21300000, guid: 44412ad9c1e9c4a43b224e6e50b7cf6d, type: 3}
   stealAmount: 1
   consolationItems:
   - {fileID: 3470639543458426257, guid: b7fe00cd98f51294994a3408a83eb1b5, type: 3}
   - {fileID: 1741095577436644675, guid: f7c607aeea2848d4ab7bd8da3898a288, type: 3}
   - {fileID: 4946287297852470925, guid: b99d8ed7347e6f24bb02468af90aa435, type: 3}
-  useMessageRo1: "\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3057\u307E\u3057\u305F"
-  useMessageRo2: "\u30A2\u30A4\u30C6\u30E0\u304C\u4F7F\u7528\u3055\u308C\u307E\u3057\u305F"
