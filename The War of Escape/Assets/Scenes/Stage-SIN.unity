@@ -55513,6 +55513,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1193664548}
     m_Modifications:
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 777274893}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: respawn
       value: 
       objectReference: {fileID: 1632623540}
@@ -55646,7 +55650,7 @@ PrefabInstance:
       objectReference: {fileID: 1386575257}
     - target: {fileID: 5157824931611108810, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_VersionIndex
-      value: 15
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8223838434121673101, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_Mesh
@@ -61994,6 +61998,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73d4e488b9e7ab340a7de490d784eb0d, type: 3}
   m_PrefabInstance: {fileID: 776671921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &777274893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2271697252025687812, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+  m_PrefabInstance: {fileID: 705893937}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &778333602
 PrefabInstance:
@@ -76989,6 +76998,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b8f929bd3fbff49b96ad5d8ac1c15c, type: 3}
+--- !u!1 &990455490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2271697252025687812, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+  m_PrefabInstance: {fileID: 1349838595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &990792440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105640,6 +105654,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1193664548}
     m_Modifications:
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 990455490}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: respawn
       value: 
       objectReference: {fileID: 1632623540}
@@ -105793,7 +105811,7 @@ PrefabInstance:
       objectReference: {fileID: 1280012723}
     - target: {fileID: 5157824931611108810, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_VersionIndex
-      value: 15
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7302678643122504156, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_Enabled
