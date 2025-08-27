@@ -34,6 +34,8 @@ public class DemonAI : MonoBehaviour
     private string message1 = "捕まっちゃった";
     private string message2 = "";
 
+    private bool collisionWaitTime = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
@@ -110,8 +112,9 @@ public class DemonAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collisionWaitTime == false)
         {
+            collisionWaitTime = true;
             child.SetActive(false);
             //newDemonCamera.enabled = false;
             //Debug.Log("Collided Object Position: " + collision.transform.position);
@@ -172,6 +175,7 @@ public class DemonAI : MonoBehaviour
         newDemonCamera.player2 = false;
         newDemonCamera.player1Chase = false;
         newDemonCamera.player2Chase = false;
+        collisionWaitTime = false;
         //Instantiate(child, transform);
         //MonoBehaviour script =this.GetComponentInChildren<NewDemonCamera>();
 
