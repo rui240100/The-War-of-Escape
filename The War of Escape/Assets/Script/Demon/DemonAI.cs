@@ -26,7 +26,13 @@ public class DemonAI : MonoBehaviour
     private MonoBehaviour targetScript;
     private float disableTime = 20.0f;
     public GameObject child;
-    //private GameObject child;
+
+    private bool isCollision = false;
+    private float collisionTime = 0.0f;
+
+    public ItemUse itemUseSc;
+    private string message1 = "捕まっちゃった";
+    private string message2 = "";
 
     void Start()
     {
@@ -65,6 +71,16 @@ public class DemonAI : MonoBehaviour
                 agent.speed = patrolSpeed; // 初期状態ではパトロール速度
             }
             GoToNextPatrolPoint(); // 次のパトロール地点へ
+        }
+
+        if (isCollision)
+        {
+            collisionTime += Time.deltaTime; // 衝突中は時間を加算
+            Debug.Log("Collision Time: " + collisionTime);
+            if (collisionTime >= 4.0f)
+            {
+                gameObject.transform.position = respawn.position;
+            }
         }
     }
 
@@ -108,6 +124,15 @@ public class DemonAI : MonoBehaviour
 
             playerScript.keyCount -= 1;
             playerScript.UpdateKeyUI();
+
+            if (playerScript.playerID == 1)
+            {
+                itemUseSc.ShowMessage(message1, message2);
+            }
+            else
+            {
+                itemUseSc.ShowMessage(message2, message1);
+            }
 
             StartCoroutine(SlowDownPlayer(playerScript));
 
@@ -166,5 +191,22 @@ public class DemonAI : MonoBehaviour
         playerScript.Speed = 0.2f;
         yield return new WaitForSeconds(5.0f);
         playerScript.Speed = 5.0f;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isCollision = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isCollision = false;
+            collisionTime = 0.0f;
+        }
     }
 }
