@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class SpeedUpItem : Item
 {
-    public float speedUpDuration = 30f;   // 効果時間
+    public float speedUpDuration = 30f;    // 効果時間
     public float speedUpMultiplier = 1.2f; // 倍率
+
+    [Header("サウンド設定")]
+    public AudioClip useSound;   // 使用時に鳴らす音
+    [Range(0f, 1f)] public float soundVolume = 1f;
 
     private string useMessageSp1 = "スピードアップアイテムを使用しました";
     private string useMessageSp2 = "相手がスピードアップアイテムを使用しました";
@@ -25,6 +29,12 @@ public class SpeedUpItem : Item
     {
         // コルーチン開始
         user.StartCoroutine(SpeedUp(user));
+
+        // 効果音再生
+        if (useSound != null)
+        {
+            AudioSource.PlayClipAtPoint(useSound, user.transform.position, soundVolume);
+        }
 
         // メッセージ表示
         if (itemUseScSp != null)

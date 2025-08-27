@@ -276,7 +276,7 @@ MonoBehaviour:
   animator: {fileID: 6471610632946459648}
   keyVisualEffect: {fileID: 0}
   reopenDelay: 60
-  openSound: {fileID: 8300000, guid: 9ff6f584d1c52774eba2c18253ff776d, type: 3}
+  openSound: {fileID: 8300000, guid: 5aff488b8be7fe74f91c9cba3eb951e1, type: 3}
 --- !u!82 &6295938226587261155
 AudioSource:
   m_ObjectHideFlags: 0
