@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SpeedUpItem : Item
 {
-    public float speedUpDuration = 30f;
-    public float speedUpMultiplier = 1.2f;
+    public float speedUpDuration = 30f;   // 効果時間
+    public float speedUpMultiplier = 1.2f; // 倍率
 
     private string useMessageSp1 = "スピードアップアイテムを使用しました";
     private string useMessageSp2 = "相手がスピードアップアイテムを使用しました";
@@ -23,10 +23,10 @@ public class SpeedUpItem : Item
 
     public override void Activate(Player user)
     {
-        // 自分のスピードアップ
+        // コルーチン開始
         user.StartCoroutine(SpeedUp(user));
 
-        // メッセージ表示（任意）
+        // メッセージ表示
         if (itemUseScSp != null)
         {
             if (user.playerID == 1)
@@ -48,8 +48,21 @@ public class SpeedUpItem : Item
         float originalSpeed = player.Speed;
         player.Speed *= speedUpMultiplier;
 
+        // パーティクル制御
+        if (player.speedUpEffect != null)
+        {
+            player.speedUpEffect.gameObject.SetActive(true);
+            player.speedUpEffect.Play();
+        }
+
         yield return new WaitForSeconds(speedUpDuration);
 
         player.Speed = originalSpeed;
+
+        if (player.speedUpEffect != null)
+        {
+            player.speedUpEffect.Stop();
+            player.speedUpEffect.gameObject.SetActive(false);
+        }
     }
 }

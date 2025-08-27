@@ -66,6 +66,10 @@ public class Player : MonoBehaviour
     [Header("アイテム使用時の効果音")]
     public AudioSource itemUseSound;
 
+
+    [Header("エフェクト関連")]
+    public ParticleSystem speedUpEffect; // スピードアップ時のパーティクル
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -100,7 +104,7 @@ public class Player : MonoBehaviour
 
         if (keyUIContainer != null)
         {
-            keyUIContainer.SetActive(true); // 🔸これを必ず入れる！
+            keyUIContainer.SetActive(true); 
         }
 
 
