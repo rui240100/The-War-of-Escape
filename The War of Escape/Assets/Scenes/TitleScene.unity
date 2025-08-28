@@ -1144,6 +1144,14 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1351120948}
+    - target: {fileID: 3062055781258138785, guid: 343cd85c8dde28f4a9c7ce9458ff6a4d, type: 3}
+      propertyPath: waitTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062055781258138785, guid: 343cd85c8dde28f4a9c7ce9458ff6a4d, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1949995400}
     - target: {fileID: 7252131943932004564, guid: 343cd85c8dde28f4a9c7ce9458ff6a4d, type: 3}
       propertyPath: m_Name
       value: PvPlayer
