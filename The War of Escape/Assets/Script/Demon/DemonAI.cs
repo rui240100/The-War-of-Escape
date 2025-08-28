@@ -125,7 +125,10 @@ public class DemonAI : MonoBehaviour
             Debug.Log("Collided Object Name: " + collision.gameObject.name);
             playerScript = collision.gameObject.GetComponent<Player>();
 
-            playerScript.keyCount -= 1;
+            if (playerScript.keyCount >= 1)
+            {  
+                playerScript.keyCount -= 1;
+            }
             playerScript.UpdateKeyUI();
 
             if (playerScript.playerID == 1)
