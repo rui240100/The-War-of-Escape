@@ -1,38 +1,51 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;  // ← 追加！
+using UnityEngine.SceneManagement;
+
 public class GameDrector : MonoBehaviour
 {
     public GameObject timeUI;
+    public AudioSource bgmSource;       // 通常BGM用
+    public AudioClip finalMinuteBGM;    // 残り1分用の短いBGM
 
     float TimeCount = 180;
-    private bool hasEnded = false; // 終了処理が一度だけ実行されるように
+    private bool hasEnded = false;
+    private bool isFinalMinuteBGMPlayed = false; // 1分BGMを一度だけ再生するフラグ
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         timeUI.GetComponent<TextMeshProUGUI>().text = "0:00";
+        if (bgmSource != null) bgmSource.Play(); // 最初のBGM再生
     }
 
-    // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
-
-        if( TimeCount > 0)
+        if (TimeCount > 0)
         {
             TimeCount -= Time.deltaTime;
 
-        }
+            // 残り1分になったら短いBGM再生
+            if (TimeCount <= 60f && !isFinalMinuteBGMPlayed)
+            {
+                isFinalMinuteBGMPlayed = true;
 
+                if (bgmSource != null && finalMinuteBGM != null)
+                {
+                    bgmSource.Stop(); // 通常BGMを止める
+                    bgmSource.clip = finalMinuteBGM;
+                    bgmSource.Play();
+                }
+            }
+        }
         else if (!hasEnded)
         {
-            hasEnded = true; // 2回以上呼ばれないように
-            TimeCount = 0;   // マイナスにならないように固定
-            SceneManager.LoadScene("Clear"); // ← シーン名をここに！
+            hasEnded = true;
+            TimeCount = 0;
+            FadeManager.Instance.LoadScene("Clear", 2.0f);
         }
 
         int second = (int)TimeCount % 60;
-
         timeUI.GetComponent<TextMeshProUGUI>().text = "" + (int)TimeCount / 60 + ":" + second.ToString("D2");
     }
 }
