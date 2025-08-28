@@ -113,9 +113,15 @@ public class SwitchPositionItem : Item
 
         // プレイヤー位置を入れ替え
         Transform other = user.otherPlayer.transform;
+        Debug.Log($"Before Swap: User={user.transform.position}, Other={other.position}");
+
+        // 入れ替え処理
         Vector3 temp = user.transform.position;
         user.transform.position = other.position;
         other.position = temp;
+
+        Debug.Log($"After Swap: User={user.transform.position}, Other={other.position}");
+
 
         yield return new WaitForSeconds(0.5f);
 

@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class WalkRange : MonoBehaviour
 {
-    public AudioClip walkSound;
+    //public AudioClip walkSound;
     public AudioSource audioSource;
-    private bool walkSoudPlaying = false;
 
     public DemonAI demonAI;
 
@@ -14,11 +13,15 @@ public class WalkRange : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if (!walkSoudPlaying && demonAI.isChasing == false)
+            if (!audioSource.isPlaying && demonAI.isChasing == false)
             {
-                walkSoudPlaying = true;
-                audioSource.PlayOneShot(walkSound);
-                walkSoudPlaying = false;
+                audioSource.pitch = 1.0f;
+                audioSource.Play();
+            }
+            else if(!audioSource.isPlaying && demonAI.isChasing == true)
+            {
+                audioSource.pitch = 1.5f;
+                audioSource.Play();
             }
         }
     }
