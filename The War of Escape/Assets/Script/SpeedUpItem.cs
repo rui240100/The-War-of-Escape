@@ -59,7 +59,7 @@ public class SpeedUpItem : Item
     private System.Collections.IEnumerator SpeedUp(Player player)
     {
         float originalSpeed = player.Speed;
-        player.Speed *= speedUpMultiplier;
+        player.Speed = 7.5f;
 
         // パーティクル制御
         if (player.speedUpEffect != null)
