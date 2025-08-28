@@ -69,12 +69,12 @@ public class DemonAI : MonoBehaviour
                 if (!demonStun)
                 {
                     agent.speed = chaseSpeed; // 追跡時のスピードに変更
-                    if (!runSoundPlaying)
-                    {
-                        runSoundPlaying = true;
-                        audioSource.PlayOneShot(runSound);
-                        runSoundPlaying = false;
-                    }
+                    //if (!runSoundPlaying)
+                    //{
+                    //    runSoundPlaying = true;
+                    //    audioSource.PlayOneShot(runSound);
+                    //    runSoundPlaying = false;
+                    //}
 
 
                 }

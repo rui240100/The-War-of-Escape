@@ -15,6 +15,12 @@ public class WalkRange : MonoBehaviour
         {
             if (!audioSource.isPlaying && demonAI.isChasing == false)
             {
+                audioSource.pitch = 1.0f;
+                audioSource.Play();
+            }
+            else if(!audioSource.isPlaying && demonAI.isChasing == true)
+            {
+                audioSource.pitch = 1.5f;
                 audioSource.Play();
             }
         }

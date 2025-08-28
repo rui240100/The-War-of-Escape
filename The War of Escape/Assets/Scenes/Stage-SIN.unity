@@ -106100,6 +106100,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon0
       objectReference: {fileID: 0}
+    - target: {fileID: 4056210797809920372, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 89302aad418c5bd4281bb0f995993d6f, type: 3}
+    - target: {fileID: 4056210797809920372, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 89302aad418c5bd4281bb0f995993d6f, type: 3}
     - target: {fileID: 5157824931611108810, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_Mesh
       value: 
