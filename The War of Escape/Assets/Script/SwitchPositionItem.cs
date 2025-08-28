@@ -14,36 +14,49 @@ public class SwitchPositionItem : Item
     private GameObject itemUseSw;
     private ItemUse itemUseScSw;
 
+    [Header("サウンド設定")]
+    public AudioClip countdownBeep;   // 3,2,1 で鳴る音
+    public AudioClip countdownFinal;  // 0 で鳴る音
+    [Range(0f, 1f)] public float soundVolume = 1f;
+
+    private static AudioSource uiAudioSource; // 共有AudioSource（2D再生）
+
     void Start()
     {
-        // 非アクティブなオブジェクトも対象に含めて探す
+        // UI探し
         if (countdownUI == null)
         {
-            // 1. UIのCanvas（親）を探す
             GameObject uiRoot = GameObject.Find("SwitchPositionCountdownUI");
-
             if (uiRoot != null)
             {
                 countdownUI = uiRoot.transform.Find("SwitchPositionCountdown")?.gameObject;
 
-                // 2. CountText をその子から探す
                 if (countdownUI != null)
                 {
                     countdownText = countdownUI.transform.Find("CountText")
                                     ?.GetComponent<TextMeshProUGUI>();
 
-                    // 最初は非表示にしておく
                     countdownUI.SetActive(false);
                 }
             }
         }
 
-        // シーン内のMessageDisplayManagerを探す
+        // メッセージ用
         itemUseSw = GameObject.Find("ItemUse");
         itemUseScSw = itemUseSw.GetComponent<ItemUse>();
         if (itemUseScSw == null)
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
+        }
+
+        // 2D用AudioSourceを確保
+        if (uiAudioSource == null)
+        {
+            GameObject go = new GameObject("CountdownAudioSource");
+            DontDestroyOnLoad(go); // シーン切り替えでも残す
+            uiAudioSource = go.AddComponent<AudioSource>();
+            uiAudioSource.spatialBlend = 0f; // 2Dサウンド
+            uiAudioSource.playOnAwake = false;
         }
     }
 
@@ -60,15 +73,11 @@ public class SwitchPositionItem : Item
         {
             if (playerScriptSw.playerID == 1)
             {
-                string message1 = useMessageSw1;
-                string message2 = useMessageSw2;
-                itemUseScSw.ShowMessage(message1, message2);
+                itemUseScSw.ShowMessage(useMessageSw1, useMessageSw2);
             }
             else if (playerScriptSw.playerID == 2)
             {
-                string message1 = useMessageSw2;
-                string message2 = useMessageSw1;
-                itemUseScSw.ShowMessage(message1, message2);
+                itemUseScSw.ShowMessage(useMessageSw2, useMessageSw1);
             }
         }
     }
@@ -82,25 +91,32 @@ public class SwitchPositionItem : Item
             countdownText.text = $"{user.playerID + 1}Pが位置入れ替えアイテムを使用！";
             yield return new WaitForSeconds(2f);
 
+            // 3
             countdownText.text = "3...";
+            PlayBeep();
             yield return new WaitForSeconds(1f);
 
+            // 2
             countdownText.text = "2...";
+            PlayBeep();
             yield return new WaitForSeconds(1f);
 
+            // 1
             countdownText.text = "1...";
+            PlayBeep();
             yield return new WaitForSeconds(1f);
 
-            countdownText.text = "0..."; // お好みで表示
+            // 0
+            countdownText.text = "0...";
+            PlayFinal();
         }
 
-        // プレイヤーの位置を入れ替える
+        // プレイヤー位置を入れ替え
         Transform other = user.otherPlayer.transform;
         Vector3 temp = user.transform.position;
         user.transform.position = other.position;
         other.position = temp;
 
-        // 少しだけ表示を続けてもOK（お好み）
         yield return new WaitForSeconds(0.5f);
 
         if (countdownUI != null)
@@ -111,4 +127,19 @@ public class SwitchPositionItem : Item
         user.SetHeldItem(null);
     }
 
+    private void PlayBeep()
+    {
+        if (countdownBeep != null && uiAudioSource != null)
+        {
+            uiAudioSource.PlayOneShot(countdownBeep, soundVolume);
+        }
+    }
+
+    private void PlayFinal()
+    {
+        if (countdownFinal != null && uiAudioSource != null)
+        {
+            uiAudioSource.PlayOneShot(countdownFinal, soundVolume);
+        }
+    }
 }
