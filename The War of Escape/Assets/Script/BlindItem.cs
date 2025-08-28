@@ -17,6 +17,10 @@ public class BlindItem : Item
     [Header("Blind Image")]
     [SerializeField] private Sprite blindSprite;
 
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip useSound;           // 使用時に鳴らす音
+    [SerializeField] private AudioSource audioSource;      // AudioSourceをInspectorでセット
+
     private Player playerScriptBl;
     private string useMessageBl1 = "目隠しアイテムを使用しました";
     private string useMessageBl2 = "";
@@ -50,6 +54,12 @@ public class BlindItem : Item
 
         playerScriptBl = user.GetComponent<Player>();
         user.SetHeldItem(null);
+
+        // 音を鳴らす
+        if (audioSource != null && useSound != null)
+        {
+            audioSource.PlayOneShot(useSound);
+        }
 
         if (itemUseScBl != null)
         {
