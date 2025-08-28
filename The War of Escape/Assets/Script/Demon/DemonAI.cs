@@ -36,6 +36,13 @@ public class DemonAI : MonoBehaviour
 
     private bool collisionWaitTime = false;
 
+    public AudioClip runSound;
+    public AudioClip findSound;
+    public AudioClip dieSound;
+    public AudioSource audioSource;
+
+    private bool runSoundPlaying = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
@@ -62,6 +69,14 @@ public class DemonAI : MonoBehaviour
                 if (!demonStun)
                 {
                     agent.speed = chaseSpeed; // 追跡時のスピードに変更
+                    if (!runSoundPlaying)
+                    {
+                        runSoundPlaying = true;
+                        audioSource.PlayOneShot(runSound);
+                        runSoundPlaying = false;
+                    }
+
+
                 }
             }
         }
@@ -71,6 +86,12 @@ public class DemonAI : MonoBehaviour
             if (!demonStun)
             {
                 agent.speed = patrolSpeed; // 初期状態ではパトロール速度
+                //if (!walkSoundPlaying)
+                //{
+                //    walkSoundPlaying = true;
+                //    audioSource.PlayOneShot(walkSound);
+                //    walkSoundPlaying = false;
+                //}
             }
             GoToNextPatrolPoint(); // 次のパトロール地点へ
         }
@@ -99,6 +120,7 @@ public class DemonAI : MonoBehaviour
     {
         player = target;
         isChasing = true;
+        audioSource.PlayOneShot(findSound);
         //Debug.Log("ChaseStart");
     }
 
@@ -114,6 +136,7 @@ public class DemonAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && collisionWaitTime == false)
         {
+            audioSource.PlayOneShot(dieSound);
             collisionWaitTime = true;
             child.SetActive(false);
             //newDemonCamera.enabled = false;
