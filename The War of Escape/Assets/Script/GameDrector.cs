@@ -8,7 +8,7 @@ public class GameDrector : MonoBehaviour
     public AudioSource bgmSource;       // 通常BGM用
     public AudioClip finalMinuteBGM;    // 残り1分用の短いBGM
 
-    float TimeCount = 180;
+    public float TimeCount = 180;
     private bool hasEnded = false;
     private bool isFinalMinuteBGMPlayed = false; // 1分BGMを一度だけ再生するフラグ
 

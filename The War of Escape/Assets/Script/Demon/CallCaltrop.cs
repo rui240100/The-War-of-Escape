@@ -10,6 +10,8 @@ public class CallCaltrop : Item
     private GameObject itemUseCo;
     private ItemUse itemUseScCo;
 
+    public AudioSource caltropSetAudioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +36,7 @@ public class CallCaltrop : Item
 
     public override void Activate(Player user)
     {
+        caltropSetAudioSource.Play();
         Debug.Log("Ç‹Ç´Ç—Çµê›íu0");
         GameObject caltropObj = Instantiate(caltrop);
         caltropObj.transform.position = new Vector3(user.transform.position.x, user.transform.position.y - 1.1f, user.transform.position.z);

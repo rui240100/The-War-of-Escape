@@ -6408,6 +6408,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 385355d885661594d931d96d75fefdbb, type: 3}
   m_PrefabInstance: {fileID: 89952179}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &90025196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90025197}
+  - component: {fileID: 90025200}
+  - component: {fileID: 90025199}
+  - component: {fileID: 90025198}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &90025197
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90025196}
+  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1384085103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 435}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &90025198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90025196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370ce209ada210a4c938a228ee66e8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 90025199}
+  gameDrector: {fileID: 791891442}
+--- !u!114 &90025199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90025196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 108ccb0a1031f7f47aca3f3371b66b4d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &90025200
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90025196}
+  m_CullTransparentMesh: 1
 --- !u!4 &90627718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: 63c1b1c4c58d1cc4682f4035c2b47974, type: 3}
@@ -63560,6 +63650,7 @@ MonoBehaviour:
   timeUI: {fileID: 1481843277}
   bgmSource: {fileID: 791891444}
   finalMinuteBGM: {fileID: 8300000, guid: 3c6a26f8e55fa86428eb9c70613fca47, type: 3}
+  TimeCount: 180
 --- !u!4 &791891443
 Transform:
   m_ObjectHideFlags: 0
@@ -77425,7 +77516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6358809814560706215, guid: 51818954e9ddbb647ba96a574017e48c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.4
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6358809814560706215, guid: 51818954e9ddbb647ba96a574017e48c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -77446,6 +77537,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5629109006914493631, guid: 51818954e9ddbb647ba96a574017e48c, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 90025197}
     - targetCorrespondingSourceObject: {fileID: 5629109006914493631, guid: 51818954e9ddbb647ba96a574017e48c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 149273875}

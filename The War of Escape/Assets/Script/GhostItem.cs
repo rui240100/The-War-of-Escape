@@ -17,6 +17,8 @@ public class GhostItem : Item
     private GameObject itemUseRo;
     private ItemUse itemUseScRo;
 
+    public AudioSource ghostStealAudioSource;
+
     private void Start()
     {
         // ÉVÅ[Éìì‡ÇÃMessageDisplayManagerÇíTÇ∑
@@ -30,6 +32,7 @@ public class GhostItem : Item
 
     public override void Activate(Player user)
     {
+        ghostStealAudioSource.Play();
         playerScriptRo = user.GetComponent<Player>();
         user.SetHeldItem(null);
 
