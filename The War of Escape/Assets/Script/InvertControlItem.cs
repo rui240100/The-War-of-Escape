@@ -12,6 +12,7 @@ public class InvertControlItem : Item
     private GameObject itemUseRe;
     private ItemUse itemUseScRe;
 
+    public AudioSource invertAudioSource;
     private void Start()
     {
         // ƒV[ƒ““à‚ÌMessageDisplayManager‚ğ’T‚·
@@ -25,6 +26,7 @@ public class InvertControlItem : Item
 
     public override void Activate(Player user)
     {
+        invertAudioSource.Play();
         if (user.otherPlayer != null)
         {
             user.StartCoroutine(InvertControl(user.otherPlayer,user));

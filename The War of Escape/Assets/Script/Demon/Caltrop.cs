@@ -10,6 +10,8 @@ public class Caltrap : MonoBehaviour
 
     private int count = 0;
 
+    public AudioSource caltropAudioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,6 +35,7 @@ public class Caltrap : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            caltropAudioSource.Play();
             playerScript = other.GetComponent<Player>();
             StartCoroutine(SlowDownPlayer(playerScript));
             this.transform.position = new Vector3(0, -100, 0);
