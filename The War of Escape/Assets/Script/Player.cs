@@ -133,8 +133,8 @@ public class Player : MonoBehaviour
         if (playerID == 1)
         {
             InvertedInput inv = GetComponent<InvertedInput>();
-            x = (inv != null) ? inv.GetAxisRaw("Horizontal1") : Input.GetAxisRaw("Horizontal1");
-            z = (inv != null) ? inv.GetAxisRaw("Vertical1") : Input.GetAxisRaw("Vertical1");
+            x = (inv != null) ? inv.GetAxisRaw("Horizontal1") : Input.GetAxis("Horizontal1");
+            z = (inv != null) ? inv.GetAxisRaw("Vertical1") : Input.GetAxis("Vertical1");
 
             mouseX = Input.GetAxis("Mouse X");
             mouseY = Input.GetAxis("Mouse Y");
@@ -142,8 +142,8 @@ public class Player : MonoBehaviour
         else if (playerID == 2)
         {
             InvertedInput inv = GetComponent<InvertedInput>();
-            x = (inv != null) ? inv.GetAxisRaw("Horizontal2") : Input.GetAxisRaw("Horizontal2");
-            z = (inv != null) ? inv.GetAxisRaw("Vertical2") : Input.GetAxisRaw("Vertical2");
+            x = (inv != null) ? inv.GetAxisRaw("Horizontal2") : Input.GetAxis("Horizontal2");
+            z = (inv != null) ? inv.GetAxisRaw("Vertical2") : Input.GetAxis("Vertical2");
 
             mouseX = Input.GetAxis("Mouse X2");
             mouseY = Input.GetAxis("Mouse Y2");
@@ -163,6 +163,13 @@ public class Player : MonoBehaviour
         right.Normalize();
 
         Vector3 move = (forward * z + right * x).normalized;
+
+
+
+        // ★ 倒し具合に応じたスピード計算
+        float magnitude = Mathf.Clamp01(new Vector2(x, z).magnitude);
+        float currentSpeed = Speed * magnitude;
+
 
         if (forward == Vector3.zero)
         {
