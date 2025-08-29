@@ -21,12 +21,22 @@ public class KeyBox : MonoBehaviour
     [Header("宝箱が開くときの効果音 (任意)")]
     [SerializeField] private AudioClip openSound;
 
-    private AudioSource audioSource;
+    [Header("宝箱が中身を持っている時のBGM (ループ)")]
+    [SerializeField] private AudioClip chestBGM;
 
+    private AudioSource audioSource;
+    private bool hasItem = true; // ← 中身があるかどうかを管理（初期は入っている）
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        if (chestBGM != null && hasItem)
+        {
+            audioSource.clip = chestBGM;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 
     void Update()
@@ -89,6 +99,13 @@ public class KeyBox : MonoBehaviour
         {
             Instantiate(keyVisualEffect, transform.position, Quaternion.identity);
         }
+
+        // 中身がなくなったらBGMを止める
+        hasItem = false;
+        if (audioSource.isPlaying && audioSource.clip == chestBGM)
+        {
+            audioSource.Stop();
+        }
     }
 
     private void OpenChest()
@@ -110,5 +127,16 @@ public class KeyBox : MonoBehaviour
 
         if (animator != null) animator.SetTrigger("Close");
         isOpen = false;
+
+        // 再使用可能になったら再び中身が入ると仮定する
+        hasItem = true;
+
+        // BGMを再生し直す
+        if (chestBGM != null)
+        {
+            audioSource.clip = chestBGM;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 }
