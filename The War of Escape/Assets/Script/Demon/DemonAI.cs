@@ -41,6 +41,17 @@ public class DemonAI : MonoBehaviour
     public AudioClip dieSound;
     public AudioSource audioSource;
 
+    public RectTransform uiImage1;  // 対象のUI (Image)
+    public RectTransform uiImage2;
+    private Vector2 startPosRight = new Vector2(1000, 0);  // 右外からの開始位置
+    private Vector2 centerPos = new Vector2(0, 0);         // 中央位置
+    private Vector2 endPosLeft = new Vector2(-1000, 0);    // 左外へ消える位置
+    private float slideTime = 0.5f;   // スライドにかかる時間
+    private float stayTime = 2.0f;      // 中央で停止する時間
+
+    private bool isAnimating1 = false;
+    private bool isAnimating2 = false;
+
     private bool runSoundPlaying = false;
 
     void Start()
@@ -136,7 +147,7 @@ public class DemonAI : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && collisionWaitTime == false)
         {
-            audioSource.PlayOneShot(dieSound);
+            //audioSource.PlayOneShot(dieSound);
             collisionWaitTime = true;
             child.SetActive(false);
             //newDemonCamera.enabled = false;
@@ -154,13 +165,25 @@ public class DemonAI : MonoBehaviour
             }
             playerScript.UpdateKeyUI();
 
+            int playerID;
+
             if (playerScript.playerID == 1)
             {
-                itemUseSc.ShowMessage(message1, message2);
+                if (!isAnimating1)
+                {
+                    playerID = 1;
+                    StartCoroutine(PlayUIAnimation(playerID));
+                }
+                //itemUseSc.ShowMessage(message1, message2);
             }
             else
             {
-                itemUseSc.ShowMessage(message2, message1);
+                if (!isAnimating1)
+                {
+                    playerID = 2;
+                    StartCoroutine(PlayUIAnimation(playerID));
+                }
+                //itemUseSc.ShowMessage(message2, message1);
             }
 
             StartCoroutine(SlowDownPlayer(playerScript));
@@ -191,6 +214,58 @@ public class DemonAI : MonoBehaviour
             StopChase();
             Debug.Log("終了");
         }
+    }
+
+    IEnumerator PlayUIAnimation(int playerID)
+    {
+        if(playerID == 1)
+        {
+            isAnimating1 = true;
+
+            // 右 → 中央へ移動
+            yield return StartCoroutine(Slide(uiImage1, startPosRight, centerPos, slideTime));
+
+            // 中央で待機
+            yield return new WaitForSeconds(stayTime);
+
+            // 中央 → 左へ移動
+            yield return StartCoroutine(Slide(uiImage1, centerPos, endPosLeft, slideTime));
+
+            // 終了したら初期位置に戻す
+            uiImage1.anchoredPosition = startPosRight;
+            isAnimating1 = false;
+        }
+        else
+        {
+            isAnimating2 = true;
+
+            // 右 → 中央へ移動
+            yield return StartCoroutine(Slide(uiImage2, startPosRight, centerPos, slideTime));
+
+            // 中央で待機
+            yield return new WaitForSeconds(stayTime);
+
+            // 中央 → 左へ移動
+            yield return StartCoroutine(Slide(uiImage2, centerPos, endPosLeft, slideTime));
+
+            // 終了したら初期位置に戻す
+            uiImage1.anchoredPosition = startPosRight;
+            isAnimating2 = false;
+        }
+    }
+
+    // 補間で移動
+    IEnumerator Slide(RectTransform target, Vector2 from, Vector2 to, float duration)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = Mathf.Clamp01(time / duration);
+            target.anchoredPosition = Vector2.Lerp(from, to, t);
+            yield return null;
+        }
+        target.anchoredPosition = to;
     }
 
     private IEnumerator DisableForSeconds()

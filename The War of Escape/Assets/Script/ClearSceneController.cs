@@ -13,11 +13,11 @@ public class ClearSceneController : MonoBehaviour
 
         if (id != -1)
         {
-            resultText.text = $"Player {id} 脱出成功！";
+            resultText.text = $"Player {id} \n脱出成功！";
         }
         else
         {
-            resultText.text = "誰も脱出していません";
+            resultText.text = "誰も\n脱出していません";
         }
     }
 
