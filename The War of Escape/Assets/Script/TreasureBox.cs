@@ -4,8 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// 判定エリア（Trigger）に入っているプレイヤー本人だけが対応ボタンで宝箱を開ける。
-/// 1P は Fire2 / 2P は Fire2_2 を使う想定。
-/// 一番近いプレイヤーのみ開けられる仕様に改修済み。
+/// 一番近いプレイヤーのみ開けられる仕様。
+/// 宝箱に「中身あり」の間はBGMを流し、開けられたら止めて、リセット後に再び流す。
 /// </summary>
 public class TreasureBox : MonoBehaviour
 {
@@ -21,8 +21,26 @@ public class TreasureBox : MonoBehaviour
     private readonly List<Player> playersInRange = new();
 
     [Header("サウンド")]
-    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip openSound;   // 開封SE
+    [SerializeField] private AudioClip treasureBgm; // 宝箱BGM
     [SerializeField] private AudioSource audioSource;
+
+    void Start()
+    {
+        // 開始時は「中身あり」なのでBGMを流す
+        if (audioSource != null && treasureBgm != null)
+        {
+            audioSource.clip = treasureBgm;
+            audioSource.loop = true;
+
+            // 🔊 3Dサウンド設定
+            audioSource.spatialBlend = 1.0f;  // 1 = 完全3D
+            audioSource.minDistance = 2f;     // 2m以内はフル音量
+            audioSource.maxDistance = 12f;    // 12m以上離れると聞こえない
+
+            audioSource.Play();
+        }
+    }
 
     void Update()
     {
@@ -79,8 +97,6 @@ public class TreasureBox : MonoBehaviour
 
     private void GiveItemToPlayer(Player player)
     {
-        //player.AddMagatama(); // 勾玉 +1
-
         if (possibleItems.Length == 0) return;
 
         GameObject obj = Instantiate(possibleItems[Random.Range(0, possibleItems.Length)]);
@@ -119,12 +135,19 @@ public class TreasureBox : MonoBehaviour
 
         if (animator != null) animator.SetTrigger("Open");
 
+        // 開封SE
         if (audioSource != null && openSound != null)
         {
             audioSource.PlayOneShot(openSound);
         }
 
-        // 30秒後に宝箱をリセットして再び開けられるようにする
+        // BGMを止める
+        if (audioSource != null && audioSource.clip == treasureBgm)
+        {
+            audioSource.Stop();
+        }
+
+        // 60秒後にリセット
         StartCoroutine(ResetChestAfterDelay(60f));
     }
 
@@ -134,12 +157,20 @@ public class TreasureBox : MonoBehaviour
 
         isOpen = false;
 
-        // 任意：アニメーターに Close トリガーがある場合はこれも実行
+        // 任意：アニメーターに Close トリガーがある場合
         if (animator != null)
         {
-            animator.SetTrigger("Close"); // Closeアニメーションを再生（あれば）
+            animator.SetTrigger("Close");
         }
 
         Debug.Log("TreasureBox has been reset and can be opened again.");
+
+        // 中身が補充されたので再びBGMを流す
+        if (audioSource != null && treasureBgm != null)
+        {
+            audioSource.clip = treasureBgm;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 }
