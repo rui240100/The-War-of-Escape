@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public int playerID;
-    public float Speed;
+    public float Speed = 5f; // 最大移動速度
     public Transform cameraTransform;
     public float lookSensitivity = 3.0f;
     CharacterController characterController;
@@ -72,6 +72,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        
+
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
 
@@ -170,14 +172,8 @@ public class Player : MonoBehaviour
         float magnitude = Mathf.Clamp01(new Vector2(x, z).magnitude);
         float currentSpeed = Speed * magnitude;
 
-
-        if (forward == Vector3.zero)
-        {
-            move = transform.right * x + transform.forward * z;
-            move = move.normalized;
-        }
-
-        characterController.SimpleMove(move * Speed);
+        // 入力方向を正規化したベクトルに掛ける
+        characterController.SimpleMove(move * currentSpeed);
 
         // アニメーション制御（IdleとRunを個別に調整）
         if (animator != null)
