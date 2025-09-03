@@ -42,7 +42,9 @@ public class DemonAI : MonoBehaviour
     public AudioSource audioSource;
 
     public RectTransform uiImage1;  // 対象のUI (Image)
+    public RectTransform uiImage12;
     public RectTransform uiImage2;
+    public RectTransform uiImage22;
     private Vector2 startPosRight = new Vector2(1000, 0);  // 右外からの開始位置
     private Vector2 centerPos = new Vector2(0, 0);         // 中央位置
     private Vector2 endPosLeft = new Vector2(-1000, 0);    // 左外へ消える位置
@@ -51,6 +53,8 @@ public class DemonAI : MonoBehaviour
 
     private bool isAnimating1 = false;
     private bool isAnimating2 = false;
+    private bool keyCount1 = false;
+    private bool keyCount2 = false;
 
     private bool runSoundPlaying = false;
 
@@ -160,10 +164,24 @@ public class DemonAI : MonoBehaviour
             playerScript = collision.gameObject.GetComponent<Player>();
 
             if (playerScript.keyCount >= 1)
-            {  
+            {
+                if (playerScript.playerID == 1)
+                    keyCount1 = true;
+
+                if (playerScript.playerID == 2)
+                    keyCount2 = true;
+
                 playerScript.keyCount -= 1;
             }
-            playerScript.UpdateKeyUI();
+            else if(playerScript.keyCount == 0)
+            {
+                if (playerScript.playerID == 1)
+                    keyCount1 = false;
+
+                if (playerScript.playerID == 2)
+                    keyCount2 = false;
+            }
+                playerScript.UpdateKeyUI();
 
             int playerID;
 
@@ -222,35 +240,71 @@ public class DemonAI : MonoBehaviour
         {
             isAnimating1 = true;
 
-            // 右 → 中央へ移動
-            yield return StartCoroutine(Slide(uiImage1, startPosRight, centerPos, slideTime));
+            if(keyCount1 == true)
+            {
+                // 右 → 中央へ移動
+                yield return StartCoroutine(Slide(uiImage1, startPosRight, centerPos, slideTime));
 
-            // 中央で待機
-            yield return new WaitForSeconds(stayTime);
+                // 中央で待機
+                yield return new WaitForSeconds(stayTime);
 
-            // 中央 → 左へ移動
-            yield return StartCoroutine(Slide(uiImage1, centerPos, endPosLeft, slideTime));
+                // 中央 → 左へ移動
+                yield return StartCoroutine(Slide(uiImage1, centerPos, endPosLeft, slideTime));
 
-            // 終了したら初期位置に戻す
-            uiImage1.anchoredPosition = startPosRight;
-            isAnimating1 = false;
+                // 終了したら初期位置に戻す
+                uiImage1.anchoredPosition = startPosRight;
+            }
+            else if(keyCount1 == false)
+            {
+                // 右 → 中央へ移動
+                yield return StartCoroutine(Slide(uiImage12, startPosRight, centerPos, slideTime));
+
+                // 中央で待機
+                yield return new WaitForSeconds(stayTime);
+
+                // 中央 → 左へ移動
+                yield return StartCoroutine(Slide(uiImage12, centerPos, endPosLeft, slideTime));
+
+                // 終了したら初期位置に戻す
+                uiImage12.anchoredPosition = startPosRight;
+            }
+
+                isAnimating1 = false;
         }
         else
         {
             isAnimating2 = true;
 
-            // 右 → 中央へ移動
-            yield return StartCoroutine(Slide(uiImage2, startPosRight, centerPos, slideTime));
+            if(keyCount2 == true)
+            {
+                // 右 → 中央へ移動
+                yield return StartCoroutine(Slide(uiImage2, startPosRight, centerPos, slideTime));
 
-            // 中央で待機
-            yield return new WaitForSeconds(stayTime);
+                // 中央で待機
+                yield return new WaitForSeconds(stayTime);
 
-            // 中央 → 左へ移動
-            yield return StartCoroutine(Slide(uiImage2, centerPos, endPosLeft, slideTime));
+                // 中央 → 左へ移動
+                yield return StartCoroutine(Slide(uiImage2, centerPos, endPosLeft, slideTime));
 
-            // 終了したら初期位置に戻す
-            uiImage1.anchoredPosition = startPosRight;
-            isAnimating2 = false;
+                // 終了したら初期位置に戻す
+                uiImage1.anchoredPosition = startPosRight;
+            }
+            else if (keyCount2 == false)
+            {
+                // 右 → 中央へ移動
+                yield return StartCoroutine(Slide(uiImage22, startPosRight, centerPos, slideTime));
+
+                // 中央で待機
+                yield return new WaitForSeconds(stayTime);
+
+                // 中央 → 左へ移動
+                yield return StartCoroutine(Slide(uiImage22, centerPos, endPosLeft, slideTime));
+
+                // 終了したら初期位置に戻す
+                uiImage22.anchoredPosition = startPosRight;
+            }
+
+                isAnimating2 = false;
         }
     }
 
