@@ -108172,6 +108172,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149100c91951405448785b677e7475a6, type: 3}
+<<<<<<< HEAD
 --- !u!1001 &1271689938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108235,6 +108236,8 @@ PrefabInstance:
       addedObject: {fileID: 11105563}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd296fd18d185614a98b64c436fd2ecc, type: 3}
+=======
+>>>>>>> parent of 0a3f16b (オブジェクト配置)
 --- !u!1001 &1272232188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134391,6 +134394,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 98df250e1fa34ea4e9380a1ac3c7bbef, type: 3}
   m_PrefabInstance: {fileID: 1813472801}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1558080834
 GameObject:
   m_ObjectHideFlags: 0
@@ -134466,6 +134470,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558080834}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of 0a3f16b (オブジェクト配置)
 --- !u!4 &1559361519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e5b8f929bd3fbff49b96ad5d8ac1c15c, type: 3}
@@ -189213,8 +189219,11 @@ SceneRoots:
   - {fileID: 1354171192}
   - {fileID: 2011477468}
   - {fileID: 876068623}
+<<<<<<< HEAD
   - {fileID: 2123969954}
   - {fileID: 1499688205}
   - {fileID: 1271689938}
   - {fileID: 1625254272}
   - {fileID: 533381146}
+=======
+>>>>>>> parent of 0a3f16b (オブジェクト配置)
