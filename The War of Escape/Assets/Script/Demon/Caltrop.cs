@@ -9,6 +9,7 @@ public class Caltrap : MonoBehaviour
     private Necromancer necromancerScript;
 
     private int count = 0;
+    private bool wait;
 
     public AudioSource caltropAudioSource;
 
@@ -27,33 +28,30 @@ public class Caltrap : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         count++;
+        StartCoroutine(CaltropWait());
 
         if (count <= 1)
         {
             return;
         }
 
-        if (other.CompareTag("Player"))
+        if (wait)
         {
-            caltropAudioSource.Play();
-            playerScript = other.GetComponent<Player>();
-            StartCoroutine(SlowDownPlayer(playerScript));
-            this.transform.position = new Vector3(0, -100, 0);
-            Destroy(this.gameObject,5.1f);
-        }
-        else if (other.CompareTag("Demon"))
-        {
-            demonAIScript = other.GetComponent<DemonAI>();
-            StartCoroutine(SlowDownDemon(demonAIScript));
-            this.transform.position = new Vector3(0, -100, 0);
-            Destroy(this.gameObject, 5.1f);
-        }
-        else if (other.CompareTag("Necromancer"))
-        {
-            necromancerScript = other.GetComponent<Necromancer>();
-            StartCoroutine(SlowDownNecromancer(necromancerScript));
-            this.transform.position = new Vector3(0, -100, 0);
-            Destroy(this.gameObject, 5.1f);
+            if (other.CompareTag("Player"))
+            {
+                caltropAudioSource.Play();
+                playerScript = other.GetComponent<Player>();
+                StartCoroutine(SlowDownPlayer(playerScript));
+                this.transform.position = new Vector3(0, -100, 0);
+                Destroy(this.gameObject, 5.1f);
+            }
+            else if (other.CompareTag("Demon"))
+            {
+                demonAIScript = other.GetComponent<DemonAI>();
+                StartCoroutine(SlowDownDemon(demonAIScript));
+                this.transform.position = new Vector3(0, -100, 0);
+                Destroy(this.gameObject, 5.1f);
+            }
         }
     }
 
@@ -96,20 +94,10 @@ public class Caltrap : MonoBehaviour
         }
     }
 
-    private IEnumerator SlowDownNecromancer(Necromancer necromancerScript)
+    private IEnumerator CaltropWait()
     {
-        necromancerScript.agent.speed = 0.2f;
+        yield return new WaitForSeconds(1.0f);
 
-        yield return new WaitForSeconds(5.0f);
-
-        necromancerScript.agent.speed = 6.0f;
+        wait = true;
     }
-
-
-
-
-
-
-
-
 }
