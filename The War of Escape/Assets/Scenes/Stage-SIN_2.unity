@@ -132604,11 +132604,11 @@ PrefabInstance:
     - target: {fileID: 3453667387177418615, guid: d172ee21ef2490346b6c5b225c61dc4e, type: 3}
       propertyPath: clearSound
       value: 
-      objectReference: {fileID: 8300000, guid: 89302aad418c5bd4281bb0f995993d6f, type: 3}
+      objectReference: {fileID: 8300000, guid: 4bb8086aab6288347928dcad42a7479b, type: 3}
     - target: {fileID: 3453667387177418615, guid: d172ee21ef2490346b6c5b225c61dc4e, type: 3}
       propertyPath: lockedSound
       value: 
-      objectReference: {fileID: 8300000, guid: 89302aad418c5bd4281bb0f995993d6f, type: 3}
+      objectReference: {fileID: 8300000, guid: 1cc1badef13deda4b9921318a62a268f, type: 3}
     - target: {fileID: 3453667387177418615, guid: d172ee21ef2490346b6c5b225c61dc4e, type: 3}
       propertyPath: countdownText
       value: 

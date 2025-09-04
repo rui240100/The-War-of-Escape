@@ -19,7 +19,7 @@ public class TitlesceneManager : MonoBehaviour
             }
 
             // ƒV[ƒ“‘JˆÚ
-            FadeManager.Instance.LoadScene("Stage-SIN", 2.0f);
+            FadeManager.Instance.LoadScene("Stage-SIN_2", 2.0f);
         }
     }
 }

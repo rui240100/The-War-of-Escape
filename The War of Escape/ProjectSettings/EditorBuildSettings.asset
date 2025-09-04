@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: d391ea56e394598478b39ed35d0d92db
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage-SIN.unity
     guid: 311f799a2da964a45bcba3170e466195
+  - enabled: 1
+    path: Assets/Scenes/Stage-SIN_2.unity
+    guid: 8797e309ff828b9499b946fb8f07cc10
   - enabled: 1
     path: Assets/Scenes/Stage.unity
     guid: 99c9720ab356a0642a771bea13969a05
