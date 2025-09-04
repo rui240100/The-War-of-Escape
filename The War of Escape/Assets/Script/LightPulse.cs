@@ -1,32 +1,64 @@
+using System.Collections;
 using UnityEngine;
 
-public class MultiLightPulseRandom : MonoBehaviour
+public class LightPulse : MonoBehaviour
 {
-    public Light[] pointLights;     // 複数のライトをアサイン
-    public float speed = 2f;        // 点滅の速さ
-    public float maxIntensity = 3f; // 明るさの最大値
-    public float minIntensity = 0f; // 明るさの最小値
+    [SerializeField] private Light[] lightComponents; // 複数ライトをまとめて指定
+    [SerializeField] private float minOnDuration = 0.5f;
+    [SerializeField] private float maxOnDuration = 1.5f;
+    [SerializeField] private float minOffDuration = 0.5f;
+    [SerializeField] private float maxOffDuration = 1.5f;
+    [SerializeField] private float fadeSpeed = 2f;     // フェードの速さ
+    [SerializeField] private float maxIntensity = 2f;  // 明るいときの強さ
+    [SerializeField] private float minIntensity = 0f;  // 暗いときの強さ
+    [SerializeField] private bool alwaysOn = false;
 
-    private float[] offsets; // 各ライトごとのオフセット
-
-    void Start()
+    private void Start()
     {
-        offsets = new float[pointLights.Length];
-        for (int i = 0; i < pointLights.Length; i++)
+        if (lightComponents == null || lightComponents.Length == 0)
         {
-            offsets[i] = Random.Range(0f, 10f); // ランダムな位相ずれ
+            lightComponents = GetComponentsInChildren<Light>(); // 子にあるライトを自動取得
+        }
+
+        foreach (var light in lightComponents)
+        {
+            if (light != null)
+            {
+                StartCoroutine(Blink(light));
+            }
         }
     }
 
-    void Update()
+    private IEnumerator Blink(Light targetLight)
     {
-        for (int i = 0; i < pointLights.Length; i++)
+        while (true)
         {
-            if (pointLights[i] != null)
+            if (alwaysOn)
             {
-                float t = Mathf.PingPong((Time.time + offsets[i]) * speed, 1f);
-                pointLights[i].intensity = Mathf.Lerp(minIntensity, maxIntensity, t);
+                targetLight.intensity = maxIntensity;
+                yield break;
             }
+
+            // フェードイン（暗 → 明）
+            float onDuration = Random.Range(minOnDuration, maxOnDuration);
+            yield return StartCoroutine(FadeLight(targetLight, minIntensity, maxIntensity, onDuration));
+
+            // フェードアウト（明 → 暗）
+            float offDuration = Random.Range(minOffDuration, maxOffDuration);
+            yield return StartCoroutine(FadeLight(targetLight, maxIntensity, minIntensity, offDuration));
         }
+    }
+
+    private IEnumerator FadeLight(Light targetLight, float from, float to, float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime * fadeSpeed;
+            float t = Mathf.Clamp01(elapsed / duration);
+            targetLight.intensity = Mathf.Lerp(from, to, t);
+            yield return null;
+        }
+        targetLight.intensity = to;
     }
 }
