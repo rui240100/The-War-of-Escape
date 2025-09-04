@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     bool playerStart = false;
     public TextMove textMove;
     public Player player;
+    private bool playerStart2;
 
 
     /*[Header("プレイヤーの視点関係")]
@@ -80,8 +81,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
 
+        textMove.StartDesu();
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
 
@@ -129,10 +130,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!playerStart)
-            Speed = 0.0f;
-        if(playerStart)
-            Speed = 5.0f;
+        //if(!playerStart)
+        //    Speed = 0.0f;
+        //if (playerStart && playerStart2 == false)
+        //{
+        //    Speed = 5.0f;
+        //    playerStart2 = true;
+        //}
+            
 
         float x = 0f;
         float z = 0f;
@@ -207,24 +212,24 @@ public class Player : MonoBehaviour
         if (((playerID == 1 && Input.GetButtonDown("Fire2")) ||
              (playerID == 2 && Input.GetButtonDown("Fire2_2"))))
         {
-            if (!buttonDown)
-            {
-                if (itemManu != null)
-                {
-                    Destroy(itemManu);
-                }
+            //if (!buttonDown)
+            //{
+            //    if (itemManu != null)
+            //    {
+            //        Destroy(itemManu);
+            //    }
 
-                buttonDown = true;
-                demonAI.startDemon = true;
-                if (gameDrector.startGame == false)
-                {
-                    textMove.StartDesu();
-                }
-                gameDrector.startGame = true;
-                playerStart = true;
-                player.playerStart = true;
-                player.buttonDown = true;
-            }
+            //    buttonDown = true;
+            //    demonAI.startDemon = true;
+            //    //if (gameDrector.startGame == false)
+            //    {
+                    
+            //    }
+            //    gameDrector.startGame = true;
+            //    playerStart = true;
+            //    player.playerStart = true;
+            //    player.buttonDown = true;
+            //}
         }
 
         if (((playerID == 1 && Input.GetButtonDown("Fire3")) ||

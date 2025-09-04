@@ -23,7 +23,7 @@ public class GameDrector : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        if (TimeCount > 0 && startGame)
+        if (TimeCount > 0 )
         {
             TimeCount -= Time.deltaTime;
 

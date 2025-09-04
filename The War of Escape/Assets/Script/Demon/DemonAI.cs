@@ -64,7 +64,7 @@ public class DemonAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
-        //GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
+        GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
 
         //child = Instantiate(childPrefab, transform);
 
@@ -76,18 +76,18 @@ public class DemonAI : MonoBehaviour
 
     void Update()
     {
-        if (!startDemon)
-        {
-            patrolSpeed = 0.0f;
-            agent.speed = patrolSpeed;
-        }
-        else if (startDemon && !start2Demon)
-        {
-            GoToNextPatrolPoint();
-            patrolSpeed = 4.0f;
-            agent.speed = patrolSpeed;
-            start2Demon = true;
-        }
+        //if (!startDemon)
+        //{
+        //    patrolSpeed = 0.0f;
+        //    agent.speed = patrolSpeed;
+        //}
+        //else if (startDemon && !start2Demon)
+        //{
+        //    GoToNextPatrolPoint();
+        //    patrolSpeed = 4.0f;
+        //    agent.speed = patrolSpeed;
+        //    start2Demon = true;
+        //}
 
         if (isChasing)
         {
