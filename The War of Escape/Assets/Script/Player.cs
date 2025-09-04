@@ -41,6 +41,14 @@ public class Player : MonoBehaviour
 
     public Sprite itemBackgroundSprite; // 宝箱の画像（常に表示したいやつ）
 
+    public bool buttonDown = false;
+    public GameObject itemManu;
+    public DemonAI demonAI;
+    public GameDrector gameDrector;
+    bool playerStart = false;
+    public TextMove textMove;
+    public Player player;
+
 
     /*[Header("プレイヤーの視点関係")]
     public float verticalRotation = 0f;
@@ -121,35 +129,41 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        if(!playerStart)
+            Speed = 0.0f;
+        if(playerStart)
+            Speed = 5.0f;
 
         float x = 0f;
         float z = 0f;
         float mouseX = 0f;
         float mouseY = 0f;
 
+
+
+
+        //if (playerStart)
+        {
+            if (playerID == 1)
+            {
+                InvertedInput inv = GetComponent<InvertedInput>();
+                x = (inv != null) ? inv.GetAxisRaw("Horizontal1") : Input.GetAxis("Horizontal1");
+                z = (inv != null) ? inv.GetAxisRaw("Vertical1") : Input.GetAxis("Vertical1");
+
+                mouseX = Input.GetAxis("Mouse X");
+                mouseY = Input.GetAxis("Mouse Y");
+            }
+            else if (playerID == 2)
+            {
+                InvertedInput inv = GetComponent<InvertedInput>();
+                x = (inv != null) ? inv.GetAxisRaw("Horizontal2") : Input.GetAxis("Horizontal2");
+                z = (inv != null) ? inv.GetAxisRaw("Vertical2") : Input.GetAxis("Vertical2");
+
+                mouseX = Input.GetAxis("Mouse X2");
+                mouseY = Input.GetAxis("Mouse Y2");
+            }
+        }
         
-
-
-
-        if (playerID == 1)
-        {
-            InvertedInput inv = GetComponent<InvertedInput>();
-            x = (inv != null) ? inv.GetAxisRaw("Horizontal1") : Input.GetAxis("Horizontal1");
-            z = (inv != null) ? inv.GetAxisRaw("Vertical1") : Input.GetAxis("Vertical1");
-
-            mouseX = Input.GetAxis("Mouse X");
-            mouseY = Input.GetAxis("Mouse Y");
-        }
-        else if (playerID == 2)
-        {
-            InvertedInput inv = GetComponent<InvertedInput>();
-            x = (inv != null) ? inv.GetAxisRaw("Horizontal2") : Input.GetAxis("Horizontal2");
-            z = (inv != null) ? inv.GetAxisRaw("Vertical2") : Input.GetAxis("Vertical2");
-
-            mouseX = Input.GetAxis("Mouse X2");
-            mouseY = Input.GetAxis("Mouse Y2");
-        }
 
     
 
@@ -187,6 +201,29 @@ public class Player : MonoBehaviour
             {
                 animator.speed = idleAnimationSpeed;
                 animator.Play("Idle");
+            }
+        }
+
+        if (((playerID == 1 && Input.GetButtonDown("Fire2")) ||
+             (playerID == 2 && Input.GetButtonDown("Fire2_2"))))
+        {
+            if (!buttonDown)
+            {
+                if (itemManu != null)
+                {
+                    Destroy(itemManu);
+                }
+
+                buttonDown = true;
+                demonAI.startDemon = true;
+                if (gameDrector.startGame == false)
+                {
+                    textMove.StartDesu();
+                }
+                gameDrector.startGame = true;
+                playerStart = true;
+                player.playerStart = true;
+                player.buttonDown = true;
             }
         }
 

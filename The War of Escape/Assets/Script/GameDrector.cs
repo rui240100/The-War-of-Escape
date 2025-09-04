@@ -12,6 +12,8 @@ public class GameDrector : MonoBehaviour
     private bool hasEnded = false;
     private bool isFinalMinuteBGMPlayed = false; // 1•ªBGM‚ğˆê“x‚¾‚¯Ä¶‚·‚éƒtƒ‰ƒO
 
+    public bool startGame = false;
+
     void Start()
     {
         timeUI.GetComponent<TextMeshProUGUI>().text = "0:00";
@@ -21,7 +23,7 @@ public class GameDrector : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        if (TimeCount > 0)
+        if (TimeCount > 0 && startGame)
         {
             TimeCount -= Time.deltaTime;
 
@@ -38,7 +40,7 @@ public class GameDrector : MonoBehaviour
                 }
             }
         }
-        else if (!hasEnded)
+        else if (TimeCount == 0 && !hasEnded)
         {
             hasEnded = true;
             TimeCount = 0;

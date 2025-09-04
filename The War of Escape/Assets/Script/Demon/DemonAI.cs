@@ -58,10 +58,13 @@ public class DemonAI : MonoBehaviour
 
     private bool runSoundPlaying = false;
 
+    public bool startDemon = false;
+    public bool start2Demon = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
-        GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
+        //GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
 
         //child = Instantiate(childPrefab, transform);
 
@@ -73,6 +76,19 @@ public class DemonAI : MonoBehaviour
 
     void Update()
     {
+        if (!startDemon)
+        {
+            patrolSpeed = 0.0f;
+            agent.speed = patrolSpeed;
+        }
+        else if (startDemon && !start2Demon)
+        {
+            GoToNextPatrolPoint();
+            patrolSpeed = 4.0f;
+            agent.speed = patrolSpeed;
+            start2Demon = true;
+        }
+
         if (isChasing)
         {
             //if (agent.hasPath)
@@ -108,7 +124,15 @@ public class DemonAI : MonoBehaviour
                 //    walkSoundPlaying = false;
                 //}
             }
-            GoToNextPatrolPoint(); // 次のパトロール地点へ
+            //else if (startDemon)
+            {
+                Debug.Log("startDemon");
+                GoToNextPatrolPoint(); // 次のパトロール地点へ
+            }
+            //else if (!startDemon)
+            {
+                //Debug.Log("!startDemon");
+            }
         }
 
         if (isCollision)
