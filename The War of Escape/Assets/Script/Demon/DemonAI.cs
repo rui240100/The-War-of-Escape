@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class DemonAI : MonoBehaviour
 {
@@ -60,6 +61,10 @@ public class DemonAI : MonoBehaviour
 
     public bool startDemon = false;
     public bool start2Demon = false;
+
+    public Image targetImage1; // 透明度を変更する対象のImage
+    public Image targetImage2;
+    public float duration = 0.5f; // フェードにかける時間（秒
 
     void Start()
     {
@@ -260,75 +265,97 @@ public class DemonAI : MonoBehaviour
 
     IEnumerator PlayUIAnimation(int playerID)
     {
-        if(playerID == 1)
+        if (playerID == 1)
         {
             isAnimating1 = true;
 
-            if(keyCount1 == true)
+            if (keyCount1 == true)
             {
-                // 右 → 中央へ移動
-                yield return StartCoroutine(Slide(uiImage1, startPosRight, centerPos, slideTime));
+                Color color = targetImage1.color;
+                float startAlpha = color.a;
+                float time = 0f;
 
-                // 中央で待機
-                yield return new WaitForSeconds(stayTime);
+                while (time < duration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / duration);
+                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
+                    targetImage1.color = color;
+                    yield return null;
+                }
 
-                // 中央 → 左へ移動
-                yield return StartCoroutine(Slide(uiImage1, centerPos, endPosLeft, slideTime));
-
-                // 終了したら初期位置に戻す
-                uiImage1.anchoredPosition = startPosRight;
-            }
-            else if(keyCount1 == false)
-            {
-                // 右 → 中央へ移動
-                yield return StartCoroutine(Slide(uiImage12, startPosRight, centerPos, slideTime));
-
-                // 中央で待機
-                yield return new WaitForSeconds(stayTime);
-
-                // 中央 → 左へ移動
-                yield return StartCoroutine(Slide(uiImage12, centerPos, endPosLeft, slideTime));
-
-                // 終了したら初期位置に戻す
-                uiImage12.anchoredPosition = startPosRight;
+                // 最終的に確実に Max にしておく
+                color.a = 1f;
+                targetImage1.color = color;
             }
 
-                isAnimating1 = false;
+            else if (keyCount1 == false)
+            {
+                Color color = targetImage1.color;
+                float startAlpha = color.a;
+                float time = 0f;
+
+                while (time < duration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / duration);
+                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
+                    targetImage1.color = color;
+                    yield return null;
+                }
+
+                // 最終的に確実に Max にしておく
+                color.a = 1f;
+                targetImage1.color = color;
+            }
+
+            isAnimating1 = false;
         }
         else
         {
             isAnimating2 = true;
 
-            if(keyCount2 == true)
+            if (keyCount2 == true)
             {
-                // 右 → 中央へ移動
-                yield return StartCoroutine(Slide(uiImage2, startPosRight, centerPos, slideTime));
+                Color color = targetImage2.color;
+                float startAlpha = color.a;
+                float time = 0f;
 
-                // 中央で待機
-                yield return new WaitForSeconds(stayTime);
+                while (time < duration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / duration);
+                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
+                    targetImage2.color = color;
+                    yield return null;
+                }
 
-                // 中央 → 左へ移動
-                yield return StartCoroutine(Slide(uiImage2, centerPos, endPosLeft, slideTime));
-
-                // 終了したら初期位置に戻す
-                uiImage1.anchoredPosition = startPosRight;
+                // 最終的に確実に Max にしておく
+                color.a = 1f;
+                targetImage2.color = color;
             }
+        
             else if (keyCount2 == false)
             {
-                // 右 → 中央へ移動
-                yield return StartCoroutine(Slide(uiImage22, startPosRight, centerPos, slideTime));
+                Color color = targetImage2.color;
+                float startAlpha = color.a;
+                float time = 0f;
 
-                // 中央で待機
-                yield return new WaitForSeconds(stayTime);
+                while (time < duration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / duration);
+                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
+                    targetImage2.color = color;
+                    yield return null;
+                }
 
-                // 中央 → 左へ移動
-                yield return StartCoroutine(Slide(uiImage22, centerPos, endPosLeft, slideTime));
-
-                // 終了したら初期位置に戻す
-                uiImage22.anchoredPosition = startPosRight;
+                // 最終的に確実に Max にしておく
+                color.a = 1f;
+                targetImage2.color = color;
             }
-
-                isAnimating2 = false;
+    
+            isAnimating2 = false;
         }
     }
 
