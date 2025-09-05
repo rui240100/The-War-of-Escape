@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using TMPro;
 
 public class DemonAI : MonoBehaviour
 {
@@ -32,8 +33,6 @@ public class DemonAI : MonoBehaviour
     private float collisionTime = 0.0f;
 
     public ItemUse itemUseSc;
-    private string message1 = "鍵持っている。";
-    private string message2 = "鍵持っていない。";
 
     private bool collisionWaitTime = false;
 
@@ -51,9 +50,17 @@ public class DemonAI : MonoBehaviour
 
     public Image targetImage1; // 透明度を変更する対象のImage
     public Image targetImage2;
-    public float duration = 0.5f; // フェードにかける時間（秒
-    public float waitTime = 4.0f;     // 表示しておく時間
-    public float fadeDuration = 0.5f; // フェードアウトにかける時間（秒）
+    private float duration = 0.5f; // フェードにかける時間（秒
+    private float waitTime = 4.0f;     // 表示しておく時間
+    private float fadeDuration = 0.5f; // フェードアウトにかける時間（秒）
+
+    public TextMeshProUGUI player1Key;
+    public TextMeshProUGUI player1Die;
+    public TextMeshProUGUI player2Key;
+    public TextMeshProUGUI player2Die;
+    private float textDuration = 0.5f; // フェードにかける時間（秒
+    private float textWaitTime = 3.0f;     // 表示しておく時間
+    private float textFadeDuration = 0.5f; // フェードアウトにかける時間（秒）
 
 
     void Start()
@@ -212,153 +219,286 @@ public class DemonAI : MonoBehaviour
 
             if (keyCount1 == true)
             {
-                Color color = targetImage1.color;
-                float startAlpha = color.a;
-                float time = 0f;
+                Color color1 = targetImage1.color;
+                Color color2 = player1Key.color;
+                float startAlpha1 = color1.a;
+                float startAlpha2 = color2.a;
+                float time1 = 0f;
+                float time2 = 0f;
 
-                while (time < duration)
+                while (time1 < duration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / duration);
-                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
-                    targetImage1.color = color;
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / duration);
+                    color1.a = Mathf.Lerp(startAlpha1, 1f, t1); // α値を補間
+                    targetImage1.color = color1;
+                    yield return null;
+                }
+
+                yield return new WaitForSeconds(0.5f);
+
+                // 最終的に確実に Max にしておく
+                color1.a = 1f;
+                targetImage1.color = color1;
+
+                while (time2 < textDuration)
+                {
+                    time2 += Time.deltaTime;
+                    float t2 = Mathf.Clamp01(time2 / textDuration);
+                    color2.a = Mathf.Lerp(startAlpha2, 1f, t2); // α値を補間
+                    player1Key.color = color2;
                     yield return null;
                 }
 
                 // 最終的に確実に Max にしておく
-                color.a = 1f;
-                targetImage1.color = color;
+                color2.a = 1f;
+                player1Key.color = color2;
 
-                yield return new WaitForSeconds(waitTime);
+                yield return new WaitForSeconds(textDuration);
 
-                // 3. フェードアウト (1 → 0)
-                time = 0f;
-                while (time < fadeDuration)
+                time2 = 0f;
+                while (time2 < textFadeDuration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / fadeDuration);
-                    color.a = Mathf.Lerp(1f, 0f, t);
-                    targetImage1.color = color;
+                    time2 += Time.deltaTime;
+                    float t2 = Mathf.Clamp01(time2 / textFadeDuration);
+                    color2.a = Mathf.Lerp(1f, 0f, t2);
+                    player1Key.color = color2;
                     yield return null;
                 }
-                color.a = 0f;
-                targetImage1.color = color;
-            }
 
+                yield return new WaitForSeconds(0.5f);
+
+                color2.a = 0f;
+                player1Key.color = color2;
+
+                // 3. フェードアウト (1 → 0)
+                time1 = 0f;
+                while (time1 < fadeDuration)
+                {
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / fadeDuration);
+                    color1.a = Mathf.Lerp(1f, 0f, t1);
+                    targetImage1.color = color1;
+                    yield return null;
+                }
+
+                color1.a = 0f;
+                targetImage1.color = color1;
+            }
             else if (keyCount1 == false)
             {
-                Color color = targetImage1.color;
-                float startAlpha = color.a;
-                float time = 0f;
+                Color color1 = targetImage1.color;
+                Color color2 = player1Die.color;
+                float startAlpha1 = color1.a;
+                float startAlpha2 = color2.a;
+                float time1 = 0f;
+                float time2 = 0f;
 
-                while (time < duration)
+                while (time1 < duration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / duration);
-                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
-                    targetImage1.color = color;
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / duration);
+                    color1.a = Mathf.Lerp(startAlpha1, 1f, t1); // α値を補間
+                    targetImage1.color = color1;
+                    yield return null;
+                }
+
+                yield return new WaitForSeconds(0.5f);
+
+                // 最終的に確実に Max にしておく
+                color1.a = 1f;
+                targetImage1.color = color1;
+
+                while (time2 < textDuration)
+                {
+                    time2 += Time.deltaTime;
+                    float t2 = Mathf.Clamp01(time2 / textDuration);
+                    color2.a = Mathf.Lerp(startAlpha2, 1f, t2); // α値を補間
+                    player1Die.color = color2;
                     yield return null;
                 }
 
                 // 最終的に確実に Max にしておく
-                color.a = 1f;
-                targetImage1.color = color;
+                color2.a = 1f;
+                player1Die.color = color2;
 
-                yield return new WaitForSeconds(waitTime);
+                yield return new WaitForSeconds(textDuration);
 
-                // 3. フェードアウト (1 → 0)
-                time = 0f;
-                while (time < fadeDuration)
+                time2 = 0f;
+                while (time2 < textFadeDuration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / fadeDuration);
-                    color.a = Mathf.Lerp(1f, 0f, t);
-                    targetImage1.color = color;
+                    time2 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time2 / textFadeDuration);
+                    color2.a = Mathf.Lerp(1f, 0f, t1);
+                    player1Die.color = color2;
                     yield return null;
                 }
-                color.a = 0f;
-                targetImage1.color = color;
-            }
 
+                yield return new WaitForSeconds(0.5f);
+
+                color2.a = 0f;
+                player1Die.color = color2;
+
+                // 3. フェードアウト (1 → 0)
+                time1 = 0f;
+                while (time1 < fadeDuration)
+                {
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / fadeDuration);
+                    color1.a = Mathf.Lerp(1f, 0f, t1);
+                    targetImage1.color = color1;
+                    yield return null;
+                }
+
+                color1.a = 0f;
+                targetImage1.color = color1;
+            }
             isAnimating1 = false;
         }
-        else
+        else if (playerID == 2)
         {
             isAnimating2 = true;
 
             if (keyCount2 == true)
             {
-                Color color = targetImage2.color;
-                float startAlpha = color.a;
-                float time = 0f;
+                Color color1 = targetImage2.color;
+                Color color2 = player2Key.color;
+                float startAlpha1 = color1.a;
+                float startAlpha2 = color2.a;
+                float time1 = 0f;
+                float time2 = 0f;
 
-                while (time < duration)
+                while (time1 < duration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / duration);
-                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
-                    targetImage2.color = color;
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / duration);
+                    color1.a = Mathf.Lerp(startAlpha1, 1f, t1); // α値を補間
+                    targetImage2.color = color1;
+                    yield return null;
+                }
+
+                yield return new WaitForSeconds(0.5f);
+
+                // 最終的に確実に Max にしておく
+                color1.a = 1f;
+                targetImage2.color = color1;
+
+                while (time2 < textDuration)
+                {
+                    time2 += Time.deltaTime;
+                    float t2 = Mathf.Clamp01(time2 / textDuration);
+                    color2.a = Mathf.Lerp(startAlpha2, 1f, t2); // α値を補間
+                    player2Key.color = color2;
                     yield return null;
                 }
 
                 // 最終的に確実に Max にしておく
-                color.a = 1f;
-                targetImage2.color = color;
+                color2.a = 1f;
+                player2Key.color = color2;
 
-                yield return new WaitForSeconds(waitTime);
+                yield return new WaitForSeconds(textDuration);
 
-                // 3. フェードアウト (1 → 0)
-                time = 0f;
-                while (time < fadeDuration)
+                time2 = 0f;
+                while (time2 < textFadeDuration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / fadeDuration);
-                    color.a = Mathf.Lerp(1f, 0f, t);
-                    targetImage2.color = color;
+                    time2 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time2 / textFadeDuration);
+                    color2.a = Mathf.Lerp(1f, 0f, t1);
+                    player2Key.color = color2;
                     yield return null;
                 }
-                color.a = 0f;
-                targetImage2.color = color;
+
+                yield return new WaitForSeconds(0.5f);
+
+                color2.a = 0f;
+                player2Key.color = color2;
+
+                // 3. フェードアウト (1 → 0)
+                time1 = 0f;
+                while (time1 < fadeDuration)
+                {
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / fadeDuration);
+                    color1.a = Mathf.Lerp(1f, 0f, t1);
+                    targetImage2.color = color1;
+                    yield return null;
+                }
+
+                color1.a = 0f;
+                targetImage2.color = color1;
             }
-        
             else if (keyCount2 == false)
             {
-                Color color = targetImage2.color;
-                float startAlpha = color.a;
-                float time = 0f;
+                Color color1 = targetImage2.color;
+                Color color2 = player2Die.color;
+                float startAlpha1 = color1.a;
+                float startAlpha2 = color2.a;
+                float time1 = 0f;
+                float time2 = 0f;
 
-                while (time < duration)
+                while (time1 < duration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / duration);
-                    color.a = Mathf.Lerp(startAlpha, 1f, t); // α値を補間
-                    targetImage2.color = color;
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / duration);
+                    color1.a = Mathf.Lerp(startAlpha1, 1f, t1); // α値を補間
+                    targetImage2.color = color1;
                     yield return null;
                 }
 
                 // 最終的に確実に Max にしておく
-                color.a = 1f;
-                targetImage2.color = color;
+                color1.a = 1f;
+                targetImage2.color = color1;
 
-                yield return new WaitForSeconds(waitTime);
+                yield return new WaitForSeconds(0.5f);
 
-                // 3. フェードアウト (1 → 0)
-                time = 0f;
-                while (time < fadeDuration)
+                while (time2 < textDuration)
                 {
-                    time += Time.deltaTime;
-                    float t = Mathf.Clamp01(time / fadeDuration);
-                    color.a = Mathf.Lerp(1f, 0f, t);
-                    targetImage2.color = color;
+                    time2 += Time.deltaTime;
+                    float t2 = Mathf.Clamp01(time2 / textDuration);
+                    color2.a = Mathf.Lerp(startAlpha2, 1f, t2); // α値を補間
+                    player2Die.color = color2;
                     yield return null;
                 }
-                color.a = 0f;
-                targetImage2.color = color;
+
+                // 最終的に確実に Max にしておく
+                color2.a = 1f;
+                player2Die.color = color2;
+
+                yield return new WaitForSeconds(textDuration);
+
+                time2 = 0f;
+                while (time2 < textFadeDuration)
+                {
+                    time2 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time2 / textFadeDuration);
+                    color2.a = Mathf.Lerp(1f, 0f, t1);
+                    player2Die.color = color2;
+                    yield return null;
+                }
+
+                yield return new WaitForSeconds(0.5f);
+
+                color2.a = 0f;
+                player2Key.color = color2;
+
+                // 3. フェードアウト (1 → 0)
+                time1 = 0f;
+                while (time1 < fadeDuration)
+                {
+                    time1 += Time.deltaTime;
+                    float t1 = Mathf.Clamp01(time1 / fadeDuration);
+                    color1.a = Mathf.Lerp(1f, 0f, t1);
+                    targetImage2.color = color1;
+                    yield return null;
+                }
+
+                color1.a = 0f;
+                targetImage2.color = color1;
             }
-    
             isAnimating2 = false;
         }
     }
+
 
     private IEnumerator DisableForSeconds()
     {
