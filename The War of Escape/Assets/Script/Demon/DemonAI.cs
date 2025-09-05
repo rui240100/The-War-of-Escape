@@ -53,6 +53,7 @@ public class DemonAI : MonoBehaviour
     public Image targetImage2;
     public float duration = 0.5f; // フェードにかける時間（秒
     public float waitTime = 4.0f;     // 表示しておく時間
+    public float fadeDuration = 0.5f; // フェードアウトにかける時間（秒）
 
 
     void Start()
