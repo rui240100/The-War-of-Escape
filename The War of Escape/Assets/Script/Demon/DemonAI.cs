@@ -25,15 +25,15 @@ public class DemonAI : MonoBehaviour
     private ChaseUI chaseUI;
 
     private MonoBehaviour targetScript;
-    private float disableTime = 20.0f;
+    private float disableTime = 10.0f;
     public GameObject child;
 
     private bool isCollision = false;
     private float collisionTime = 0.0f;
 
     public ItemUse itemUseSc;
-    private string message1 = "捕まっちゃった";
-    private string message2 = "";
+    private string message1 = "鍵持っている。";
+    private string message2 = "鍵持っていない。";
 
     private bool collisionWaitTime = false;
 
@@ -42,16 +42,6 @@ public class DemonAI : MonoBehaviour
     public AudioClip dieSound;
     public AudioSource audioSource;
 
-    public RectTransform uiImage1;  // 対象のUI (Image)
-    public RectTransform uiImage12;
-    public RectTransform uiImage2;
-    public RectTransform uiImage22;
-    private Vector2 startPosRight = new Vector2(1000, 0);  // 右外からの開始位置
-    private Vector2 centerPos = new Vector2(0, 0);         // 中央位置
-    private Vector2 endPosLeft = new Vector2(-1000, 0);    // 左外へ消える位置
-    private float slideTime = 0.5f;   // スライドにかかる時間
-    private float stayTime = 2.0f;      // 中央で停止する時間
-
     private bool isAnimating1 = false;
     private bool isAnimating2 = false;
     private bool keyCount1 = false;
@@ -59,19 +49,16 @@ public class DemonAI : MonoBehaviour
 
     private bool runSoundPlaying = false;
 
-    public bool startDemon = false;
-    public bool start2Demon = false;
-
     public Image targetImage1; // 透明度を変更する対象のImage
     public Image targetImage2;
     public float duration = 0.5f; // フェードにかける時間（秒
+    public float waitTime = 4.0f;     // 表示しておく時間
+
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // エージェント取得
         GoToNextPatrolPoint(); // 最初のパトロールポイントへ移動
-
-        //child = Instantiate(childPrefab, transform);
 
         newDemonCamera = GetComponentInChildren<NewDemonCamera>();
 
@@ -81,26 +68,12 @@ public class DemonAI : MonoBehaviour
 
     void Update()
     {
-        //if (!startDemon)
-        //{
-        //    patrolSpeed = 0.0f;
-        //    agent.speed = patrolSpeed;
-        //}
-        //else if (startDemon && !start2Demon)
-        //{
-        //    GoToNextPatrolPoint();
-        //    patrolSpeed = 4.0f;
-        //    agent.speed = patrolSpeed;
-        //    start2Demon = true;
-        //}
-
         if (isChasing)
         {
             //if (agent.hasPath)
             {
                 Transform target = player.transform;
                 agent.destination = target.position; // プレイヤーを追跡
-                //Debug.Log("PlayerPosition" + target.position);
 
                 if (!demonStun)
                 {
@@ -111,13 +84,10 @@ public class DemonAI : MonoBehaviour
                     //    audioSource.PlayOneShot(runSound);
                     //    runSoundPlaying = false;
                     //}
-
-
                 }
             }
         }
         else if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        //else if (!isChasing)
         {
             if (!demonStun)
             {
@@ -129,15 +99,7 @@ public class DemonAI : MonoBehaviour
                 //    walkSoundPlaying = false;
                 //}
             }
-            //else if (startDemon)
-            {
-                Debug.Log("startDemon");
                 GoToNextPatrolPoint(); // 次のパトロール地点へ
-            }
-            //else if (!startDemon)
-            {
-                //Debug.Log("!startDemon");
-            }
         }
 
         if (isCollision)
@@ -165,7 +127,6 @@ public class DemonAI : MonoBehaviour
         player = target;
         isChasing = true;
         audioSource.PlayOneShot(findSound);
-        //Debug.Log("ChaseStart");
     }
 
     public void StopChase()
@@ -173,7 +134,6 @@ public class DemonAI : MonoBehaviour
         isChasing = false;
         player = null;
         agent.speed = patrolSpeed;
-        Debug.Log("ChaseStop");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -221,7 +181,6 @@ public class DemonAI : MonoBehaviour
                     playerID = 1;
                     StartCoroutine(PlayUIAnimation(playerID));
                 }
-                //itemUseSc.ShowMessage(message1, message2);
             }
             else
             {
@@ -230,28 +189,9 @@ public class DemonAI : MonoBehaviour
                     playerID = 2;
                     StartCoroutine(PlayUIAnimation(playerID));
                 }
-                //itemUseSc.ShowMessage(message2, message1);
             }
 
             StartCoroutine(SlowDownPlayer(playerScript));
-
-
-
-            Debug.Log("プレイヤー" + playerScript.playerID + "と接触");
-
-
-
-            //if (playerScript.playerID == 1)
-            //{
-            //    newDemonCamera.player1Chase = false;
-            //    chaseUI.player1 = false;
-            //}
-            //else if (playerScript.playerID == 2)
-            //{
-            //    newDemonCamera.player2Chase = false;
-            //    chaseUI.player2 = false;
-            //}
-
 
             chaseUI.player1 = false;
             chaseUI.player2 = false;
@@ -287,6 +227,21 @@ public class DemonAI : MonoBehaviour
                 // 最終的に確実に Max にしておく
                 color.a = 1f;
                 targetImage1.color = color;
+
+                yield return new WaitForSeconds(waitTime);
+
+                // 3. フェードアウト (1 → 0)
+                time = 0f;
+                while (time < fadeDuration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / fadeDuration);
+                    color.a = Mathf.Lerp(1f, 0f, t);
+                    targetImage1.color = color;
+                    yield return null;
+                }
+                color.a = 0f;
+                targetImage1.color = color;
             }
 
             else if (keyCount1 == false)
@@ -306,6 +261,21 @@ public class DemonAI : MonoBehaviour
 
                 // 最終的に確実に Max にしておく
                 color.a = 1f;
+                targetImage1.color = color;
+
+                yield return new WaitForSeconds(waitTime);
+
+                // 3. フェードアウト (1 → 0)
+                time = 0f;
+                while (time < fadeDuration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / fadeDuration);
+                    color.a = Mathf.Lerp(1f, 0f, t);
+                    targetImage1.color = color;
+                    yield return null;
+                }
+                color.a = 0f;
                 targetImage1.color = color;
             }
 
@@ -333,6 +303,21 @@ public class DemonAI : MonoBehaviour
                 // 最終的に確実に Max にしておく
                 color.a = 1f;
                 targetImage2.color = color;
+
+                yield return new WaitForSeconds(waitTime);
+
+                // 3. フェードアウト (1 → 0)
+                time = 0f;
+                while (time < fadeDuration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / fadeDuration);
+                    color.a = Mathf.Lerp(1f, 0f, t);
+                    targetImage2.color = color;
+                    yield return null;
+                }
+                color.a = 0f;
+                targetImage2.color = color;
             }
         
             else if (keyCount2 == false)
@@ -353,24 +338,25 @@ public class DemonAI : MonoBehaviour
                 // 最終的に確実に Max にしておく
                 color.a = 1f;
                 targetImage2.color = color;
+
+                yield return new WaitForSeconds(waitTime);
+
+                // 3. フェードアウト (1 → 0)
+                time = 0f;
+                while (time < fadeDuration)
+                {
+                    time += Time.deltaTime;
+                    float t = Mathf.Clamp01(time / fadeDuration);
+                    color.a = Mathf.Lerp(1f, 0f, t);
+                    targetImage2.color = color;
+                    yield return null;
+                }
+                color.a = 0f;
+                targetImage2.color = color;
             }
     
             isAnimating2 = false;
         }
-    }
-
-    // 補間で移動
-    IEnumerator Slide(RectTransform target, Vector2 from, Vector2 to, float duration)
-    {
-        float time = 0f;
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            float t = Mathf.Clamp01(time / duration);
-            target.anchoredPosition = Vector2.Lerp(from, to, t);
-            yield return null;
-        }
-        target.anchoredPosition = to;
     }
 
     private IEnumerator DisableForSeconds()
@@ -382,18 +368,6 @@ public class DemonAI : MonoBehaviour
         newDemonCamera.player1Chase = false;
         newDemonCamera.player2Chase = false;
         collisionWaitTime = false;
-        //Instantiate(child, transform);
-        //MonoBehaviour script =this.GetComponentInChildren<NewDemonCamera>();
-
-        //if (script != null)
-        //{
-        //    //script.enabled = false;       // 無効化
-        //    Debug.Log("DemonCameraFalse");
-        //    Debug.Log("今から5秒止めます");
-        //    yield return new WaitForSeconds(disableTime);
-        //    Debug.Log("5秒後");
-        //    script.enabled = true;        // 再び有効化
-        //}
     }
 
     private IEnumerator SlowDownPlayer(Player playerScript)
