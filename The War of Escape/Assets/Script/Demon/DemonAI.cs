@@ -199,7 +199,7 @@ public class DemonAI : MonoBehaviour
                 }
             }
 
-            StartCoroutine(SlowDownPlayer(playerScript));
+            StartCoroutine(SlowDownPlayer(playerScript,collision));
 
             chaseUI.player1 = false;
             chaseUI.player2 = false;
@@ -511,11 +511,13 @@ public class DemonAI : MonoBehaviour
         collisionWaitTime = false;
     }
 
-    private IEnumerator SlowDownPlayer(Player playerScript)
+    private IEnumerator SlowDownPlayer(Player playerScript,Collision player)
     {
         playerScript.Speed = 0.2f;
+        player.gameObject.GetComponent<CharacterController>().radius = 0.1f;
         yield return new WaitForSeconds(5.0f);
         playerScript.Speed = 5.0f;
+        player.gameObject.GetComponent<CharacterController>().radius = 0.56f;
     }
 
     private void OnCollisionStay(Collision collision)
