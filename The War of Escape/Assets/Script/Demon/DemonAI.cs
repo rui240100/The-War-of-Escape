@@ -59,7 +59,7 @@ public class DemonAI : MonoBehaviour
     public TextMeshProUGUI player2Key;
     public TextMeshProUGUI player2Die;
     private float textDuration = 0.5f; // フェードにかける時間（秒
-    private float textWaitTime = 3.0f;     // 表示しておく時間
+    private float textWaitTime = 4.0f;     // 表示しておく時間
     private float textFadeDuration = 0.5f; // フェードアウトにかける時間（秒）
 
 
@@ -254,7 +254,7 @@ public class DemonAI : MonoBehaviour
                 color2.a = 1f;
                 player1Key.color = color2;
 
-                yield return new WaitForSeconds(textDuration);
+                yield return new WaitForSeconds(textWaitTime);
 
                 time2 = 0f;
                 while (time2 < textFadeDuration)
@@ -266,7 +266,7 @@ public class DemonAI : MonoBehaviour
                     yield return null;
                 }
 
-                yield return new WaitForSeconds(0.5f);
+                //yield return new WaitForSeconds(0.5f);
 
                 color2.a = 0f;
                 player1Key.color = color2;
@@ -322,7 +322,7 @@ public class DemonAI : MonoBehaviour
                 color2.a = 1f;
                 player1Die.color = color2;
 
-                yield return new WaitForSeconds(textDuration);
+                yield return new WaitForSeconds(textWaitTime);
 
                 time2 = 0f;
                 while (time2 < textFadeDuration)
@@ -334,7 +334,7 @@ public class DemonAI : MonoBehaviour
                     yield return null;
                 }
 
-                yield return new WaitForSeconds(0.5f);
+                //yield return new WaitForSeconds(0.5f);
 
                 color2.a = 0f;
                 player1Die.color = color2;
@@ -396,7 +396,7 @@ public class DemonAI : MonoBehaviour
                 color2.a = 1f;
                 player2Key.color = color2;
 
-                yield return new WaitForSeconds(textDuration);
+                yield return new WaitForSeconds(textWaitTime);
 
                 time2 = 0f;
                 while (time2 < textFadeDuration)
@@ -408,7 +408,7 @@ public class DemonAI : MonoBehaviour
                     yield return null;
                 }
 
-                yield return new WaitForSeconds(0.5f);
+                //yield return new WaitForSeconds(0.5f);
 
                 color2.a = 0f;
                 player2Key.color = color2;
@@ -464,7 +464,7 @@ public class DemonAI : MonoBehaviour
                 color2.a = 1f;
                 player2Die.color = color2;
 
-                yield return new WaitForSeconds(textDuration);
+                yield return new WaitForSeconds(textWaitTime);
 
                 time2 = 0f;
                 while (time2 < textFadeDuration)
@@ -476,7 +476,7 @@ public class DemonAI : MonoBehaviour
                     yield return null;
                 }
 
-                yield return new WaitForSeconds(0.5f);
+                //yield return new WaitForSeconds(0.5f);
 
                 color2.a = 0f;
                 player2Key.color = color2;
