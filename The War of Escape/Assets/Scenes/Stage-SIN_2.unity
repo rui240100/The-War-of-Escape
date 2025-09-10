@@ -68748,6 +68748,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1632623540}
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: dieSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 353f3666d475ba449b32c2182b0fd4b0, type: 3}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: runSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 99c1dc21859250c4fb4e6579133c3799, type: 3}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: uiImage1
       value: 
       objectReference: {fileID: 1032941065}
@@ -68755,6 +68763,10 @@ PrefabInstance:
       propertyPath: uiImage2
       value: 
       objectReference: {fileID: 510602672}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: findSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d359f25bfac8c74591d10c701d689df, type: 3}
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: itemUseSc
       value: 
@@ -131435,7 +131447,11 @@ PrefabInstance:
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: dieSound
       value: 
-      objectReference: {fileID: 8300000, guid: 9ff6f584d1c52774eba2c18253ff776d, type: 3}
+      objectReference: {fileID: 8300000, guid: 353f3666d475ba449b32c2182b0fd4b0, type: 3}
+    - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: runSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 81d48c044214b47489aa23162e065440, type: 3}
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: uiImage1
       value: 
@@ -131447,7 +131463,7 @@ PrefabInstance:
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: findSound
       value: 
-      objectReference: {fileID: 8300000, guid: ab94f795e4ee1ee48947de1737a9c753, type: 3}
+      objectReference: {fileID: 8300000, guid: 9d359f25bfac8c74591d10c701d689df, type: 3}
     - target: {fileID: 840521334081726271, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: itemUseSc
       value: 
