@@ -51,6 +51,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 7eb9511735713eb49aa4d56935920c63, type: 3}
   countdownBeep: {fileID: 8300000, guid: 5aa2a2477ada5bc47a47dc019111d546, type: 3}
   countdownFinal: {fileID: 8300000, guid: 263d1fd665cc1b34ca404dc62d4124ef, type: 3}
+  useSound: {fileID: 8300000, guid: eaec03456d659424592ca4a074c1f6fd, type: 3}
+  audioSource: {fileID: 935448918373635374}
   soundVolume: 1
 --- !u!65 &3861061212146857923
 BoxCollider:

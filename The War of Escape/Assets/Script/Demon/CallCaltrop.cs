@@ -1,68 +1,72 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class CallCaltrop : Item
 {
-    public GameObject caltrop;
+    [Header("Caltrop Settings")]
+    [SerializeField] private GameObject caltrop;
+
     private Player playerScriptCo;
 
-    private string useMessageCa1 = "‚Ü‚«‚Ñ‚µ‚ğİ’u‚µ‚Ü‚µ‚½";
+    private string useMessageCa1 = "ã¾ãã³ã—ã‚’è¨­ç½®ã—ã¾ã—ãŸ";
     private string useMessageCa2 = "";
     private GameObject itemUseCo;
     private ItemUse itemUseScCo;
 
-    public AudioSource caltropSetAudioSource;
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip useSound;           // ä½¿ç”¨æ™‚ã«é³´ã‚‰ã™éŸ³
+    [SerializeField] private AudioSource audioSource;      // AudioSourceã‚’Inspectorã§ã‚»ãƒƒãƒˆ
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        // ƒV[ƒ““à‚ÌMessageDisplayManager‚ğ’T‚·
+        // ã‚·ãƒ¼ãƒ³å†…ã®MessageDisplayManagerã‚’æ¢ã™
         itemUseCo = GameObject.Find("ItemUse");
         itemUseScCo = itemUseCo.GetComponent<ItemUse>();
         if (itemUseScCo == null)
         {
-            Debug.Log("nothing‚Å");
+            Debug.Log("MessageDisplayManager ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
         }
         else
         {
-            Debug.Log("Œ©‚Â‚¯‚½");
+            Debug.Log("MessageDisplayManager ã‚’è¦‹ã¤ã‘ã¾ã—ãŸ");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public override void Activate(Player user)
     {
-        caltropSetAudioSource.Play();
-        Debug.Log("‚Ü‚«‚Ñ‚µİ’u0");
+        // ğŸµ ä½¿ç”¨éŸ³ã‚’å†ç”Ÿ
+        if (audioSource != null && useSound != null)
+        {
+            audioSource.PlayOneShot(useSound);
+        }
+
+        Debug.Log("ã¾ãã³ã—è¨­ç½®0");
         GameObject caltropObj = Instantiate(caltrop);
-        caltropObj.transform.position = new Vector3(user.transform.position.x, user.transform.position.y - 1.1f, user.transform.position.z);
-        Debug.Log("‚Ü‚«‚Ñ‚µİ’u1");
+        caltropObj.transform.position = new Vector3(
+            user.transform.position.x,
+            user.transform.position.y - 1.1f,
+            user.transform.position.z
+        );
+        Debug.Log("ã¾ãã³ã—è¨­ç½®1");
+
         playerScriptCo = user.GetComponent<Player>();
 
         if (itemUseScCo != null)
         {
             if (playerScriptCo.playerID == 1)
             {
-                string message1 = useMessageCa1;
-                string message2 = useMessageCa2;
-                itemUseScCo.ShowMessage(message1, message2);
+                itemUseScCo.ShowMessage(useMessageCa1, useMessageCa2);
             }
             else if (playerScriptCo.playerID == 2)
             {
-                string message1 = useMessageCa2;
-                string message2 = useMessageCa1;
-                itemUseScCo.ShowMessage(message1, message2);
+                itemUseScCo.ShowMessage(useMessageCa2, useMessageCa1);
             }
-            Debug.Log("ƒƒbƒZ[ƒW“n‚µ‚½");
+            Debug.Log("ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ¸¡ã—ãŸ");
         }
         else
         {
-            Debug.Log("ƒƒbƒZ[ƒW“n‚¹‚È‚©‚Á‚½");
+            Debug.Log("ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ¸¡ã›ãªã‹ã£ãŸ");
         }
-            user.SetHeldItem(null);
+
+        user.SetHeldItem(null);
     }
 }

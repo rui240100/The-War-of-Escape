@@ -1,35 +1,44 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InvertControlItem : Item
 {
-    public float duration = 10f; // ”½“]‚ª‘±‚­ŠÔ
+    [Header("Invert Settings")]
+    [SerializeField] private float duration = 10f; // åè»¢ãŒç¶šãæ™‚é–“
 
     private Player playerScriptRe;
-    private string useMessageRe1 = "‘€ì”½“]ƒAƒCƒeƒ€‚ğg—p‚µ‚Ü‚µ‚½";
-    private string useMessageRe2 = "ˆÚ“®‘€ì‚ª”½“]‚³‚ê‚Ü‚µ‚½";
+    private string useMessageRe1 = "æ“ä½œåè»¢ã‚¢ã‚¤ãƒ†ãƒ ã‚’ä½¿ç”¨ã—ã¾ã—ãŸ";
+    private string useMessageRe2 = "ç§»å‹•æ“ä½œãŒåè»¢ã•ã‚Œã¾ã—ãŸ";
     private GameObject itemUseRe;
     private ItemUse itemUseScRe;
 
-    public AudioSource invertAudioSource;
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip useSound;           // ä½¿ç”¨æ™‚ã«é³´ã‚‰ã™éŸ³
+    [SerializeField] private AudioSource audioSource;      // AudioSourceã‚’Inspectorã§ã‚»ãƒƒãƒˆ
+
     private void Start()
     {
-        // ƒV[ƒ““à‚ÌMessageDisplayManager‚ğ’T‚·
+        // ã‚·ãƒ¼ãƒ³å†…ã®MessageDisplayManagerã‚’æ¢ã™
         itemUseRe = GameObject.Find("ItemUse");
         itemUseScRe = itemUseRe.GetComponent<ItemUse>();
         if (itemUseScRe == null)
         {
-            Debug.LogError("MessageDisplayManager‚ªƒV[ƒ“‚É‚ ‚è‚Ü‚¹‚ñI");
+            Debug.LogError("MessageDisplayManagerãŒã‚·ãƒ¼ãƒ³ã«ã‚ã‚Šã¾ã›ã‚“ï¼");
         }
     }
 
     public override void Activate(Player user)
     {
-        invertAudioSource.Play();
+        // ğŸµ ä½¿ç”¨éŸ³ã‚’å†ç”Ÿ
+        if (audioSource != null && useSound != null)
+        {
+            audioSource.PlayOneShot(useSound);
+        }
+
         if (user.otherPlayer != null)
         {
-            user.StartCoroutine(InvertControl(user.otherPlayer,user));
+            user.StartCoroutine(InvertControl(user.otherPlayer, user));
         }
 
         playerScriptRe = user.GetComponent<Player>();
@@ -38,21 +47,18 @@ public class InvertControlItem : Item
         {
             if (playerScriptRe.playerID == 1)
             {
-                string message1 = useMessageRe1;
-                string message2 = useMessageRe2;
-                itemUseScRe.ShowMessage(message1, message2);
+                itemUseScRe.ShowMessage(useMessageRe1, useMessageRe2);
             }
             else if (playerScriptRe.playerID == 2)
             {
-                string message1 = useMessageRe2;
-                string message2 = useMessageRe1;
-                itemUseScRe.ShowMessage(message1, message2);
+                itemUseScRe.ShowMessage(useMessageRe2, useMessageRe1);
             }
         }
+
         user.SetHeldItem(null);
     }
 
-    private IEnumerator InvertControl(Player targetPlayer,Player user)
+    private IEnumerator InvertControl(Player targetPlayer, Player user)
     {
         InvertedInput inverted = targetPlayer.gameObject.GetComponent<InvertedInput>();
         if (inverted == null)

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class GhostItem : Item
@@ -9,36 +9,43 @@ public class GhostItem : Item
     [Header("Consolation Items")]
     [SerializeField] private List<GameObject> consolationItems = new();
 
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip useSound;           // ä½¿ç”¨æ™‚ã«é³´ã‚‰ã™éŸ³
+    [SerializeField] private AudioSource audioSource;      // AudioSourceã‚’Inspectorã§ã‚»ãƒƒãƒˆ
+
     private Player playerScriptRo;
-    private string useMessageRo1 = "‘Šè‚©‚çŒ®‚ğ’D‚¢‚Ü‚µ‚½";
-    private string useMessageRo2 = "‘Šè‚ÉŒ®‚ğ’D‚í‚ê‚Ü‚µ‚½";
-    private string useMessageRo12 = "‘Šè‚ªŒ®‚ğ‚Á‚Ä‚¢‚È‚©‚Á‚½‚Ì‚ÅAƒAƒCƒeƒ€‚ğö‚¯‚Ü‚·";
+    private string useMessageRo1 = "ç›¸æ‰‹ã‹ã‚‰éµã‚’å¥ªã„ã¾ã—ãŸ";
+    private string useMessageRo2 = "ç›¸æ‰‹ã«éµã‚’å¥ªã‚ã‚Œã¾ã—ãŸ";
+    private string useMessageRo12 = "ç›¸æ‰‹ãŒéµã‚’æŒã£ã¦ã„ãªã‹ã£ãŸã®ã§ã€ã‚¢ã‚¤ãƒ†ãƒ ã‚’æˆã‘ã¾ã™";
     private string useMessageRo22 = "";
     private GameObject itemUseRo;
     private ItemUse itemUseScRo;
 
-    public AudioSource ghostStealAudioSource;
-
     private void Start()
     {
-        // ƒV[ƒ““à‚ÌMessageDisplayManager‚ğ’T‚·
+        // ã‚·ãƒ¼ãƒ³å†…ã®MessageDisplayManagerã‚’æ¢ã™
         itemUseRo = GameObject.Find("ItemUse");
         itemUseScRo = itemUseRo.GetComponent<ItemUse>();
         if (itemUseScRo == null)
         {
-            Debug.LogError("MessageDisplayManager‚ªƒV[ƒ“‚É‚ ‚è‚Ü‚¹‚ñI");
+            Debug.LogError("MessageDisplayManagerãŒã‚·ãƒ¼ãƒ³ã«ã‚ã‚Šã¾ã›ã‚“ï¼");
         }
     }
 
     public override void Activate(Player user)
     {
-        ghostStealAudioSource.Play();
         playerScriptRo = user.GetComponent<Player>();
         user.SetHeldItem(null);
 
+        // ğŸµ ä½¿ç”¨éŸ³ã‚’å†ç”Ÿ
+        if (audioSource != null && useSound != null)
+        {
+            audioSource.PlayOneShot(useSound);
+        }
+
         if (user == null || user.otherPlayer == null)
         {
-            Debug.LogWarning("GhostItem: user‚Ü‚½‚ÍotherPlayer‚ªnull‚Å‚·B");
+            Debug.LogWarning("GhostItem: userã¾ãŸã¯otherPlayerãŒnullã§ã™ã€‚");
             return;
         }
 
@@ -46,7 +53,7 @@ public class GhostItem : Item
 
         if (target.keyCount > 0)
         {
-            int keysToSteal = stealAmount <= 0 ? target.keyCount: Mathf.Min(stealAmount, target.keyCount);
+            int keysToSteal = stealAmount <= 0 ? target.keyCount : Mathf.Min(stealAmount, target.keyCount);
 
             for (int i = 0; i < keysToSteal; i++)
             {
@@ -54,27 +61,23 @@ public class GhostItem : Item
                 user.AddKey();
             }
 
-            Debug.Log($"GhostItem: {keysToSteal} Œ®‚ğ Player{target.playerID} ‚©‚ç Player{user.playerID} ‚É’D‚¢‚Ü‚µ‚½B");
+            Debug.Log($"GhostItem: {keysToSteal} éµã‚’ Player{target.playerID} ã‹ã‚‰ Player{user.playerID} ã«å¥ªã„ã¾ã—ãŸã€‚");
 
             if (itemUseScRo != null)
             {
                 if (playerScriptRo.playerID == 1)
                 {
-                    string message1 = useMessageRo1;
-                    string message2 = useMessageRo2;
-                    itemUseScRo.ShowMessage(message1, message2);
+                    itemUseScRo.ShowMessage(useMessageRo1, useMessageRo2);
                 }
                 else if (playerScriptRo.playerID == 2)
                 {
-                    string message1 = useMessageRo2;
-                    string message2 = useMessageRo1;
-                    itemUseScRo.ShowMessage(message1, message2);
+                    itemUseScRo.ShowMessage(useMessageRo2, useMessageRo1);
                 }
             }
         }
         else
         {
-            Debug.Log($"GhostItem: Player{target.playerID} ‚ÍŒ®‚ğ‚Á‚Ä‚¢‚Ü‚¹‚ñB‘ã‘ÖƒAƒCƒeƒ€‚ğ’T‚µ‚Ü‚·B");
+            Debug.Log($"GhostItem: Player{target.playerID} ã¯éµã‚’æŒã£ã¦ã„ã¾ã›ã‚“ã€‚ä»£æ›¿ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ¢ã—ã¾ã™ã€‚");
 
             if (consolationItems != null && consolationItems.Count > 0)
             {
@@ -83,18 +86,18 @@ public class GhostItem : Item
 
                 if (selectedPrefab == null)
                 {
-                    Debug.LogWarning("GhostItem: ‘I‚Î‚ê‚½ƒvƒŒƒnƒu‚ª null ‚Å‚·I");
+                    Debug.LogWarning("GhostItem: é¸ã°ã‚ŒãŸãƒ—ãƒ¬ãƒãƒ–ãŒ null ã§ã™ï¼");
                     return;
                 }
 
                 GameObject obj = Instantiate(selectedPrefab);
-                Debug.Log($"GhostItem: {selectedPrefab.name} ‚ğ¶¬‚µ‚Ü‚µ‚½B");
+                Debug.Log($"GhostItem: {selectedPrefab.name} ã‚’ç”Ÿæˆã—ã¾ã—ãŸã€‚");
 
                 if (obj.TryGetComponent<Item>(out Item newItem))
                 {
                     if (user.HasItem)
                     {
-                        Debug.Log($"GhostItem: Šù‘¶ƒAƒCƒeƒ€ {user.heldItem.name} ‚ğíœ‚µ‚Ü‚·B");
+                        Debug.Log($"GhostItem: æ—¢å­˜ã‚¢ã‚¤ãƒ†ãƒ  {user.heldItem.name} ã‚’å‰Šé™¤ã—ã¾ã™ã€‚");
                         user.heldItem = null;
                     }
 
@@ -108,32 +111,28 @@ public class GhostItem : Item
                     var mesh = obj.GetComponent<MeshRenderer>();
                     if (mesh) mesh.enabled = false;
 
-                    Debug.Log($"GhostItem: {newItem.name} ‚ğ Player{user.playerID} ‚É“n‚µ‚Ü‚µ‚½B");
+                    Debug.Log($"GhostItem: {newItem.name} ã‚’ Player{user.playerID} ã«æ¸¡ã—ã¾ã—ãŸã€‚");
                 }
                 else
                 {
-                    Debug.LogWarning("GhostItem: ƒCƒ“ƒXƒ^ƒ“ƒX‚É Item ƒXƒNƒŠƒvƒg‚ª•t‚¢‚Ä‚¢‚Ü‚¹‚ñI");
+                    Debug.LogWarning("GhostItem: ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã« Item ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒä»˜ã„ã¦ã„ã¾ã›ã‚“ï¼");
                     Destroy(obj);
                 }
             }
             else
             {
-                Debug.LogWarning("GhostItem: consolationItems ‚ª‹ó‚Å‚·B‰½‚à“n‚¹‚Ü‚¹‚ñB");
+                Debug.LogWarning("GhostItem: consolationItems ãŒç©ºã§ã™ã€‚ä½•ã‚‚æ¸¡ã›ã¾ã›ã‚“ã€‚");
             }
 
             if (itemUseScRo != null)
             {
                 if (playerScriptRo.playerID == 1)
                 {
-                    string message1 = useMessageRo12;
-                    string message2 = useMessageRo22;
-                    itemUseScRo.ShowMessage(message1, message2);
+                    itemUseScRo.ShowMessage(useMessageRo12, useMessageRo22);
                 }
                 else if (playerScriptRo.playerID == 2)
                 {
-                    string message1 = useMessageRo22;
-                    string message2 = useMessageRo12;
-                    itemUseScRo.ShowMessage(message1, message2);
+                    itemUseScRo.ShowMessage(useMessageRo22, useMessageRo12);
                 }
             }
         }

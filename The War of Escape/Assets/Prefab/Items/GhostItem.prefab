@@ -75,7 +75,8 @@ MonoBehaviour:
   - {fileID: 5222341061944560564, guid: b9d7ba3740c7e9b4d86ca2eeab907fcb, type: 3}
   - {fileID: 5027695806682306833, guid: 53edc3570fccc7e4380ea2404f319ce2, type: 3}
   - {fileID: 4946287297852470925, guid: b99d8ed7347e6f24bb02468af90aa435, type: 3}
-  ghostStealAudioSource: {fileID: 6207161841846118369}
+  useSound: {fileID: 8300000, guid: a84b9e9da922ca947a3fadaad073170f, type: 3}
+  audioSource: {fileID: 6207161841846118369}
 --- !u!82 &6207161841846118369
 AudioSource:
   m_ObjectHideFlags: 0
