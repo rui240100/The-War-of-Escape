@@ -48035,7 +48035,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514398279}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3e48698b68c22f4aa0047458c1f584d, type: 3}
@@ -69030,6 +69030,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon1
       objectReference: {fileID: 0}
+    - target: {fileID: 4056210797809920372, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 99c1dc21859250c4fb4e6579133c3799, type: 3}
+    - target: {fileID: 4056210797809920372, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99c1dc21859250c4fb4e6579133c3799, type: 3}
     - target: {fileID: 5157824931611108810, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -131862,11 +131870,11 @@ PrefabInstance:
     - target: {fileID: 4056210797809920372, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 89302aad418c5bd4281bb0f995993d6f, type: 3}
+      objectReference: {fileID: 8300000, guid: 81d48c044214b47489aa23162e065440, type: 3}
     - target: {fileID: 4056210797809920372, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 89302aad418c5bd4281bb0f995993d6f, type: 3}
+      objectReference: {fileID: 8300000, guid: 81d48c044214b47489aa23162e065440, type: 3}
     - target: {fileID: 5157824931611108810, guid: 9a4b5697d953e3c44bff286e6112030b, type: 3}
       propertyPath: m_Mesh
       value: 

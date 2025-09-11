@@ -157,7 +157,7 @@ public class DemonAI : MonoBehaviour
             //collision.gameObject.transform.position = respawn.position;
             //collision.gameObject.GetComponent<CharacterController>().enabled = true;
             //Debug.Log("Collided Object Position: " + collision.transform.position);
-            Debug.Log("Collided Object Name: " + collision.gameObject.name);
+            //Debug.Log("Collided Object Name: " + collision.gameObject.name);
             playerScript = collision.gameObject.GetComponent<Player>();
 
             if (playerScript.keyCount >= 1)
