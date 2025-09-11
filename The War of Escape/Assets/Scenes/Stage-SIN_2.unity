@@ -32274,6 +32274,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 245240372}
     m_Modifications:
+    - target: {fileID: 2552945937146054857, guid: 7e7a0e7fe3195524fa11aaae5bcd0d94, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4228781257462175261, guid: 7e7a0e7fe3195524fa11aaae5bcd0d94, type: 3}
       propertyPath: m_Name
       value: KeyUICount_1P
@@ -97603,6 +97607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6117867342961522225, guid: bb2b276fcba82b44ebad17202b1bbb37, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6173363202921084123, guid: bb2b276fcba82b44ebad17202b1bbb37, type: 3}
       propertyPath: m_SizeDelta.x
       value: 800
@@ -110292,6 +110300,10 @@ PrefabInstance:
     - target: {fileID: 4620962650296364380, guid: 20ec95cbce13f9f458feda38099213d7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -433
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242136073010632245, guid: 20ec95cbce13f9f458feda38099213d7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6755482812848661518, guid: 20ec95cbce13f9f458feda38099213d7, type: 3}
       propertyPath: m_Name
