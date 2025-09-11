@@ -18,6 +18,9 @@ public class SpeedUpItem : Item
     private GameObject itemUseSp;
     private ItemUse itemUseScSp;
 
+    private Player playerScriptSp; // Player参照
+    private AudioSource audioSource; // サウンド再生用
+
     void Start()
     {
         itemUseSp = GameObject.Find("ItemUse");
@@ -26,27 +29,35 @@ public class SpeedUpItem : Item
         {
             Debug.LogError("MessageDisplayManager（ItemUse）が見つかりません！");
         }
+
+        // AudioSource を追加して管理
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f; // 2Dサウンド
     }
 
     public override void Activate(Player user)
     {
+        // Playerスクリプト取得
+        playerScriptSp = user.GetComponent<Player>();
+
         // コルーチン開始
         user.StartCoroutine(SpeedUp(user));
 
         // 使用時の効果音
-        if (useSound != null)
+        if (useSound != null && audioSource != null)
         {
-            AudioSource.PlayClipAtPoint(useSound, user.transform.position, soundVolume);
+            audioSource.PlayOneShot(useSound, soundVolume);
         }
 
         // メッセージ表示
         if (itemUseScSp != null)
         {
-            if (user.playerID == 1)
+            if (playerScriptSp.playerID == 1)
             {
                 itemUseScSp.ShowMessage(useMessageSp1, useMessageSp2);
             }
-            else
+            else if (playerScriptSp.playerID == 2)
             {
                 itemUseScSp.ShowMessage(useMessageSp2, useMessageSp1);
             }

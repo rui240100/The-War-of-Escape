@@ -14,12 +14,12 @@ public class SwitchPositionItem : Item
     private GameObject itemUseSw;
     private ItemUse itemUseScSw;
 
-    [Header("サウンド設定")]
-    public AudioClip countdownBeep;   // 3,2,1 で鳴る音
-    public AudioClip countdownFinal;  // 0 で鳴る音
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip countdownBeep;   // 3,2,1 で鳴る音
+    [SerializeField] private AudioClip countdownFinal;  // 0 で鳴る音
+    [SerializeField] private AudioClip useSound;           // 使用時に鳴らす音
+    [SerializeField] private AudioSource audioSource;   // Inspectorでセット
     [Range(0f, 1f)] public float soundVolume = 1f;
-
-    private static AudioSource uiAudioSource; // 共有AudioSource（2D再生）
 
     void Start()
     {
@@ -48,20 +48,15 @@ public class SwitchPositionItem : Item
         {
             Debug.LogError("MessageDisplayManagerがシーンにありません！");
         }
-
-        // 2D用AudioSourceを確保
-        if (uiAudioSource == null)
-        {
-            GameObject go = new GameObject("CountdownAudioSource");
-            DontDestroyOnLoad(go); // シーン切り替えでも残す
-            uiAudioSource = go.AddComponent<AudioSource>();
-            uiAudioSource.spatialBlend = 0f; // 2Dサウンド
-            uiAudioSource.playOnAwake = false;
-        }
     }
 
     public override void Activate(Player user)
     {
+        if (audioSource != null && useSound != null)
+        {
+            audioSource.PlayOneShot(useSound);
+        }
+
         if (isUsed || user.otherPlayer == null) return;
 
         isUsed = true;
@@ -115,13 +110,11 @@ public class SwitchPositionItem : Item
         Transform other = user.otherPlayer.transform;
         Debug.Log($"Before Swap: User={user.transform.position}, Other={other.position}");
 
-        // 入れ替え処理
         Vector3 temp = user.transform.position;
         user.transform.position = other.position;
         other.position = temp;
 
         Debug.Log($"After Swap: User={user.transform.position}, Other={other.position}");
-
 
         yield return new WaitForSeconds(0.5f);
 
@@ -135,17 +128,17 @@ public class SwitchPositionItem : Item
 
     private void PlayBeep()
     {
-        if (countdownBeep != null && uiAudioSource != null)
+        if (countdownBeep != null && audioSource != null)
         {
-            uiAudioSource.PlayOneShot(countdownBeep, soundVolume);
+            audioSource.PlayOneShot(countdownBeep, soundVolume);
         }
     }
 
     private void PlayFinal()
     {
-        if (countdownFinal != null && uiAudioSource != null)
+        if (countdownFinal != null && audioSource != null)
         {
-            uiAudioSource.PlayOneShot(countdownFinal, soundVolume);
+            audioSource.PlayOneShot(countdownFinal, soundVolume);
         }
     }
 }

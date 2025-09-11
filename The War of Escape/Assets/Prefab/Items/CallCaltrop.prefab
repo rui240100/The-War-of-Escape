@@ -49,7 +49,8 @@ MonoBehaviour:
   slowMultiplier: 0.2
   icon: {fileID: 21300000, guid: c54ffb9d05de4344aaf41410bd85d60c, type: 3}
   caltrop: {fileID: 5325104350198187437, guid: 999c29add9676c84faadb4a66785a245, type: 3}
-  caltropSetAudioSource: {fileID: -4971536243315694367}
+  useSound: {fileID: 8300000, guid: aa610a84a71e9474fbc845403318430c, type: 3}
+  audioSource: {fileID: -4971536243315694367}
 --- !u!82 &-4971536243315694367
 AudioSource:
   m_ObjectHideFlags: 0
